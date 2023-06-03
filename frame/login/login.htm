@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<meta name="author" content="Korei">
+<meta name="copyright" content="Copyright 2022 Korei Industry">
+<meta name="generator" content="EmEditor">
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="shortcut icon" type="image/x-icon" id="iIcon" href="#">
+<link rel="stylesheet" type="text/css" id="iCSS_Com" href="#">
+<link rel="stylesheet" type="text/css" id="iCSS_Org" href="#">
+
+<title>Galaxy Fleet - Login</title>
+<meta name="description" content="Galaxy Fleetのログインページです。">
+
+<!--
+
+<script src="../_res/js/login/init.js"></script>
+
+//-->
+
+
+<script src="../../_js/save/_load_0001.js"></script>
+<script src="../../_js/save/load.js"></script>
+<script src="../../_js/save/save.js"></script>
+
+<script src="../../_js/user/md5.js"></script>
+<script src="../../_js/user/confirm.js"></script>
+<script src="../../_js/user/useradm.js"></script>
+
+<script src="../../_js/com/file_ctrl.js"></script>
+
+<script src="_handle_login.js"></script>
+
+</head><body onLoad="__handle_Login_PageLoad()">
+
+
+
+
+
+<div id="com_TitleSub">
+	<span id="iTitleSubJP">ログイン</span>
+	<span id="iTitleSubEN">Login</span>
+</div>
+
+
+
+
+
+<main id="gf_Login" class="gf_ContentsSection_Center">
+	<div class="gf_ContentsBody">
+<!-- com_ContentsBody - Start -->
+
+	<div class="gf_Discription">
+		<div class="gf_Trans_JP">
+		新しくゲームを始める場合は[NEW]を押してください。<br />
+		途中からゲームを再開するには、[Select Save File]でセーブデータを読んでください。<br />
+		そのあとユーザID、パスワード、パスコードを入力して、[Login]を押してください。<br />
+		</div>
+		<div class="gf_Trans_EN">
+		Press [NEW] to start a new game. <br />
+		To restart the game from the middle, read the save data with [Select Save File]. <br />
+		Then enter your user ID and password and passcode and press [Login]. <br />
+		</div>
+	</div>
+
+	<form><table class="com_Center">
+	<tr>
+		<td>
+			<span class="gf_Trans_JP">ユーザID</span><span class="gf_Trans_EN">USER ID</span>
+		</td>
+		<td>
+			<input class="Textbox" type="text" id="iUserID" value="">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="gf_Trans_JP">パスワード</span><span class="gf_Trans_EN">PASSWORD</span>
+		</td>
+		<td>
+			<input class="Textbox" type="password" id="iPassWD" value="" autocomplete="off" name="password">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="gf_Trans_JP">[PASSコード]</span><span class="gf_Trans_EN">[PASS CODE]</span>
+		</td>
+		<td>
+			<input class="Textbox" type="text" id="iPassCD" value="">
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan="2" class="gf_FileButttonCell">
+			<label for="iDIALOG-File" id="iBTN-File" class="gf_FileButton gf_BTN_Color_Def">
+			Select Save File
+			<input type="file" id="iDIALOG-File" onchange="__handle_Login_SelectFile(event)">
+			</label>
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan="2">
+			<input type="button" class="gf_Button gf_BTN_Color_Def" id="iLogin" value="LOGIN"
+				onclick="__handle_Login_Login()">
+			<input type="button" class="gf_Button gf_BTN_Color_Def" id="iClose" value="CLOSE"
+				onclick="__handle_Login_Close()">
+			<input type="button" class="gf_Button gf_BTN_Color_Def" id="iNew" value="NEW"
+				onclick="__handle_Login_New()">
+		</td>
+	</tr>
+
+	</table></form>
+
+	<div class="gf_SaveDiscription">
+		<div class="gf_Trans_JP">
+		ログアウトした場合は、下のセーブデータと、パスコードを必ず保存してください。<br />
+		なおユーザID、パスワード、パスコードを忘れたり、セーブデータを保存し忘れた場合、<br />
+		データの復元は不可能です。<br />
+		</div>
+		<div class="gf_Trans_EN">
+		If you log out, be sure to save the save data below and your passcode.<br />
+		If you forget your user ID, password, passcode, or forget to save the save data,<br />
+		Data cannot be restored. <br />
+		</div>
+	</div>
+
+	<div class="gf_SaveBody">
+		<div class="gf_SaveLabel">
+			<div class="gf_Trans_JP">
+			セーブデータ<br />
+			</div>
+			<div class="gf_Trans_EN">
+			SAVE DATA<br />
+			</div>
+		</div>
+		<div class="gf_SaveButton">
+			<textarea class="gf_SaveData" id="iSaveData" rows="6" cols="60" onclick="javascript:this.select()" readonly>　</textarea>
+			<span class="gf_Trans_JP">[PASSコード]</span><span class="gf_Trans_EN">[PASS CODE]</span>
+			<input class="Textbox" type="text" id="iSavePassCD" value="" readonly>
+		</div>
+
+		<div class="gf_SaveHelp">
+			<div class="gf_Trans_JP">
+			＜セーブデータの保存の仕方＞<br>
+			webブラウザにはセーブデータを保存する能力がないため、<br />
+			以下の手順でセーブデータを保存してください。<br />
+			　1.上のセーブデータをコピーする。<br />
+			　2.適当なフォルダに新規作成でテキストファイルを作成する。<br />
+			　3.メモ帳などで2のファイルを開く。<br />
+			　4.ペーストして、保存する。<br />
+			　　※ファイル名に日付をつけておくと管理しやすいです。<br />
+			</div>
+			<div class="gf_Trans_EN">
+			＜How to save save data＞<br />
+			Since the web browser does not have the ability to save save data, <br />
+			Follow the procedure below to save the save data. <br />
+			1. Copy the save data above. <br />
+			2. Create a new text file in an appropriate folder. <br />
+			3. Open file 2 with Notepad etc. <br />
+			4. Paste and save. <br />
+			　　※It is easier to manage if you add a date to the file name. <br />
+			</div>
+		</div>
+
+	</div>
+
+<!-- com_ContentsBody - End -->
+	</div>
+</main>
+
+
+
+
+
+</body></html>

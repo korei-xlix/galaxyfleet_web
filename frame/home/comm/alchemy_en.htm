@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<meta name="author" content="Lucida">
+<meta name="copyright" content="◆Copyright 2019 Mynoghra◆">
+<meta name="generator" content="EmEditor">
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="stylesheet" type="text/css" id="iCSS_Com" href="../_res/css/common_wide.css">
+<link rel="stylesheet" type="text/css" id="iCSS_Org" href="../_res/css/strgmain.css">
+
+<title>Star Region - Alchemy</title>
+
+<script src="../_res/js/window/button.js"></script>
+<script src="../_res/js/com_src/window_ctrl.js"></script>
+<script src="../_res/js/handle/alchemy.js"></script>
+
+</head><body onload="_hdl_PageLoad()" class="IF_Body">
+
+
+
+<article><div id="SR-Alchemy"><div class="Disc">
+Convert surplus resources to other resources.<br>
+</div>
+
+<div class="Machine"><h1>Alchemy Device 1</h1>
+<table>
+<tr><td colspan="2" id="iSet-Alchemy_Src1">　</td>
+	<td id="iIcon-Alchemy_Src1" class="IconSrc">　</td>
+	<td id="iIcon-Alchemy_Hen1" class="IconHen">　</td>
+	<td id="iIcon-Alchemy_Dst1" class="IconDst">　</td>
+	<td id="iSet-Alchemy_Dst1">　</td></tr>
+<tr><td class="Set-Left">
+	Number of 1 set<input type="text" id="iAlchemy-Kazu1" class="SetText" value="0" size="3" readonly><br>
+	Number of sets<input type="text" id="iAlchemy-Sets1" value="0" size="3" readonly><br>
+	Resource consumption<input type="text" id="iAlchemy-Total1" class="SetText" value="0" size="7" readonly></td>
+	<td class="Set-Right">
+	<input type="button" id="iBtn-Alchemy_Up1" class="SpinBtn Btn-Def" value="▲"
+		onclick="_hdl_AlchemyUpDownButton_Click(1,'up')"
+		onmouseover="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Up1','On')"
+		onmouseout="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Up1','Off')"><br>
+	<input type="button" id="iBtn-Alchemy_Dw1" class="SpinBtn Btn-Def" value="▼"
+		onclick="_hdl_AlchemyUpDownButton_Click(1,'dw')"
+		onmouseover="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Dw1','On')"
+		onmouseout="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Dw1','Off')"></td><td colspan="3" class="BtnTD">
+	<input type="button" id="iBtn-Alchemy_Start1" class="Btn Btn-Def" value="Start"
+		onclick="_hdl_AlchemyStartButton_Click(1)"
+		onmouseover="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Start1','On')"
+		onmouseout="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Start1','Off')"></td><td>
+	Number of conversions 1 set<input type="text" id="iAlchemy-Nums1" class="SetText" value="0" size="7" readonly><br>
+	Number of conversions planned<input type="text" id="iAlchemy-Keis1" class="SetText" value="0" size="7" readonly>
+	</td></tr>
+</table></div>
+
+<div class="Machine"><h1>Alchemy Device 2</h1>
+<table>
+<tr><td colspan="2" id="iSet-Alchemy_Src2">　</td>
+	<td id="iIcon-Alchemy_Src2" class="IconSrc">　</td>
+	<td id="iIcon-Alchemy_Hen2" class="IconHen">　</td>
+	<td id="iIcon-Alchemy_Dst2" class="IconDst">　</td>
+	<td id="iSet-Alchemy_Dst2">　</td></tr>
+<tr><td class="Set-Left">
+	Number of 1 set<input type="text" id="iAlchemy-Kazu2" class="SetText" value="0" size="3" readonly><br>
+	Number of sets<input type="text" id="iAlchemy-Sets2" value="0" size="3" readonly><br>
+	Resource consumption<input type="text" id="iAlchemy-Total2" class="SetText" value="0" size="7" readonly></td>
+	<td class="Set-Right">
+	<input type="button" id="iBtn-Alchemy_Up2" class="SpinBtn Btn-Def" value="▲"
+		onclick="_hdl_AlchemyUpDownButton_Click(2,'up')"
+		onmouseover="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Up2','On')"
+		onmouseout="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Up2','Off')"><br>
+	<input type="button" id="iBtn-Alchemy_Dw2" class="SpinBtn Btn-Def" value="▼"
+		onclick="_hdl_AlchemyUpDownButton_Click(2,'dw')"
+		onmouseover="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Dw2','On')"
+		onmouseout="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Dw2','Off')"></td><td colspan="3" class="BtnTD">
+	<input type="button" id="iBtn-Alchemy_Start2" class="Btn Btn-Def" value="Start"
+		onclick="_hdl_AlchemyStartButton_Click(2)"
+		onmouseover="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Start2','On')"
+		onmouseout="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Start2','Off')"></td><td>
+	Number of conversions 1 set<input type="text" id="iAlchemy-Nums2" class="SetText" value="0" size="7" readonly><br>
+	Number of conversions planned<input type="text" id="iAlchemy-Keis2" class="SetText" value="0" size="7" readonly>
+	</td></tr>
+</table></div>
+
+<div class="Machine"><h1>Alchemy Device 3（For scrap stone only）</h1>
+<table>
+<tr><td colspan="2" id="iSet-Alchemy_Src3">　</td>
+	<td id="iIcon-Alchemy_Src3" class="IconSrc">　</td>
+	<td id="iIcon-Alchemy_Hen3" class="IconHen">　</td>
+	<td id="iIcon-Alchemy_Dst3" class="IconDst">　</td>
+	<td id="iSet-Alchemy_Dst3">　</td></tr>
+<tr><td class="Set-Left">
+	Number of 1 set<input type="text" id="iAlchemy-Kazu3" class="SetText" value="0" size="3" readonly><br>
+	Number of sets<input type="text" id="iAlchemy-Sets3" value="0" size="3" readonly><br>
+	Resource consumption<input type="text" id="iAlchemy-Total3" class="SetText" value="0" size="7" readonly></td>
+	<td class="Set-Right">
+	<input type="button" id="iBtn-Alchemy_Up3" class="SpinBtn Btn-Def" value="▲"
+		onclick="_hdl_AlchemyUpDownButton_Click(3,'up')"
+		onmouseover="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Up3','On')"
+		onmouseout="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Up3','Off')"><br>
+	<input type="button" id="iBtn-Alchemy_Dw3" class="SpinBtn Btn-Def" value="▼"
+		onclick="_hdl_AlchemyUpDownButton_Click(3,'dw')"
+		onmouseover="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Dw3','On')"
+		onmouseout="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Dw3','Off')"></td><td colspan="3" class="BtnTD">
+	<input type="button" id="iBtn-Alchemy_Start3" class="Btn Btn-Def" value="Start"
+		onclick="_hdl_AlchemyStartButton_Click(3)"
+		onmouseover="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Start3','On')"
+		onmouseout="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Start3','Off')"></td><td>
+	Number of conversions 1 set<input type="text" id="iAlchemy-Nums3" class="SetText" value="0" size="7" readonly><br>
+	Number of conversions planned<input type="text" id="iAlchemy-Keis3" class="SetText" value="0" size="7" readonly>
+	</td></tr>
+</table></div>
+
+</div></article>
+
+
+
+<div id="iHelp"><article>
+＜About Alchemy＞<br>
+Alchemy is the conversion of excess resources by "alchemy equipment" into other resources.<br>
+
+・Alchemy is possible to three kinds at the same time. Two types are optional, and only rubbish will be a separate frame.<br>
+・The second is that resources in alchemy can not be alchemy.<br>
+・After conversion, you lose 10% of the original material before conversion. However, rubbish and high-speed building agents do not fall under this category.<br>
+・It takes 10 minutes to convert one set. If you set up conversion, the resources required will be consumed (delivered to the alchemy system).<br>
+　Although cancellation can not be performed on the way, when batch conversion is performed, except for one set being converted, it returns immediately.<br>
+・Funds, rubbish, high-speed build agents, you can choose the converted resources.<br>
+　Ammunition, nuclear stones and pyroxenes are dispersively transformed into two types of resources. (See the table below)<br>
+<br>
+
+＜Conversion rate of each resource＞　（The left is the number required for one set of conversion, and the right is the number of adjacent resources obtained after conversion）<br>
+Ammo(100/45)→Steel(100/90)→Rear Metal(100/900)→Capital(1000/1)→【Core Stone】(1/45)→Steel / Rear Metal<br>
+　　　　　　　　　と　　　　　　　　　　　　　　　　　　　　　　　か<br>
+　　　　　　　Fuel(100/90)→Hyper Plastic(100/900)→Capital(1000/10)→【Glitter Stone】(10/45)→Hyper Plastic / Rear Metal<br>
+<br>
+High-speed building agent: conversion rate per 10<br>
+Core Stone(1)、Glitter Stone(10)、Fuel(100)、Ammo(100)<br>
+<br>
+Scrap Stone：Conversion rate per unit<br>
+Core Stone(1)、Glitter Stone(10)、Capital(1000)、High-speed building agent(10)、Other(100)<br>
+
+</article></div>
+
+
+
+</body></html>

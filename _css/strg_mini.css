@@ -1,0 +1,250 @@
+/* *****************************************************
+::ProjectName= web page  
+::github= https://github.com/lucida3rd/starregion_doc  
+::Admin= Lucida（twitter: @lucida3rd）  
+::Twitter URL= https://twitter.com/lucida3rd  
+::Homepage=  https://lucida3web.wixsite.com/prof  
+::Message= https://marshmallow-qa.com/lucida3poi  
+::Class= Star Region Style [mini]
+***************************************************** */
+
+/*=== Page Title ===*/
+#PageTitle div.Image{
+background-image	: url(../title/starregion_mob.jpg);
+width				: 200px;
+height				: 40px;
+margin				: 0px auto;
+padding				: 0px;
+}
+
+
+
+/*=== Body ===*/
+body{
+color				: white;
+/*background-color	: black;*/
+background			: url('../wall/ani_hoshizora3.gif');
+}
+#body-OUT{
+}
+#body-IN{
+}
+
+
+
+/*=== Header ===*/
+header{
+background-color	: #000033;
+border-top			: solid 4px blue;
+border-bottom		: solid 4px blue;
+font-family			: "Arial Black";
+}
+header span.SelectAnk{
+color				: #99CC00;
+background-color	: #006600;
+border				: solid 2px #003300;
+padding				: 1px;
+}
+header a.Ank{
+color				: #66CCFF;
+background-color	: transparent;
+}
+header div.CSSmenu{
+color				: white;
+}
+header a.Ank-CSS{
+color				: limegreen;
+background-color	: darkcyan;
+}
+header a.Ank-CSS-Select{
+color				: darkgreen;
+background-color	: lightgreen;
+}
+
+
+
+/*=== Footer ===*/
+footer{
+background-color	: #000033;
+border-top			: solid 4px blue;
+border-bottom		: solid 4px blue;
+font-family			: "Arial Black";
+}
+footer a.Ank{
+color				: #66CCFF;
+background-color	: transparent;
+}
+
+
+
+/*=== h1～h6 ===*/
+h1{
+color				: white;
+background-color	: darkblue;
+}
+h2{
+color				: white;
+background-color	: blue;
+}
+h3{
+color				: black;
+background-color	: cyan;
+}
+h4{
+color				: black;
+background-color	: orange;
+}
+h5{
+color				: black;
+background-color	: yellow;
+}
+h6{
+color				: white;
+background-color	: pink;
+}
+
+
+
+/*=== Line ===*/
+hr{
+border				: 0px;
+background-color	: lightgray;
+}
+
+
+
+/*=== Inline Text ===*/
+a{
+color				: blue;
+background-color	: white;
+text-decoration		: underline;
+}
+
+
+
+/*=== Table ===*/
+table{
+background-color	: dimgray;
+border				: solid 2px dimgray;
+}
+
+th{
+color				: white;
+background-color	: darkgray;
+border				: solid 2px dimgray;
+}
+
+td{
+color				: black;
+background-color	: white;
+border				: solid 2px dimgray;
+}
+
+
+
+/*=== CopyrightHeader ===*/
+
+
+
+/*=== CopyrightFooter ===*/
+#CopyrightFooter .ButtonIndex{
+color				: white;
+background-color	: forestgreen;
+}
+
+#CopyrightFooter .ButtonRule{
+color				: white;
+background-color	: red;
+}
+
+#CopyrightFooter .ButtonRSS{
+color				: white;
+background-color	: #ee802f;
+}
+
+#CopyrightFooter .ButtonWeb{
+color				: white;
+background-color	: dodgerblue;
+}
+
+#CopyrightFooter div.ButtonTwitter, #CopyrightFooter a.ButtonTwitter{
+color				: #66CCFF;
+background-color	: transparent;
+}
+
+
+
+/*=== Description ===*/
+#Description{
+color				: white;
+background-color	: black;
+text-align			:center;
+}
+
+
+
+/*=== Contents Common ===*/
+.ContTitle{
+color				: white;
+background-color	: cornflowerblue;
+}
+.ContBody{
+color				: white;
+background-color	: black;
+}
+a.NavRet{
+color				: dimgray;
+background-color	: lavender;
+}
+
+/*=== Contents Common - Selector ===*/
+							/* Close */
+input[type="checkbox"].ContSel-CBX + .ContSel-LAB{
+color				: white;
+background-color	: cornflowerblue;
+border				: inset 6px dimgray;
+}
+							/* Open */
+input[type="checkbox"].ContSel-CBX:checked + .ContSel-LAB{
+color				: white;
+background-color	: forestgreen;
+}
+							/* Body */
+.ContSel-BODY{
+color				: black;
+background-color	: white;
+border-left			: solid 4px dimgray;
+border-right		: solid 4px dimgray;
+border-bottom		: solid 4px dimgray;
+border-top			: 0px;
+}
+
+
+
+/*=== Navigation ===*/
+#Navigation{
+color				: blue;
+background-color	: transparent;
+/*
+background-color	: cyan;
+*/
+}
+#Navigation a{
+color				: blue;
+background-color	: transparent;
+}
+
+
+
+/*=== Original Contents ===*/
+#Description div.Caution{
+color				: red;
+}
+
+div.Sorry{
+color				: red;
+text-align			:center;
+}
+
+
+

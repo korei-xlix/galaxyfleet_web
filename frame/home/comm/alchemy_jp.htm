@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<meta name="author" content="Lucida">
+<meta name="copyright" content="◆Copyright 2019 Mynoghra◆">
+<meta name="generator" content="EmEditor">
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="stylesheet" type="text/css" id="iCSS_Com" href="../_res/css/common_wide.css">
+<link rel="stylesheet" type="text/css" id="iCSS_Org" href="../_res/css/strgmain.css">
+
+<title>Star Region - Alchemy</title>
+
+<script src="../_res/js/window/button.js"></script>
+<script src="../_res/js/com_src/window_ctrl.js"></script>
+<script src="../_res/js/handle/alchemy.js"></script>
+
+</head><body onload="_hdl_PageLoad()" class="IF_Body">
+
+
+
+<article><div id="SR-Alchemy"><div class="Disc">
+余った資源を、他の資源に変換します。<br>
+</div>
+
+<div class="Machine"><h1>錬金装置１</h1>
+<table>
+<tr><td colspan="2" id="iSet-Alchemy_Src1">　</td>
+	<td id="iIcon-Alchemy_Src1" class="IconSrc">　</td>
+	<td id="iIcon-Alchemy_Hen1" class="IconHen">　</td>
+	<td id="iIcon-Alchemy_Dst1" class="IconDst">　</td>
+	<td id="iSet-Alchemy_Dst1">　</td></tr>
+<tr><td class="Set-Left">
+	１セット数量<input type="text" id="iAlchemy-Kazu1" class="SetText" value="0" size="3" readonly><br>
+	セット設定数<input type="text" id="iAlchemy-Sets1" value="0" size="3" readonly><br>
+	資源消費数<input type="text" id="iAlchemy-Total1" class="SetText" value="0" size="7" readonly></td>
+	<td class="Set-Right">
+	<input type="button" id="iBtn-Alchemy_Up1" class="SpinBtn Btn-Def" value="▲"
+		onclick="_hdl_AlchemyUpDownButton_Click(1,'up')"
+		onmouseover="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Up1','On')"
+		onmouseout="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Up1','Off')"><br>
+	<input type="button" id="iBtn-Alchemy_Dw1" class="SpinBtn Btn-Def" value="▼"
+		onclick="_hdl_AlchemyUpDownButton_Click(1,'dw')"
+		onmouseover="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Dw1','On')"
+		onmouseout="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Dw1','Off')"></td><td colspan="3" class="BtnTD">
+	<input type="button" id="iBtn-Alchemy_Start1" class="Btn Btn-Def" value="変換開始"
+		onclick="_hdl_AlchemyStartButton_Click(1)"
+		onmouseover="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Start1','On')"
+		onmouseout="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Start1','Off')"></td><td>
+	１セット変換数<input type="text" id="iAlchemy-Nums1" class="SetText" value="0" size="7" readonly><br>
+	合計変換予定数<input type="text" id="iAlchemy-Keis1" class="SetText" value="0" size="7" readonly>
+	</td></tr>
+</table></div>
+
+<div class="Machine"><h1>錬金装置２</h1>
+<table>
+<tr><td colspan="2" id="iSet-Alchemy_Src2">　</td>
+	<td id="iIcon-Alchemy_Src2" class="IconSrc">　</td>
+	<td id="iIcon-Alchemy_Hen2" class="IconHen">　</td>
+	<td id="iIcon-Alchemy_Dst2" class="IconDst">　</td>
+	<td id="iSet-Alchemy_Dst2">　</td></tr>
+<tr><td class="Set-Left">
+	１セット数量<input type="text" id="iAlchemy-Kazu2" class="SetText" value="0" size="3" readonly><br>
+	セット設定数<input type="text" id="iAlchemy-Sets2" value="0" size="3" readonly><br>
+	資源消費数<input type="text" id="iAlchemy-Total2" class="SetText" value="0" size="7" readonly></td>
+	<td class="Set-Right">
+	<input type="button" id="iBtn-Alchemy_Up2" class="SpinBtn Btn-Def" value="▲"
+		onclick="_hdl_AlchemyUpDownButton_Click(2,'up')"
+		onmouseover="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Up2','On')"
+		onmouseout="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Up2','Off')"><br>
+	<input type="button" id="iBtn-Alchemy_Dw2" class="SpinBtn Btn-Def" value="▼"
+		onclick="_hdl_AlchemyUpDownButton_Click(2,'dw')"
+		onmouseover="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Dw2','On')"
+		onmouseout="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Dw2','Off')"></td><td colspan="3" class="BtnTD">
+	<input type="button" id="iBtn-Alchemy_Start2" class="Btn Btn-Def" value="変換開始"
+		onclick="_hdl_AlchemyStartButton_Click(2)"
+		onmouseover="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Start2','On')"
+		onmouseout="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Start2','Off')"></td><td>
+	１セット変換数<input type="text" id="iAlchemy-Nums2" class="SetText" value="0" size="7" readonly><br>
+	合計変換予定数<input type="text" id="iAlchemy-Keis2" class="SetText" value="0" size="7" readonly>
+	</td></tr>
+</table></div>
+
+<div class="Machine"><h1>錬金装置３（屑石専用）</h1>
+<table>
+<tr><td colspan="2" id="iSet-Alchemy_Src3">　</td>
+	<td id="iIcon-Alchemy_Src3" class="IconSrc">　</td>
+	<td id="iIcon-Alchemy_Hen3" class="IconHen">　</td>
+	<td id="iIcon-Alchemy_Dst3" class="IconDst">　</td>
+	<td id="iSet-Alchemy_Dst3">　</td></tr>
+<tr><td class="Set-Left">
+	１セット数量<input type="text" id="iAlchemy-Kazu3" class="SetText" value="0" size="3" readonly><br>
+	セット設定数<input type="text" id="iAlchemy-Sets3" value="0" size="3" readonly><br>
+	資源消費数<input type="text" id="iAlchemy-Total3" class="SetText" value="0" size="7" readonly></td>
+	<td class="Set-Right">
+	<input type="button" id="iBtn-Alchemy_Up3" class="SpinBtn Btn-Def" value="▲"
+		onclick="_hdl_AlchemyUpDownButton_Click(3,'up')"
+		onmouseover="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Up3','On')"
+		onmouseout="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Up3','Off')"><br>
+	<input type="button" id="iBtn-Alchemy_Dw3" class="SpinBtn Btn-Def" value="▼"
+		onclick="_hdl_AlchemyUpDownButton_Click(3,'dw')"
+		onmouseover="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Dw3','On')"
+		onmouseout="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Dw3','Off')"></td><td colspan="3" class="BtnTD">
+	<input type="button" id="iBtn-Alchemy_Start3" class="Btn Btn-Def" value="変換開始"
+		onclick="_hdl_AlchemyStartButton_Click(3)"
+		onmouseover="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Start3','On')"
+		onmouseout="_hdl_STRG_Button_OnOff('iBtn-Alchemy_Start3','Off')"></td><td>
+	１セット変換数<input type="text" id="iAlchemy-Nums3" class="SetText" value="0" size="7" readonly><br>
+	合計変換予定数<input type="text" id="iAlchemy-Keis3" class="SetText" value="0" size="7" readonly>
+	</td></tr>
+</table></div>
+
+</div></article>
+
+
+
+<div id="iHelp"><article>
+＜錬金について＞<br>
+錬金は「錬金装置」によって余った資源を別の資源に変換することです。<br>
+
+・錬金は同時に３種類まで可能です。２種類は自由選択、屑石だけは別枠となります。<br>
+・２個目は錬金中の資源は錬金できません。<br>
+・変換後は変換前の素材の１割相当量を失います。ただし、屑石、高速建造剤はこれに該当しません。<br>
+・１セットの変換には １０ 分かかります。変換設定した場合、要求された資源は消費されます（錬金システムに投入されます）。<br>
+　途中キャンセルはできませんが、一括変換した場合、変換中の１セット以外は即時に戻ります。<br>
+・資金、屑石、高速建造剤は、変換後の資源が選択できます。弾薬、核石、輝石は２種類の資源に分散変換されます。(下表参照)<br>
+<br>
+
+＜各資源の変換率＞　（左は１セットの変換に必要な数、右は変換後に得られる隣の資源数）<br>
+弾薬(100/45)→鋼材(100/90)→希金(100/900)→資金(1000/1)→【核石】(1/45)→鋼材・希金<br>
+　　　　　　　　　と　　　　　　　　　　　　　　　　　　　　　　　か<br>
+　　　　　　　燃料(100/90)→合板(100/900)→資金(1000/10)→【輝石】（10/45）→合板・希金<br>
+<br>
+高速建造剤：10個あたりの変換率<br>
+核石(1)、輝石(10)、燃料(100)、弾薬(100)<br>
+<br>
+屑石：1個あたりの変換率<br>
+核石(1)、輝石(10)、資金(1000)、高速建造剤(10)、その他(100)<br>
+
+</article></div>
+
+
+
+</body></html>

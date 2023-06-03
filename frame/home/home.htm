@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<meta name="author" content="Korei">
+<meta name="copyright" content="Copyright 2022 Korei Industry">
+<meta name="generator" content="EmEditor">
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="shortcut icon" type="image/x-icon" id="iIcon" href="#">
+<link rel="stylesheet" type="text/css" id="iCSS_Com" href="#">
+<link rel="stylesheet" type="text/css" id="iCSS_Org" href="#">
+
+<title>Galaxy Fleet - Home</title>
+<meta name="description" content="Galaxy Fleetのメイン画面です。">
+
+<script src="_handle_home.js"></script>
+
+</head><body onLoad="__handle_Home_PageLoad()">
+
+
+
+
+
+<main id="gf_Home" class="gf_ContenttsHome">
+
+	<div class="gf_ContenttsHome_Top">
+
+		<div id="gf_Material">
+			<table>
+			<tr>
+				<td class="gf_MateGreen">
+					<div class="gf_MateImg"><img src="../../_icon/icon_fuel.jpg" alt="Fuel"></div>
+					<div class="gf_MateVal" id="iMateFuel">0</div>
+					<div class="gf_MateHelp">
+					<span class="gf_Trans_JP">燃料 - 燃焼することでエネルギーを生み出す資源です。兵器や基地の設備を動かす重要な資材です。</span>
+					<span class="gf_Trans_EN">Fuel - A resource that produces energy when burned.<br />It is an important material for moving weapons and base equipment.</span></div>
+				</td>
+				<td class="gf_MateGreen">
+					<div class="gf_MateImg"><img src="../../_icon/icon_fiber.jpg" alt="Fiber"></div>
+					<div class="gf_MateVal" id="iMateFiber">0</div>
+					<div class="gf_MateHelp">
+					<span class="gf_Trans_JP">繊維 - 非常に軽くて丈夫な有機性の素材です。戦闘兵器や装備品の製造、一部の艦船や建築物の素材にも使われます。</span>
+					<span class="gf_Trans_EN">Fiber - It is a very light and durable organic material.<br />It is also used in the manufacture of combat weapons and equipment,<br />and as a material for some ships and buildings.</span></div>
+				</td>
+				<td class="gf_MateBlue">
+					<div class="gf_MateImg"><img src="../../_icon/icon_red.jpg" alt="Red"></div>
+					<div class="gf_MateVal" id="iMateRed">0</div>
+					<div class="gf_MateHelp">
+					<span class="gf_Trans_JP">赤液 - 燃焼性、爆発性の高い危険な液体状の素材です。弾薬の材料や、一部装備品の材料、錬金の触媒に使用します。</span>
+					<span class="gf_Trans_EN">Red Liquid - It is a highly flammable, explosive and dangerous liquid material.<br />It is used as a material for ammunition, a material for some equipment,<br />and a catalyst for alchemy.</span></div>
+				</td>
+				<td class="gf_MateBlue">
+					<div class="gf_MateImg"><img src="../../_icon/icon_blue.jpg" alt="Blue"></div>
+					<div class="gf_MateVal" id="iMateBlue">0</div>
+					<div class="gf_MateHelp">
+					<span class="gf_Trans_JP">青片 - 粘着性の高い板状の素材です。装備品の製造や、一部戦闘兵器の製造、錬金の触媒に使用します。</span>
+					<span class="gf_Trans_EN">Blue Piece - It is a plate-shaped material with high adhesiveness.<br />It is used for manufacturing equipment, manufacturing some combat weapons,<br />and as a catalyst for alchemy.</span></div>
+				</td>
+				<td class="gf_MateBlue">
+					<div class="gf_MateImg"><img src="../../_icon/icon_black.jpg" alt="Black"></div>
+					<div class="gf_MateVal" id="iMateBlack">0</div>
+					<div class="gf_MateHelp gf_MateHelp_Right">
+					<span class="gf_Trans_JP">黒晶 - 星の塵やガス、プラズマが超冷温で固まった結晶です。レーザやビームの発振器、砲身、弾薬の製造、加工時の触媒に使われます。</span>
+					<span class="gf_Trans_EN">Black Crystal - It is a crystal made up of star dust, gas,<br />and plasma at ultra-cold temperatures.<br />It is used as a catalyst in the manufacture and processing of lasers and beam oscillators,<br />gun barrels and ammunition.</span></div>
+				</td>
+				<td class="gf_MatePurple">
+					<div class="gf_MateImg"><img src="../../_icon/icon_cors.jpg" alt="Core"></div>
+					<div class="gf_MateVal" id="iMateCore">0</div>
+					<div class="gf_MateHelp gf_MateHelp_Right">
+					<span class="gf_Trans_JP">核石 - 艦船のコアや、メインコンピュータに使われる薄い青色に光る石です。艦船の建造、建築の資材に使います。</span>
+					<span class="gf_Trans_EN">Core Stone] - Light blue glowing stone used for ship cores and main computers.<br />It is used for building ships and building materials.</span></div>
+				</td>
+				<td class="gf_MateYellow">
+					<div class="gf_MateImg"><img src="../../_icon/icon_pan.jpg" alt="Food"></div>
+					<div class="gf_MateVal" id="iMateFood">0</div>
+					<div class="gf_MateHelp gf_MateHelp_Right">
+					<span class="gf_Trans_JP">食料 - 食料です。人員の活動に欠かすことができません。</span>
+					<span class="gf_Trans_EN">Food - Food. Indispensable for personnel activities.</span></div>
+				</td>
+				<td class="gf_MateYellow">
+					<div class="gf_MateImg"><img src="../../_icon/icon_capt.jpg" alt="Capital"></div>
+					<div class="gf_MateVal" id="iMateCapital">0</div>
+					<div class="gf_MateHelp gf_MateHelp_Right">
+					<span class="gf_Trans_JP">資金 - 金（かね）です。大大戦前の時代から経済的な価値が高く、現在でも物品との交換で使えます。</span>
+					<span class="gf_Trans_EN">Capital - It is money. It has had a high economic value since before the Great War,<br />and it can still be used in exchange for goods.</span></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="gf_MateGreen">
+					<div class="gf_MateImg"><img src="../../_icon/icon_stel.jpg" alt="Steel"></div>
+					<div class="gf_MateVal" id="iMateSteel">0</div>
+					<div class="gf_MateHelp">
+					<span class="gf_Trans_JP">鋼材 - 硬くて重くて頑丈な金属鉱石です。艦船の建造、建築物の基礎、兵器の修理にも使われます。</span>
+					<span class="gf_Trans_EN">Steel - A hard, heavy, tough metal ore. It is also used to build ships,<br />build foundations, and repair weapons.</span></div>
+				</td>
+				<td class="gf_MateGreen">
+					<div class="gf_MateImg"><img src="../../_icon/icon_metal.jpg" alt="RareEarth"></div>
+					<div class="gf_MateVal" id="iMateRareEarth">0</div>
+					<div class="gf_MateHelp">
+					<span class="gf_Trans_JP">希土 - 希少な金属を含む土です。戦闘兵器の製造や、電子装備の製造、一部艦船の建造に使われます。</span>
+					<span class="gf_Trans_EN">Rare Earth - Soil containing rare metals. It is used in the manufacture of combat weapons,<br />the manufacture of electronic equipment, and the construction of some ships.</span></div>
+				</td>
+				<td class="gf_MateBlue">
+					<div class="gf_MateImg"><img src="../../_icon/icon_green.jpg" alt="Green"></div>
+					<div class="gf_MateVal" id="iMateGreen">0</div>
+					<div class="gf_MateHelp">
+					<span class="gf_Trans_JP">緑粉 - 有機性で栄養価、攪拌力が高い粉状の素材です。農業用として土に撒いたり、建築の資材に使います。</span>
+					<span class="gf_Trans_EN">Green Powder - It is an organic, nutritious, and powdery material with high stirring power.<br />It can be sprinkled on the soil for agricultural purposes or used as a building material.</span></div>
+				</td>
+				<td class="gf_MateBlue">
+					<div class="gf_MateImg"><img src="../../_icon/icon_purple.jpg" alt="Purple"></div>
+					<div class="gf_MateVal" id="iMatePurple">0</div>
+					<div class="gf_MateHelp">
+					<span class="gf_Trans_JP">柴缶 - 未知のエネルギーが詰まった謎の気体です。魔導兵器の製造や、魔導装備の生産、反物質兵器の弾薬の材料に使用します。</span>
+					<span class="gf_Trans_EN">Purple Can - It is a mysterious gas filled with unknown energy.<br />It is used to manufacture magic weapons, magic equipment,<br />and ammunition materials for antimatter weapons.</span></div>
+				</td>
+				<td class="gf_MatePurple">
+					<div class="gf_MateImg"><img src="../../_icon/icon_pot.jpg" alt="Pot"></div>
+					<div class="gf_MateVal" id="iMatePot">0</div>
+					<div class="gf_MateHelp gf_MateHelp_Right">
+					<span class="gf_Trans_JP">時瓶 - 資材の錬成を活性化させる素材です。建造や生産の効率や、速度をあげる不思議なチカラがあります。</span>
+					<span class="gf_Trans_EN">Time Pot - A material that activates the alchemy of materials.<br />There is a mysterious power that increases the efficiency<br />and speed of construction and production.</span></div>
+				</td>
+				<td class="gf_MatePurple">
+					<div class="gf_MateImg"><img src="../../_icon/icon_glis.jpg" alt="Glitter"></div>
+					<div class="gf_MateVal" id="iMateGlitter">0</div>
+					<div class="gf_MateHelp gf_MateHelp_Right">
+					<span class="gf_Trans_JP">輝石 - 主に戦闘兵器のコアや、魔導兵器の起動に使われる白銀に輝く石です。戦闘兵器の生産や、魔導兵器の起動に使います。</span>
+					<span class="gf_Trans_EN">Glitter Stone - It is a stone that shines with silver and is mainly used for the core of combat weapons<br />and the activation of magic weapons.<br />It is used to produce combat weapons and activate magic weapons.</span></div>
+				</td>
+				<td class="gf_MateYellow">
+					<div class="gf_MateImg"><img src="../../_icon/icon_fablic.jpg" alt="Fabric"></div>
+					<div class="gf_MateVal" id="iMateFabric">0</div>
+					<div class="gf_MateHelp gf_MateHelp_Right">
+					<span class="gf_Trans_JP">建材 - 建物や防衛兵器を建築するのに必要な建築資材です。</span>
+					<span class="gf_Trans_EN">Fabric - A building material necessary for constructing buildings and defensive weapons.</span></div>
+				</td>
+				<td class="gf_MateGray">
+					<div class="gf_MateImg"><img src="../../_icon/icon_scrp.jpg" alt="Scrap"></div>
+					<div class="gf_MateVal" id="iMateScrap">0</div>
+					<div class="gf_MateHelp gf_MateHelp_Right">
+					<span class="gf_Trans_JP">屑板 - そのままでは何の価値もないただの金属板です。加工が容易で、錬金で他の資材に加工できます。</span>
+					<span class="gf_Trans_EN">Scrap Bord - It's just a metal plate with no value as it is.<br />It is easy to process and can be processed into other materials through alchemy.</span></div>
+				</td>
+			<tr>
+			</table>
+		</div>
+
+	</div>
+
+	<div class="gf_ContenttsHome_Body">
+
+		<div class="gf_ContenttsHome_Left">
+
+			<iframe id="iMenu" class="gf_iframe_Menu" src="../_blank/_blank.htm" sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts allow-modals allow-popups allow-pointer-lock"></iframe>
+
+		</div>
+		<div class="gf_ContenttsHome_Center">
+
+			<iframe id="iCom" class="gf_iframe_Comm" src="../_blank/_blank.htm" sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts allow-modals allow-popups allow-pointer-lock"></iframe>
+
+			<iframe id="iMap" class="gf_iframe_Map" src="../_blank/_blank.htm" sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts allow-modals allow-popups allow-pointer-lock"></iframe>
+
+			<iframe id="iBattle" class="gf_iframe_Battle" src="../_blank/_blank.htm" sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts allow-modals allow-popups allow-pointer-lock"></iframe>
+
+		</div>
+		<br class="gf_ContenttsHome_End" />
+
+	</div>
+
+	<div class="gf_ContenttsHome_Bottom">
+
+
+	</div>
+
+</main>
+
+
+
+
+
+<div id="iLogWindow">
+	<div class="gf_LogWindowBar" onmousedown="__handle_clickMoveLogWindow()">
+		<div class="gf_LogWindowClose">
+		<a href="javascript:__handle_openLogWindow({});" class="gf_LogWindowClose_a">　</a>
+		</div>
+	</div>
+	<div class="gf_LogWindowBody">
+		<textarea class="gf_LogWindow_Text" id="iLogText" rows="30" cols="40"></textarea>
+	</div>
+</div>
+
+
+
+
+
+<div id="iMessageBox">
+	<div class="gf_MessageBoxBar" onmousedown="__handle_clickMoveMessageBox()">
+		<div class="gf_MessageBoxClose">
+		<a href="javascript:__handle_openMessageBox({});" class="gf_MessageBoxClose_a">　</a>
+		</div>
+	</div>
+	<div class="gf_MessageBoxBody">
+		<div class="gf_MessageBox_Text" id="iMessageBox_Text">
+		あああ
+		</div>
+		<div class="gf_MessageBoxButtonCell" id="iMessageBox_Sell1">
+			<input type="button" class="gf_BTN_Color_Msg gf_MessageBox_Button" value="あああ" id="iMessageBox_Btn1"
+				onclick="__handle_clickMessageBoxButton({inKey:'iMessageBox_Btn1'})">
+		</div>
+		<div class="gf_MessageBoxButtonCell" id="iMessageBox_Sell2">
+			<input type="button" class="gf_BTN_Color_Msg gf_MessageBox_Button" value="いいい" id="iMessageBox_Btn2"
+				onclick="__handle_clickMessageBoxButton({inKey:'iMessageBox_Btn2'})">
+		</div>
+		<div class="gf_MessageBoxButtonCell" id="iMessageBox_Sell3">
+			<input type="button" class="gf_BTN_Color_Msg gf_MessageBox_Button" value="ううう" id="iMessageBox_Btn3"
+				onclick="__handle_clickMessageBoxButton({inKey:'iMessageBox_Btn3'})">
+		</div>
+		<div class="gf_MessageBoxButtonCell" id="iMessageBox_Sell4">
+			<input type="button" class="gf_BTN_Color_Msg gf_MessageBox_Button" value="えええ" id="iMessageBox_Btn4"
+				onclick="__handle_clickMessageBoxButton({inKey:'iMessageBox_Btn4'})">
+		</div>
+		<div class="gf_MessageBoxButtonCell" id="iMessageBox_Sell5">
+			<input type="button" class="gf_BTN_Color_Msg gf_MessageBox_Button" value="おおお" id="iMessageBox_Btn5"
+				onclick="__handle_clickMessageBoxButton({inKey:'iMessageBox_Btn5'})">
+		</div>
+		<div class="gf_MessageBoxButtonCell" id="iMessageBox_Sell6">
+			<input type="button" class="gf_BTN_Color_Msg gf_MessageBox_Button" value="かかか" id="iMessageBox_Btn6"
+				onclick="__handle_clickMessageBoxButton({inKey:'iMessageBox_Btn6'})">
+		</div>
+	</div>
+</div>
+
+
+
+
+
+</body></html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<meta name="author" content="Korei">
+<meta name="copyright" content="Copyright 2022 Korei Industry">
+<meta name="generator" content="EmEditor">
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="shortcut icon" type="image/x-icon" id="iIcon" href="#">
+<link rel="stylesheet" type="text/css" id="iCSS_Com" href="#">
+<link rel="stylesheet" type="text/css" id="iCSS_Org" href="#">
+
+<title>Galaxy Fleet - Menu</title>
+<meta name="description" content="メニューです。">
+
+<script src="../../_handle_menu.js"></script>
+<script src="_handle_menu_account.js"></script>
+
+</head><body onLoad="__handle_Menu_PageLoad()">
+
+
+
+
+
+<main id="gf_Menu">
+	<div class="gf_MainMenu_UpClose">
+		<div class="gf_MainMenuCell">
+		<input type="button" class="gf_BTN_Color_Menu gf_MainMenu_Button" id="iBtn_Close" value="CLOSE"
+			onclick="__handle_Menu_COMM_Close()">
+			<div class="gf_MainMenu_Help">
+			<span class="gf_Trans_JP">クローズ - グローバルマップ画面に戻ります。</span>
+			<span class="gf_Trans_EN">Close - Return to the Global Map screen.</span></div></div>
+	</div>
+
+	<div class="gf_MainMenuCell">
+	<input type="button" class="gf_BTN_Color_Menu gf_MainMenu_BigButton" id="iBtn_ChangeComment" value="CHANGE COMMENT"
+		onclick="__handle_Account_OpenCtrl('iBtn_ChangeComment')">
+		<div class="gf_MainMenu_Help">
+		<span class="gf_Trans_JP">コメント変更 - プロフィールコメントを変更します。</span>
+		<span class="gf_Trans_EN">Change Comment - Change your profile comment.</span></div></div>
+
+	<div class="gf_MainMenuCell">
+	<input type="button" class="gf_BTN_Color_Menu gf_MainMenu_BigButton" id="iBtn_ChangePassword" value="CHANGE PASSWORD"
+		onclick="__handle_Account_OpenCtrl('iBtn_ChangePassword')">
+		<div class="gf_MainMenu_Help">
+		<span class="gf_Trans_JP">パスワード変更 - パスワードを変更します。</span>
+		<span class="gf_Trans_EN">Change Password - Change your password.</span></div></div>
+
+	<div class="gf_MainMenuCell">
+	<input type="button" class="gf_BTN_Color_Menu gf_MainMenu_BigButton" id="iBtn_ChangeUserName" value="CHANGE USER NAME"
+		onclick="__handle_Account_OpenCtrl('iBtn_ChangeUserName')">
+		<div class="gf_MainMenu_Help">
+		<span class="gf_Trans_JP">ユーザ名変更 - ユーザ名を変更します。</span>
+		<span class="gf_Trans_EN">Change User Name - Change your username.</span></div></div>
+
+	<div class="gf_MainMenuCell">
+	<input type="button" class="gf_BTN_Color_Menu gf_MainMenu_BigButton" id="iBtn_ChangeUserID" value="CHANGE USER ID"
+		onclick="__handle_Account_OpenCtrl('iBtn_ChangeUserID')" disabled>
+		<div class="gf_MainMenu_Help">
+		<span class="gf_Trans_JP">ユーザID変更 - ユーザIDを変更します。</span>
+		<span class="gf_Trans_EN">Change User ID - Change your user id.</span></div></div>
+
+</main>
+
+
+
+
+
+</body></html>

@@ -1,0 +1,888 @@
+/**********************************************
+Site URL : https://mynoghra.jp/
+Degine   : Default Style [wide]
+******************************************** */
+
+/* margin / padding
+	1px             = ALL
+	1px 1px         = UP.Down / Left.Right
+	1px 1px 1px     = UP / Left.Right / Down
+	1px 1px 1px 1px = UP / Right / Down / Left
+	*/
+
+/*=== Body ===*/
+body{
+color				: #ffffff;
+/*background-color	: #0000ff;*/
+background			: url('../wall/ani_hoshizora3.gif');
+}
+#body-OUT{
+margin				: 0px;
+padding				: 8px 8px 0px !important;
+}
+
+
+
+/*=== Title Label ===*/
+h1{
+}
+hr{
+border				: solid 4px #808080;
+}
+#Title{
+/*background-color	: #FF99FF;*/
+margin				: 24px 0px;
+padding				: 16px 0px;
+text-align			: center;
+}
+.Title-Img{
+background-image	: url(../title/starregion_ttl.jpg);
+width				: 600px;
+height				: 120px;
+margin				: 0px auto;
+padding				: 0px;
+}
+
+
+
+/*=== Table ===*/
+table{
+border				: solid 1px #808080;
+}
+th{
+color				: #000000;
+background-color	: #c0c0c0;
+border				: solid 1px #808080;
+}
+td{
+border				: solid 1px #808080;
+}
+
+
+
+/*=== ★Original Common Class★ ===*/
+.div-Img-noSS{	/* SSなし */
+color				: #ff0000;
+}
+.div-Img-SS{	/* SSあり */
+}
+.span-Force{	/* 強調 */
+color				: #ff0000;
+}
+.span-Weak{		/* 弱め */
+color				: #008000;
+}
+
+.C-Copy-INup{
+margin				: 0px 0px 4px !important;
+}
+.C-Copy-INdw{
+margin				: 4px 0px 0px !important;
+}
+.C-Copy-Up{
+margin				: 0px !important;
+}
+.C-Copy-Update{
+margin				: 0px !important;
+}
+.C-Copy-Dw{
+margin				: 0px !important;
+}
+.C-Copy-Under{
+margin				: 0px !important;
+}
+
+header.Header-Main{
+/*margin				: 0px 0px 32px;*/
+margin				: 0px !important;
+}
+.C-PanLine{
+background-color	: #000033;
+border-top			: solid 1px #0033CC;
+border-bottom		: solid 1px #0033CC;
+height				: 8px;
+/*margin				: 0px 0px 4px;*/
+margin				: 8px 0px;
+padding				: 0px;
+}
+
+
+
+/*=== Copyright ===*/
+.C-Copy-INup{
+font-family			: "Arial Black";
+}
+.C-Copy-INdw{
+font-family			: "Arial Black";
+}
+.C-Copy-Update{
+color				: #0066FF;
+}
+.C-Copy-Under{
+}
+.C-Copy-li-Right{
+color				: #0066FF;
+}
+.C-Copy-li-Mtd,
+.C-Copy-a-Mtd{
+color				: #ff0000;
+background-color	: transparent;
+}
+.C-Copy-a-Mtd:hover{
+color				: #ffffff;
+background-color	: #ff0000;
+}
+.C-Copy-a-sIn-Unyo{
+color				: #ffffff;
+background-color	: #00BB00;
+border				: solid 2px #006600;
+}
+.C-Copy-a-sIn-Rule{
+color				: #ffffff;
+background-color	: #CC0000;
+border				: solid 2px #660000;
+}
+.C-Copy-Swt{
+color				: #0066FF;
+}
+.C-Copy-a-Swt{
+color				: #0066FF;
+background-color	: transparent;
+}
+
+
+
+/*=== Header ===*/
+header{
+margin				: 0px !important;
+padding				: 0px !important;
+}
+/*.header-Desc{
+border-top			: solid 4px #0033CC;
+border-bottom		: solid 4px #0033CC;
+}*/
+
+
+
+/*=== Footer ===*/
+footer{
+margin				: 0px !important;
+padding				: 0px !important;
+}
+
+
+
+/*=== Pankuz ===*/
+.C-Pankuz{
+}
+.C-Pankuz-Pan{
+color				: #66CCFF;
+background-color	: #000033;
+border-top			: solid 4px #0033CC;
+border-bottom		: solid 4px #0033CC;
+padding				: 10px 16px !important;
+}
+.C-Pankuz-Title{
+color				: #0000ff;
+background-color	: #D7EEFF;
+border-left			: solid 48px #BAD3FF;
+}
+.C-Pankuz-a{
+color				: #66CCFF;
+background-color	: transparent;
+padding				: 4px !important;
+}
+.C-Pankuz-a:hover{
+color				: #33CC33 ;
+background-color	: #003300 ;
+}
+.C-Pankuz-Cur{
+/*color				: #B22222;
+background-color	: #330000;
+border				: solid 1px #550000;
+padding				: 2px !important;*/
+/*color				: #993300;
+background-color	: #FFCC00;
+border				: solid 1px #FF9900;
+padding				: 2px !important;*/
+/*color				: #66CCFF;
+background-color	: #000066;
+border				: solid 2px #0000aa;
+padding				: 2px !important;*/
+color				: #99CC00;
+background-color	: #006600;
+border				: solid 2px #003300;
+padding				: 2px !important;
+}
+
+
+
+/*=== Navigation ===*/
+#C-Navi{
+}
+.C-Navi-Title{
+}
+#C-Navi ul{
+list-style-type		: square;
+/*
+list-style-type		: disc;
+list-style-type		: circle;
+list-style-type		: none;
+*/	}
+#C-Navi a{
+color				: #0000ff;
+background-color	: transparent;
+}
+#C-Navi a:hover{
+color				: #ffffff;
+background-color	: #0000ff;
+}
+
+#C-Navi-Sub{
+background-color	: #99CC99;
+}
+#C-Navi-Sub a{
+color				: #003300;
+background-color	: transparent;
+}
+#C-Navi-Sub a:hover{
+color				: #ffffff;
+background-color	: #0000ff;
+}
+
+
+
+/*=== Contents ===*/
+.C-Cont{
+background-color	: #000000;
+}
+.C-Cont-Title{
+color				: #66CCFF;
+background-color	: #000066;
+border-top			: solid 2px #0033FF;
+border-bottom		: solid 4px #0033CC;
+border-left			: solid 6px #000099;
+}
+.C-Cont-Body{
+}
+.C-Cont-a{
+color				: #003300;
+background-color	: transparent;
+}
+.C-Cont-a:hover{
+color				: #ffffff;
+background-color	: #0000ff;
+}
+.C-Cont-Menu{
+background-color	: #FFFFCC;
+}
+.C-Cont-Menu-a{
+color				: #003300;
+background-color	: transparent;
+}
+.C-Cont-Menu-a:hover{
+color				: #ffffff;
+background-color	: #0000ff;
+}
+
+.C-Cont-a-Ret{
+color				: #993300;
+background-color	: #FFCC00;
+}
+.C-Cont-a-Ret:hover{
+color				: #FFFF66;
+background-color	: #FF6600;
+}
+
+
+
+/*=== ★↓↓↓ Origin Contents ↓↓↓★ ===*/
+
+/*=== Inner Frame Body ===*/
+body.IF_Body{
+color				: #ffffff;
+background			: none;
+}
+iframe.IF_Main{
+/*background-color	: #ffffff;*/
+border-style		: none;
+height				: 800px;
+width				: 100%;
+}
+iframe.IF_Disp{
+border-style		: none;
+height				: 0px;
+width				: 0px;
+}
+iframe.IF_Hidden{
+display				: none;
+}
+iframe.IF_Log{
+color				: #ffffff;
+background-color	: #000033;
+border				: solid 4px #0000ff;
+top					: 120px;
+right				: 0px;
+width				: 480px;
+/*height			: 760px;*/
+height				: 580px;
+margin				: 0px;
+padding				: 8px 8px 16px;
+position			: absolute;
+display				: none;
+}
+
+
+/*=== Transrate ===*/
+.TransCtrl{
+margin				: 0px;
+padding				: 0px;
+}
+.TransHelp{
+color				: #ffff00;
+margin				: 8px 0px 0px;
+padding				: 0px;
+}
+input[type="radio"].RAD-Trans{
+display				: none;
+}
+.LAB-Trans{
+color				: #33CC33;
+background-color	: #003300;
+border				: 1px solid #33CC33;
+display				: inline-block;
+-webkit-transition	: background-color 0.2s linear;
+transition			: background-color 0.2s linear;
+box-sizing			: border-box;
+position			: relative;
+margin				: 0px;
+padding				: 1px 8px 1px 26px;
+border-radius		: 8px;
+vertical-align		: middle;
+/*cursor: pointer;*/
+}
+.LAB-Trans:after{
+border				: 1px solid #33CC33;
+display				: block;
+-webkit-transition	: border-color 0.2s linear;
+transition			: border-color 0.2s linear;
+top					: 50%;
+left				: 2px;
+width				: 16px;
+height				: 16px;
+margin				: -10px 0px 0px 2px;
+padding				: 0px;
+border-radius		: 6px;
+position			: absolute;
+content				: '';
+}
+.LAB-Trans:before {
+background-color	: #33CC33;
+display				: block;
+-webkit-transition	: opacity 0.2s linear;
+transition			: opacity 0.2s linear;
+top					: 50%;
+left				: 6px;
+width				: 10px;
+height				: 10px;
+margin				: -6px 0px 0px 2px;
+padding				: 0px;
+border-radius		: 50%;
+position			: absolute;
+content				: '';
+opacity				: 0;
+}
+input[type="radio"]:checked + .LAB-Trans:before {
+opacity				: 1;
+}
+/*.Trans-On {
+display				: block;
+margin				: 0px;
+padding				: 0px;
+}
+.Trans-Off {
+display				: none;
+}*/
+
+/*=== Load Label ===*/
+#iLoadLab{
+font-size			: 14px;
+width				: 160px;
+margin				: 8px 48px 0px;
+padding				: 4px 12px 4px;
+}
+.LOADLAB{
+background-color	: transparent;
+border				: solid 2px transparent;
+}
+.LOADLAB_ON{
+color				: #cccccc;
+background-color	: #330000;
+border				: solid 2px #880000;
+}
+.LOADLAB_OFF{
+color				: #00CCFF;
+background-color	: #000066;
+border				: solid 2px #0099FF;
+}
+
+
+
+/*=== Login ===*/
+#SR-Login{
+width				: 720px;
+margin-left			: auto;
+margin-right		: auto;
+}
+/*.SubDisp{
+width				: 680px;
+margin				: 32px 0px 0px 40px !important;
+}*/
+#SR-Login .Disc{
+background-color	: #000000 !important;
+}
+#SR-Login table{
+background-color	: #000000 !important;
+background			: none;
+width				: 400px;
+border				: 0px !important;
+margin				: 0px 0px 36px;
+}
+#SR-Login td{
+border				: 0px;
+padding				: 8px;
+vertical-align		: middle;
+}
+#SR-Login td.SR-Login-Center{
+padding				: 36px 48px 0px;
+}
+#SR-Login .Btn{
+width				: 80px;
+height				: 32px;
+}
+/*#SR-Login .AllDelete{
+margin-top			: 32px;
+text-align			: right;
+}*/
+.SR-Login-RO{
+color				: #00ff00 !important;
+background-color	: #000000 !important;
+}
+/*
+#iPassChange{
+display				: none;
+background-color	: #180000 !important;
+margin				: 0px;
+padding				: 4px 0px 0px;
+}
+#iPassChange .Disc,
+#iPassChange table,
+#iPassChange td{
+background-color	: #180000 !important;
+}*/
+
+#SR-Login .SR-Save{
+background-color	: #000000 !important;
+width				: 540px;
+margin				: 0px;
+padding				: 8px 12px;
+}
+
+#SR-Login label > input{
+display				: none;
+}
+#SR-Login .FileBtn{
+font-size			: 16px;
+margin				: 2px;
+padding				: 4px 30px 4px;
+}
+
+
+/*=== Main ===*/
+#SR-Main{
+width				: 1428px;	/* 1200+180+(24*2) */
+margin				: 0px;
+padding				: 0px;
+}
+#SR-Main .SR-Main-Top{
+height				: 100px;
+margin				: 0px;
+padding				: 0px;
+}
+#SR-Main .SR-Main-Menu{
+background-color	: #000000;
+width				: 180px;
+margin				: 0px;
+padding				: 24px;
+float				: left;
+}
+#SR-Main .SR-Main-Menu-Under{
+margin				: 16px 0px 0px;
+padding				: 0px;
+}
+#SR-Main .SR-Main-Disp{
+height				: 668px;	/* 800-(100+16*2) **もう片方の16が謎 */
+margin				: 16px 0px 0px;
+padding				: 0px;
+float				: left;
+}
+#SR-Main .SR-Main-End{
+clear				: both;
+}
+/*#SR-Main .SR-Main-Middle{
+background-color	: #0000ff;
+height				: 100px;
+margin				: 0px;
+padding				: 0px;
+}*/
+#SR-Main .SR-Main-Menu-Sub{
+display				: block;
+margin				: 0px;
+padding				: 0px;
+}
+#SR-Main .SR-Main-Menu-Hidden{
+display				: none;
+}
+
+/*=== Main Command Button ===*/
+#SR-Main .Btn{
+font-size			: 16px;
+width				: 170px;
+height				: 36px;
+margin				: 2px;
+padding				: 4px;
+}
+
+
+/*=== Material ===*/
+#SR-Main-Material{
+margin				: 0px;
+padding				: 0px;
+}
+#SR-Main-Material table{
+background-color	: #000000 !important;
+border				: solid 1px #000066 !important;
+margin				: 0px;
+padding				: 0px;
+float				: left;
+}
+#SR-Main-Material td{
+color				: #ffffff;
+background-color	: #000010;
+border				: solid 1px #000066 !important;
+width				: 80px;
+padding				: 4px !important;
+vertical-align		: middle !important;
+}
+#SR-Main-Material td.Blue{
+background-color	: #001030 !important;
+}
+#SR-Main-Material td.Yellow{
+background-color	: #202000 !important;
+}
+#SR-Main-Material td.Gray{
+background-color	: #101010 !important;
+}
+#SR-Main-Material td.Green{
+background-color	: #001800 !important;
+}
+#SR-Main-Material img{
+margin				: 0px 6px 0px 0px;
+padding				: 0px;
+}
+/*=== Log Button ===*/
+#SR-Main-Material .LogBtn_Div_Left{
+margin				: 0px 0px 0px 8px;
+padding				: 0px;
+float				: left;
+}
+#SR-Main-Material .LogBtn_Div_Right{
+margin				: 0px;
+padding				: 0px;
+float				: left;
+}
+#SR-Main-Material .LogBtn{
+width				: 56px;
+height				: 32px;
+margin				: 0px 0px 4px;
+padding				: 0px;
+}
+#SR-Main-Material .LogViewBtn{
+width				: 80px;
+height				: 68px;
+margin				: 0px 0px 4px;
+padding				: 0px;
+}
+#SR-Main-Material .LogBtn_End{
+clear				: both;
+}
+
+
+/*=== Log Frame ===*/
+#iLogBody{
+margin				: 0px 0px 0px 16px !important;
+padding				: 0px !important;
+}
+#iLogBody p.Line{
+margin				: 0px 0px 8px !important;
+padding				: 0px !important;
+padding-left		: 1em !important;
+text-indent			: -2em ;
+}
+
+
+/*=== Message Box ===*/
+#iMsg{
+color				: #ffffff;
+background-color	: #000033;
+border				: solid 4px #0000ff;
+width				: 720px;
+/*height				: 600px;*/
+margin				: 0px;
+padding				: 8px 8px 16px;
+position			: absolute;
+display				: none;
+}
+.SR-Msg-Text{
+background-color	: #000033;
+margin				: 0px 0px 8px;
+padding				: 4px;
+}
+.SR-Msg-Text-Hover{
+background-color	: #0000aa;
+margin				: 0px 0px 8px;
+padding				: 4px;
+}
+#iMsg .Btn{
+/*font-size			: 16px;
+width				: 170px;
+height				: 36px;*/
+width				: 712px;
+margin				: 2px;
+padding				: 4px;
+}
+.SR-Msg-Btn{
+margin				: 0px;
+padding				: 0px;
+display				: none;
+}
+
+
+/*=== Help Message Window ===*/
+#iHelp{
+color				: #ffffff;
+background-color	: #000033;
+border				: solid 4px #0000ff;
+/*width				: 1000px;*/
+width				: 90%;
+margin				: 0px;
+padding				: 8px 8px 16px;
+position			: absolute;
+display				: none;
+}
+
+
+/*=== Alchemy Disp ===*/
+#SR-Alchemy{
+/*background-color	: #000000;*/
+margin				: 0px;
+padding				: 0px;
+}
+#SR-Alchemy .Machine{
+background-color	: #000000;
+width				: 720px;
+margin				: 0px 0px 16px;
+padding				: 0px;
+}
+#SR-Alchemy h1{
+background-color	: #000033;
+/*border-top			: solid 4px #6699FF;*/
+border-bottom		: solid 1px #0033CC;
+border-left			: solid 8px #0033CC;
+width				: 640px;
+}
+#SR-Alchemy .Disc{
+/*background-color	: #000000 !important;
+background			: none;*/
+background-color	: #000000;
+}
+#SR-Alchemy table{
+/*background-color	: #000000;*/
+border				: 0px;
+/*margin				: 0px 0px 36px;*/
+/*margin				: 0px;*/
+margin				: 24px 0px 0px;
+padding				: 0px;
+}
+#SR-Alchemy td{
+border				: 0px;
+padding				: 8px;
+vertical-align		: middle;
+}
+#SR-Alchemy td.Set-Left{
+padding-right		: 0px;
+text-align			: right ;
+}
+#SR-Alchemy td.Set-Right{
+padding-left		: 0px;
+}
+#SR-Alchemy .SetText{
+color				: #00ff00;
+background-color	: #000000;
+}
+#SR-Alchemy .SpinBtn{
+width				: 24px;
+height				: 24px;
+}
+#SR-Alchemy .Btn{
+width				: 120px;
+height				: 48px;
+}
+#SR-Alchemy .BtnTD{
+width				: 160px;
+padding				: 0px;
+text-align			: center;
+}
+#SR-Alchemy .Icon{
+margin				: 0px;
+padding				: 0px;
+}
+#SR-Alchemy .IconSrc,
+#SR-Alchemy .IconDst{
+width				: 64px;
+padding				: 0px;
+text-align			: center;
+}
+#SR-Alchemy .IconHen{
+width				: 32px;
+padding				: 0px;
+}
+
+
+
+
+/*=== Default Disp ===*/
+#SR-dDisp{
+/*background-color	: #000000;*/
+/*width				: 720px;*/
+margin				: 0px;
+margin-left			: auto;
+margin-right		: auto;
+padding				: 0px;
+}
+#SR-dDisp .Disc{
+background-color	: #000000 !important;
+}
+#SR-dDisp table{
+background-color	: #000000 !important;
+background			: none;
+/*width				: 400px;*/
+border				: 0px !important;
+margin				: 0px 0px 36px;
+}
+#SR-dDisp td{
+border				: 0px;
+padding				: 8px;
+vertical-align		: middle;
+}
+#SR-dDisp .Btn{
+width				: 80px;
+height				: 32px;
+}
+
+
+
+
+
+
+
+
+
+/*=== Edit ===*/
+#SR-Edit{
+width				: 1428px;	/* 1200+180+(24*2) */
+margin				: 0px;
+padding				: 0px;
+}
+#SR-Edit .SR-Edit-Menu{
+background-color	: #000000;
+width				: 180px;
+margin				: 0px;
+padding				: 24px;
+float				: left;
+}
+#SR-Edit .SR-Edit-Disp{
+/*height			: 668px;*/	/* 800-(100+16*2) **もう片方の16が謎 */
+margin				: 16px 0px 0px;
+padding				: 0px;
+float				: left;
+}
+#SR-Edit .SR-Edit-End{
+clear				: both;
+}
+#SR-Edit .SR-Edit-Menu-Sub{
+display				: block;
+margin				: 0px;
+padding				: 0px;
+}
+#SR-Edit .SR-Edit-Menu-Hidden{
+display				: none;
+}
+
+/*=== Main Command Button ===*/
+#SR-Edit .Btn{
+font-size			: 16px;
+width				: 170px;
+height				: 36px;
+margin				: 2px;
+padding				: 4px;
+}
+
+
+
+
+/*=== Button Color ===*/
+.Btn-Def{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 2px #0033CC;
+}
+.Btn-Hover{
+color				: #33CC33;
+background-color	: #003300;
+border				: solid 2px #009900;
+}
+.Btn-Disabled{
+color				: #CCCCCC;
+background-color	: #202020;
+border				: solid 2px #666666;
+}
+.Btn-Forced{
+color				: #cccccc;
+background-color	: #330000;
+border				: solid 2px #880000;
+}
+
+/*=== Main Command Button Color ===*/
+.mCmd-Def{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 2px #0033CC;
+}
+.mCmd-Hover{
+color				: #33CC33;
+background-color	: #003300;
+border				: solid 2px #009900;
+}
+.mCmd-Disabled{
+color				: #CCCCCC;
+background-color	: #202020;
+border				: solid 2px #666666;
+}
+.mCmd-Forced{
+color				: #cccccc;
+background-color	: #330000;
+border				: solid 2px #880000;
+}
+
+

@@ -1,0 +1,558 @@
+/* *****************************************************
+ ::Project  : web page
+ ::Admin    : Korei (@korei-xlix)
+ ::github   : https://github.com/korei-xlix/galaxyfleet/
+ ::Style    : Galaxy Fleet Index - Wide
+***************************************************** */
+
+/* margin / padding
+	1px             = ALL
+	1px 1px         = UP.Down / Left.Right
+	1px 1px 1px     = UP / Left.Right / Down
+	1px 1px 1px 1px = UP / Right / Down / Left
+	*/
+
+/* =====================================================
+   Galaxy Fleet Style
+===================================================== */
+
+/*=== Caution ===*/
+div.gf_NonMobile{
+display				: none;
+}
+
+div.gf_DevCaution{
+color				: #FF0000;
+margin				: 8px auto;
+font-weight			: bolder;
+}
+
+/*=== Start Button ===*/
+#gf_Start a.StartButton{
+color				: #ffffff;
+background-color	: #00BB00;
+border				: solid 2px #006600;
+margin				: 0px;
+padding				: 4px 48px;
+font-size			: 18px;
+font-weight			: bolder;
+font-family			: "Arial Black";
+text-decoration		: none;
+display				: inline;
+text-decoration		: none;
+}
+
+#gf_Start a.StartButton:hover{
+color				: #ff4500;
+background-color	: #ffd700;
+border				: solid 2px #ff8c00;
+}
+
+/*=== Transrate ===*/
+#gf_Transrate label.Label{
+color				: #33CC33;
+background-color	: #003300;
+border				: 1px solid #33CC33;
+display				: inline-block;
+-webkit-transition	: background-color 0.2s linear;
+transition			: background-color 0.2s linear;
+box-sizing			: border-box;
+position			: relative;
+margin				: 0px;
+padding				: 1px 8px 1px 26px;
+border-radius		: 8px;
+vertical-align		: middle;
+cursor				: pointer;
+}
+
+#gf_Transrate label.Label:after{
+border				: 1px solid #33CC33;
+display				: block;
+-webkit-transition	: border-color 0.2s linear;
+transition			: border-color 0.2s linear;
+top					: 50%;
+left				: 2px;
+width				: 16px;
+height				: 16px;
+margin				: -10px 0px 0px 2px;
+padding				: 0px;
+border-radius		: 6px;
+position			: absolute;
+content				: '';
+}
+
+#gf_Transrate label.Label:before {
+background-color	: #33CC33;
+display				: block;
+-webkit-transition	: opacity 0.2s linear;
+transition			: opacity 0.2s linear;
+top					: 50%;
+left				: 6px;
+width				: 10px;
+height				: 10px;
+margin				: -6px 0px 0px 2px;
+padding				: 0px;
+border-radius		: 50%;
+position			: absolute;
+content				: '';
+opacity				: 0;
+}
+
+#gf_Transrate input[type="radio"].Button{
+display				: none;
+}
+
+#gf_Transrate input[type="radio"].Button:checked + label.Label:before {
+opacity				: 1;
+}
+
+#gf_Transrate div.Deskription{
+color				: #ffff00;
+margin				: 8px 0px 0px;
+padding				: 0px;
+}
+
+/*=== Bunner ===*/
+#gf_Bunner{
+margin				: 8px 0px 16px 32px;
+}
+
+
+
+/* =====================================================
+   Page Title
+===================================================== */
+
+#com_PageTitle div.com_TitleImage{
+background-image	: url(../_pic/title/galaxyfleet_title.jpg);
+width				: 600px;
+height				: 120px;
+}
+
+
+
+/* =====================================================
+   Inline Frame
+===================================================== */
+
+iframe.com_Frame-sample1{
+height				: 100px;
+}
+
+
+
+/* =====================================================
+   Body
+===================================================== */
+
+body{
+color				: #FFFFFF;
+background			: url('../_pic/wall/prcm_sttars.gif');
+}
+
+#com_bodyOutline{
+}
+
+#com_bodyInline{
+}
+
+
+
+/* =====================================================
+   Header
+===================================================== */
+
+header{
+background-color	: #000033;
+border-top			: solid 4px blue;
+border-bottom		: solid 4px blue;
+font-family			: "Arial Black";
+}
+
+header span.com_Menu_Select{
+color				: #FFFFFF;
+background-color	: #0033FF;
+padding				: 2px !important;
+border-radius		: 0px !important;
+}
+
+header a.com_Menu_Cel{
+color				: #66FFFF;
+background-color	: transparent;
+border-radius		: 0px !important;
+}
+
+header a.com_Menu_Cel:hover{
+color				: #33CC33 ;
+background-color	: #003300 ;
+}
+
+header div.com_CSS_Menu{
+color				: #6699FF;
+}
+
+header a.com_CSS_Mode{
+color				: #FFFFFF;
+background-color	: #6699FF;
+padding				: 3px !important;
+border-radius		: 0px !important;
+}
+
+header a.com_CSS_Mode:hover{
+color				: #0000FF;
+background-color	: #00ECFF;
+}
+
+
+
+/* =====================================================
+   Footter
+===================================================== */
+
+footer{
+background-color	: #000033;
+border-top			: solid 4px blue;
+border-bottom		: solid 4px blue;
+font-family			: "Arial Black";
+}
+
+footer div.com_Menu_Description{
+color				: #EEFFFF;
+}
+
+footer a.com_Menu_Cel{
+color				: #66FFFF;
+background-color	: transparent;
+border-radius		: 0px !important;
+}
+
+footer a.com_Menu_Cel:hover{
+color				: #33CC33 ;
+background-color	: #003300 ;
+}
+
+
+
+/* =====================================================
+   CopyrightHeader
+===================================================== */
+
+#com_CopyrightHeader{
+/*
+color				: #000000;
+background-color	: #FFFFFF;	*/
+font-family			: "Arial Black";
+}
+
+
+
+/* =====================================================
+   CopyrightFooter
+===================================================== */
+
+#com_CopyrightFooter{
+/*
+color				: #000000;
+background-color	: #FFFFFF;	*/
+font-family			: "Arial Black";
+}
+
+#com_CopyrightFooter div.com_Menu_Ope, #com_CopyrightFooter a.com_Menu_Ope{
+color				: #FFFFFF;
+background-color	: #008000;
+border-radius		: 0px !important;
+}
+#com_CopyrightFooter div.com_Menu_Ope:hover, #com_CopyrightFooter a.com_Menu_Ope:hover{
+color				: #008000;
+background-color	: #00FF3B;
+}
+
+#com_CopyrightFooter div.com_Menu_Rule, #com_CopyrightFooter a.com_Menu_Rule{
+color				: #FFFFFF;
+background-color	: #FF0000;
+border-radius		: 0px !important;
+}
+#com_CopyrightFooter div.com_Menu_Rule:hover, #com_CopyrightFooter a.com_Menu_Rule:hover{
+color				: #FF0000;
+background-color	: #FFCCFF;
+}
+
+#com_CopyrightFooter div.com_Menu_RSS, #com_CopyrightFooter a.com_Menu_RSS{
+color				: #FFFFFF;
+background-color	: #ee802f;
+border-radius		: 0px !important;
+}
+#com_CopyrightFooter div.com_Menu_RSS:hover, #com_CopyrightFooter a.com_Menu_RSS:hover{
+color				: #ee802f;
+background-color	: #FFFF00;
+}
+
+#com_CopyrightFooter div.com_Menu_Github, #com_CopyrightFooter a.com_Menu_Github{
+color				: #FFFFFF;
+background-color	: #800080;
+border-radius		: 0px !important;
+}
+#com_CopyrightFooter div.com_Menu_Github:hover, #com_CopyrightFooter a.com_Menu_Github:hover{
+color				: #FF0000;
+background-color	: #FFDDFF;
+}
+
+#com_CopyrightFooter div.com_Menu_TwitterGF, #com_CopyrightFooter a.com_Menu_TwitterGF{
+color				: #FFFFFF;
+background-color	: #6699FF;
+border-radius		: 0px !important;
+}
+#com_CopyrightFooter div.com_Menu_TwitterGF:hover, #com_CopyrightFooter a.com_Menu_TwitterGF:hover{
+color				: #FFFFFF;
+background-color	: #0000FF;
+}
+
+#com_CopyrightFooter a.com_Menu_Twitter{
+color				: #6699FF;
+background-color	: #000000;
+}
+#com_CopyrightFooter a.com_Menu_Twitter:hover{
+color				: #FFFFFF;
+background-color	: #6699FF;
+}
+
+
+
+/* =====================================================
+   Description
+===================================================== */
+
+#com_Description{
+color				: #FFFFFF;
+background-color	: transparent;
+padding				: 0px;
+text-align			: center;
+}
+
+
+
+/* =====================================================
+   Navigation
+===================================================== */
+
+#com_Navigation{
+background-color	: transparent;
+/*
+color				: blue;
+border-bottom		: solid 8px dimgray;
+border-top			: solid 8px dimgray;
+background-color	: cyan;
+*/
+}
+
+#com_Navigation div.com_NavigationTitle{
+color				: #FFFFFF;
+background-color	: #000066;
+}
+
+#com_Navigation a{
+color				: #0000FF;
+background-color	: transparent;
+}
+
+#com_Navigation a:hover{
+color				: #FFFFFF;
+background-color	: #0000FF;
+}
+
+a.com_Nav{
+color				: #FFFFFF;
+background-color	: #6699FF;
+border-radius		: 0px !important;
+font-family			: "Arial Black";
+}
+
+a.com_Nav:hover{
+color				: #0000FF;
+background-color	: #00ECFF;
+}
+
+
+
+/* =====================================================
+   Contents Common
+===================================================== */
+
+.com_ContentsTitle{
+/*
+color				: white;
+background-color	: cornflowerblue;
+*/
+color				: #FFFFFF;
+background			: #000033;
+font-family			: "Arial Black";
+padding				: 8px 12px !important;
+}
+.com_ContentsTitle:before{
+border-bottom		: solid 8px #0000FF;
+border-right		: solid 20px transparent;
+}
+.com_ContentsTitle:after{
+border-top			: solid 8px #0000FF;
+border-left			: solid 20px transparent;
+}
+
+.com_ContentsBody{
+color				: #FFFFFF;
+background-color	: #000000;
+}
+
+
+
+/* =====================================================
+   Selector
+===================================================== */
+
+							/* Close */
+input[type="checkbox"].com_ContentsSelector_CBX + .com_ContentsSelector_LAB{
+color				: #FFFFFF;
+background			: #0099FF;
+border				: inset 6px #0066FF;
+}
+
+input[type="checkbox"].com_ContentsSelector_CBX:hover + .com_ContentsSelector_LAB{
+color				: #003333;
+background-color	: #CCFFCC;
+}
+
+							/* Open */
+input[type="checkbox"].com_ContentsSelector_CBX:checked + .com_ContentsSelector_LAB{
+color				: #FFFFFF;
+background-color	: #009900;
+border				: inset 6px #009900;
+}
+
+input[type="checkbox"].com_ContentsSelector_CBX:checked:hover + .com_ContentsSelector_LAB{
+color				: forestgreen;
+background-color	: lawngreen;
+}
+
+							/* Body */
+.com_ContentsSelector_Body{
+color				: #000000;
+background-color	: #FFFFFF;
+border-left			: solid 4px #009900;
+border-right		: solid 4px #009900;
+border-bottom		: solid 4px #009900;
+border-top			: 0px;
+}
+
+
+
+/* =====================================================
+   Anchor
+===================================================== */
+
+a{
+color				: #0000FF;
+background-color	: transparent;
+}
+
+a:hover{
+color				: #FFFFFF;
+background-color	: #0000FF;
+cursor				: pointer;
+/*
+cursor				: default;
+cursor				: move;
+cursor				: crosshair;
+cursor				: wait;
+cursor				: help;
+cursor				: not-allowed;
+cursor				: col-resize;
+cursor				: row-resize;
+*/
+}
+
+
+
+/* =====================================================
+   List Style
+===================================================== */
+
+ul{
+}
+
+ol{
+}
+
+li{
+}
+
+
+
+/* =====================================================
+   h1～h6
+===================================================== */
+
+h1{
+color				: white;
+background-color	: darkblue;
+}
+
+h2{
+color				: white;
+background-color	: blue;
+}
+
+h3{
+color				: black;
+background-color	: cyan;
+}
+
+h4{
+color				: black;
+background-color	: orange;
+}
+
+h5{
+color				: black;
+background-color	: yellow;
+}
+
+h6{
+color				: white;
+background-color	: pink;
+}
+
+
+
+/* =====================================================
+   hr
+===================================================== */
+
+hr{
+border				: 0px;
+background-color	: lightgray;
+}
+
+
+
+/* =====================================================
+   Table
+===================================================== */
+
+table{
+background-color	: dimgray;
+border				: solid 2px dimgray;
+}
+
+th{
+color				: white;
+background-color	: darkgray;
+border				: solid 2px dimgray;
+}
+
+td{
+color				: black;
+background-color	: white;
+border				: solid 2px dimgray;
+}
+
+
+

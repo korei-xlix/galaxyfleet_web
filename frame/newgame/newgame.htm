@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<meta name="author" content="Korei">
+<meta name="copyright" content="Copyright 2022 Korei Industry">
+<meta name="generator" content="EmEditor">
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="shortcut icon" type="image/x-icon" id="iIcon" href="#">
+<link rel="stylesheet" type="text/css" id="iCSS_Com" href="#">
+<link rel="stylesheet" type="text/css" id="iCSS_Org" href="#">
+
+<title>Galaxy Fleet - New Game</title>
+<meta name="description" content="Galaxy Fleetのユーザ登録ページです。">
+
+<script src="../../_js/user/md5.js"></script>
+<script src="../../_js/user/confirm.js"></script>
+<script src="../../_js/user/useradm.js"></script>
+
+<script src="_handle_newgame.js"></script>
+
+</head><body onLoad="__handle_NewGame_PageLoad()">
+
+
+
+
+
+<div id="com_TitleSub">
+	<span id="iTitleSubJP">新しくゲームを始める</span>
+	<span id="iTitleSubEN">New Game</span>
+</div>
+
+
+
+
+
+<main id="gf_NewGame" class="gf_ContentsSection_Center">
+	<div class="gf_ContentsBody">
+<!-- com_ContentsBody - Start -->
+
+	<div class="gf_Discription">
+		<div class="gf_Trans_JP">
+		新しくゲームを始めます。<br />
+		ユーザID、ユーザ名、パスワードを入力してください。<br />
+			<div class="gf_Discription_Force">
+			ユーザID：ログインに必要なIDキーです。（半角英数字 8文字以上）<br />
+			ユーザ名：ゲーム内に表示される司令官名を指定できます。（全角16文字まで）<br />
+			パスワード：ログインに必要なパスワードです。（12文字以上）<br />
+			　パスワードに使用可能な文字　半角英数字 &lt; &gt; ( ) { } ! ? @ + - * / = % # & $<br />
+			</div>
+		全て入力して[START]を押すと、ゲームが始まります。<br />
+		</div>
+		<div class="gf_Trans_EN">
+		Start a new game. <br />
+		Please enter your user ID, user name and password. <br />
+			<div class="gf_Discription_Force">
+			User ID: An ID key required for login. (8 or more single-byte alphanumeric characters) <br />
+			User name: You can specify the commander name displayed in the game. (Up to 8 double-byte characters) <br />
+			Password: The password required to log in. (12 characters or more) <br />
+			　Characters that can be used for passwords　Half-width alphanumeric characters &lt; &gt; ( ) { } ! ? @ + - * / = % # & $<br />
+			</div>
+		Enter all and press [START] to start the game. <br />
+		</div>
+	</div>
+
+	<form><table class="com_Center">
+	<tr>
+		<td>
+			<span class="gf_Trans_JP">ユーザID</span><span class="gf_Trans_EN">USER ID</span>
+		</td>
+		<td>
+			<input class="Textbox" type="text" id="iUserID" value="">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="gf_Trans_JP">ユーザ名</span><span class="gf_Trans_EN">USER NAME</span>
+		</td>
+		<td>
+			<input class="Textbox" type="text" id="iUserName" value="">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="gf_Trans_JP">パスワード</span><span class="gf_Trans_EN">PASSWORD</span>
+		</td>
+		<td>
+			<input class="Textbox" type="password" id="iPassWD" value="" autocomplete="off" name="password">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="gf_Trans_JP">パスワード(再)</span><span class="gf_Trans_EN">PASSWORD(RE)</span>
+		</td>
+		<td>
+			<input class="Textbox" type="password" id="iPassWD2" value="" autocomplete="off" name="password2">
+		</td>
+	</tr>
+	</table></form>
+
+	<div class="gf_Discription">
+		<div class="gf_Trans_JP">
+		ゲームをプレイしただくにあたって、以下の各項目（利用規約）に同意していただく必要があります。<br />
+		本ゲームのユーザをご登録いただいた時点で当利用規約に同意いただいたとみなします。<br />
+		</div>
+		<div class="gf_Trans_EN">
+		Before playing the game, you need to agree to the following items (Terms of Service). 
+		It is considered that you have agreed to these terms of use at the time of registration, so do not be afraid. <br />
+		</div>
+	</div>
+
+	<table class="com_Center">
+	<tr>
+		<td>
+			<input class="gf_CheckBox" type="checkbox" id="iAgree1" value=""
+				onclick="__handle_NewGame_AgreeClick()">
+		</td>
+		<td>
+			<a target="_blank" href="https://lucida3web.wixsite.com/prof/rules">
+			<span class="gf_Trans_JP">免責事項</span>
+			<span class="gf_Trans_EN">Disclaimer</span>
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input class="gf_CheckBox" type="checkbox" id="iAgree2" value=""
+				onclick="__handle_NewGame_AgreeClick()">
+		</td>
+		<td>
+			<a target="_blank" href="https://lucida3web.wixsite.com/prof/rules">
+			<span class="gf_Trans_JP">情報セキュリティポリシー</span>
+			<span class="gf_Trans_EN">Information security policy</span>
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input class="gf_CheckBox" type="checkbox" id="iAgree3" value=""
+				onclick="__handle_NewGame_AgreeClick()">
+		</td>
+		<td>
+			<a target="_blank" href="https://lucida3web.wixsite.com/prof/rules">
+			<span class="gf_Trans_JP">サイト規約</span>
+			<span class="gf_Trans_EN">Site terms</span>
+			</a>
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan="2" class="com_Center gf_ButtonBar">
+			<input type="button" class="gf_Button gf_BTN_Color_Def" id="iStart" value="START"
+				onclick="__handle_NewGame_Start()" disabled>
+			<input type="button" class="gf_Button gf_BTN_Color_Def" id="iClose" value="CLOSE"
+				onclick="__handle_NewGame_Close()">
+		</td>
+	</tr>
+	</table>
+
+<!-- com_ContentsBody - End -->
+	</div>
+</main>
+
+
+
+
+
+</body></html>

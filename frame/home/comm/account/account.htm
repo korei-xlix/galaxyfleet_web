@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<meta name="author" content="Korei">
+<meta name="copyright" content="Copyright 2022 Korei Industry">
+<meta name="generator" content="EmEditor">
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="shortcut icon" type="image/x-icon" id="iIcon" href="#">
+<link rel="stylesheet" type="text/css" id="iCSS_Com" href="#">
+<link rel="stylesheet" type="text/css" id="iCSS_Org" href="#">
+
+<title>Galaxy Fleet - Account</title>
+<meta name="description" content="アカウントの管理ページです。">
+
+<script src="../../../../_js/user/md5.js"></script>
+<script src="../../../../_js/user/confirm.js"></script>
+<script src="../../../../_js/user/useradm.js"></script>
+
+<script src="_handle_account.js"></script>
+<script src="../_handle_comm.js"></script>
+
+</head><body onLoad="__handle_Comm_PageLoad()">
+
+
+
+
+
+
+<div id="com_TitleSub">
+	<span id="iTitleSubJP">アカウント管理</span>
+	<span id="iTitleSubEN">Admin Account</span>
+</div>
+
+
+
+
+
+<main id="gf_Account" class="gf_ContentsSection_Center">
+	<div class="gf_ContentsBody">
+<!-- com_ContentsBody - Start -->
+
+	<div class="gf_Discription">
+		<div class="gf_Trans_JP">
+		ログイン中のユーザ情報を表示します。<br />
+		左のメニューのボタンを押すと、各項目が変更できます。<br />
+		変更できるのは、プロフィール、パスワード、ユーザ名、ユーザIDです。<br />
+		<br />
+		[CHANGE COMMENT] コメント（プロフィール）が変更できます。<br />
+		[CHANGE PASSWORD] パスワードが変更できます。<br />
+		[CHANGE USER NAME] ユーザ名が変更できます。<br />
+		[CHANGE USER ID] ユーザIDが変更できます。<br />
+		</div>
+		<div class="gf_Trans_EN">
+		Displays the logged-in user information.<br />
+		You can change each item by pressing the button on the left menu.<br />
+		You can change your profile, password, username, and user ID.<br />
+		<br />
+		[CHANGE COMMENT] You can change your comment (profile).<br />
+		[CHANGE PASSWORD] Password can be changed.<br />
+		[CHANGE USER NAME] User name can be changed.<br />
+		[CHANGE USER ID] User ID can be changed.<br />
+		</div>
+	</div>
+
+	<form><table class="com_Center">
+	<tr>
+		<th>
+			<span class="gf_Trans_JP">ユーザID</span><span class="gf_Trans_EN">USER ID</span>
+		</th>
+		<td id="iUserID"></td>
+	</tr>
+
+	<tr>
+		<th>
+			<span class="gf_Trans_JP">ユーザ名</span><span class="gf_Trans_EN">USER NAME</span>
+		</th>
+		<td id="iUserName"></td>
+	</tr>
+
+	<tr>
+		<th>
+			<span class="gf_Trans_JP">登録日時</span><span class="gf_Trans_EN">USER NAME</span>
+		</th>
+		<td id="iRegDate"></td>
+	</tr>
+
+	<tr>
+		<th>
+			<span class="gf_Trans_JP">ログイン（今回）</span><span class="gf_Trans_EN">USER NAME</span>
+		</th>
+		<td id="iLinDate"></td>
+	</tr>
+
+	<tr>
+		<th>
+			<span class="gf_Trans_JP">データ更新日時</span><span class="gf_Trans_EN">USER NAME</span>
+		</th>
+		<td id="iLotDate"></td>
+	</tr>
+
+	<tr>
+		<th>
+			<span class="gf_Trans_JP">前回ユーザ変更日時</span><span class="gf_Trans_EN">USER NAME</span>
+		</th>
+		<td id="iChgDate"></td>
+	</tr>
+
+	<tr>
+		<th>
+			<span class="gf_Trans_JP">前回パスワード変更日時</span><span class="gf_Trans_EN">USER NAME</span>
+		</th>
+		<td id="iPwdDate"></td>
+	</tr>
+
+	<tr>
+		<th colspan="2" class="gf_Comment">
+		プロフィール
+		</th>
+	</tr>
+	<tr>
+		<td colspan="2" id="iComment" class="gf_Comment">　aaaa</td>
+	</tr>
+
+	</table></form>
+
+
+
+	<div id="iCel_Input_Comment" class="gf_Cel_Input">
+		<div class="gf_Cel_Input_Discription">
+			<div class="gf_Trans_JP">コメントを変更します。（1024文字以内）<br />
+				　禁止文字　, ' " | $</div>
+			<div class="gf_Trans_EN">Change your comment. (within 1024 characters)<br />
+				prohibited characters , ' " | $</div>
+		</div>
+		<div class="gf_Cel_Input_Input">
+			<textarea class="gf_Comment" id="iInput_Comment" rows="6" cols="60" oninput="__handle_Account_SaveCtrl({inKey:'iBtn_ChangeComment'})"></textarea>
+		</div>
+		<div class="gf_Cel_Input_Button">
+			<input type="button" class="gf_BTN_Color_Menu gf_Input_Button" value="CANCEL"
+				onclick="__handle_Account_OpenCtrl({inKey:'iBtn_ChangeComment',inOpen:false})">
+			<input type="button" class="gf_BTN_Color_Menu gf_Input_Button" id="iBtn_Input_Comment" value="SAVE"
+				onclick="__handle_InputComment()" disabled>
+		</div>
+	</div>
+
+
+
+	<div id="iCel_Input_Password" class="gf_Cel_Input">
+		<div class="gf_Cel_Input_Discription">
+			<div class="gf_Trans_JP">パスワードを変更します。変更後のパスワードを入力してください。<br />
+				パスワードとはログインに必要なパスワードです。（12文字以上）<br />
+				　使用可能な文字　半角英数字 &lt; &gt; ( ) { } ! ? @ + - * / = % # & $</div>
+			<div class="gf_Trans_EN">Change your password. Please enter the password before and after the change.<br />
+				Password is the password required for login. (at least 12 characters)<br />
+				Characters that can be used in passwords：Single-byte alphanumeric characters &lt; &gt; ( ) { } ! ? @ + - * / = % # & $</div>
+		</div>
+
+		<div class="gf_Cel_Input_Discription">
+			<span class="gf_Trans_JP">現在のパスワード</span>
+			<span class="gf_Trans_EN">Current password</span>
+		</div>
+		<div class="gf_Cel_Input_Input">
+			<input class="Textbox gf_Cel_Input_PasswordView" type="text" id="iView_PassWD_now" value="" onclick="javascript:this.select()" name="password_now" readonly>
+		</div>
+		<div class="gf_Cel_Input_Button">
+		<input type="button" class="gf_BTN_Color_Menu gf_Input_Button" id="iBtn_View_Password" value="VIEW"
+			onclick="__handle_ViewPassword()">
+		</div>
+
+		<div class="gf_Cel_Input_Side">
+			<div class="gf_Cel_Input_Discription">
+				<span class="gf_Trans_JP">変更後パスワード</span>
+				<span class="gf_Trans_EN">Password after change</span>
+			</div>
+			<div class="gf_Cel_Input_Input">
+				<form><input class="Textbox" type="password" id="iInput_PassWD" value="" autocomplete="off" name="password" oninput="__handle_Account_SaveCtrl({inKey:'iBtn_ChangePassword'})"></form>
+			</div>
+			<div class="gf_Cel_Input_Button">
+			<input type="button" class="gf_BTN_Color_Menu gf_Input_Button" value="CANCEL"
+				onclick="__handle_Account_OpenCtrl({inKey:'iBtn_ChangePassword',inOpen:false})">
+			<input type="button" class="gf_BTN_Color_Menu gf_Input_Button" id="iBtn_Input_Password" value="SAVE"
+				onclick="__handle_InputPassword()" disabled>
+			</div>
+		</div>
+		<div class="gf_Cel_Input_Side">
+			<div class="gf_Cel_Input_Discription">
+				<span class="gf_Trans_JP">変更後パスワード（再入力）</span>
+				<span class="gf_Trans_EN">Password after change (re-enter)</span>
+			</div>
+			<div class="gf_Cel_Input_Input">
+				<form><input class="Textbox" type="password" id="iInput_PassWD2" value="" autocomplete="off" name="password" oninput="__handle_Account_SaveCtrl({inKey:'iBtn_ChangePassword'})"></form>
+			</div>
+		</div>
+		<br class="gf_Cel_Input_End" />
+	</div>
+
+
+
+	<div id="iCel_Input_UserName" class="gf_Cel_Input">
+		<div class="gf_Cel_Input_Discription">
+			<div class="gf_Trans_JP">ユーザ名を変更します。変更後のユーザ名を入力してください。<br />
+				（全角16文字まで）</div>
+			<div class="gf_Trans_EN">Change your username. Please enter your new username.<br />
+				(up to 16 double-byte characters)</div>
+		</div>
+		<div class="gf_Cel_Input_Input">
+			<input class="Textbox" type="text" id="iInput_UserName" value="" name="username" oninput="__handle_Account_SaveCtrl({inKey:'iBtn_ChangeUserName'})">
+		</div>
+		<div class="gf_Cel_Input_Button">
+			<input type="button" class="gf_BTN_Color_Menu gf_Input_Button" value="CANCEL"
+				onclick="__handle_Account_OpenCtrl({inKey:'iBtn_ChangeUserName',inOpen:false})">
+			<input type="button" class="gf_BTN_Color_Menu gf_Input_Button" id="iBtn_Input_UserName" value="SAVE"
+				onclick="__handle_InputUserName()" disabled>
+		</div>
+	</div>
+
+
+
+	<div id="iCel_Input_UserID" class="gf_Cel_Input">
+		<div class="gf_Cel_Input_Discription">
+			<span class="gf_Trans_JP">ユーザIDを変更します。</span>
+			<span class="gf_Trans_EN">Change your user id.</span>
+
+			<div class="gf_Trans_JP">ユーザIDを変更します。変更後のユーザIDを入力してください。<br />
+				ユーザIDとはログインに必要なユーザIDです。（半角英数字 8文字以上）</div>
+			<div class="gf_Trans_EN">Change your user ID. Please enter your new User ID.<br />
+				User ID is the user ID required for login. (8 or more half-width alphanumeric characters)</div>
+		</div>
+		<div class="gf_Cel_Input_Input">
+			<input class="Textbox" type="text" id="iInput_UserID" value="" name="userid" oninput="__handle_Account_SaveCtrl({inKey:'iBtn_ChangeUserID'})">
+		</div>
+		<div class="gf_Cel_Input_Button">
+			<input type="button" class="gf_BTN_Color_Menu gf_Input_Button" value="CANCEL"
+				onclick="__handle_Account_OpenCtrl({inKey:'iBtn_ChangeUserID',inOpen:false})">
+			<input type="button" class="gf_BTN_Color_Menu gf_Input_Button" id="iBtn_Input_UserID" value="SAVE"
+				onclick="__handle_InputUserID()" disabled>
+		</div>
+	</div>
+
+
+
+<!-- com_ContentsBody - End -->
+	</div>
+</main>
+
+
+
+
+
+</body></html>

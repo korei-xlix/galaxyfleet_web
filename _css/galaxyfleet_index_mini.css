@@ -1,0 +1,384 @@
+/* *****************************************************
+ ::Project  : web page
+ ::Admin    : Korei (@korei-xlix)
+ ::github   : https://github.com/korei-xlix/galaxyfleet/
+ ::Style    : Default Style - Mini
+***************************************************** */
+
+/* margin / padding
+	1px             = ALL
+	1px 1px         = UP.Down / Left.Right
+	1px 1px 1px     = UP / Left.Right / Down
+	1px 1px 1px 1px = UP / Right / Down / Left
+	*/
+
+/* =====================================================
+   Galaxy Fleet Style
+===================================================== */
+
+/*=== Caution ===*/
+div.gf_NonMobile{
+color				: #FFFF00;
+margin				: 8px auto;
+font-weight			: bolder;
+}
+
+div.gf_DevCaution{
+color				: #FF0000;
+margin				: 8px auto;
+font-weight			: bolder;
+}
+
+/*=== Bunner ===*/
+#gf_Bunner{
+margin				: 8px 0px 16px 32px;
+}
+
+
+
+/* =====================================================
+   Page Title
+===================================================== */
+
+#com_PageTitle div.com_TitleImage{
+background-image	: url(../_pic/title/galaxyfleet_bunner.jpg);
+width				: 200px;
+height				: 40px;
+}
+
+
+
+/* =====================================================
+   Inline Frame
+===================================================== */
+
+iframe.com_Frame-sample1{
+height				: 100px;
+}
+
+
+
+/* =====================================================
+   Body
+===================================================== */
+
+body{
+color				: #FFFFFF;
+background			: url('../_pic/wall/prcm_sttars.gif');
+}
+
+#com_bodyOutline{
+}
+
+#com_bodyInline{
+}
+
+
+
+/* =====================================================
+   Header
+===================================================== */
+
+header{
+background-color	: #000033;
+border-top			: solid 4px blue;
+border-bottom		: solid 4px blue;
+font-family			: "Arial Black";
+}
+
+header span.com_Menu_Select{
+color				: #FFFFFF;
+background-color	: #0033FF;
+padding				: 2px !important;
+border-radius		: 0px !important;
+}
+
+header a.com_Menu_Cel{
+color				: #66FFFF;
+background-color	: transparent;
+border-radius		: 0px !important;
+}
+
+header div.com_CSS_Menu{
+color				: #6699FF;
+}
+
+header a.com_CSS_Mode{
+color				: #FFFFFF;
+background-color	: #6699FF;
+padding				: 3px !important;
+border-radius		: 0px !important;
+}
+
+
+
+/* =====================================================
+   Footter
+===================================================== */
+
+footer{
+background-color	: #000033;
+border-top			: solid 4px blue;
+border-bottom		: solid 4px blue;
+font-family			: "Arial Black";
+}
+
+footer div.com_Menu_Description{
+color				: #EEFFFF;
+}
+
+footer a.com_Menu_Cel{
+color				: #66FFFF;
+background-color	: transparent;
+border-radius		: 0px !important;
+}
+
+
+
+/* =====================================================
+   CopyrightHeader
+===================================================== */
+
+#com_CopyrightHeader{
+font-family			: "Arial Black";
+}
+
+
+
+/* =====================================================
+   CopyrightFooter
+===================================================== */
+
+#com_CopyrightFooter{
+font-family			: "Arial Black";
+}
+
+#com_CopyrightFooter div.com_Menu_Ope, #com_CopyrightFooter a.com_Menu_Ope{
+color				: #FFFFFF;
+background-color	: #008000;
+border-radius		: 0px !important;
+}
+
+#com_CopyrightFooter div.com_Menu_Rule, #com_CopyrightFooter a.com_Menu_Rule{
+color				: #FFFFFF;
+background-color	: #FF0000;
+border-radius		: 0px !important;
+}
+
+#com_CopyrightFooter div.com_Menu_RSS, #com_CopyrightFooter a.com_Menu_RSS{
+color				: #FFFFFF;
+background-color	: #ee802f;
+border-radius		: 0px !important;
+}
+
+#com_CopyrightFooter div.com_Menu_Github, #com_CopyrightFooter a.com_Menu_Github{
+color				: #FFFFFF;
+background-color	: #800080;
+border-radius		: 0px !important;
+}
+
+#com_CopyrightFooter div.com_Menu_TwitterGF, #com_CopyrightFooter a.com_Menu_TwitterGF{
+color				: #FFFFFF;
+background-color	: #6699FF;
+border-radius		: 0px !important;
+}
+
+#com_CopyrightFooter a.com_Menu_Twitter{
+color				: #6699FF;
+background-color	: #000000;
+}
+
+
+
+/* =====================================================
+   Description
+===================================================== */
+
+#com_Description{
+color				: #FFFFFF;
+background-color	: transparent;
+padding				: 0px;
+text-align			: center;
+}
+
+
+
+/* =====================================================
+   Navigation
+===================================================== */
+
+#com_Navigation{
+background-color	: transparent;
+}
+
+#com_Navigation div.com_NavigationTitle{
+color				: #FFFFFF;
+background-color	: #000066;
+}
+
+#com_Navigation a{
+color				: #0000FF;
+background-color	: transparent;
+}
+
+a.com_Nav{
+color				: #FFFFFF;
+background-color	: #6699FF;
+border-radius		: 0px !important;
+font-family			: "Arial Black";
+}
+
+
+
+/* =====================================================
+   Contents Common
+===================================================== */
+
+.com_ContentsTitle{
+color				: #FFFFFF;
+background			: #000033;
+font-family			: "Arial Black";
+padding				: 8px 12px !important;
+}
+.com_ContentsTitle:before{
+border-bottom		: solid 8px #0000FF;
+border-right		: solid 20px transparent;
+}
+.com_ContentsTitle:after{
+border-top			: solid 8px #0000FF;
+border-left			: solid 20px transparent;
+}
+
+.com_ContentsBody{
+color				: #FFFFFF;
+background-color	: #000000;
+}
+
+
+
+/* =====================================================
+   Selector
+===================================================== */
+
+							/* Close */
+input[type="checkbox"].com_ContentsSelector_CBX + .com_ContentsSelector_LAB{
+color				: #FFFFFF;
+background			: #0099FF;
+border				: inset 6px #0066FF;
+}
+
+							/* Open */
+input[type="checkbox"].com_ContentsSelector_CBX:checked + .com_ContentsSelector_LAB{
+color				: #FFFFFF;
+background-color	: #009900;
+border				: inset 6px #009900;
+}
+
+							/* Body */
+.com_ContentsSelector_Body{
+color				: #000000;
+background-color	: #FFFFFF;
+border-left			: solid 4px #009900;
+border-right		: solid 4px #009900;
+border-bottom		: solid 4px #009900;
+border-top			: 0px;
+}
+
+
+
+/* =====================================================
+   Anchor
+===================================================== */
+
+a{
+color				: #0000FF;
+background-color	: transparent;
+}
+
+
+
+/* =====================================================
+   List Style
+===================================================== */
+
+ul{
+}
+
+ol{
+}
+
+li{
+}
+
+
+
+/* =====================================================
+   h1～h6
+===================================================== */
+
+h1{
+color				: white;
+background-color	: darkblue;
+}
+
+h2{
+color				: white;
+background-color	: blue;
+}
+
+h3{
+color				: black;
+background-color	: cyan;
+}
+
+h4{
+color				: black;
+background-color	: orange;
+}
+
+h5{
+color				: black;
+background-color	: yellow;
+}
+
+h6{
+color				: white;
+background-color	: pink;
+}
+
+
+
+/* =====================================================
+   hr
+===================================================== */
+
+hr{
+border				: 0px;
+background-color	: lightgray;
+}
+
+
+
+/* =====================================================
+   Table
+===================================================== */
+
+table{
+background-color	: dimgray;
+border				: solid 2px dimgray;
+}
+
+th{
+color				: white;
+background-color	: darkgray;
+border				: solid 2px dimgray;
+}
+
+td{
+color				: black;
+background-color	: white;
+border				: solid 2px dimgray;
+}
+
+
+

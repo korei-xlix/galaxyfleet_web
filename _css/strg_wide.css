@@ -1,0 +1,807 @@
+/* *****************************************************
+::ProjectName= web page  
+::github= https://github.com/lucida3rd/starregion_doc  
+::Admin= Lucida（twitter: @lucida3rd）  
+::Twitter URL= https://twitter.com/lucida3rd  
+::Homepage=  https://lucida3web.wixsite.com/prof  
+::Message= https://marshmallow-qa.com/lucida3poi  
+::Class= Star Region Style [wide]
+***************************************************** */
+
+/* margin / padding
+	1px             = ALL
+	1px 1px         = UP.Down / Left.Right
+	1px 1px 1px     = UP / Left.Right / Down
+	1px 1px 1px 1px = UP / Right / Down / Left
+	*/
+
+/*=== Page Title ===*/
+#PageTitle div.Image{
+background-image	: url(../_pic/title/starregion_ttl.jpg);
+width				: 600px;
+height				: 120px;
+margin				: 0px auto;
+padding				: 0px;
+}
+
+
+
+/*=== Body ===*/
+body{
+color				: white;
+/*background-color	: black;*/
+background			: url('../_pic/wall/prcm_sttars.gif');
+}
+#body-OUT{
+}
+#body-IN{
+}
+
+
+
+/*=== Header ===*/
+header{
+background-color	: #000033;
+border-top			: solid 4px blue;
+border-bottom		: solid 4px blue;
+font-family			: "Arial Black";
+}
+header span.SelectAnk{
+color				: #99CC00;
+background-color	: #006600;
+border				: solid 2px #003300;
+padding				: 1px;
+}
+header a.Ank{
+color				: #66CCFF;
+background-color	: transparent;
+}
+header a.Ank:hover{
+color				: #33CC33 ;
+background-color	: #003300 ;
+}
+header div.CSSmenu{
+color				: white;
+}
+header a.Ank-CSS{
+color				: limegreen;
+background-color	: darkcyan;
+}
+header a.Ank-CSS:hover, header a.Ank-CSS-Select{
+color				: darkgreen;
+background-color	: lightgreen;
+}
+
+
+
+/*=== Footer ===*/
+footer{
+background-color	: #000033;
+border-top			: solid 4px blue;
+border-bottom		: solid 4px blue;
+font-family			: "Arial Black";
+}
+footer div.Desk{
+color				: #66CCFF;
+}
+footer a.Ank{
+color				: #66CCFF;
+background-color	: transparent;
+}
+footer a.Ank:hover{
+color				: #33CC33 ;
+background-color	: #003300 ;
+}
+
+
+
+/*=== h1～h6 ===*/
+h1{
+color				: white;
+background-color	: darkblue;
+}
+h2{
+color				: white;
+background-color	: blue;
+}
+h3{
+color				: black;
+background-color	: cyan;
+}
+h4{
+color				: black;
+background-color	: orange;
+}
+h5{
+color				: black;
+background-color	: yellow;
+}
+h6{
+color				: white;
+background-color	: pink;
+}
+
+
+
+/*=== Line ===*/
+hr{
+border				: 0px;
+background-color	: lightgray;
+}
+
+
+
+/*=== Inline Text ===*/
+a{
+color				: white;
+background-color	: transparent;
+text-decoration		: underline;
+}
+a:hover{
+color				: #33CC33 ;
+background-color	: #003300 ;
+}
+
+
+
+/*=== Table ===*/
+table{
+background-color	: dimgray;
+border				: solid 2px dimgray;
+}
+
+th{
+color				: white;
+background-color	: darkgray;
+border				: solid 2px dimgray;
+}
+
+td{
+color				: black;
+background-color	: white;
+border				: solid 2px dimgray;
+}
+
+
+
+/*=== CopyrightHeader ===*/
+#CopyrightHeader{
+font-family			: "Arial Black";
+}
+
+
+
+/*=== CopyrightFooter ===*/
+#CopyrightFooter{
+font-family			: "Arial Black";
+}
+#CopyrightFooter .ButtonIndex{
+color				: white;
+background-color	: forestgreen;
+}
+#CopyrightFooter .ButtonIndex:hover{
+color				: forestgreen;
+background-color	: lawngreen;
+}
+
+#CopyrightFooter .ButtonRule{
+color				: white;
+background-color	: red;
+}
+#CopyrightFooter .ButtonRule:hover{
+color				: lavenderblush;
+background-color	: fuchsia;
+}
+
+#CopyrightFooter .ButtonRSS{
+color				: white;
+background-color	: #ee802f;
+}
+#CopyrightFooter .ButtonRSS:hover{
+color				: #ee802f;
+background-color	: yellow;
+}
+
+#CopyrightFooter .ButtonWeb{
+color				: white;
+background-color	: dodgerblue;
+}
+#CopyrightFooter .ButtonWeb:hover{
+color				: blue;
+background-color	: cyan;
+}
+
+#CopyrightFooter div.ButtonTwitter, #CopyrightFooter a.ButtonTwitter{
+color				: #66CCFF;
+background-color	: transparent;
+}
+#CopyrightFooter a.ButtonTwitter:hover{
+color				: #33CC33 ;
+background-color	: #003300 ;
+}
+
+
+
+/*=== Description ===*/
+#Description{
+color				: white;
+background-color	: black;
+text-align			:center;
+}
+
+
+
+/*=== Contents Common ===*/
+.ContTitle{
+color				: #66CCFF;
+background-color	: #000033;
+border-top			: solid 4px blue;
+border-bottom		: solid 4px blue;
+font-family			: "Arial Black";
+}
+.ContBody{
+color				: white;
+background-color	: black;
+}
+a.NavRet{
+color				: #33CC33 ;
+background-color	: transparent;
+font-family			: "Arial Black";
+}
+a.NavRet:hover{
+color				: #33CC33 ;
+background-color	: #003300 ;
+}
+
+/*=== Contents Common - Selector ===*/
+							/* Close */
+input[type="checkbox"].ContSel-CBX + .ContSel-LAB{
+color				: white;
+background-color	: cornflowerblue;
+border				: inset 6px dimgray;
+font-family			: "Arial Black";
+}
+input[type="checkbox"].ContSel-CBX:hover + .ContSel-LAB{
+color				: darkblue;
+background-color	: paleturquoise;
+}
+							/* Open */
+input[type="checkbox"].ContSel-CBX:checked + .ContSel-LAB{
+color				: white;
+background-color	: forestgreen;
+font-family			: "Arial Black";
+}
+input[type="checkbox"].ContSel-CBX:checked:hover + .ContSel-LAB{
+color				: forestgreen;
+background-color	: lawngreen;
+}
+							/* Body */
+.ContSel-BODY{
+color				: black;
+background-color	: white;
+border-left			: solid 4px dimgray;
+border-right		: solid 4px dimgray;
+border-bottom		: solid 4px dimgray;
+border-top			: 0px;
+}
+
+
+
+/*=== Navigation ===*/
+#Navigation{
+color				: #33CC33 ;
+background-color	: black;
+}
+#Navigation a{
+color				: #33CC33 ;
+background-color	: transparent;
+}
+#Navigation a:hover{
+color				: #33CC33 ;
+background-color	: #003300 ;
+}
+
+
+
+/*=== Contents - Button Color ===*/
+input[type="checkbox"].CBX-Stat,
+input[type="radio"].RDO-Stat{
+display				: none;
+}
+								/* 青っぽい */
+.BTN-Def, .BTN-Off, .BTN-Cut, .BTN-Clr, .BTN-Hld{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 2px #0033CC;
+}
+								/* 緑っぽい */
+.BTN-Def:hover, .BTN-Off:hover, .BTN-Cut:hover, .BTN-Hld:hover{
+color				: #33CC33;
+background-color	: #003300;
+border				: solid 2px #009900;
+}
+								/* 黄色っぽい */
+input[type="checkbox"].CBX-Stat:checked + .BTN-Def{
+color				: #FF3300;
+background-color	: #FFFF66;
+border				: solid 2px #FF6600;
+}
+								/* 水色っぽい */
+input[type="radio"].RDO-Stat:checked + .BTN-Def{
+color				: #3366FF;
+background-color	: #66FFFF;
+border				: solid 2px #3399FF;
+}
+								/* 赤っぽい */
+.BTN-Off-On{
+color				: #cccccc;
+background-color	: #330000;
+border				: solid 2px #880000;
+}
+								/* 赤柴っぽい */
+.BTN-Cut-On{
+color				: #FFDDFF;
+background-color	: #CC3399;
+border				: solid 2px #660066;
+}
+								/* 濃い青っぽい */
+.BTN-Clr:hover{
+color				: #CCFFFF;
+background-color	: #0033CC;
+border				: solid 2px #0066FF;
+}
+								/* 薄い緑っぽい */
+.BTN-Hld-On{
+color				: #002200;
+background-color	: #43FF6B;
+border				: solid 2px #009900;
+}
+								/* 灰色っぽい */
+/* .Button:disabled{ */
+.BTN-Disabled{
+color				: #CCCCCC;
+background-color	: #202020;
+border				: solid 2px #666666;
+}
+
+
+
+/*=== Contents - index.html ===*/
+#Description div.Caution{
+color				: red;
+}
+
+#Start{
+text-align			:center;
+}
+#Start a.StartButton{
+color				: #ffffff;
+background-color	: #00BB00;
+border				: solid 2px #006600;
+margin				: 0px;
+padding				: 4px 48px;
+font-size			: 18px;
+font-weight			: bolder;
+font-family			: "Arial Black";
+text-decoration		: none;
+display				: inline;
+text-decoration		: none;
+}
+#Start a.StartButton:hover{
+color				: #ff4500;
+background-color	: #ffd700;
+border				: solid 2px #ff8c00;
+}
+
+#Transrate{
+text-align			:center;
+}
+#Transrate label.Label{
+color				: #33CC33;
+background-color	: #003300;
+border				: 1px solid #33CC33;
+display				: inline-block;
+-webkit-transition	: background-color 0.2s linear;
+transition			: background-color 0.2s linear;
+box-sizing			: border-box;
+position			: relative;
+margin				: 0px;
+padding				: 1px 8px 1px 26px;
+border-radius		: 8px;
+vertical-align		: middle;
+cursor				: pointer;
+}
+#Transrate label.Label:after{
+border				: 1px solid #33CC33;
+display				: block;
+-webkit-transition	: border-color 0.2s linear;
+transition			: border-color 0.2s linear;
+top					: 50%;
+left				: 2px;
+width				: 16px;
+height				: 16px;
+margin				: -10px 0px 0px 2px;
+padding				: 0px;
+border-radius		: 6px;
+position			: absolute;
+content				: '';
+}
+#Transrate label.Label:before {
+background-color	: #33CC33;
+display				: block;
+-webkit-transition	: opacity 0.2s linear;
+transition			: opacity 0.2s linear;
+top					: 50%;
+left				: 6px;
+width				: 10px;
+height				: 10px;
+margin				: -6px 0px 0px 2px;
+padding				: 0px;
+border-radius		: 50%;
+position			: absolute;
+content				: '';
+opacity				: 0;
+}
+#Transrate input[type="radio"].Button{
+display				: none;
+}
+#Transrate input[type="radio"].Button:checked + label.Label:before {
+opacity				: 1;
+}
+#Transrate div.Deskription{
+color				: #ffff00;
+margin				: 8px 0px 0px;
+padding				: 0px;
+}
+
+.Bunner{
+margin				: 8px 0px 0px 32px;
+}
+
+
+
+/*=== Contents - main.html ===*/
+.HeaderMain{
+margin				: 8px 0px 0px;
+}
+.FooterMain{
+margin				: 0px 0px 8px;
+}
+
+iframe.IframeMain{
+border-style		: none;
+height				: 980px;
+width				: 100%;
+
+background-color	: cyan;
+
+}
+iframe.IframeHidden{
+display				: none;
+}
+
+
+
+
+
+
+
+
+
+
+iframe.IframeDisp{
+border-style		: none;
+height				: 0px;
+width				: 0px;
+}
+
+
+iframe.IF_Log{
+color				: #ffffff;
+background-color	: #000033;
+border				: solid 4px #0000ff;
+top					: 120px;
+right				: 0px;
+width				: 480px;
+/*height			: 760px;*/
+height				: 580px;
+margin				: 0px;
+padding				: 8px 8px 16px;
+position			: absolute;
+display				: none;
+}
+
+
+
+/*=== Contents - login.html ===*/
+#Login div.LoginBody{
+color				: #33CC33;
+margin				: 0px auto;
+width				: 720px;
+text-align			: center;
+}
+
+#Login table{
+color				: white;
+background			: none;
+border				: 0px !important;
+}
+#Login td{
+color				: #33CC33;
+background			: none;
+border				: 0px !important;
+padding				: 8px;
+}
+
+#Login input.Textbox{
+width				: 200px;
+}
+
+#Login label > input{
+display				: none;
+}
+#Login input.Button{
+font-size			: 16px;
+margin				: 0px;
+padding				: 4px 24px;
+}
+#Login label.Button{
+font-size			: 16px;
+margin				: 0px;
+padding				: 4px 25px;
+display				: inline-block;
+}
+#Login label.FileBtn{
+font-size			: 16px;
+padding				: 4px 108px 4px;
+}
+
+#Login div.Save{
+padding				: 16px 0px 0px 128px;
+text-align			: left;
+}
+#Login div.SaveForce{
+color				: red;
+font-weight			:bold;
+}
+#Login div.SaveHelp{
+color				: yellow;
+}
+
+#Login div.NewLogin-Text{
+color				: yellow;
+padding				: 8px 0px 8px 128px;
+text-align			: left;
+}
+#Login div.NewLogin-Agree{
+color				: yellow;
+padding				: 8px 0px 8px 96px;
+text-align			: left;
+}
+#Login a.Agree{
+color				: yellow;
+text-decoration		: underline;
+}
+#Login td.Agree{
+color				: red;
+}
+#Login input.Agreebox{
+margin				: 4px 8px 0px 0px ;
+float				: left;
+}
+#Login br.AgreeEnd{
+clear				: both;
+}
+#Login td.Start{
+padding				: 0px 0px 32px 128px ;
+}
+
+
+
+/*=== Contents - home.htm ===*/
+#Home div.Home-Top{
+background			:red;
+
+height				: 200px;
+width				: 100%;
+}
+/*
+#Home div.Home-Left{
+background			:blue;
+
+width				: 320px;
+float				: left;
+}*/
+#Home div.Home-Center{
+background			:green;
+
+
+width				: 100%;
+/*text-align		: left;
+float				: right;*/
+}
+#Home br.End{
+clear				: both ;
+}
+
+
+
+
+#Home-Material{
+margin				: 0px;
+padding				: 0px;
+}
+#Home-Material table{
+background-color	: #000000 !important;
+border				: solid 1px #000066 !important;
+margin				: 0px;
+padding				: 0px;
+float				: left;
+}
+#Home-Material td{
+color				: #ffffff;
+background-color	: #000010;
+border				: solid 1px #000066 !important;
+width				: 80px;
+padding				: 4px !important;
+vertical-align		: middle !important;
+}
+#Home-Material div.MateIcon{
+width				: 16px;
+height				: 16px;
+margin				: 0px;
+padding				: 0px;
+float				: left;
+}
+#Home-Material div.MateVal{
+width				: 48px;
+height				: 16px;
+margin				: 0px;
+padding				: 0px 8px 0px 0px;
+text-align			:right;
+float				: right;
+}
+#Home-Material br.End{
+display				: none;
+clear				: both;
+}
+
+
+
+
+
+#Home-Material td.Blue{
+background-color	: #001030 !important;
+}
+#Home-Material td.Yellow{
+background-color	: #202000 !important;
+}
+#Home-Material td.Gray{
+background-color	: #101010 !important;
+}
+#Home-Material td.Green{
+background-color	: #001800 !important;
+}
+#Home-Material img{
+margin				: 0px 6px 0px 0px;
+padding				: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*=== Contents - Popup Menu ===*/
+.Popup-Menu{
+color				: #ffffff;
+background-color	: #000033;
+border				: solid 4px #0000ff;
+width				: 200px;
+margin				: 0px;
+padding				: 0px;
+position			: absolute;
+}
+.Popup-Menu-Bar{
+background-color	: blue;
+height				: 16px;
+width				: 200px;
+margin				: 0px;
+padding				: 1px 2px 1px 1px;
+text-align			: right;
+}
+.Popup-Menu-Button{
+background-color	: #660000;
+height				: 12px;
+width				: 12px;
+margin				: 0px 0px 0px auto;
+padding				: 0px;
+}
+.Popup-Menu-Body{
+background-color	: #001030 !important;
+margin				: 0px;
+padding				: 4px 0px 0px 10px;
+}
+input.MainButton{
+font-size			: 16px;
+width				: 180px;
+margin				: 2px 0px;
+padding				: 4px 24px;
+}
+.Popup-Group{
+margin				: 0px 0px 12px 0px;
+padding				: 0px;
+}
+
+
+
+/*=== Contents - Popup Help ===*/
+.Popup-Help-Open{
+color				: #ffffff;
+background-color	: #000033;
+border				: solid 4px #0000ff;
+width				: 320px;
+/*width				: 90%;*/
+margin				: 0px;
+padding				: 8px ;
+position			: absolute;
+display				: block;
+}
+.Popup-Help{
+display				: none;
+}
+
+
+
+/*=== Contents - MessageBox ===*/
+.Msgbox{
+color				: #ffffff;
+background-color	: #000033;
+border				: solid 4px #0000ff;
+width				: 720px;
+margin				: 0px;
+padding				: 4px 4px 16px 4px;
+position			: absolute;
+display				: none;
+}
+.Msgbox-Text{
+margin				: 4px 4px 8px 4px;
+padding				: 4px;
+}
+input.MsgboxButton{
+font-size			: 16px;
+width				: 704px;
+margin				: 4px 0px 0px 8px;
+padding				: 4px 24px;
+}
+
+input.MsgboxBTN-Def{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 2px #0033CC;
+}
+input.MsgboxBTN-Def:hover{
+color				: #33CC33;
+background-color	: #003300;
+border				: solid 2px #009900;
+}
+
+
+
+
+
+
+
+
+
