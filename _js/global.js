@@ -27,7 +27,8 @@ var DEF_TEST_MOB = false ;
 // ホスト名
 var DEF_GLOBAL_HOST = new Array(
 	"localhost",
-	"starregion"
+///	"starregion"
+	"galaxy-fleet.koreis-labo.com"
 	) ;
 
 /////////////////////////////
