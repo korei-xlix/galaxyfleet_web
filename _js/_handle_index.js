@@ -19,7 +19,7 @@ function __handle_PageLoad()
 	CLS_WindowCtrl_PageSet({
 	   inPageObj	: self.document,
 	   inStylePath	: "/_css/",
-	   inStyleName	: "galaxyfleet_index",
+///	   inStyleName	: "galaxyfleet_index",
 	   inMode		: "normal",
 	   inStyleCommPath	: null,
 	   inIconPath	: "/_icon/galaxyfleet_icon.ico"

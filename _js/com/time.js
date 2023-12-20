@@ -133,3 +133,29 @@ function CLS_Time_extDateArray({
 
 
 
+//#####################################################
+//# ループ式 Sleep
+//#####################################################
+function CLS_Time_Sleep({
+	inMSec = 1000
+})
+{
+	///////////////////////////////
+	// 応答形式の取得
+	let wRes = CLS_L_getRes({ inClassName : "CLS_Time", inFuncName : "CLS_Time_Sleep" }) ;
+	
+	let wStartSec ;
+	
+	///////////////////////////////
+	// Sleep処理
+	wStartSec = new Date() ;
+	while (new Date() - wStartSec < inMSec) ;
+	
+	///////////////////////////////
+	// 正常
+	wRes['Result']   = true ;
+	return wRes ;
+}
+
+
+

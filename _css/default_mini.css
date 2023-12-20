@@ -13,13 +13,199 @@
 	*/
 
 /* =====================================================
+   Profile
+===================================================== */
+
+#Profile{
+border				: 0px !important;
+background-color	: transparent !important;
+}
+#Profile tr{
+border				: 0px !important;
+}
+
+#Profile  td{
+border				: 0px !important;
+padding-top			: 8px;
+padding-left		: 10px;
+}
+
+#Profile a.Icon{
+color				: transparent !important;
+background-color	: transparent !important;
+display				: block ;
+text-decoration		: none;
+}
+
+#Profile  div.Caution{
+color				: #ff0000;
+border-bottom		: 1px solid #ff0000;
+font-weight			: bold;
+margin				: 8px 0px;
+padding				: 0px;
+}
+
+
+
+/* =====================================================
+   Profile Index
+===================================================== */
+
+#ProfileIndex{
+border				: 0px !important;
+background-color	: transparent !important;
+}
+#Profile tr{
+border				: 0px !important;
+}
+
+#ProfileIndex  td{
+border				: 0px !important;
+padding-top			: 8px;
+padding-left		: 10px;
+}
+
+#ProfileIndex a{
+color				: transparent !important;
+background-color	: transparent !important;
+display				: block ;
+text-decoration		: none;
+}
+
+
+
+/* =====================================================
+   Contents Index
+===================================================== */
+
+#ContentsIndex{
+border				: 0px !important;
+background-color	: transparent !important;
+}
+#ContentsIndex tr{
+border				: 0px !important;
+}
+
+#ContentsIndex  td{
+border				: 0px !important;
+padding-top			: 8px;
+padding-left		: 10px;
+}
+
+#ContentsIndex .Link{
+margin				: 4px 0px;
+}
+
+#ContentsIndex .Text{
+margin				: 0px 0px 4px 6px;
+
+}
+
+#ContentsIndex a{
+/* font-size		: 20px; */
+font-weight			: bolder;
+/*
+color				: transparent !important;
+background-color	: transparent !important;
+display				: block ;
+text-decoration		: none; */
+}
+
+
+
+/* =====================================================
+   Address
+===================================================== */
+
+#Address{
+border				: solid 1px #a0a0FF;
+background-color	: #a0a0FF;
+}
+#Address tr{
+border				: solid 1px #a0a0FF;
+}
+
+#Address  td{
+border				: solid 1px #a0a0FF;
+padding-top			: 8px;
+padding-left		: 10px;
+}
+
+#Address a{
+color				: transparent !important;
+background-color	: transparent !important;
+display				: block ;
+text-decoration		: none;
+}
+
+#Address div.Address{
+color				: #ffffff;
+background-color	: #8080ff;
+margin				: 4px 32px 8px 0px;
+padding				: 2px;
+text-decoration		: underline;
+}
+
+
+
+/* =====================================================
+   Thanks
+===================================================== */
+
+#Thanks{
+border				: solid 1px #a0a0FF;
+background-color	: #a0a0FF;
+}
+#Thanks tr{
+border				: solid 1px #a0a0FF;
+}
+
+#Thanks  td{
+border				: solid 1px #a0a0FF;
+padding-top			: 8px;
+padding-left		: 10px;
+}
+
+#Thanks a{
+padding				: 2px;
+display				: block ;
+}
+
+#Thanks div.Text{
+margin				: 4px 32px 8px 0px;
+padding				: 2px;
+}
+
+
+
+/* =====================================================
+   Site Link
+===================================================== */
+
+#SiteLink span.LinkURL{
+color				: #3333FF;
+background-color	: #eeeeFF;
+font-weight			: bolder;
+text-decoration		: underline;
+}
+
+
+
+/* =====================================================
    Page Title
 ===================================================== */
 
 #com_PageTitle div.com_TitleImage{
-background-image	: url(../_pic/title/starregion_mob.jpg);
+background-image	: url(../_pic/title/koreilabo_title_bunner.png);
 width				: 200px;
-height				: 40px;
+height				: 95px;
+}
+
+#com_PageTitle div.com_TitleText{
+color				: #000000;
+background-color	: transparent;
+/*	font-size			: 32px !important;	*/
+/*	line-height			: 40px !important;	*/
 }
 
 
@@ -124,6 +310,11 @@ color				: #000000;
 background-color	: #FFFFFF;
 }
 
+#com_CopyrightFooter div.com_Menu_Index, #com_CopyrightFooter a.com_Menu_Index{
+color				: #FFFFFF;
+background-color	: #000080;
+}
+
 #com_CopyrightFooter div.com_Menu_Ope, #com_CopyrightFooter a.com_Menu_Ope{
 color				: #FFFFFF;
 background-color	: #008000;
@@ -131,7 +322,7 @@ background-color	: #008000;
 
 #com_CopyrightFooter div.com_Menu_Rule, #com_CopyrightFooter a.com_Menu_Rule{
 color				: #FFFFFF;
-background-color	: #FF0000;
+background-color	: #aa1212;
 }
 
 #com_CopyrightFooter div.com_Menu_RSS, #com_CopyrightFooter a.com_Menu_RSS{
@@ -141,17 +332,32 @@ background-color	: #ee802f;
 
 #com_CopyrightFooter div.com_Menu_Github, #com_CopyrightFooter a.com_Menu_Github{
 color				: #FFFFFF;
-background-color	: #800080;
-border-radius		: 0px !important;
+background-color	: #7D4ABE;
+/*border-radius		: 0px !important;*/
 }
 
-#com_CopyrightFooter div.com_Menu_TwitterGF, #com_CopyrightFooter a.com_Menu_TwitterGF{
+#com_CopyrightFooter div.com_Menu_Youtube, #com_CopyrightFooter a.com_Menu_Youtube{
 color				: #FFFFFF;
-background-color	: #6699FF;
-border-radius		: 0px !important;
+background-color	: #FF0000;
 }
 
-#com_CopyrightFooter a.com_Menu_Twitter{
+#com_CopyrightFooter div.com_Menu_Twitter, #com_CopyrightFooter a.com_Menu_Twitter{
+color				: #FFFFFF;
+background-color	: #469AF9;
+/*border-radius		: 0px !important;*/
+}
+
+#com_CopyrightFooter div.com_Menu_Address, #com_CopyrightFooter a.com_Menu_Address{
+color				: #FFFFFF;
+background-color	: #333333;
+}
+
+#com_CopyrightFooter div.com_Menu_Warnlist, #com_CopyrightFooter a.com_Menu_Warnlist{
+color				: #c00000;
+background-color	: #e0e000;
+}
+
+#com_CopyrightFooter a.com_Menu_TwitterFT{
 color				: #0000FF;
 background-color	: #FFFFFF;
 }
@@ -220,6 +426,14 @@ color				: #000000;
 background-color	: #FFFFFF;
 }
 
+.com_ContentsTitle_Bunner{
+color				: #FFFFFF;
+}
+.com_ContentsTitle_Bunner:hover{
+color				: #0000FF;
+background			: #FFFFFF;
+}
+
 
 
 /* =====================================================
@@ -261,6 +475,21 @@ color				: #0000FF;
 background-color	: transparent;
 }
 
+a:hover{
+color				: #FFFFFF;
+background-color	: #0000FF;
+cursor				: pointer;
+/*
+cursor				: default;
+cursor				: move;
+cursor				: crosshair;
+cursor				: wait;
+cursor				: help;
+cursor				: not-allowed;
+cursor				: col-resize;
+cursor				: row-resize;
+*/
+}
 
 
 /* =====================================================

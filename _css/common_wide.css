@@ -13,6 +13,47 @@
 	*/
 
 /* =====================================================
+   Font
+===================================================== */
+
+/*** color ***/
+span.com_FontColorRed{
+color				: #ff0000;
+}
+span.com_FontColorBlue{
+color				: #0000ff;
+}
+
+/*** mark color ***/
+span.com_FontMarkRed{
+color				: #ff0000;
+font-weight			: bold;
+text-decoration		: underline;
+}
+span.com_FontMarkBlue{
+color				: #0000ff;
+font-weight			: bold;
+text-decoration		: underline;
+}
+
+/*** font ***/
+span.com_FontBold{
+font-weight			: bold;
+}
+span.com_FontUnderline{
+text-decoration		: underline;
+}
+span.com_FontItalic{
+font-style			: italic;
+}
+span.com_FontMark{
+font-weight			: bold;
+text-decoration		: underline;
+}
+
+
+
+/* =====================================================
    Page Title
 ===================================================== */
 
@@ -24,6 +65,15 @@ padding				: 0px;
 #com_PageTitle div.com_TitleImage{
 margin				: 0px auto;
 padding				: 0px;
+}
+
+#com_PageTitle div.com_TitleText{
+font-size			: 32px;
+font-weight			: bolder;
+margin				: 0px auto;
+padding				: 8px 0px;
+line-height			: 40px;
+text-align			: center;
 }
 
 #com_TitleSub{
@@ -296,6 +346,14 @@ text-align			:center;
 float				:left;
 }
 
+#com_CopyrightFooter div.com_Menu_Cel_Long{
+width				: 360px;
+margin				: 4px;
+padding				: 4px 12px 0px;
+text-align			:left;
+float				:left;
+}
+
 #com_CopyrightFooter a.com_Menu_Cel{
 font-size			: 12px;
 display				: block;
@@ -318,6 +376,12 @@ clear				: both;
 #com_Description{
 margin				: 0px 4px 32px;
 padding				: 0px 16px 0px;
+}
+
+#com_Description_Center{
+margin				: 0px auto 32px;
+padding				: 0px 16px 0px;
+text-align			:center;
 }
 
 
@@ -431,6 +495,22 @@ top					: 100%;
 
 .com_ContentsBody{
 margin				: 0px 0px 0px 16px;
+padding				: 0px;
+}
+
+.com_ContentsBody_Center{
+margin				: 0px auto 16px;
+padding				: 0px;
+text-align			:center;
+}
+
+.com_ContentsTitle_Bunner{
+font-weight			: bolder;
+padding				: 4px;
+}
+
+.com_ContentsInline{
+margin				: 4px 0px 8px 24px;
 padding				: 0px;
 }
 
