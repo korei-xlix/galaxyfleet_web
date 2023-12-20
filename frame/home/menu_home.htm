@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<meta name="author" content="Korei">
+<meta name="copyright" content="Copyright 2022 Korei Industry">
+<meta name="generator" content="EmEditor">
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="shortcut icon" type="image/x-icon" id="iIcon" href="#">
+<link rel="stylesheet" type="text/css" id="iCSS_Com" href="#">
+<link rel="stylesheet" type="text/css" id="iCSS_Org" href="#">
+
+<title>Galaxy Fleet - Menu</title>
+<meta name="description" content="メニューです。">
+
+<script src="_handle_menu.js"></script>
+<script src="_handle_menu_home.js"></script>
+
+</head><body onLoad="__handle_Menu_PageLoad()">
+
+
+
+
+
+<main id="gf_Menu">
+	<div class="gf_MainMenuCell">
+	<input type="button" class="gf_BTN_Color_Menu gf_MainMenu_Button" id="iBtn_Mission" value="MISSION"
+		onclick="__handle_Mission()">
+		<div class="gf_MainMenu_Help">
+		<span class="gf_Trans_JP">任務 - さまざまな任務を受諾します。任務をこなすと報酬を受け取れます。</span>
+		<span class="gf_Trans_EN">Missions - Accept various missions. You will receive rewards for completing missions.</span></div></div>
+
+	<div class="gf_MainMenuCell">
+	<input type="button" class="gf_BTN_Color_Menu gf_MainMenu_Button" id="iBtn_Sotie" value="SORTIE"
+		onclick="__hdl_ButtonClick('iBTN-Mission')" disabled>
+		<div class="gf_MainMenu_Help">
+		<span class="gf_Trans_JP">出撃 - 基地から艦隊を出撃させます。戦闘があるかもしれません。</span>
+		<span class="gf_Trans_EN">Sortie - Sortie a fleet from your base. There may be combat.</span></div></div>
+
+	<div class="gf_MainMenuCell">
+	<input type="button" class="gf_BTN_Color_Menu gf_MainMenu_Button" id="iBtn_Organize" value="ORGANIZE"
+		onclick="__hdl_ButtonClick('iBTN-Mission')" disabled>
+		<div class="gf_MainMenu_Help">
+		<span class="gf_Trans_JP">編成 - 艦隊や戦隊を編成します。</span>
+		<span class="gf_Trans_EN">Organize - Organize fleets and squadrons.</span></div></div>
+
+	<div class="gf_MainMenuCell">
+	<input type="button" class="gf_BTN_Color_Menu gf_MainMenu_Button" id="iBtn_Requsition" value="REQUISITION"
+		onclick="__hdl_ButtonClick('iBTN-Mission')">
+		<div class="gf_MainMenu_Help">
+		<span class="gf_Trans_JP">徴発 - 民間から兵器の強制買い取りをします。取得時に資金が必要です。</span>
+		<span class="gf_Trans_EN">Requisition - Forcibly purchase weapons from civilians. Funds are required upon acquisition.</span></div></div>
+
+	<div class="gf_MainMenuCell">
+	<input type="button" class="gf_BTN_Color_Menu gf_MainMenu_Button" id="iBtn_Procurement" value="PROCUREMENT"
+		onclick="__hdl_ButtonClick('iBTN-Mission')">
+		<div class="gf_MainMenu_Help">
+		<span class="gf_Trans_JP">調達 - 中立の商業国から戦列艦や機動兵器、特殊なアイテムを購入します。</span>
+		<span class="gf_Trans_EN">Procurement - Purchase ships of the line, mecha, and special items from neutral commercial nations.</span></div></div>
+
+	<div class="gf_MainMenuCell">
+	<input type="button" class="gf_BTN_Color_Menu gf_MainMenu_Button" id="iBtn_Maintenance" value="MAINTENANCE"
+		onclick="__hdl_ButtonClick('iBTN-Mission')">
+		<div class="gf_MainMenu_Help">
+		<span class="gf_Trans_JP">整備 - 戦列艦の改造、追加武装の変更、訓練をおこないます。不要な戦列艦を解体することもできます。</span>
+		<span class="gf_Trans_EN">Maintenance - Modify ships of the line, change additional armaments, and train. You can also dismantle unnecessary ships of the line.</span></div></div>
+
+	<div class="gf_MainMenuCell">
+	<input type="button" class="gf_BTN_Color_Menu gf_MainMenu_Button" id="iBtn_Construction" value="CONSTRUCTION"
+		onclick="__hdl_ButtonClick('iBTN-Mission')">
+		<div class="gf_MainMenu_Help">
+		<span class="gf_Trans_JP">建造 - 資材を使って新しく戦列艦を建造します。</span>
+		<span class="gf_Trans_EN">Construction - Use materials to build new ships of the line.</span></div></div>
+
+	<div class="gf_MainMenuCell">
+	<input type="button" class="gf_BTN_Color_Menu gf_MainMenu_Button" id="iBtn_Manufuctuering" value="MANUFACTURING"
+		onclick="__hdl_ButtonClick('iBTN-Mission')">
+		<div class="gf_MainMenu_Help">
+		<span class="gf_Trans_JP">製造 - 資材を使って戦闘兵器や装備を製造します。</span>
+		<span class="gf_Trans_EN">Manufacturing - Use materials to manufacture combat weapons and equipment.</span></div></div>
+
+	<div class="gf_MainMenuCell">
+	<input type="button" class="gf_BTN_Color_Menu gf_MainMenu_Button" id="iBtn_Arhemy" value="ALCHEMY"
+		onclick="__hdl_ButtonClick('iBTN-Mission')" disabled>
+		<div class="gf_MainMenu_Help">
+		<span class="gf_Trans_JP">錬金 - 余った資材を別の資材に変換します。</span>
+		<span class="gf_Trans_EN">Alchemy - Convert surplus materials into other materials</span></div></div>
+
+	<div class="gf_MainMenuCell">
+	<input type="button" class="gf_BTN_Color_Menu gf_MainMenu_Button" id="iBtn_BaseManage" value="BASE MANAGE"
+		onclick="__hdl_ButtonClick('iBTN-Mission')" disabled>
+		<div class="gf_MainMenu_Help">
+		<span class="gf_Trans_JP">基地 - 司令部や各基地の管理をおこないます。</span>
+		<span class="gf_Trans_EN">Base Manage - Manage the headquarters and each base.</span></div></div>
+
+	<div class="gf_MainMenu_User">
+		<div class="gf_MainMenuCell">
+		<input type="button" class="gf_BTN_Color_Menu gf_MainMenu_Button" id="iBtn_GetGift" value="GIFT CODE"
+			onclick="__hdl_ButtonClick('iBTN-Mission')" disabled>
+			<div class="gf_MainMenu_Help">
+			<span class="gf_Trans_JP">ギフトコード - 戦時監視委員会（運営）から発行されたギフトの受け取りをおこないます。</span>
+			<span class="gf_Trans_EN">Gift Code - Receive gifts issued by the Wartime Surveillance Committee (Operation).</span></div></div>
+
+		<div class="gf_MainMenuCell">
+		<input type="button" class="gf_BTN_Color_Menu gf_MainMenu_Button" id="iBtn_Account" value="ACCOUNT"
+			onclick="__handle_Account()">
+			<div class="gf_MainMenu_Help">
+			<span class="gf_Trans_JP">アカウント - ユーザ情報を参照したり、パスワードの変更をおこないます。</span>
+			<span class="gf_Trans_EN">Accounts - View user information and change passwords.</span></div></div>
+
+		<div class="gf_MainMenuCell">
+		<input type="button" class="gf_BTN_Color_Menu gf_MainMenu_Button" id="iBtn_Logout" value="LOGOUT"
+			onclick="__handle_Logout()">
+			<div class="gf_MainMenu_Help">
+			<span class="gf_Trans_JP">ログアウト - ゲームからログアウトします。</span>
+			<span class="gf_Trans_EN">Logout - Log out of the game.</span></div></div>
+	</div>
+
+	<div class="gf_MainMenu_User">
+		<div class="gf_MainMenuCell">
+		<input type="button" class="gf_BTN_Color_Menu gf_MainMenu_Button" id="iBtn_LogView" value="PLAY LOG"
+			onclick="__handle_LogView()">
+			<div class="gf_MainMenu_Help">
+			<span class="gf_Trans_JP">プレイログ - ゲームログを表示します。</span>
+			<span class="gf_Trans_EN">Playlog - View the game log.</span></div></div>
+	</div>
+</main>
+
+
+
+
+
+</body></html>

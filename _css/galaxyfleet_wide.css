@@ -1,0 +1,1165 @@
+/* *****************************************************
+ ::Project  : web page
+ ::Admin    : Korei (@korei-xlix)
+ ::github   : https://github.com/korei-xlix/galaxyfleet/
+ ::Style    : Galaxy Fleet - Wide [Game Style]
+***************************************************** */
+
+/* margin / padding
+	1px             = ALL
+	1px 1px         = UP.Down / Left.Right
+	1px 1px 1px     = UP / Left.Right / Down
+	1px 1px 1px 1px = UP / Right / Down / Left
+	*/
+
+/* =====================================================
+   Galaxy Fleet Style - Common
+===================================================== */
+
+header div.gf_SubTitle{
+color				: #FFFFFF;
+/*background-color	: #0033FF;*/
+margin				: 0px !important;
+padding				: 0px 0px 0px 24px !important;
+border-radius		: 0px;
+}
+
+.gf_ContentsSection_Center{
+margin				: 0px;
+padding				: 0px;
+text-align			:center;
+}
+
+.gf_ContentsBody{
+margin				: 0px;
+padding				: 0px;
+}
+
+
+
+/* =====================================================
+   Galaxy Fleet Style - Home
+===================================================== */
+
+#gf_Home{
+margin				: 0px !important;
+padding				: 0px !important;
+}
+
+#gf_Home div.gf_ContenttsHome_Top{
+height				: 100px !important;		/* ★ */
+margin				: 0px !important;
+padding				: 0px !important;
+/*background-color	: red;*/
+}
+
+#gf_Home div.gf_ContenttsHome_Body{
+width				: 1200px;
+margin				: 0px !important;
+padding				: 0px !important;
+/*
+background-color	: yellow;*/
+}
+
+#gf_Home div.gf_ContenttsHome_Left{
+width				: 220px;
+margin				: 0px !important;
+padding				: 0px !important;
+float				: left;
+/*
+background-color	: gray*/
+}
+
+#gf_Home div.gf_ContenttsHome_Center{
+width				: 980px;
+margin				: 0px !important;
+padding				: 0px !important;
+float				: left;
+/*
+background-color	: green;*/
+}
+
+#gf_Home br.gf_ContenttsHome_End{
+clear				: both;
+}
+
+#gf_Home div.gf_ContenttsHome_Bottom{
+display				: none;
+margin				: 0px !important;
+padding				: 0px !important;
+/*background-color	: red;*/
+}
+
+
+
+/* =====================================================
+   Galaxy Fleet Style - Menu
+===================================================== */
+
+#gf_Menu{
+margin				: 0px 8px 0px !important;
+padding				: 0px !important;
+}
+
+#gf_Menu div.gf_MainMenu_User{
+margin				: 24px 0px 0px !important;
+padding				: 0px !important;
+}
+
+#gf_Menu div.gf_MainMenu_UpClose{
+margin				: 0px 0px 24px !important;
+padding				: 0px !important;
+}
+
+#gf_Menu div.gf_MainMenuCell{
+margin				: 8px !important;
+padding				: 0px !important;
+}
+
+#gf_Menu input.gf_MainMenu_Button{
+font-size			: 16px !important;
+width				: 180px !important;
+height				: 40px !important;
+margin				: 0px !important;
+padding				: 4px !important;
+font-family			: "Arial Black";
+}
+
+#gf_Menu input.gf_MainMenu_BigButton{
+font-size			: 16px !important;
+width				: 180px !important;
+height				: 72px !important;
+margin				: 0px !important;
+padding				: 2px !important;
+white-space			: normal;
+font-family			: "Arial Black";
+}
+
+#gf_Menu div.gf_MainMenu_Help{
+display				: none;
+}
+
+#gf_Menu .gf_MainMenu_BigButton:hover + .gf_MainMenu_Help,
+#gf_Menu .gf_MainMenu_Button:hover + .gf_MainMenu_Help{
+color				: #000000 !important;
+background-color	: #EEEEEE !important;
+border				: solid 2px #333333 !important;
+margin				: 6px 0px 0px 10px !important;
+padding				: 2px !important;
+font-size			: 12px;
+position			: absolute;
+background-color	: gray;
+display				: block;
+
+}
+
+#gf_Menu .gf_MainMenu_BigButton[disabled] + .gf_MainMenu_Help,
+#gf_Menu .gf_MainMenu_Button[disabled] + .gf_MainMenu_Help{
+display				: none;
+}
+
+
+
+/* =====================================================
+   Galaxy Fleet Style - Material
+===================================================== */
+
+#gf_Material{
+margin				: 0px !important;
+padding				: 0px !important;
+}
+
+#gf_Material table{
+width				: 896px;
+/*border				: solid 3px #0033CC !important;*/
+margin				: 12px 0px 0px !important;
+padding				: 0px !important;
+}
+
+#gf_Material td{
+border				: solid 4px #0033CC !important;
+height				: 32px;
+width				: 100px;
+margin				: 0px !important;
+padding				: 0px !important;
+vertical-align		: middle;
+}
+
+#gf_Material img{
+/*height			: 16px;
+width				: 16px;*/
+margin				: 0px !important;
+padding				: 0px !important;
+}
+
+
+
+#gf_Material div.gf_MateHelp{
+display				: none;
+}
+
+#gf_Material .gf_MateVal:hover + .gf_MateHelp{
+color				: #000000 !important;
+background-color	: #EEEEEE !important;
+border				: solid 2px #333333 !important;
+margin				: 6px 0px 0px 10px;
+padding				: 2px;
+font-size			: 14px;
+position			: absolute;
+background-color	: gray;
+display				: block;
+/*word-wrap			: break-word;
+width				:120px;*/
+}
+
+#gf_Material .gf_MateHelp_Right{
+right				: 200px;
+}
+
+
+#gf_Material div.gf_MateImg{
+width				: 24px;
+margin				: 8px 0px 0px !important;
+padding				: 0px !important;
+text-align			: center;
+float				: left;
+}
+
+#gf_Material div.gf_MateVal{
+width				: 60px;
+margin				: 0px 0px 0px !important;
+padding				: 8px 8px 0px !important;
+text-align			: right;
+vertical-align		: middle;
+float				: left;
+}
+
+
+
+/* =====================================================
+   Galaxy Fleet Style - LogWindows
+===================================================== */
+
+#iLogWindow{
+
+display				: none ;
+
+width				: 330px;
+color				: #66CCFF;
+background-color	: #000066;
+border				: solid 4px #0033CC;
+margin				: 0px;
+padding				: 0px 0px 4px;
+position			: absolute;
+white-space			: normal;
+}
+
+#iLogWindow div.gf_LogWindowBar{
+background-color	: #0000cc;
+width				: 330px;
+margin				: 0px 0px 8px !important;
+padding				: 0px !important;
+}
+
+#iLogWindow div.gf_LogWindowBody{
+margin				: 0px !important;
+padding				: 0px !important;
+}
+
+#iLogWindow div.gf_LogWindowClose{
+background-color	: #FF0000;
+width				: 18px;
+height				: 18px;
+margin				: 0px 0px 0px auto !important;
+padding				: 0px !important;
+}
+
+#iLogWindow .gf_LogWindowClose:hover{
+background-color	: #88FFFF;
+}
+
+#iLogWindow a.gf_LogWindowClose_a{
+color				: transparent;
+background-color	: transparent;
+display				: block ;
+text-decoration		: none ;
+}
+
+
+
+/* =====================================================
+   Galaxy Fleet Style - MessageBox
+===================================================== */
+
+#iMessageBox{
+
+display				: none ;
+
+width				: 640px;
+color				: #66CCFF;
+background-color	: #000066;
+border				: solid 4px #0033CC;
+margin				: 0px;
+padding				: 0px 0px 4px ;
+position			: absolute;
+white-space			: normal;
+}
+
+#iMessageBox div.gf_MessageBoxBar{
+background-color	: #0000cc;
+width				: 640px;
+margin				: 0px 0px 8px !important;
+padding				: 0px !important;
+}
+
+#iMessageBox div.gf_MessageBoxBody{
+margin				: 0px !important;
+padding				: 0px !important;
+}
+
+#iMessageBox div.gf_MessageBoxClose{
+background-color	: #FF0000;
+width				: 18px;
+height				: 18px;
+margin				: 0px 0px 0px auto !important;
+padding				: 0px !important;
+}
+
+#iMessageBox .gf_MessageBoxClose:hover{
+background-color	: #88FFFF;
+}
+
+#iMessageBox a.gf_MessageBoxClose_a{
+color				: transparent;
+background-color	: transparent;
+display				: block ;
+text-decoration		: none ;
+}
+
+#iMessageBox div.gf_MessageBox_Text{
+margin				: 0px 8px 16px;
+padding				: 0px;
+}
+
+#iMessageBox div.gf_MessageBoxButtonCell{
+
+display				: none ;
+
+margin				: 0px 0px 3px 8px;
+padding				: 0px;
+}
+
+#iMessageBox input.gf_MessageBox_Button{
+font-size			: 14px !important;
+width				: 620px !important;
+height				: 32px !important;
+margin				: 0px !important;
+padding				: 2px !important;
+font-family			: "Arial Black";
+}
+
+
+
+
+/* =====================================================
+   Galaxy Fleet Style - Main
+===================================================== */
+
+header.gf_Main{
+margin				: 8px 0px 0px !important;
+padding				: 2px;
+}
+
+footer.gf_Main{
+margin				: 0px 0px 8px !important;
+padding				: 2px;
+}
+
+
+
+/* =====================================================
+   Galaxy Fleet Style - Frame
+===================================================== */
+
+iframe.gf_iframe_Main{
+/*border-style		: inset;*/
+border-style		: none;
+margin				: 0px !important;
+padding				: 4px !important;
+}
+
+iframe.gf_iframe_Menu{
+border-style		: none;
+margin				: 0px !important;
+padding				: 0px !important;
+}
+
+iframe.gf_iframe_Map{
+border				: inset 4px #999999;
+margin				: 0px 0px 0px 12px !important;
+padding				: 0px !important;
+}
+
+iframe.gf_iframe_Comm{
+border-style		: none;
+margin				: 0px !important;
+padding				: 0px !important;
+}
+
+iframe.gf_iframe_Battle{
+border-style		: none;
+margin				: 0px !important;
+padding				: 0px !important;
+}
+
+iframe.gf_iframe_Hidden{
+display				: none;
+margin				: 0px !important;
+padding				: 0px !important;
+}
+
+
+
+/* =====================================================
+   Galaxy Fleet Style - New Game
+===================================================== */
+
+#gf_NewGame div.gf_Discription{
+color				: #FFFF00;
+margin				: 48px 0px 0px;
+padding				: 0px;
+}
+
+#gf_NewGame div.gf_Discription_Force{
+color				: #FF0000;
+margin				: 8px 0px !important;
+padding				: 0px !important;
+}
+
+#gf_NewGame table, #gf_NewGame tr, #gf_NewGame td{
+color				: #00FF00;
+border				: 0px !important;
+vertical-align		: middle !important;
+}
+
+#gf_NewGame a{
+color				: #6699FF;
+background-color	: #000000;
+}
+#gf_NewGame a:hover{
+color				: #FFFFFF;
+background-color	: #6699FF;
+}
+
+#gf_NewGame input.gf_Button{
+font-size			: 16px !important;
+width				: 80px !important;
+height				: 32px !important;
+margin				: 8px !important;
+padding				: 4px !important;
+font-family			: "Arial Black";
+}
+
+#gf_NewGame input.gf_CheckBox{
+margin				: 8px 16px !important;
+padding				: 0px !important;
+cursor				: pointer;
+}
+
+#gf_NewGame td.gf_ButtonBar{
+padding				: 16px 0px 0px !important;
+}
+
+
+
+/* =====================================================
+   Galaxy Fleet Style - Login
+===================================================== */
+
+#gf_Login div.gf_Discription{
+color				: #FFFF00;
+margin				: 48px 0px 0px;
+padding				: 0px;
+}
+
+#gf_Login div.gf_SaveDiscription{
+color				: #FF0000;
+margin				: 0px !important;
+padding				: 24px 0px 8px !important;
+}
+
+#gf_Login div.gf_SaveBody{
+width				: 540px;
+margin				: 0px auto 0px !important;
+padding				: 0px !important;
+}
+
+#gf_Login div.gf_SaveLabel{
+color				: #FFFF00;
+margin				: 0px !important;
+padding				: 0px !important;
+}
+
+#gf_Login div.gf_SaveButton{
+color				: #FFFF00;
+margin				: 0px 0px 32px!important;
+padding				: 0px !important;
+}
+
+#gf_Login textarea.gf_SaveData{
+margin				: 0px !important;
+padding				: 0px !important;
+}
+
+#gf_Login div.gf_SaveHelp{
+color				: #00FFFF;
+margin				: 0px !important;
+padding				: 0px !important;
+text-align			: left !important;
+}
+
+#gf_Login div.gf_SaveHelp{
+color				: #00FFFF;
+margin				: 0px !important;
+padding				: 0px !important;
+text-align			: left !important;
+}
+
+#gf_Login table, #gf_Login tr, #gf_Login td{
+color				: #00FF00;
+border				: 0px !important;
+vertical-align		: middle !important;
+}
+
+#gf_Login td.gf_FileButttonCell{
+padding				: 24px 0px 8px !important;
+text-align			: center;
+}
+#gf_Login label > input{
+display				: none;
+}
+#gf_Login .gf_FileButton{
+font-size			: 16px !important;
+padding				: 4px 30px 4px !important;
+font-family			: "Arial Black";
+}
+
+#gf_Login input.gf_Button{
+font-size			: 16px !important;
+width				: 80px !important;
+height				: 32px !important;
+margin				: 8px !important;
+padding				: 4px !important;
+font-family			: "Arial Black";
+}
+
+
+
+/* =====================================================
+   Galaxy Fleet Style - Account
+===================================================== */
+
+#gf_Account div.gf_Discription{
+color				: #FFFF00;
+margin				: 48px 0px 0px;
+padding				: 0px;
+}
+
+#gf_Account div.gf_Discription_Force{
+color				: #FF0000;
+margin				: 8px 0px !important;
+padding				: 0px !important;
+}
+
+#gf_Account table{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 3px #0033CC;
+vertical-align		: middle !important;
+}
+
+#gf_Account th{
+width				: 210px;
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 1px #0033CC;
+padding				: 4px !important;
+vertical-align		: middle !important;
+}
+
+#gf_Account td{
+width				: 330px;
+color				: #00FF00;
+background-color	: #000000;
+border				: solid 1px #0033CC;
+padding				: 4px !important;
+vertical-align		: middle !important;
+}
+
+
+#gf_Account th.gf_Comment{
+width				: 540px;
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 1px #0033CC;
+padding				: 4px !important;
+vertical-align		: middle !important;
+}
+
+#gf_Account td.gf_Comment{
+width				: 540px;
+color				: #00FF00;
+background-color	: #000000;
+border				: solid 1px #0033CC;
+padding				: 4px !important;
+}
+
+#gf_Account input.gf_Input_Button{
+font-size			: 12px !important;
+width				: 80px !important;
+height				: 32px !important;
+margin				: 0px !important;
+padding				: 1px !important;
+font-family			: "Arial Black";
+}
+
+
+#gf_Account div.gf_Cel_Input{
+display				: none;
+font-size			: 14px !important;
+width				: 556px;
+color				: #66CCFF;
+background-color	: #000033;
+margin				: 0px auto 0px ;
+border				: solid 3px #0033CC;
+padding				: 4px !important;
+text-align			: center;
+}
+
+#gf_Account div.gf_Cel_Input_Discription{
+margin				: 4px !important;
+padding				: 0px !important;
+text-align			: left;
+}
+
+#gf_Account div.gf_Cel_Input_Input{
+margin				: 4px !important;
+padding				: 0px !important;
+text-align			: left;
+}
+
+#gf_Account div.gf_Cel_Input_Button{
+margin				: 4px !important;
+padding				: 0px !important;
+text-align			: left;
+/*text-align			: right;*/
+}
+
+#gf_Account div.gf_Cel_Input_Side{
+margin				: 8px 0px 0px !important;
+padding				: 0px !important;
+text-align			: left;
+float				: left;
+}
+#gf_Account br.gf_Cel_Input_End{
+clear				: both;
+}
+
+#gf_Account input.gf_Cel_Input_PasswordView{
+color				: #000000;
+background-color	: #333333;
+}
+
+
+
+/* =====================================================
+   Galaxy Fleet Style - Button Color
+===================================================== */
+
+.gf_BTN_Color_Def{
+color				: #33CC33;
+background-color	: #003300;
+}
+
+.gf_BTN_Color_Def:hover{
+color				: #003300;
+background-color	: #00FF00;
+cursor				: pointer;
+}
+
+.gf_BTN_Color_Def:disabled{
+color				: #CCCCCC;
+background-color	: #202020;
+cursor				: default;
+}
+
+.gf_BTN_Color_Menu{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 4px #0033CC;
+}
+.gf_BTN_Color_Menu:hover{
+color				: #33CC33;
+background-color	: #003300;
+border				: solid 4px #009900;
+cursor				: pointer;
+}
+
+.gf_BTN_Color_Menu:disabled{
+color				: #CCCCCC;
+background-color	: #202020;
+border				: solid 4px #666666;
+}
+
+.gf_BTN_Color_Msg{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 1px #0033CC;
+}
+.gf_BTN_Color_Msg:hover{
+color				: #33CC33;
+background-color	: #003300;
+border				: solid 2px #009900;
+cursor				: pointer;
+}
+
+
+
+/* =====================================================
+   Page Title
+===================================================== */
+
+#com_PageTitle div.com_TitleImage{
+background-image	: url(../_pic/title/galaxyfleet_title.jpg);
+width				: 600px;
+height				: 120px;
+}
+
+
+
+/* =====================================================
+   Inline Frame
+===================================================== */
+
+iframe.com_Frame-sample1{
+height				: 100px;
+}
+
+
+
+/* =====================================================
+   Body
+===================================================== */
+
+body{
+color				: #FFFFFF;
+background			: url('../_pic/wall/prcm_sttars.gif');
+}
+
+#com_bodyOutline{
+}
+
+#com_bodyInline{
+}
+
+
+
+/* =====================================================
+   Header
+===================================================== */
+
+header{
+background-color	: #000033;
+border-top			: solid 4px blue;
+border-bottom		: solid 4px blue;
+font-family			: "Arial Black";
+}
+
+header span.com_Menu_Select{
+color				: #FFFFFF;
+background-color	: #0033FF;
+padding				: 2px !important;
+border-radius		: 0px !important;
+}
+
+header a.com_Menu_Cel{
+color				: #66FFFF;
+background-color	: #000033;
+border-radius		: 0px !important;
+}
+
+header a.com_Menu_Cel:hover{
+color				: #33CC33 ;
+background-color	: #003300 ;
+}
+
+header div.com_CSS_Menu{
+color				: #6699FF;
+}
+
+header a.com_CSS_Mode{
+color				: #FFFFFF;
+background-color	: #6699FF;
+padding				: 3px !important;
+border-radius		: 0px !important;
+}
+
+header a.com_CSS_Mode:hover{
+color				: #0000FF;
+background-color	: #00ECFF;
+}
+
+
+
+/* =====================================================
+   Footter
+===================================================== */
+
+footer{
+background-color	: #000033;
+border-top			: solid 4px blue;
+border-bottom		: solid 4px blue;
+font-family			: "Arial Black";
+}
+
+footer div.com_Menu_Description{
+color				: #EEFFFF;
+}
+
+footer a.com_Menu_Cel{
+color				: #66FFFF;
+background-color	: transparent;
+border-radius		: 0px !important;
+}
+
+footer a.com_Menu_Cel:hover{
+color				: #33CC33 ;
+background-color	: #003300 ;
+}
+
+
+
+/* =====================================================
+   CopyrightHeader
+===================================================== */
+
+#com_CopyrightHeader{
+/*
+color				: #000000;
+background-color	: #FFFFFF;	*/
+font-family			: "Arial Black";
+}
+
+
+
+/* =====================================================
+   CopyrightFooter
+===================================================== */
+
+#com_CopyrightFooter{
+/*
+color				: #000000;
+background-color	: #FFFFFF;	*/
+font-family			: "Arial Black";
+}
+
+#com_CopyrightFooter div.com_Menu_Ope, #com_CopyrightFooter a.com_Menu_Ope{
+color				: #FFFFFF;
+background-color	: #008000;
+border-radius		: 0px !important;
+}
+#com_CopyrightFooter div.com_Menu_Ope:hover, #com_CopyrightFooter a.com_Menu_Ope:hover{
+color				: #008000;
+background-color	: #00FF3B;
+}
+
+#com_CopyrightFooter div.com_Menu_Rule, #com_CopyrightFooter a.com_Menu_Rule{
+color				: #FFFFFF;
+background-color	: #FF0000;
+border-radius		: 0px !important;
+}
+#com_CopyrightFooter div.com_Menu_Rule:hover, #com_CopyrightFooter a.com_Menu_Rule:hover{
+color				: #FF0000;
+background-color	: #FFCCFF;
+}
+
+#com_CopyrightFooter div.com_Menu_RSS, #com_CopyrightFooter a.com_Menu_RSS{
+color				: #FFFFFF;
+background-color	: #ee802f;
+border-radius		: 0px !important;
+}
+#com_CopyrightFooter div.com_Menu_RSS:hover, #com_CopyrightFooter a.com_Menu_RSS:hover{
+color				: #ee802f;
+background-color	: #FFFF00;
+}
+
+#com_CopyrightFooter div.com_Menu_Github, #com_CopyrightFooter a.com_Menu_Github{
+color				: #FFFFFF;
+background-color	: #800080;
+border-radius		: 0px !important;
+}
+#com_CopyrightFooter div.com_Menu_Github:hover, #com_CopyrightFooter a.com_Menu_Github:hover{
+color				: #FF0000;
+background-color	: #FFDDFF;
+}
+
+#com_CopyrightFooter div.com_Menu_TwitterGF, #com_CopyrightFooter a.com_Menu_TwitterGF{
+color				: #FFFFFF;
+background-color	: #6699FF;
+border-radius		: 0px !important;
+}
+#com_CopyrightFooter div.com_Menu_TwitterGF:hover, #com_CopyrightFooter a.com_Menu_TwitterGF:hover{
+color				: #FFFFFF;
+background-color	: #0000FF;
+}
+
+#com_CopyrightFooter a.com_Menu_Twitter{
+color				: #6699FF;
+background-color	: #000000;
+}
+#com_CopyrightFooter a.com_Menu_Twitter:hover{
+color				: #FFFFFF;
+background-color	: #6699FF;
+}
+
+
+
+/* =====================================================
+   Description
+===================================================== */
+
+#com_Description{
+color				: #FFFFFF;
+background-color	: transparent;
+padding				: 0px;
+text-align			: center;
+}
+
+
+
+/* =====================================================
+   Navigation
+===================================================== */
+
+#com_Navigation{
+background-color	: transparent;
+/*
+color				: blue;
+border-bottom		: solid 8px dimgray;
+border-top			: solid 8px dimgray;
+background-color	: cyan;
+*/
+}
+
+#com_Navigation div.com_NavigationTitle{
+color				: #FFFFFF;
+background-color	: #000066;
+}
+
+#com_Navigation a{
+color				: #0000FF;
+background-color	: transparent;
+}
+
+#com_Navigation a:hover{
+color				: #FFFFFF;
+background-color	: #0000FF;
+}
+
+a.com_Nav{
+color				: #FFFFFF;
+background-color	: #6699FF;
+border-radius		: 0px !important;
+font-family			: "Arial Black";
+}
+
+a.com_Nav:hover{
+color				: #0000FF;
+background-color	: #00ECFF;
+}
+
+
+
+/* =====================================================
+   Contents Common
+===================================================== */
+
+.com_ContentsTitle{
+/*
+color				: white;
+background-color	: cornflowerblue;
+*/
+color				: #FFFFFF;
+background			: #000033;
+font-family			: "Arial Black";
+padding				: 8px 12px !important;
+}
+.com_ContentsTitle:before{
+border-bottom		: solid 8px #0000FF;
+border-right		: solid 20px transparent;
+}
+.com_ContentsTitle:after{
+border-top			: solid 8px #0000FF;
+border-left			: solid 20px transparent;
+}
+
+.com_ContentsBody{
+color				: #FFFFFF;
+background-color	: #000000;
+}
+
+
+
+/* =====================================================
+   Selector
+===================================================== */
+
+							/* Close */
+input[type="checkbox"].com_ContentsSelector_CBX + .com_ContentsSelector_LAB{
+color				: #FFFFFF;
+background			: #0099FF;
+border				: inset 6px #0066FF;
+}
+
+input[type="checkbox"].com_ContentsSelector_CBX:hover + .com_ContentsSelector_LAB{
+color				: #003333;
+background-color	: #CCFFCC;
+}
+
+							/* Open */
+input[type="checkbox"].com_ContentsSelector_CBX:checked + .com_ContentsSelector_LAB{
+color				: #FFFFFF;
+background-color	: #009900;
+border				: inset 6px #009900;
+}
+
+input[type="checkbox"].com_ContentsSelector_CBX:checked:hover + .com_ContentsSelector_LAB{
+color				: forestgreen;
+background-color	: lawngreen;
+}
+
+							/* Body */
+.com_ContentsSelector_Body{
+color				: #000000;
+background-color	: #FFFFFF;
+border-left			: solid 4px #009900;
+border-right		: solid 4px #009900;
+border-bottom		: solid 4px #009900;
+border-top			: 0px;
+}
+
+
+
+/* =====================================================
+   Anchor
+===================================================== */
+
+a{
+color				: #0000FF;
+background-color	: transparent;
+}
+
+a:hover{
+color				: #FFFFFF;
+background-color	: #0000FF;
+cursor				: pointer;
+/*
+cursor				: default;
+cursor				: move;
+cursor				: crosshair;
+cursor				: wait;
+cursor				: help;
+cursor				: not-allowed;
+cursor				: col-resize;
+cursor				: row-resize;
+*/
+}
+
+
+
+/* =====================================================
+   List Style
+===================================================== */
+
+ul{
+}
+
+ol{
+}
+
+li{
+}
+
+
+
+/* =====================================================
+   h1～h6
+===================================================== */
+
+h1{
+color				: white;
+background-color	: darkblue;
+}
+
+h2{
+color				: white;
+background-color	: blue;
+}
+
+h3{
+color				: black;
+background-color	: cyan;
+}
+
+h4{
+color				: black;
+background-color	: orange;
+}
+
+h5{
+color				: black;
+background-color	: yellow;
+}
+
+h6{
+color				: white;
+background-color	: pink;
+}
+
+
+
+/* =====================================================
+   hr
+===================================================== */
+
+hr{
+border				: 0px;
+background-color	: lightgray;
+}
+
+
+
+/* =====================================================
+   Table
+===================================================== */
+/*
+table{
+background-color	: dimgray;
+border				: solid 2px dimgray;
+}
+
+th{
+color				: white;
+background-color	: darkgray;
+border				: solid 2px dimgray;
+}
+
+td{
+color				: black;
+background-color	: white;
+border				: solid 2px dimgray;
+}
+*/
+
+
+

@@ -1,0 +1,333 @@
+/**********************************************
+Site URL : https://mynoghra.jp/
+Degine   : Default Style [wide]
+******************************************** */
+
+/* margin / padding
+	1px             = ALL
+	1px 1px         = UP.Down / Left.Right
+	1px 1px 1px     = UP / Left.Right / Down
+	1px 1px 1px 1px = UP / Right / Down / Left
+	*/
+
+/*=== Body ===*/
+body{
+color				: #ffffff;
+background-color	: #000000;
+}
+#body-IN{
+/*background-color	: #ffffff;*/
+}
+
+
+
+/*=== Title Label ===*/
+h1{
+}
+hr{
+border				: solid 4px #808080;
+}
+#Title{
+}
+.Title-Img{
+}
+
+
+
+/*=== Table ===*/
+table{
+border				: solid 1px #808080;
+}
+th{
+color				: #000000;
+background-color	: #c0c0c0;
+border				: solid 1px #808080;
+}
+td{
+border				: solid 1px #808080;
+}
+
+
+
+/*=== ★Original Common Class★ ===*/
+.div-Img-noSS{	/* SSなし */
+color				: #ff0000;
+}
+.div-Img-SS{	/* SSあり */
+}
+.span-Force{	/* 強調 */
+color				: #ff0000;
+}
+.span-Weak{		/* 弱め */
+color				: #008000;
+}
+
+
+
+/*=== Copyright ===*/
+.C-Copy-INup{
+font-family			: "Arial Black";
+}
+.C-Copy-INdw{
+font-family			: "Arial Black";
+}
+.C-Copy-Update{
+color				: #0066FF;
+}
+.C-Copy-Under{
+}
+.C-Copy-li-Right{
+color				: #0066FF;
+}
+.C-Copy-li-Mtd,
+.C-Copy-a-Mtd{
+color				: #ff0000;
+background-color	: transparent;
+}
+.C-Copy-a-Mtd:hover{
+color				: #ffffff;
+background-color	: #ff0000;
+}
+.C-Copy-a-sIn-Unyo{
+color				: #ffffff;
+background-color	: #00BB00;
+border				: solid 2px #006600;
+}
+.C-Copy-a-sIn-Rule{
+color				: #ffffff;
+background-color	: #CC0000;
+border				: solid 2px #660000;
+}
+.C-Copy-Swt{
+color				: #0066FF;
+}
+.C-Copy-a-Swt{
+color				: #0066FF;
+background-color	: transparent;
+}
+
+
+
+/*=== Header ===*/
+header{
+}
+.header-Desc{
+border-top			: solid 4px #0033CC;
+border-bottom		: solid 4px #0033CC;
+}
+
+
+
+/*=== Footer ===*/
+footer{
+}
+
+
+
+/*=== Pankuz ===*/
+.C-Pankuz{
+}
+.C-Pankuz-Pan{
+color				: #66CCFF;
+background-color	: #000033;
+border-top			: solid 4px #0033CC;
+border-bottom		: solid 4px #0033CC;
+padding				: 10px 16px !important;
+}
+.C-Pankuz-Title{
+color				: #0000ff;
+background-color	: #D7EEFF;
+border-left			: solid 48px #BAD3FF;
+}
+.C-Pankuz-a{
+color				: #66CCFF;
+background-color	: transparent;
+padding				: 4px !important;
+}
+.C-Pankuz-a:hover{
+color				: #33CC33 ;
+background-color	: #003300 ;
+}
+.C-Pankuz-Cur{
+/*color				: #B22222;
+background-color	: #330000;
+border				: solid 1px #550000;
+padding				: 2px !important;*/
+/*color				: #993300;
+background-color	: #FFCC00;
+border				: solid 1px #FF9900;
+padding				: 2px !important;*/
+/*color				: #66CCFF;
+background-color	: #000066;
+border				: solid 2px #0000aa;
+padding				: 2px !important;*/
+color				: #99CC00;
+background-color	: #006600;
+border				: solid 2px #003300;
+padding				: 2px !important;
+}
+.C-Pankuz-Cur-Edit{
+/*color				: #B22222;
+background-color	: #330000;
+border				: solid 1px #550000;
+padding				: 2px !important;*/
+color				: #993300;
+background-color	: #FFCC00;
+border				: solid 1px #FF9900;
+padding				: 2px !important;
+/*color				: #66CCFF;
+background-color	: #000066;
+border				: solid 2px #0000aa;
+padding				: 2px !important;*/
+/*color				: #99CC00;
+background-color	: #006600;
+border				: solid 2px #003300;
+padding				: 2px !important;*/
+}
+
+
+
+/*=== Navigation ===*/
+#C-Navi{
+}
+.C-Navi-Title{
+}
+#C-Navi ul{
+list-style-type		: square;
+/*
+list-style-type		: disc;
+list-style-type		: circle;
+list-style-type		: none;
+*/	}
+#C-Navi a{
+color				: #0000ff;
+background-color	: transparent;
+}
+#C-Navi a:hover{
+color				: #ffffff;
+background-color	: #0000ff;
+}
+
+#C-Navi-Sub{
+background-color	: #99CC99;
+}
+#C-Navi-Sub a{
+color				: #003300;
+background-color	: transparent;
+}
+#C-Navi-Sub a:hover{
+color				: #ffffff;
+background-color	: #0000ff;
+}
+
+
+
+/*=== Contents ===*/
+.C-Cont{
+background-color	: #000000;
+}
+.C-Cont-Title{
+color				: #66CCFF;
+background-color	: #000066;
+border-top			: solid 2px #0033FF;
+border-bottom		: solid 4px #0033CC;
+border-left			: solid 6px #000099;
+}
+.C-Cont-Body{
+}
+.C-Cont-a{
+color				: #003300;
+background-color	: transparent;
+}
+.C-Cont-a:hover{
+color				: #ffffff;
+background-color	: #0000ff;
+}
+.C-Cont-Menu{
+background-color	: #FFFFCC;
+}
+.C-Cont-Menu-a{
+color				: #003300;
+background-color	: transparent;
+}
+.C-Cont-Menu-a:hover{
+color				: #ffffff;
+background-color	: #0000ff;
+}
+
+.C-Cont-a-Ret{
+color				: #993300;
+background-color	: #FFCC00;
+}
+.C-Cont-a-Ret:hover{
+color				: #FFFF66;
+background-color	: #FF6600;
+}
+
+
+
+/*=== ★↓↓↓ Origin Contents ↓↓↓★ ===*/
+
+
+iframe.IF_Main{
+background-color	: #ffffff;
+border-style		: none;
+width				: 100%;
+margin				: 8px auto !important;
+padding				: 0px !important;
+}
+
+
+
+
+/*=== Window ===*/
+
+/*div{
+margin				: 8px 0px 16px 16px;
+padding				: 0px;
+}*/
+
+.W-Frame{
+/*margin				: 0px !important;*/
+margin				: 0px 0px 64px;
+padding				: 0px;
+}
+.W-Body{
+margin				: 0px;
+padding				: 0px;
+}
+
+
+
+/*=== Button ===*/
+
+/*input{
+margin				: 2px;
+padding				: 2px;
+}*/
+
+.Btn-Edit-Main{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 2px #0033CC;
+width				: 120px;
+height				: 32px;
+}
+.Btn-Def{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 2px #0033CC;
+}
+.Btn-Hover{
+color				: #33CC33;
+background-color	: #003300;
+border				: solid 2px #009900;
+}
+.Btn-Disabled{
+color				: #CCCCCC;
+background-color	: #202020;
+border				: solid 2px #666666;
+}
+
+
+
