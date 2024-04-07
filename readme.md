@@ -1,21 +1,35 @@
-# Galaxy Fleet　～Game Site～  
-  
+# Galaxy Fleet：Website
+
+## Website
+
+## このドキュメントについて / About this document
+
 **★このリポジトリの改造、流用、配布、クローンは禁止です★**  
-**　　Modification, appropriation, distribution, and cloning of this repository are prohibited.**  
+    **Modification, diversion, distribution, and cloning of this repository are prohibited**  
   
-
-<h1 id="aHowto">このリポジトリについて</h1>  
-このリポジトリは、Galaxy FleetのGame Siteと本体の設置用リポジトリです。  
-本体情報についてはGalaxy Fleetリポジトリのreadmeを参照ください。  
+このドキュメント群ではブラウザで動作する艦隊ストラテジゲーム「Galaxy Fleet」のWebサイトです。  
   
-  　　[[Galaxy Fleetリポジトリ]](https://github.com/korei-xlix/galaxyfleet)  
+　　This document group is the website for the fleet strategy game "Galaxy Fleet" that runs on a browser.  
   
 
 
 
 
 
-<h1 id="aRules">リポジトリの利用規約 / Repository terms</h1>  
+## 目次 / Table of contents
+
+* [readme.md](/readme.md)
+  * [リポジトリの利用規約](#リポジトリの利用規約--repository-terms)
+
+* [github:Galaxy Fleetドキュメント](https://github.com/korei-xlix/galaxyfleet_doc)
+* [github:Galaxy Fleetデータベース](https://github.com/korei-xlix/galaxyfleet_db)
+  
+
+
+
+
+
+## リポジトリの利用規約 / Repository terms
 
 本項目では、githubの各リポジトリの共通的な利用規約について定めます。  
 
@@ -60,7 +74,6 @@
   * その他、仕様に関するお問い合わせ、不具合へのクレームは受け付けません。  
 
   * 第三者を介したトラブル解決の際、当方の名称を出すのはご遠慮ください。  
-  
   　　[[連絡先ページ]](https://website.koreis-labo.com/rules/address.htm)  
   
 
@@ -69,15 +82,18 @@
 
 
 ***
-::Game Site= https://galaxy-fleet.koreis-labo.com/  
-::github= https://github.com/korei-xlix/galaxyfleet  
-::Twitter= https://twitter.com/galaxy_fleet  
+::Game Site= [https://galaxy-fleet.koreis-labo.com/](https://galaxy-fleet.koreis-labo.com/)  
+::github= [https://github.com/korei-xlix/galaxyfleet](https://github.com/korei-xlix/galaxyfleet)  
+::Public X= [https://twitter.com/korei_sup](https://twitter.com/korei_sup)  
+  
+::Deverop= Samafeald (@samafeald)  
+::X= [https://twitter.com/samafeald](https://twitter.com/samafeald)  
   
 
 ***
 [[トップへ戻る]](/readme.md)  
   
 ::Admin= Korei (@korei-xlix)  
-::github= https://github.com/korei-xlix/  
-::Web= https://website.koreis-labo.com/  
-::Twitter= https://twitter.com/korei_xlix  
+::github= [https://github.com/korei-xlix/](https://github.com/korei-xlix/)  
+::Web= [https://website.koreis-labo.com/](https://website.koreis-labo.com/)  
+::X= [https://twitter.com/korei_xlix](https://twitter.com/korei_xlix)  
