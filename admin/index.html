@@ -24,9 +24,7 @@
 <script src="/_js/com/osif.js"></script>
 <script src="/_js/com/timer_ctrl.js"></script>
 <script src="/_js/com/sel_ctrl.js"></script>
-<script src="/_js/com/button_ctrl.js"></script>
 <script src="/_js/com/popup_ctrl.js"></script>
-<script src="/_js/com/frame_ctrl.js"></script>
 <script src="/_js/com/window_ctrl.js"></script>
 
 <script src="/_js/gf/sys/extsys.js"></script>
@@ -36,7 +34,7 @@
 <script src="/_js/global.js"></script>
 <script src="/_js/global_gf.js"></script>
 
-</head><body onLoad="__handle_PageLoad()" onresize="__handle_PageResize()"><div id="com_bodyOutline"><div id="com_bodyInline">
+</head><body onLoad="__handle_PageLoad()"><div id="com_bodyOutline"><div id="com_bodyInline">
 
 
 
@@ -86,9 +84,6 @@
 
 		<a class="com_Menu_Cel" target="_blank" title="for auther X" href="https://website.koreis-labo.com/profile/korei_xlix.htm">
 		[X（Author）]</a>
-
-		<a class="com_Menu_Cel" title="Open Popup window" href="javascript:__handle_PopupWinOpen()">
-		[開く]</a>
 
 	</div>
 
@@ -151,25 +146,19 @@
 
 
 
-
-<img class="com_PopupHelp_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SHelp({
-	inID : 'gf_Start_a', inLang : { 'JP':'ゲームを始めます', 'EN':'Game Start' } });" />
 <section id="gf_Start" class="com_ContentsSection_Center com_NonMobileOpen">
-	<a class="StartButton" target="_self" href="javascript:__handle_Start();" id="gf_Start_a">START</a>
+	<a class="StartButton" target="_self" href="javascript:__handle_Start();" id="gf_Start_a-PH-iPFrame">START</a>
 </section>
-
-<img class="com_PopupHelp_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SHelp({
-	inID : 'gf_Mente_a', inLang : { 'JP':'メンテナンス中です', 'EN':'Now Mentenunce' } });" />
 <section id="gf_Mente" class="com_ContentsSection_Center com_NonMobileOpen">
-	<a class="MenteButton" target="_self" href="javascript:void(0);" id="gf_Mente_a">NOW MENTE</a>
+	<a class="MenteButton" target="_self" href="javascript:void(0);" id="gf_Mente_a-PH-iPFrame">NOW MENTE</a>
 </section>
-
 
 
 
 
 
 <section id="gf_Transrate" class="com_ContentsSection_Center com_NonMobileOpen">
+
 	<div id="iRAD_Transrate"></div>
 
 	<div class="wordTrans_JP">
@@ -178,8 +167,14 @@
 	<div class="wordTrans_EN">
 		Please select your language.<br />
 	</div>
-</section>
 
+
+	<div id="gf_HelpTest-PH-iPFrame">ああああああああああああ</div>
+
+<!--
+	<a href="javascript:CLS_ClientInfo_getIPinfo({inCallback:CLS_ClientInfo_test})">[取得]</a><br />
+//-->
+</section>
 
 
 
@@ -420,8 +415,64 @@
 
 
 <!-- *** ポップアップヘルプ *** -->
-<div id="iPopupHelp" class="com_PopupHelp"></div>
+<div id="iPopupHelp-PHPOP-iPFrame" class="com_PopupHelp"></div>
 
+
+
+
+
+
+<!-- *** ポップアップWindow *** -->
+<div id="iPopup" class="com_PopupWin">
+	<div class="com_PopupBar" onclick="__handle_PopupBarClick()"></div>
+	<div class="com_PopupClose" onclick="__handle_PopupCloseClick()"></div>
+	<br class="com_PopupBarEnd" />
+	
+	<input type="button" class="com_PopupBTN com_PopupBTN-Def" id="iPopup-BTN1" value=""
+		onclick="__handle_PopupBTNClick(1)">
+	
+</div>
+
+
+
+
+
+<!-- *** ログボックス *** -->
+<div id="iLogbox" class="com_LogBox">
+	<div class="com_LogBoxBar" onclick="__handle_LogBoxBarClick()"></div>
+	<div class="com_LogBoxClose" onclick="__handle_LogBoxCloseClick()"></div>
+	<br class="com_LogBoxBarEnd" />
+	
+	<textarea class="com_LogBoxArea" id="iLogboxArea" cols="40" readonly></textarea>
+	
+</div>
+
+
+
+
+
+<!-- *** メッセージボックス *** -->
+<div id="iMsgbox" class="com_MsgBox">
+	<div class="com_MsgBoxBar" onclick="__handle_MsgBoxBarClick()"></div>
+	<div class="com_MsgBoxClose" onclick="__handle_MsgBoxCloseClick()"></div>
+	<br class="com_MsgBoxBarEnd" />
+	
+	<input type="button" class="com_MsgBoxBTN com_MsgBoxBTN-Def" id="iMsgBox-BTN1" value=""
+		onclick="__handle_MsgBoxBTNClick(1)">
+	
+	<input type="button" class="com_MsgBoxBTN com_MsgBoxBTN-Def" id="iMsgBox-BTN2" value=""
+		onclick="__handle_MsgBoxBTNClick(2)">
+	
+	<input type="button" class="com_MsgBoxBTN com_MsgBoxBTN-Def" id="iMsgBox-BTN3" value=""
+		onclick="__handle_MsgBoxBTNClick(3)">
+	
+	<input type="button" class="com_MsgBoxBTN com_MsgBoxBTN-Def" id="iMsgBox-BTN4" value=""
+		onclick="__handle_MsgBoxBTNClick(4)">
+	
+	<input type="button" class="com_MsgBoxBTN com_MsgBoxBTN-Def" id="iMsgBox-BTN5" value=""
+		onclick="__handle_MsgBoxBTNClick(5)">
+	
+</div>
 
 
 

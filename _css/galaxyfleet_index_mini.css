@@ -73,6 +73,15 @@ background			: url('../_pic/wall/prcm_sttars.gif');
 #com_bodyInline{
 }
 
+/*=== Frame ===*/
+#com_bodyFrameOutline{
+background-color	: transparent;
+}
+
+#com_bodyFrameInline{
+background-color	: transparent;
+}
+
 
 
 /* =====================================================
@@ -110,6 +119,10 @@ padding				: 3px !important;
 border-radius		: 0px !important;
 }
 
+/*=== Frame ===*/
+header .com_headerFrame{
+}
+
 
 
 /* =====================================================
@@ -133,6 +146,10 @@ background-color	: transparent;
 border-radius		: 0px !important;
 }
 
+/*=== Frame ===*/
+footer .com_footerFrame{
+}
+
 
 
 /* =====================================================
@@ -153,39 +170,164 @@ font-family			: "Arial Black";
 font-family			: "Arial Black";
 }
 
-#com_CopyrightFooter div.com_Menu_Ope, #com_CopyrightFooter a.com_Menu_Ope{
-color				: #FFFFFF;
-background-color	: #008000;
-border-radius		: 0px !important;
-}
-
+/* *** Yellow / Therms ***/
 #com_CopyrightFooter div.com_Menu_Rule, #com_CopyrightFooter a.com_Menu_Rule{
-color				: #FFFFFF;
-background-color	: #FF0000;
-border-radius		: 0px !important;
+color				: #F00000;
+background-color	: #FFFF00;
+}
+#com_CopyrightFooter div.com_Menu_Rule:hover, #com_CopyrightFooter a.com_Menu_Rule:hover{
+color				: #F00000;
+background-color	: #FFD5EC;
 }
 
-#com_CopyrightFooter div.com_Menu_RSS, #com_CopyrightFooter a.com_Menu_RSS{
+/* *** Orange / Update ***/
+#com_CopyrightFooter div.com_Menu_Update, #com_CopyrightFooter a.com_Menu_Update{
 color				: #FFFFFF;
 background-color	: #ee802f;
-border-radius		: 0px !important;
+}
+#com_CopyrightFooter div.com_Menu_Update:hover, #com_CopyrightFooter a.com_Menu_Update:hover{
+color				: #59270D;
+background-color	: #FFFF99;
 }
 
+/* *** Dark Blue / Mentenance ***/
+#com_CopyrightFooter div.com_Menu_Mente, #com_CopyrightFooter a.com_Menu_Mente{
+color				: #FFFFFF;
+background-color	: #999900;
+}
+#com_CopyrightFooter div.com_Menu_Mente:hover, #com_CopyrightFooter a.com_Menu_Mente:hover{
+color				: #59270D;
+background-color	: #FFFF99;
+}
+
+/* *** Green / Information ***/
+#com_CopyrightFooter div.com_Menu_Info, #com_CopyrightFooter a.com_Menu_Info{
+color				: #FFFFFF;
+background-color	: #008000;
+}
+#com_CopyrightFooter div.com_Menu_Info:hover, #com_CopyrightFooter a.com_Menu_Info:hover{
+color				: #006633;
+background-color	: #CCFF99;
+}
+
+/* *** Dark green / Documents ***/
+#com_CopyrightFooter div.com_Menu_Doc, #com_CopyrightFooter a.com_Menu_Doc{
+color				: #FFFFFF;
+background-color	: #003300;
+}
+#com_CopyrightFooter div.com_Menu_Doc:hover, #com_CopyrightFooter a.com_Menu_Doc:hover{
+color				: #003300;
+background-color	: #00DD00;
+}
+
+/* *** Blue / Index ***/
+#com_CopyrightFooter div.com_Menu_Index, #com_CopyrightFooter a.com_Menu_Index{
+color				: #FFFFFF;
+background-color	: #0000FF;
+}
+#com_CopyrightFooter div.com_Menu_Index:hover, #com_CopyrightFooter a.com_Menu_Index:hover{
+color				: #3333FF;
+background-color	: #CCFFFF;
+}
+
+/* *** Pink / Acknowrage ***/
+#com_CopyrightFooter div.com_Menu_Acknow, #com_CopyrightFooter a.com_Menu_Acknow{
+color				: #FFFFFF;
+background-color	: #FF55FF;
+}
+#com_CopyrightFooter div.com_Menu_Acknow:hover, #com_CopyrightFooter a.com_Menu_Acknow:hover{
+color				: #FFFFFF;
+background-color	: #F00000;
+}
+
+/* *** Purple / How to Use ***/
+#com_CopyrightFooter div.com_Menu_Howto, #com_CopyrightFooter a.com_Menu_Howto{
+color				: #FFFFFF;
+background-color	: #6927FF;
+}
+#com_CopyrightFooter div.com_Menu_Howto:hover, #com_CopyrightFooter a.com_Menu_Howto:hover{
+color				: #FFFFFF;
+background-color	: #CC99FF;
+/*background-color	: #660066;*/
+}
+
+/* *** Red / Youyube ***/
+#com_CopyrightFooter div.com_Menu_Youtube, #com_CopyrightFooter a.com_Menu_Youtube{
+color				: #FFFFFF;
+background-color	: #EF180F;
+}
+#com_CopyrightFooter div.com_Menu_Youtube:hover, #com_CopyrightFooter a.com_Menu_Youtube:hover{
+color				: #FFFFFF;
+background-color	: #010101;
+}
+
+/* *** Purple / Github ***/
 #com_CopyrightFooter div.com_Menu_Github, #com_CopyrightFooter a.com_Menu_Github{
 color				: #FFFFFF;
-background-color	: #800080;
-border-radius		: 0px !important;
+background-color	: #B064C6;
+}
+#com_CopyrightFooter div.com_Menu_Github:hover, #com_CopyrightFooter a.com_Menu_Github:hover{
+color				: #EEEEEE;
+background-color	: #7491FF;
 }
 
-#com_CopyrightFooter div.com_Menu_TwitterGF, #com_CopyrightFooter a.com_Menu_TwitterGF{
+/* *** Black / Warnlist ***/
+#com_CopyrightFooter div.com_Menu_Warnlist, #com_CopyrightFooter a.com_Menu_Warnlist{
+color				: #F00000;
+background-color	: #222222;
+}
+#com_CopyrightFooter div.com_Menu_Warnlist:hover, #com_CopyrightFooter a.com_Menu_Warnlist:hover{
+color				: #F00000;
+background-color	: #FFFFCC;
+}
+
+/* *** Light gray / Contact ***/
+#com_CopyrightFooter div.com_Menu_Contact, #com_CopyrightFooter a.com_Menu_Contact{
 color				: #FFFFFF;
-background-color	: #6699FF;
-border-radius		: 0px !important;
+background-color	: #808080;
+}
+#com_CopyrightFooter div.com_Menu_Contact:hover, #com_CopyrightFooter a.com_Menu_Contact:hover{
+color				: #111111;
+background-color	: #EEEEEE;
 }
 
-#com_CopyrightFooter a.com_Menu_Twitter{
-color				: #6699FF;
-background-color	: #000000;
+/* *** Pink / X :: Public ***/
+#com_CopyrightFooter div.com_Menu_X_Pub, #com_CopyrightFooter a.com_Menu_X_Pub{
+color				: #FFFFFF;
+background-color	: #FF367F;
+}
+#com_CopyrightFooter div.com_Menu_X_Pub:hover, #com_CopyrightFooter a.com_Menu_X_Pub:hover{
+color				: #FFFFFF;
+background-color	: #7491FF;
+}
+
+/* *** Blue / X :: Author ***/
+#com_CopyrightFooter div.com_Menu_X_Auth, #com_CopyrightFooter a.com_Menu_X_Auth{
+color				: #FFFFFF;
+background-color	: #7491FF;
+}
+#com_CopyrightFooter div.com_Menu_X_Auth:hover, #com_CopyrightFooter a.com_Menu_X_Auth:hover{
+color				: #FFFFFF;
+background-color	: #C63735;
+}
+
+/* *** Maroon / X :: Deverop ***/
+#com_CopyrightFooter div.com_Menu_X_Dev, #com_CopyrightFooter a.com_Menu_X_Dev{
+color				: #FFFFFF;
+background-color	: #C63735;
+}
+#com_CopyrightFooter div.com_Menu_X_Dev:hover, #com_CopyrightFooter a.com_Menu_X_Dev:hover{
+color				: #FFFFFF;
+background-color	: #7491FF;
+}
+
+#com_CopyrightFooter a.com_Menu_TwitterFT{
+color				: #0000FF;
+background-color	: #FFFFFF;
+}
+#com_CopyrightFooter a.com_Menu_TwitterFT:hover{
+color				: #FFFFFF;
+background-color	: #0000FF;
 }
 
 
@@ -257,6 +399,36 @@ background-color	: #000000;
 
 
 /* =====================================================
+   Transrate
+===================================================== */
+
+#iRAD_Transrate{
+color				: #ffff00;
+}
+
+#iRAD_Transrate label.Label{
+color				: #33CC33;
+background-color	: #003300;
+border				: 1px solid #33CC33;
+}
+
+#iRAD_Transrate label.Label:after{
+border				: 1px solid #33CC33;
+}
+
+#iRAD_Transrate label.Label:before {
+background-color	: #33CC33;
+}
+
+#iRAD_Transrate input[type="radio"].Button{
+}
+
+#iRAD_Transrate input[type="radio"].Button:checked + label.Label:before {
+}
+
+
+
+/* =====================================================
    Selector
 ===================================================== */
 
@@ -283,6 +455,154 @@ border-right		: solid 4px #009900;
 border-bottom		: solid 4px #009900;
 border-top			: 0px;
 }
+
+
+
+/* =====================================================
+   Button Style
+===================================================== */
+
+/*=== Button Color :: Default・青っぽい・緑っぽい ===*/
+.com_BTNCOL_Def{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 2px #0033CC;
+}
+
+.com_BTNCOL_Def:hover{
+color				: #33CC33;
+background-color	: #003300;
+border				: solid 2px #009900;
+}
+
+
+/*=== Button Color :: Hold ===*/
+.com_BTNCOL_Hold{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 2px #0033CC;
+}
+
+.com_BTNCOL_Hold:hover{
+color				: #003300;
+background-color	: #669900;
+border				: solid 2px #009900;
+}
+
+.com_BTNCOL_Hold_On{
+color				: #003300;
+background-color	: #99FF00;
+border				: solid 2px #009900;
+}
+
+
+/*=== Button Color :: Click ===*/
+.com_BTNCOL_Click{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 2px #0033CC;
+}
+
+.com_BTNCOL_Click:hover{
+color				: #880000;
+background-color	: #CC6600;
+border				: solid 2px #880000;
+}
+
+.com_BTNCOL_Click_On{
+color				: #880000;
+background-color	: #FFCC33;
+border				: solid 2px #880000;
+}
+
+
+/*=== Button Color :: Message ===*/
+.com_BTNCOL_Msg{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 2px #0033CC;
+}
+
+.com_BTNCOL_Msg:hover{
+color				: #33CC33;
+background-color	: #003300;
+border				: solid 2px #009900;
+}
+
+
+/*=== Button Color :: Check ===*/
+label.com_BTNCOL_Check{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 2px #0033CC;
+}
+
+label.com_BTNCOL_Check:hover{
+color				: #CCFFFF;
+background-color	: #0033CC;
+border				: solid 2px #3399FF;
+}
+
+input[type="checkbox"].com_BTNCOL_Check:checked + .com_BTNCOL_Check{
+color				: #000088;
+background-color	: #0099FF;
+border				: solid 2px #3399FF;
+}
+
+
+/*=== Button Color :: Radio ===*/
+label.com_BTNCOL_Radio{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 2px #0033CC;
+}
+
+label.com_BTNCOL_Radio:hover{
+color				: #CCFFFF;
+background-color	: #0033CC;
+border				: solid 2px #3399FF;
+}
+
+label.com_BTNCOL_Radio:after{
+border				: solid 2px #0033CC;
+}
+
+label.com_BTNCOL_Radio:before {
+background-color	: #0099FF;
+}
+
+
+/*=== Button Color :: Disabled・灰色 ===*/
+.com_BTNCOL_Def:disabled,
+.com_BTNCOL_Disabled{
+color				: #CCCCCC;
+background-color	: #202020;
+border				: solid 2px #666666;
+}
+
+
+
+/* =====================================================
+   Popup Help
+===================================================== */
+
+/* Not compatible */
+
+
+
+/* =====================================================
+   Popup Window
+===================================================== */
+
+/* Not compatible */
+
+
+
+/* =====================================================
+   Log Box
+===================================================== */
+
+/* Not compatible */
 
 
 

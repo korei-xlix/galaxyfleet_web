@@ -13,6 +13,212 @@
 	*/
 
 /* =====================================================
+   Default Style
+===================================================== */
+
+/*=== Form ===*/
+form{		/* 入力フォーム */
+margin				: 0px;
+padding				: 0px;
+}
+
+textarea{	/* テキスト入力領域 */
+margin				: 0px;
+padding				: 0px;
+}
+
+button{		/* クリックできるボタン */
+margin				: 0px;
+padding				: 0px;
+}
+
+input{		/* テキストボックス（1行）など */
+margin				: 2px;
+padding				: 2px;
+}
+
+label{		/* ユーザーインターフェイスの項目のキャプション */
+margin				: 0px;
+padding				: 0px;
+}
+
+
+
+/*=== Section ===*/
+address{	/* これを含んでいる HTML が個人、団体、組織の連絡先を提供していることを示す */
+margin				: 0px;
+padding				: 0px;
+}
+article{	/* 文書、ページ、アプリケーション、サイトなどの中で自己完結しており、個別に配信や再利用を行うことを意図した構成物を示す */
+margin				: 0px;
+padding				: 0px;
+}
+aside{		/* 文書のメインコンテンツと間接的な関係しか持っていない文書の部分を示す */
+margin				: 0px;
+padding				: 0px;
+}
+main{		/* 文書の body の主要な内容を示す */
+margin				: 0px;
+padding				: 0px;
+}
+nav{		/* 現在の文書内の他の部分や他の文書へのナビゲーションリンクを提供するためのセクションを示す */
+margin				: 0px;
+padding				: 0px;
+}
+section{	/* 文書の自立した一般的なセクション（区間）を示す */
+margin				: 0px;
+padding				: 0px;
+}
+
+
+
+/*=== Contents ===*/
+div{
+					/* UP / Left.Right / Down */
+margin				: 8px 0px 16px;
+padding				: 0px;
+}
+
+p{			/* 段落 */
+margin				: 0px 0px 12px;
+padding				: 0px;
+}
+
+
+
+/*=== Figure 図表などの自己完結型のコンテンツ ===*/
+img{
+border				: 0px;
+margin				: 0px;
+padding				: 0px;
+}
+
+
+
+/*=== Media, Enbedded ===*/
+area, map{	/* イメージマップの定義 */
+margin				: 0px;
+padding				: 0px;
+}
+
+audio{		/* 文書内に音声コンテンツを埋め込むために使用 */
+margin				: 0px;
+padding				: 0px;
+}
+
+video{		/* 文書内にビデオコンテンツを埋め込むために使用 */
+margin				: 0px;
+padding				: 0px;
+}
+
+track{		/* メディア要素の子として使用 */
+margin				: 0px;
+padding				: 0px;
+}
+
+embed{		/* 外部のコンテンツを文書中の指定された場所に埋め込む */
+margin				: 0px;
+padding				: 0px;
+}
+
+object{		/* 画像、内部の閲覧コンテキスト、プラグインによって扱われるリソースなどのように扱われる外部リソース */
+margin				: 0px;
+padding				: 0px;
+}
+
+param{		/* objectのパラメータ */
+margin				: 0px;
+padding				: 0px;
+}
+
+canvas{		/* <canvas> 要素 と Canvas スクリプティング API や WebGL API を使用して、グラフィックやアニメーションを描画することができる */
+margin				: 0px;
+padding				: 0px;
+}
+
+script{		/* コードやデータを埋め込む */
+margin				: 0px;
+padding				: 0px;
+}
+
+noscript{	/* このページ上のスクリプトの種類に対応していない場合や、スクリプトの実行がブラウザーで無効にされている場合に表示する HTML */
+margin				: 0px;
+padding				: 0px;
+}
+
+
+/*=== Inline Text ===*/
+
+span{		/* 記述コンテンツの汎用的な行内コンテナ */
+margin				: 0px;
+padding				: 0px;
+}
+
+br{			/* 改行  */
+margin				: 0px;
+padding				: 0px;
+}
+
+
+
+/* =====================================================
+   Font
+===================================================== */
+
+/*** color ***/
+span.com_FontColorRed{
+color				: #ff0000;
+}
+span.com_FontColorBlue{
+color				: #0000ff;
+}
+span.com_FontColorGreen{
+color				: #00ff00;
+}
+span.com_FontColorBlack{
+color				: #000000;
+}
+
+/*** mark color ***/
+span.com_FontMarkRed{
+color				: #ff0000;
+font-weight			: bold;
+text-decoration		: underline;
+}
+span.com_FontMarkBlue{
+color				: #0000ff;
+font-weight			: bold;
+text-decoration		: underline;
+}
+span.com_FontMarkGreen{
+color				: #00ff00;
+font-weight			: bold;
+text-decoration		: underline;
+}
+span.com_FontMarkBlack{
+color				: #000000;
+font-weight			: bold;
+text-decoration		: underline;
+}
+
+/*** font ***/
+span.com_FontBold{
+font-weight			: bold;
+}
+span.com_FontUnderline{
+text-decoration		: underline;
+}
+span.com_FontItalic{
+font-style			: italic;
+}
+span.com_FontMark{
+font-weight			: bold;
+text-decoration		: underline;
+}
+
+
+
+/* =====================================================
    Page Title
 ===================================================== */
 
@@ -26,6 +232,15 @@ margin				: 0px auto;
 padding				: 0px;
 }
 
+#com_PageTitle div.com_TitleText{
+font-size			: 32px;
+font-weight			: bolder;
+margin				: 0px auto;
+padding				: 8px 0px;
+line-height			: 40px;
+text-align			: center;
+}
+
 #com_TitleSub{
 display				: none;
 }
@@ -37,11 +252,18 @@ display				: none;
 ===================================================== */
 
 iframe{
+/*
 width				: 100%;
 height				: 100%;
+*/
 margin				: 0px;
 padding				: 0px;
-overflow			: hidden;
+overflow			: auto;		/* Scroll bar auto  */
+}
+
+iframe .comPanel{
+border-style		: none;		/* Border Line off */
+overflow			: hidden;	/* Scroll bar off  */
 }
 
 
@@ -72,6 +294,18 @@ padding				: 8px;
 #com_bodyInline{
 margin				: 0px;
 padding				: 2px;
+}
+
+/*=== Frame ===*/
+#com_bodyFrameOutline{
+width				: auto;
+margin				: 0px;
+padding				: 2px;
+}
+
+#com_bodyFrameInline{
+margin				: 0px;
+padding				: 0px;
 }
 
 
@@ -130,6 +364,11 @@ padding				: 2px;
 border-radius		: 4px;
 }
 
+/*=== Frame ===*/
+header .com_headerFrame{
+display				: none;
+}
+
 
 
 /* =====================================================
@@ -159,6 +398,11 @@ font-weight			: bold;
 text-decoration		: none;
 padding				: 4px;
 border-radius		: 6px;
+}
+
+/*=== Frame ===*/
+footer .com_footerFrame{
+display				: none;
 }
 
 
@@ -228,12 +472,6 @@ padding				: 0px;
 text-align			:left;
 }
 
-#com_CopyrightHeader div.com_Corp{
-margin				: 0px;
-padding				: 0px;
-text-align			:right;
-}
-
 
 
 /* =====================================================
@@ -276,23 +514,20 @@ margin				: 12px 12px 12px;
 padding				: 0px;
 }
 
-#com_CopyrightFooter div.com_Menu_Twitter{
-margin				: 0px 24px 16px;
-padding				: 0px;
-}
-
-#com_CopyrightFooter a.com_Menu_Twitter{
-margin				: 0px;
-padding				: 4px;
-text-decoration		: underline;
-}
-
 #com_CopyrightFooter div.com_Menu_Cel{
-width				: 72px;
+width				: 80px;
 margin				: 4px;
 padding				: 0px;
 border-radius		: 12px;
 text-align			:center;
+float				:left;
+}
+
+#com_CopyrightFooter div.com_Menu_Cel_Long{
+width				: 360px;
+margin				: 4px;
+padding				: 4px 12px 0px;
+text-align			:left;
 float				:left;
 }
 
@@ -318,6 +553,12 @@ clear				: both;
 #com_Description{
 margin				: 0px 4px 32px;
 padding				: 0px 16px 0px;
+}
+
+#com_Description_Center{
+margin				: 0px auto 32px;
+padding				: 0px 16px 0px;
+text-align			:center;
 }
 
 
@@ -397,18 +638,6 @@ text-align			:center;
 }
 
 .com_ContentsTitle{
-/*
-font-size			: 16px;
-font-weight			: bold;
-margin				: 0px 0px 12px 0px;
-padding				: 4px 4px 4px 16px;
-*/
-
-/*
-width				: 100px;
-height				: 100px;
-*/
-
 margin				: 0px auto 20px;
 padding				: 0px 12px 0px;
 position			: relative;
@@ -431,6 +660,90 @@ top					: 100%;
 
 .com_ContentsBody{
 margin				: 0px 0px 0px 16px;
+padding				: 0px;
+}
+
+.com_ContentsBody_Center{
+margin				: 0px auto 16px;
+padding				: 0px;
+text-align			:center;
+}
+
+.com_ContentsTitle_Bunner{
+font-weight			: bolder;
+padding				: 4px;
+}
+
+.com_ContentsInline{
+margin				: 4px 0px 8px 24px;
+padding				: 0px;
+}
+
+
+
+/* =====================================================
+   Transrate
+===================================================== */
+
+#iRAD_Transrate{
+margin				: 12px auto;
+padding				: 8px 0px;
+}
+
+#iRAD_Transrate label.Label{
+display				: inline-block;
+-webkit-transition	: background-color 0.2s linear;
+transition			: background-color 0.2s linear;
+box-sizing			: border-box;
+position			: relative;
+margin				: 0px;
+padding				: 1px 8px 1px 26px;
+border-radius		: 8px;
+vertical-align		: middle;
+cursor				: pointer;
+}
+
+#iRAD_Transrate label.Label:after{
+display				: block;
+-webkit-transition	: border-color 0.2s linear;
+transition			: border-color 0.2s linear;
+top					: 50%;
+left				: 2px;
+width				: 16px;
+height				: 16px;
+margin				: -10px 0px 0px 2px;
+padding				: 0px;
+border-radius		: 6px;
+position			: absolute;
+content				: '';
+}
+
+#iRAD_Transrate label.Label:before {
+display				: block;
+-webkit-transition	: opacity 0.2s linear;
+transition			: opacity 0.2s linear;
+top					: 50%;
+left				: 6px;
+width				: 10px;
+height				: 10px;
+margin				: -6px 0px 0px 2px;
+padding				: 0px;
+border-radius		: 50%;
+position			: absolute;
+content				: '';
+opacity				: 0;
+}
+
+#iRAD_Transrate input[type="radio"].Button{
+display				: none;
+}
+
+#iRAD_Transrate input[type="radio"].Button:checked + label.Label:before {
+opacity				: 1;
+}
+
+div.wordTrans_JP, div.wordTrans_EN{
+margin				: 12px 0px;
 padding				: 0px;
 }
 
@@ -471,6 +784,292 @@ display				: block;
 margin				: 0px;
 padding				: 8px 0px 16px 16px;
 }
+
+
+
+/* =====================================================
+   Button Style
+===================================================== */
+
+/*=== Button Form :: Dummy load image ===*/
+.com_BTN_Img{
+display				: none;
+}
+
+
+/*=== Button Form :: Default Button ===*/
+.com_DEFBTN{
+width				: 116px ;	/* ***カスタム化*** */
+height				: 32px ;
+font-size			: 16px;
+margin				: 4px;
+padding				: 2px;
+}
+
+
+/*=== Button Form :: Hold Button ===*/
+.com_HLDBTN,
+.com_HLDBTN_On{
+width				: 116px ;	/* ***カスタム化*** */
+height				: 32px ;
+font-size			: 16px;
+margin				: 4px;
+padding				: 2px;
+}
+
+
+/*=== Button Form :: Click Button ===*/
+.com_CLKBTN,
+.com_CLKBTN_On{
+width				: 116px ;	/* ***カスタム化*** */
+height				: 32px ;
+font-size			: 16px;
+margin				: 4px;
+padding				: 2px;
+}
+
+
+/*=== Button Form :: Message Button ===*/
+.com_MSGBTN{
+width				: 508px ;	/* ***カスタム化*** */
+height				: 32px ;
+font-size			: 16px;
+margin				: 4px;
+padding				: 2px;
+}
+
+
+/*=== Button Form :: Check Button ===*/
+label.com_CBXBTN{
+width				: 120px ;	/* ***カスタム化*** */
+display				: inline-block;
+-webkit-transition	: background-color 0.2s linear;
+transition			: background-color 0.2s linear;
+box-sizing			: border-box;
+position			: relative;
+margin				: 4px 2px;
+padding				: 1px 8px 1px 26px;
+/*border-radius		: 8px;*/
+vertical-align		: middle;
+cursor				: pointer;
+}
+
+input.com_CBXBTN{
+display				: none;
+}
+
+
+/*=== Button Form :: Radio Button ===*/
+label.com_RADBTN{
+width				: 120px ;	/* ***カスタム化*** */
+display				: inline-block;
+-webkit-transition	: background-color 0.2s linear;
+transition			: background-color 0.2s linear;
+box-sizing			: border-box;
+position			: relative;
+margin				: 4px 2px;
+padding				: 1px 8px 1px 26px;
+/*border-radius		: 8px;*/
+vertical-align		: middle;
+cursor				: pointer;
+}
+
+label.com_RADBTN:after{
+display				: block;
+-webkit-transition	: border-color 0.2s linear;
+transition			: border-color 0.2s linear;
+top					: 50%;
+left				: 2px;
+width				: 16px;
+height				: 16px;
+margin				: -10px 0px 0px 2px;
+padding				: 0px;
+border-radius		: 6px;
+position			: absolute;
+content				: '';
+}
+
+label.com_RADBTN:before{
+display				: block;
+-webkit-transition	: opacity 0.2s linear;
+transition			: opacity 0.2s linear;
+top					: 50%;
+left				: 6px;
+width				: 10px;
+height				: 10px;
+margin				: -6px 0px 0px 2px;
+padding				: 0px;
+border-radius		: 50%;
+position			: absolute;
+content				: '';
+opacity				: 0;
+}
+
+input[type="radio"].com_RADBTN{
+display				: none;
+}
+
+input[type="radio"].com_RADBTN:checked + label.com_RADBTN:before{
+opacity				: 1;
+}
+
+
+/*=== Button Form :: Button Group ===*/
+.com_BTNGRP{
+display				: none;
+margin				: 0px;
+padding				: 0px;
+}
+
+.com_BTNGRP_x{
+margin				: 0px;
+padding				: 0px;
+}
+
+
+
+/* =====================================================
+   Popup Help
+===================================================== */
+
+.com_PopupHelp{
+display				: none;
+width				: 480px;		/* ***カスタム化*** */
+margin				: 0px;
+padding				: 4px 4px 4px 12px;
+position			: absolute;
+}
+
+.com_PopupHelp_Img{
+display				: none;
+}
+
+
+
+/* =====================================================
+   Popup Window
+===================================================== */
+
+.com_PopupWin{
+display			: none;
+width				: 536px;		/* 536=528 +(4+4) */
+margin				: 0px;
+padding				: 0px;
+position			: absolute;
+/**************************/
+top					: 200px;
+left				: 200px;
+/**************************/
+}
+
+.com_PopupWin_Bar{
+height				: 8px ;
+width				: 516px;		/* 536= 516 + (20=4+8+8) */
+margin				: 0px;
+padding				: 0px;
+float				: left;
+}
+
+.com_PopupWin_Close{
+height				: 8px ;
+width				: 8px ;
+margin				: 0px;
+padding				: 0px;
+float				: right;
+}
+
+br.com_PopupWin_Bar_End{
+height				: 0px;
+clear				: both;
+}
+
+.com_PopupWin_Body_Up{
+width				: 520px;		/* 536= 520 + (24=8+8+8) */
+margin				: 0px;
+padding				: 2px 0px 2px;
+text-align			: right;
+}
+
+.com_PopupWin_Body{
+width				: 520px;		/* 536= 520 + ( 16 ) */
+margin				: 0px;
+padding				: 4px 8px;
+}
+
+.com_PopupWin_Body_Dw{
+width				: 520px;		/* 536= 520 + (24=8+8+8) */
+margin				: 0px;
+padding				: 0px 0px 8px 8px;
+}
+
+
+/* .com_PopupWin_Body_Dan_x{
+margin				: 0px;
+padding				: 0px;
+}
+
+.com_PopupWin_Body_Dan{
+display				: none;
+margin				: 0px;
+padding				: 0px;
+}*/
+
+.com_PopupWin_BtnFrame{
+margin				: 0px 0px 2px;
+padding				: 0px;
+}
+
+.com_PopupWin_TextArea{
+font-size			: 12pt;
+/*width				: 100%;*/
+width				: 496px;
+margin				: 8px 0px;
+padding				: 4px;
+resize				: none;
+border-radius		: 4px;
+}
+
+.com_PopupWin_People{			/* 自動送り */
+width				: 100px ;	/* ***カスタム化*** */
+height				: 100px ;
+margin				: 0px 8px;
+padding				: 0px;
+float				: left;
+}
+
+.com_PopupWin_AutoBtn,			/* 自動送り */
+.com_PopupWin_AutoBtn_On{		/* 自動送り ON */
+width				: 72px ;	/* ***カスタム化*** */
+height				: 24px ;
+font-size			: 12px;
+margin				: 76px 0px 0px 0px;
+padding				: 0px;
+float				: right;
+}
+
+.com_PopupWin_Body_Up_End{
+clear				: both;
+}
+
+.com_PopupWin_Img{
+display				: none;
+}
+
+
+
+/* =====================================================
+   Log Box
+===================================================== */
+
+.com_LogBox{
+display				: none;
+}
+
+
+
+
+
+
 
 
 
@@ -607,21 +1206,6 @@ padding				: 0px;
    Form
 ===================================================== */
 
-form{		/* 入力フォーム */
-margin				: 0px;
-padding				: 0px;
-}
-
-textarea{	/* テキスト入力領域 */
-margin				: 0px;
-padding				: 0px;
-}
-
-button{		/* クリックできるボタン */
-margin				: 0px;
-padding				: 0px;
-}
-
 datalist{	/* データリスト */
 margin				: 0px;
 padding				: 0px;
@@ -632,16 +1216,6 @@ margin				: 0px;
 padding				: 0px;
 }
 legend{		/* ファイルリストのキャプション値 */
-margin				: 0px;
-padding				: 0px;
-}
-
-input{		/* テキストボックス（1行）など */
-margin				: 2px;
-padding				: 2px;
-}
-
-label{		/* ユーザーインターフェイスの項目のキャプション */
 margin				: 0px;
 padding				: 0px;
 }
@@ -677,48 +1251,9 @@ padding				: 0px;
 
 
 /* =====================================================
-   Default Style
+   Default Style (Not use)
 ===================================================== */
 
-/*=== Section ===*/
-address{	/* これを含んでいる HTML が個人、団体、組織の連絡先を提供していることを示す */
-margin				: 0px;
-padding				: 0px;
-}
-article{	/* 文書、ページ、アプリケーション、サイトなどの中で自己完結しており、個別に配信や再利用を行うことを意図した構成物を示す */
-margin				: 0px;
-padding				: 0px;
-}
-aside{		/* 文書のメインコンテンツと間接的な関係しか持っていない文書の部分を示す */
-margin				: 0px;
-padding				: 0px;
-}
-main{		/* 文書の body の主要な内容を示す */
-margin				: 0px;
-padding				: 0px;
-}
-nav{		/* 現在の文書内の他の部分や他の文書へのナビゲーションリンクを提供するためのセクションを示す */
-margin				: 0px;
-padding				: 0px;
-}
-section{	/* 文書の自立した一般的なセクション（区間）を示す */
-margin				: 0px;
-padding				: 0px;
-}
-
-
-
-/*=== Contents ===*/
-div{
-					/* UP / Left.Right / Down */
-margin				: 8px 0px 16px;
-padding				: 0px;
-}
-
-p{			/* 段落 */
-margin				: 0px 0px 12px;
-padding				: 0px;
-}
 
 blockquote{	/* 引用 */
 margin				: 8px 0px 16px;
@@ -733,15 +1268,11 @@ padding				: 0px;
 
 
 /*=== Figure 図表などの自己完結型のコンテンツ ===*/
-img{
-border				: 0px;
-margin				: 0px;
-padding				: 0px;
-}
 figure{
 margin				: 8px 0px 16px;
 padding				: 0px;
 }
+
 figcaption{	/* キャプション */
 margin				: 0px;
 padding				: 8px 0px;
@@ -750,56 +1281,6 @@ padding				: 8px 0px;
 
 
 /*=== Media, Enbedded ===*/
-area, map{	/* イメージマップの定義 */
-margin				: 0px;
-padding				: 0px;
-}
-
-audio{		/* 文書内に音声コンテンツを埋め込むために使用 */
-margin				: 0px;
-padding				: 0px;
-}
-
-video{		/* 文書内にビデオコンテンツを埋め込むために使用 */
-margin				: 0px;
-padding				: 0px;
-}
-
-track{		/* メディア要素の子として使用 */
-margin				: 0px;
-padding				: 0px;
-}
-
-embed{		/* 外部のコンテンツを文書中の指定された場所に埋め込む */
-margin				: 0px;
-padding				: 0px;
-}
-
-object{		/* 画像、内部の閲覧コンテキスト、プラグインによって扱われるリソースなどのように扱われる外部リソース */
-margin				: 0px;
-padding				: 0px;
-}
-
-param{		/* objectのパラメータ */
-margin				: 0px;
-padding				: 0px;
-}
-
-canvas{		/* <canvas> 要素 と Canvas スクリプティング API や WebGL API を使用して、グラフィックやアニメーションを描画することができる */
-margin				: 0px;
-padding				: 0px;
-}
-
-script{		/* コードやデータを埋め込む */
-margin				: 0px;
-padding				: 0px;
-}
-
-noscript{	/* このページ上のスクリプトの種類に対応していない場合や、スクリプトの実行がブラウザーで無効にされている場合に表示する HTML */
-margin				: 0px;
-padding				: 0px;
-}
-
 picture{	/* 0個以上の source 要素と一つの img 要素を含み、様々な画面や端末の条件に応じた画像を提供 */
 margin				: 0px;
 padding				: 0px;
@@ -841,12 +1322,6 @@ padding				: 8px 0px;
 
 
 /*=== Inline Text ===*/
-
-span{		/* 記述コンテンツの汎用的な行内コンテナ */
-margin				: 0px;
-padding				: 0px;
-}
-
 b{			/* 注目 */
 margin				: 0px;
 padding				: 0px;
@@ -863,11 +1338,6 @@ padding				: 0px;
 }
 
 i{			/* 興味深い */
-margin				: 0px;
-padding				: 0px;
-}
-
-br{			/* 改行  */
 margin				: 0px;
 padding				: 0px;
 }

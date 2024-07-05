@@ -2,7 +2,7 @@
  ::Project  : web page
  ::Admin    : Korei (@korei-xlix)
  ::github   : https://github.com/korei-xlix/galaxyfleet/
- ::Style    : Default Style - Mini
+ ::Style    : Default Style - Wide
 ***************************************************** */
 
 /* margin / padding
@@ -28,6 +28,7 @@ border				: 0px !important;
 border				: 0px !important;
 padding-top			: 8px;
 padding-left		: 10px;
+white-space			: normal !important;
 }
 
 #Profile a.Icon{
@@ -45,6 +46,11 @@ margin				: 8px 0px;
 padding				: 0px;
 }
 
+#Profile img.AccountIcon{
+border				: 4px solid #8f0000;
+}
+
+
 
 
 /* =====================================================
@@ -55,7 +61,7 @@ padding				: 0px;
 border				: 0px !important;
 background-color	: transparent !important;
 }
-#Profile tr{
+#ProfileIndex tr{
 border				: 0px !important;
 }
 
@@ -63,6 +69,7 @@ border				: 0px !important;
 border				: 0px !important;
 padding-top			: 8px;
 padding-left		: 10px;
+white-space			: normal !important;
 }
 
 #ProfileIndex a{
@@ -75,58 +82,19 @@ text-decoration		: none;
 
 
 /* =====================================================
-   Contents Index
-===================================================== */
-
-#ContentsIndex{
-border				: 0px !important;
-background-color	: transparent !important;
-}
-#ContentsIndex tr{
-border				: 0px !important;
-}
-
-#ContentsIndex  td{
-border				: 0px !important;
-padding-top			: 8px;
-padding-left		: 10px;
-}
-
-#ContentsIndex .Link{
-margin				: 4px 0px;
-}
-
-#ContentsIndex .Text{
-margin				: 0px 0px 4px 6px;
-
-}
-
-#ContentsIndex a{
-/* font-size		: 20px; */
-font-weight			: bolder;
-/*
-color				: transparent !important;
-background-color	: transparent !important;
-display				: block ;
-text-decoration		: none; */
-}
-
-
-
-/* =====================================================
    Address
 ===================================================== */
 
 #Address{
-border				: solid 1px #a0a0FF;
-background-color	: #a0a0FF;
+border				: solid 1px #CC3333;
+background-color	: #CC3333;
 }
 #Address tr{
-border				: solid 1px #a0a0FF;
+border				: solid 1px #CC3333;
 }
 
 #Address  td{
-border				: solid 1px #a0a0FF;
+border				: solid 1px #CC3333;
 padding-top			: 8px;
 padding-left		: 10px;
 }
@@ -140,7 +108,7 @@ text-decoration		: none;
 
 #Address div.Address{
 color				: #ffffff;
-background-color	: #8080ff;
+background-color	: #FF3333;
 margin				: 4px 32px 8px 0px;
 padding				: 2px;
 text-decoration		: underline;
@@ -153,15 +121,15 @@ text-decoration		: underline;
 ===================================================== */
 
 #Thanks{
-border				: solid 1px #a0a0FF;
-background-color	: #a0a0FF;
+border				: solid 1px #CC3333;
+background-color	: #CC3333;
 }
 #Thanks tr{
-border				: solid 1px #a0a0FF;
+border				: solid 1px #CC3333;
 }
 
 #Thanks  td{
-border				: solid 1px #a0a0FF;
+border				: solid 1px #CC3333;
 padding-top			: 8px;
 padding-left		: 10px;
 }
@@ -196,9 +164,9 @@ text-decoration		: underline;
 ===================================================== */
 
 #com_PageTitle div.com_TitleImage{
-background-image	: url(../_pic/title/koreilabo_title_bunner.png);
-width				: 200px;
-height				: 95px;
+background-image	: url(../_pic/title/koreilabo_title.png);
+width				: 800px;
+height				: 380px;
 }
 
 #com_PageTitle div.com_TitleText{
@@ -206,6 +174,10 @@ color				: #000000;
 background-color	: transparent;
 /*	font-size			: 32px !important;	*/
 /*	line-height			: 40px !important;	*/
+}
+
+div.com_MobileCaution{
+background-color	: red;
 }
 
 
@@ -224,15 +196,19 @@ height				: 100px;
    Body
 ===================================================== */
 
+/*
 body{
-color				: black;
-background-color	: white;
+background-color	: #DDDDDD;
 }
 
 #com_bodyOutline{
+background-color	: #DDDDDD;
 }
+*/
 
 #com_bodyInline{
+color				: #000000;
+background-color	: #FFFFFF;
 }
 
 
@@ -242,20 +218,25 @@ background-color	: white;
 ===================================================== */
 
 header{
-background-color	: #6699FF;
-border-top			: solid 6px #0066CC;
-border-bottom		: solid 6px #0066CC;
+background-color	: #CC3333;
+border-top			: solid 12px #660000;
+border-bottom		: solid 12px #660000;
 }
 
 header span.com_Menu_Select{
-color				: #0033FF;
-background-color	: #CCFFFF;
+color				: #FF0000;
+background-color	: #FFDDFF;
 }
 
 header a.com_Menu_Cel{
 color				: #FFFFFF;
-background-color	: #0066FF;
+background-color	: #FF3300;
 
+}
+
+header a.com_Menu_Cel:hover{
+color				: #FF0000;
+background-color	: #FFDDFF;
 }
 
 header div.com_CSS_Menu{
@@ -264,7 +245,12 @@ color				: #FFFFFF;
 
 header a.com_CSS_Mode{
 color				: #FFFFFF;
-background-color	: #006699;
+background-color	: #FF3300;
+}
+
+header a.com_CSS_Mode:hover{
+color				: #FF0000;
+background-color	: #FFDDFF;
 }
 
 
@@ -274,18 +260,23 @@ background-color	: #006699;
 ===================================================== */
 
 footer{
-background-color	: cornflowerblue;
-border-top			: solid 6px darkblue;
-border-bottom		: solid 8px darkblue;
+background-color	: #CC3333;
+border-top			: solid 12px #660000;
+border-bottom		: solid 12px #660000;
 }
 
 footer div.com_Menu_Description{
-color				: paleturquoise;
+color				: #EEFFFF;
 }
 
 footer a.com_Menu_Cel{
-color				: paleturquoise;
-background-color	: royalblue;
+color				: #FFFFFF;
+background-color	: #FF3300;
+}
+
+footer a.com_Menu_Cel:hover{
+color				: #FF0000;
+background-color	: #FFDDFF;
 }
 
 
@@ -465,6 +456,10 @@ background-color	: #7491FF;
 color				: #0000FF;
 background-color	: #FFFFFF;
 }
+#com_CopyrightFooter a.com_Menu_TwitterFT:hover{
+color				: #FFFFFF;
+background-color	: #0000FF;
+}
 
 
 
@@ -484,26 +479,32 @@ background-color	: transparent;
 ===================================================== */
 
 #com_Navigation{
-color				: blue;
 background-color	: transparent;
-/*
-background-color	: cyan;
-*/
 }
 
 #com_Navigation div.com_NavigationTitle{
 color				: #FFFFFF;
-background-color	: #000066;
+background			: #FF3333;
 }
 
 #com_Navigation a{
-color				: blue;
+color				: #0000FF;
 background-color	: transparent;
+}
+
+#com_Navigation a:hover{
+color				: #FFFFFF;
+background-color	: #0000FF;
 }
 
 a.com_Nav{
 color				: #444444;
 background-color	: #DDDDDD;
+}
+
+a.com_Nav:hover{
+color				: #009933;
+background-color	: #66FF66;
 }
 
 
@@ -514,14 +515,14 @@ background-color	: #DDDDDD;
 
 .com_ContentsTitle{
 color				: #FFFFFF;
-background			: #0099FF;
+background			: #FF3333;
 }
 .com_ContentsTitle:before{
-border-bottom		: solid 10px #0099FF;
+border-bottom		: solid 10px #990000;
 border-right		: solid 20px transparent;
 }
 .com_ContentsTitle:after{
-border-top			: solid 10px #0099FF;
+border-top			: solid 10px #990000;
 border-left			: solid 20px transparent;
 }
 
@@ -541,37 +542,6 @@ background			: #FFFFFF;
 
 
 /* =====================================================
-   Transrate
-===================================================== */
-
-#iRAD_Transrate{
-/* color			: #000000; */
-background-color	: #ffffff;
-}
-
-#iRAD_Transrate label.Label{
-color				: #0000EE;
-background-color	: #BAD3FF;
-border				: 1px solid #0000EE;
-}
-
-#iRAD_Transrate label.Label:after{
-border				: 1px solid #0000EE;
-}
-
-#iRAD_Transrate label.Label:before {
-background-color	: #0000EE;
-}
-
-#iRAD_Transrate input[type="radio"].Button{
-}
-
-#iRAD_Transrate input[type="radio"].Button:checked + label.Label:before {
-}
-
-
-
-/* =====================================================
    Selector
 ===================================================== */
 
@@ -582,11 +552,21 @@ background			: #0099FF;
 border				: inset 6px #0066FF;
 }
 
+input[type="checkbox"].com_ContentsSelector_CBX:hover + .com_ContentsSelector_LAB{
+color				: #003333;
+background-color	: #CCFFCC;
+}
+
 							/* Open */
 input[type="checkbox"].com_ContentsSelector_CBX:checked + .com_ContentsSelector_LAB{
 color				: #FFFFFF;
 background-color	: #009900;
 border				: inset 6px #009900;
+}
+
+input[type="checkbox"].com_ContentsSelector_CBX:checked:hover + .com_ContentsSelector_LAB{
+color				: forestgreen;
+background-color	: lawngreen;
 }
 
 							/* Body */
@@ -625,6 +605,7 @@ cursor				: col-resize;
 cursor				: row-resize;
 */
 }
+
 
 
 /* =====================================================

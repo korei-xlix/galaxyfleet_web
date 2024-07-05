@@ -2,7 +2,7 @@
  ::Project  : web page
  ::Admin    : Korei (@korei-xlix)
  ::github   : https://github.com/korei-xlix/galaxyfleet/
- ::Style    : Default Style - Mini
+ ::Style    : Curse Gray - Mini
 ***************************************************** */
 
 /* margin / padding
@@ -202,7 +202,7 @@ height				: 95px;
 }
 
 #com_PageTitle div.com_TitleText{
-color				: #000000;
+color				: #999999;
 background-color	: transparent;
 /*	font-size			: 32px !important;	*/
 /*	line-height			: 40px !important;	*/
@@ -242,19 +242,19 @@ background-color	: white;
 ===================================================== */
 
 header{
-background-color	: #6699FF;
-border-top			: solid 6px #0066CC;
-border-bottom		: solid 6px #0066CC;
+background-color	: #a9a9a9;
+border-top			: solid 6px #444444;
+border-bottom		: solid 6px #444444;
 }
 
 header span.com_Menu_Select{
-color				: #0033FF;
-background-color	: #CCFFFF;
+color				: #000000;
+background-color	: #E6E6FA;
 }
 
 header a.com_Menu_Cel{
 color				: #FFFFFF;
-background-color	: #0066FF;
+background-color	: #666666;
 
 }
 
@@ -264,7 +264,7 @@ color				: #FFFFFF;
 
 header a.com_CSS_Mode{
 color				: #FFFFFF;
-background-color	: #006699;
+background-color	: #660066;
 }
 
 
@@ -274,18 +274,18 @@ background-color	: #006699;
 ===================================================== */
 
 footer{
-background-color	: cornflowerblue;
-border-top			: solid 6px darkblue;
-border-bottom		: solid 8px darkblue;
+background-color	: #a9a9a9;
+border-top			: solid 6px #444444;
+border-bottom		: solid 6px #444444;
 }
 
 footer div.com_Menu_Description{
-color				: paleturquoise;
+color				: #EEFFFF;
 }
 
 footer a.com_Menu_Cel{
-color				: paleturquoise;
-background-color	: royalblue;
+color				: #FFFFFF;
+background-color	: #666666;
 }
 
 
@@ -493,16 +493,16 @@ background-color	: cyan;
 
 #com_Navigation div.com_NavigationTitle{
 color				: #FFFFFF;
-background-color	: #000066;
+background-color	: #333333;
 }
 
 #com_Navigation a{
-color				: blue;
+color				: #333333;
 background-color	: transparent;
 }
 
 a.com_Nav{
-color				: #444444;
+color				: #333333;
 background-color	: #DDDDDD;
 }
 
@@ -513,15 +513,15 @@ background-color	: #DDDDDD;
 ===================================================== */
 
 .com_ContentsTitle{
-color				: #FFFFFF;
-background			: #0099FF;
+color				: #ffffff;
+background			: #aaaaaa;
 }
 .com_ContentsTitle:before{
-border-bottom		: solid 10px #0099FF;
+border-bottom		: solid 10px #666666;
 border-right		: solid 20px transparent;
 }
 .com_ContentsTitle:after{
-border-top			: solid 10px #0099FF;
+border-top			: solid 10px #222222;
 border-left			: solid 20px transparent;
 }
 
@@ -532,41 +532,6 @@ background-color	: #FFFFFF;
 
 .com_ContentsTitle_Bunner{
 color				: #FFFFFF;
-}
-.com_ContentsTitle_Bunner:hover{
-color				: #0000FF;
-background			: #FFFFFF;
-}
-
-
-
-/* =====================================================
-   Transrate
-===================================================== */
-
-#iRAD_Transrate{
-/* color			: #000000; */
-background-color	: #ffffff;
-}
-
-#iRAD_Transrate label.Label{
-color				: #0000EE;
-background-color	: #BAD3FF;
-border				: 1px solid #0000EE;
-}
-
-#iRAD_Transrate label.Label:after{
-border				: 1px solid #0000EE;
-}
-
-#iRAD_Transrate label.Label:before {
-background-color	: #0000EE;
-}
-
-#iRAD_Transrate input[type="radio"].Button{
-}
-
-#iRAD_Transrate input[type="radio"].Button:checked + label.Label:before {
 }
 
 

@@ -1,9 +1,59 @@
 //#####################################################
-//# ::Project  : Galaxy Fleet
+//# ::Project  : 共通アプリ
 //# ::Admin    : Korei (@korei-xlix)
 //# ::github   : https://github.com/korei-xlix/galaxyfleet/
-//# ::Class    : ファイルAPI
+//# ::Class    : ファイルクラス
 //#####################################################
+
+//#####################################################
+class CLS_File {
+//#####################################################
+
+
+
+//#####################################################
+//# テキスト出力（ダウンロード）
+//#####################################################
+	static sOutput({
+		inPath,
+		inText,
+		inAuto=false
+	})
+	{
+		let wOBJ_Blob, wOBJ_BloURL, wOBJ_Link ;
+		let wURL, wText, wFileName ;
+		
+		/////////////////////////////
+		// テキスト出力
+		try
+		{
+			wOBJ_Blob   = new Blob([inText],{type: 'text/plain'}) ;
+			wOBJ_BloURL = window.URL.createObjectURL( wOBJ_Blob ) ;
+			wOBJ_Link   = document.createElement('a') ;
+			wOBJ_Link.href = wOBJ_BloURL ;
+			wOBJ_Link.download = inPath ;
+			if( inAuto==true )
+			{///自動オープン
+				wOBJ_Link.click() ;
+			}
+		}
+		catch(e)
+		{
+			wText = "CLS_L: sOutputLog: exception: Code=" + String(e) ;
+			CLS_OSIF.sConsError({ inText:wText }) ;
+		}
+		return ;
+	}
+
+
+
+//#####################################################
+}
+
+
+
+
+
 
 //#####################################################
 //# ファイル選択
@@ -50,7 +100,7 @@ function CLS_FileCtrl_SelectFile({
 	{
 		wObj = event.target.files[0] ;
 		
-		///////////////////////////////
+		/////////////////////////////
 		// 時間の変換
 		wTimeDate = top.CLS_Time_getTimeDate({
 			inTimeDate : wObj.lastModifiedDate
@@ -71,7 +121,7 @@ function CLS_FileCtrl_SelectFile({
 	}
 	catch(e)
 	{
-		///////////////////////////////
+		/////////////////////////////
 		// 例外処理
 		wRes['Reason'] = "[Exception]=" + String( e.message )
 		top.CLS_L({ inRes:wRes, inLevel: "A" }) ;
@@ -113,34 +163,43 @@ function CLS_FileCtrl_ReadFile({
 	// FileReaderで読み込み
 	try
 	{
-		///////////////////////////////
+		/////////////////////////////
 		// リード
 		wReader = new FileReader() ;
 		wReader.readAsText( inInfo['Obj'], inInfo['Option'].inReadMode ) ;
 		
-		///////////////////////////////
+		/////////////////////////////
 		// リーダへ読み終わった時
 		//   forでリード処理する
 		//   ただし空白行はスキップする
 		wReader.onload = function(ev)
 		{
 			//改行で区切る
-			wARR_Text = wReader.result.split('\n') ;
+			wARR_Text = CLS_OSIF.sSplit({
+				inString  : wReader.result,
+				inPattern : '\n'
+			}) ;
+			if( wARR_Text['Result']!=true )
+			{///失敗
+				wRes['Reason'] = "CLS_OSIF.sSplit is failed" ;
+				CLS_L.sL({ inRes:wRes, inLevel:"A", inLine:__LINE__ }) ;
+				return wRes ;
+			}
 			
 			wARR_GetFile = new Array() ;
-			wLen = wARR_Text.length ;
+			wLen = wARR_Text['Length'] ;
 			for( wI=0 ; wI<wLen ; wI++ )
 			{
 				if( inInfo['Option'].inSpace==true )
 				{
-					wCHR_Line = wARR_Text[wI].replace(/\s+/g, "") ;
+					wCHR_Line = wARR_Text['Data'][wI].replace(/\s+/g, "") ;
 				}
 				else
 				{
 					//両端の空白を切り落とす
 					if( inInfo['Option'].inTrim==true )
 					{
-						wCHR_Line = wARR_Text[wI].trim() ;
+						wCHR_Line = wARR_Text['Data'][wI].trim() ;
 					}
 				}
 				//空白行のスキップ
@@ -163,7 +222,7 @@ function CLS_FileCtrl_ReadFile({
 					inFile		: wARR_GetFile
 				}) ;
 				
-				///////////////////////////////
+				/////////////////////////////
 				// ログの記録
 				wStatus = "File loaded [File]=" ;
 				wStatus = wStatus + " path=" + inInfo['Name'] ;
@@ -175,7 +234,7 @@ function CLS_FileCtrl_ReadFile({
 			}
 		}
 		
-		////////////////////////////////////////
+		//////////////////////////////////////
 		// エラーが起きたときの処理
 		wReader.onerror = function()
 		{
@@ -189,7 +248,7 @@ function CLS_FileCtrl_ReadFile({
 	}
 	catch(e)
 	{
-		///////////////////////////////
+		/////////////////////////////
 		// 例外処理
 		wRes['Reason'] = "[Exception]=" + String( e.message )
 		top.CLS_L({ inRes:wRes, inLevel: "A" }) ;

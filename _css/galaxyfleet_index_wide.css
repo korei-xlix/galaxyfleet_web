@@ -1,5 +1,5 @@
 /* *****************************************************
- ::Project  : web page
+ ::Project  : Galaxy Fleet
  ::Admin    : Korei (@korei-xlix)
  ::github   : https://github.com/korei-xlix/galaxyfleet/
  ::Style    : Galaxy Fleet Index - Wide
@@ -16,6 +16,15 @@
    Galaxy Fleet Style
 ===================================================== */
 
+/*=== Inline Frame :: Index ===*/
+
+iframe.gf_IndexFrame1,
+iframe.gf_IndexFrame2,
+iframe.gf_IndexFrame3{
+height				: 480px;
+width				: 100%;
+}
+
 /*=== Caution ===*/
 div.gf_NonMobile{
 display				: none;
@@ -28,7 +37,16 @@ font-weight			: bolder;
 }
 
 /*=== Start Button ===*/
-#gf_Start a.StartButton{
+#gf_Mente a{
+display				: inline;
+}
+
+#gf_Start a{
+display				: none;
+}
+
+#gf_Mente a,
+#gf_Start a{
 color				: #ffffff;
 background-color	: #00BB00;
 border				: solid 2px #006600;
@@ -38,79 +56,23 @@ font-size			: 18px;
 font-weight			: bolder;
 font-family			: "Arial Black";
 text-decoration		: none;
-display				: inline;
+/* display			: inline; */
 text-decoration		: none;
 }
 
+#gf_Start a.StartButton{
+color				: #ffffff;
+background-color	: #00BB00;
+border				: solid 2px #006600;
+}
+
+#gf_Mente a.MenteButton,
 #gf_Start a.StartButton:hover{
 color				: #ff4500;
 background-color	: #ffd700;
 border				: solid 2px #ff8c00;
 }
 
-/*=== Transrate ===*/
-#gf_Transrate label.Label{
-color				: #33CC33;
-background-color	: #003300;
-border				: 1px solid #33CC33;
-display				: inline-block;
--webkit-transition	: background-color 0.2s linear;
-transition			: background-color 0.2s linear;
-box-sizing			: border-box;
-position			: relative;
-margin				: 0px;
-padding				: 1px 8px 1px 26px;
-border-radius		: 8px;
-vertical-align		: middle;
-cursor				: pointer;
-}
-
-#gf_Transrate label.Label:after{
-border				: 1px solid #33CC33;
-display				: block;
--webkit-transition	: border-color 0.2s linear;
-transition			: border-color 0.2s linear;
-top					: 50%;
-left				: 2px;
-width				: 16px;
-height				: 16px;
-margin				: -10px 0px 0px 2px;
-padding				: 0px;
-border-radius		: 6px;
-position			: absolute;
-content				: '';
-}
-
-#gf_Transrate label.Label:before {
-background-color	: #33CC33;
-display				: block;
--webkit-transition	: opacity 0.2s linear;
-transition			: opacity 0.2s linear;
-top					: 50%;
-left				: 6px;
-width				: 10px;
-height				: 10px;
-margin				: -6px 0px 0px 2px;
-padding				: 0px;
-border-radius		: 50%;
-position			: absolute;
-content				: '';
-opacity				: 0;
-}
-
-#gf_Transrate input[type="radio"].Button{
-display				: none;
-}
-
-#gf_Transrate input[type="radio"].Button:checked + label.Label:before {
-opacity				: 1;
-}
-
-#gf_Transrate div.Deskription{
-color				: #ffff00;
-margin				: 8px 0px 0px;
-padding				: 0px;
-}
 
 /*=== Bunner ===*/
 #gf_Bunner{
@@ -154,6 +116,15 @@ background			: url('../_pic/wall/prcm_sttars.gif');
 }
 
 #com_bodyInline{
+}
+
+/*=== Frame ===*/
+#com_bodyFrameOutline{
+background-color	: transparent;
+}
+
+#com_bodyFrameInline{
+background-color	: transparent;
 }
 
 
@@ -203,6 +174,10 @@ color				: #0000FF;
 background-color	: #00ECFF;
 }
 
+/*=== Frame ===*/
+header .com_headerFrame{
+}
+
 
 
 /* =====================================================
@@ -231,6 +206,10 @@ color				: #33CC33 ;
 background-color	: #003300 ;
 }
 
+/*=== Frame ===*/
+footer .com_footerFrame{
+}
+
 
 
 /* =====================================================
@@ -256,64 +235,168 @@ color				: #000000;
 background-color	: #FFFFFF;	*/
 font-family			: "Arial Black";
 }
-
-#com_CopyrightFooter div.com_Menu_Ope, #com_CopyrightFooter a.com_Menu_Ope{
-color				: #FFFFFF;
-background-color	: #008000;
-border-radius		: 0px !important;
-}
-#com_CopyrightFooter div.com_Menu_Ope:hover, #com_CopyrightFooter a.com_Menu_Ope:hover{
-color				: #008000;
-background-color	: #00FF3B;
+#com_CopyrightFooter div.com_Menu_Cel{
+border-radius		: 4px;
 }
 
+/* *** Yellow / Therms ***/
 #com_CopyrightFooter div.com_Menu_Rule, #com_CopyrightFooter a.com_Menu_Rule{
-color				: #FFFFFF;
-background-color	: #FF0000;
-border-radius		: 0px !important;
-}
-#com_CopyrightFooter div.com_Menu_Rule:hover, #com_CopyrightFooter a.com_Menu_Rule:hover{
-color				: #FF0000;
-background-color	: #FFCCFF;
-}
-
-#com_CopyrightFooter div.com_Menu_RSS, #com_CopyrightFooter a.com_Menu_RSS{
-color				: #FFFFFF;
-background-color	: #ee802f;
-border-radius		: 0px !important;
-}
-#com_CopyrightFooter div.com_Menu_RSS:hover, #com_CopyrightFooter a.com_Menu_RSS:hover{
-color				: #ee802f;
+color				: #F00000;
 background-color	: #FFFF00;
 }
-
-#com_CopyrightFooter div.com_Menu_Github, #com_CopyrightFooter a.com_Menu_Github{
-color				: #FFFFFF;
-background-color	: #800080;
-border-radius		: 0px !important;
-}
-#com_CopyrightFooter div.com_Menu_Github:hover, #com_CopyrightFooter a.com_Menu_Github:hover{
-color				: #FF0000;
-background-color	: #FFDDFF;
+#com_CopyrightFooter div.com_Menu_Rule:hover, #com_CopyrightFooter a.com_Menu_Rule:hover{
+color				: #F00000;
+background-color	: #FFD5EC;
 }
 
-#com_CopyrightFooter div.com_Menu_TwitterGF, #com_CopyrightFooter a.com_Menu_TwitterGF{
+/* *** Orange / Update ***/
+#com_CopyrightFooter div.com_Menu_Update, #com_CopyrightFooter a.com_Menu_Update{
 color				: #FFFFFF;
-background-color	: #6699FF;
-border-radius		: 0px !important;
+background-color	: #ee802f;
 }
-#com_CopyrightFooter div.com_Menu_TwitterGF:hover, #com_CopyrightFooter a.com_Menu_TwitterGF:hover{
+#com_CopyrightFooter div.com_Menu_Update:hover, #com_CopyrightFooter a.com_Menu_Update:hover{
+color				: #59270D;
+background-color	: #FFFF99;
+}
+
+/* *** Dark Blue / Mentenance ***/
+#com_CopyrightFooter div.com_Menu_Mente, #com_CopyrightFooter a.com_Menu_Mente{
+color				: #FFFFFF;
+background-color	: #999900;
+}
+#com_CopyrightFooter div.com_Menu_Mente:hover, #com_CopyrightFooter a.com_Menu_Mente:hover{
+color				: #59270D;
+background-color	: #FFFF99;
+}
+
+/* *** Green / Information ***/
+#com_CopyrightFooter div.com_Menu_Info, #com_CopyrightFooter a.com_Menu_Info{
+color				: #FFFFFF;
+background-color	: #008000;
+}
+#com_CopyrightFooter div.com_Menu_Info:hover, #com_CopyrightFooter a.com_Menu_Info:hover{
+color				: #006633;
+background-color	: #CCFF99;
+}
+
+/* *** Dark green / Documents ***/
+#com_CopyrightFooter div.com_Menu_Doc, #com_CopyrightFooter a.com_Menu_Doc{
+color				: #FFFFFF;
+background-color	: #003300;
+}
+#com_CopyrightFooter div.com_Menu_Doc:hover, #com_CopyrightFooter a.com_Menu_Doc:hover{
+color				: #003300;
+background-color	: #00DD00;
+}
+
+/* *** Blue / Index ***/
+#com_CopyrightFooter div.com_Menu_Index, #com_CopyrightFooter a.com_Menu_Index{
 color				: #FFFFFF;
 background-color	: #0000FF;
 }
-
-#com_CopyrightFooter a.com_Menu_Twitter{
-color				: #6699FF;
-background-color	: #000000;
+#com_CopyrightFooter div.com_Menu_Index:hover, #com_CopyrightFooter a.com_Menu_Index:hover{
+color				: #3333FF;
+background-color	: #CCFFFF;
 }
-#com_CopyrightFooter a.com_Menu_Twitter:hover{
+
+/* *** Pink / Acknowrage ***/
+#com_CopyrightFooter div.com_Menu_Acknow, #com_CopyrightFooter a.com_Menu_Acknow{
 color				: #FFFFFF;
-background-color	: #6699FF;
+background-color	: #FF55FF;
+}
+#com_CopyrightFooter div.com_Menu_Acknow:hover, #com_CopyrightFooter a.com_Menu_Acknow:hover{
+color				: #FFFFFF;
+background-color	: #F00000;
+}
+
+/* *** Purple / How to Use ***/
+#com_CopyrightFooter div.com_Menu_Howto, #com_CopyrightFooter a.com_Menu_Howto{
+color				: #FFFFFF;
+background-color	: #6927FF;
+}
+#com_CopyrightFooter div.com_Menu_Howto:hover, #com_CopyrightFooter a.com_Menu_Howto:hover{
+color				: #FFFFFF;
+background-color	: #CC99FF;
+/*background-color	: #660066;*/
+}
+
+/* *** Red / Youyube ***/
+#com_CopyrightFooter div.com_Menu_Youtube, #com_CopyrightFooter a.com_Menu_Youtube{
+color				: #FFFFFF;
+background-color	: #EF180F;
+}
+#com_CopyrightFooter div.com_Menu_Youtube:hover, #com_CopyrightFooter a.com_Menu_Youtube:hover{
+color				: #FFFFFF;
+background-color	: #010101;
+}
+
+/* *** Purple / Github ***/
+#com_CopyrightFooter div.com_Menu_Github, #com_CopyrightFooter a.com_Menu_Github{
+color				: #FFFFFF;
+background-color	: #B064C6;
+}
+#com_CopyrightFooter div.com_Menu_Github:hover, #com_CopyrightFooter a.com_Menu_Github:hover{
+color				: #EEEEEE;
+background-color	: #7491FF;
+}
+
+/* *** Black / Warnlist ***/
+#com_CopyrightFooter div.com_Menu_Warnlist, #com_CopyrightFooter a.com_Menu_Warnlist{
+color				: #F00000;
+background-color	: #222222;
+}
+#com_CopyrightFooter div.com_Menu_Warnlist:hover, #com_CopyrightFooter a.com_Menu_Warnlist:hover{
+color				: #F00000;
+background-color	: #FFFFCC;
+}
+
+/* *** Light gray / Contact ***/
+#com_CopyrightFooter div.com_Menu_Contact, #com_CopyrightFooter a.com_Menu_Contact{
+color				: #FFFFFF;
+background-color	: #808080;
+}
+#com_CopyrightFooter div.com_Menu_Contact:hover, #com_CopyrightFooter a.com_Menu_Contact:hover{
+color				: #111111;
+background-color	: #EEEEEE;
+}
+
+/* *** Pink / X :: Public ***/
+#com_CopyrightFooter div.com_Menu_X_Pub, #com_CopyrightFooter a.com_Menu_X_Pub{
+color				: #FFFFFF;
+background-color	: #FF367F;
+}
+#com_CopyrightFooter div.com_Menu_X_Pub:hover, #com_CopyrightFooter a.com_Menu_X_Pub:hover{
+color				: #FFFFFF;
+background-color	: #7491FF;
+}
+
+/* *** Blue / X :: Author ***/
+#com_CopyrightFooter div.com_Menu_X_Auth, #com_CopyrightFooter a.com_Menu_X_Auth{
+color				: #FFFFFF;
+background-color	: #7491FF;
+}
+#com_CopyrightFooter div.com_Menu_X_Auth:hover, #com_CopyrightFooter a.com_Menu_X_Auth:hover{
+color				: #FFFFFF;
+background-color	: #C63735;
+}
+
+/* *** Maroon / X :: Deverop ***/
+#com_CopyrightFooter div.com_Menu_X_Dev, #com_CopyrightFooter a.com_Menu_X_Dev{
+color				: #FFFFFF;
+background-color	: #C63735;
+}
+#com_CopyrightFooter div.com_Menu_X_Dev:hover, #com_CopyrightFooter a.com_Menu_X_Dev:hover{
+color				: #FFFFFF;
+background-color	: #7491FF;
+}
+
+#com_CopyrightFooter a.com_Menu_TwitterFT{
+color				: #0000FF;
+background-color	: #FFFFFF;
+}
+#com_CopyrightFooter a.com_Menu_TwitterFT:hover{
+color				: #FFFFFF;
+background-color	: #0000FF;
 }
 
 
@@ -405,6 +488,36 @@ background-color	: #000000;
 
 
 /* =====================================================
+   Transrate
+===================================================== */
+
+#iRAD_Transrate{
+color				: #ffff00;
+}
+
+#iRAD_Transrate label.Label{
+color				: #33CC33;
+background-color	: #003300;
+border				: 1px solid #33CC33;
+}
+
+#iRAD_Transrate label.Label:after{
+border				: 1px solid #33CC33;
+}
+
+#iRAD_Transrate label.Label:before {
+background-color	: #33CC33;
+}
+
+#iRAD_Transrate input[type="radio"].Button{
+}
+
+#iRAD_Transrate input[type="radio"].Button:checked + label.Label:before {
+}
+
+
+
+/* =====================================================
    Selector
 ===================================================== */
 
@@ -441,6 +554,257 @@ border-right		: solid 4px #009900;
 border-bottom		: solid 4px #009900;
 border-top			: 0px;
 }
+
+
+
+/* =====================================================
+   Button Style
+===================================================== */
+
+/*=== Button Color :: Default・青っぽい・緑っぽい ===*/
+.com_BTNCOL_Def{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 2px #0033CC;
+}
+
+.com_BTNCOL_Def:hover{
+color				: #33CC33;
+background-color	: #003300;
+border				: solid 2px #009900;
+}
+
+
+/*=== Button Color :: Hold ===*/
+.com_BTNCOL_Hold{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 2px #0033CC;
+}
+
+.com_BTNCOL_Hold:hover{
+color				: #003300;
+background-color	: #669900;
+border				: solid 2px #009900;
+}
+
+.com_BTNCOL_Hold_On{
+color				: #003300;
+background-color	: #99FF00;
+border				: solid 2px #009900;
+}
+
+
+/*=== Button Color :: Click ===*/
+.com_BTNCOL_Click{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 2px #0033CC;
+}
+
+.com_BTNCOL_Click:hover{
+color				: #880000;
+background-color	: #CC6600;
+border				: solid 2px #880000;
+}
+
+.com_BTNCOL_Click_On{
+color				: #880000;
+background-color	: #FFCC33;
+border				: solid 2px #880000;
+}
+
+
+/*=== Button Color :: Message ===*/
+.com_BTNCOL_Msg{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 2px #0033CC;
+}
+
+.com_BTNCOL_Msg:hover{
+color				: #33CC33;
+background-color	: #003300;
+border				: solid 2px #009900;
+}
+
+
+/*=== Button Color :: Check ===*/
+label.com_BTNCOL_Check{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 2px #0033CC;
+}
+
+label.com_BTNCOL_Check:hover{
+color				: #CCFFFF;
+background-color	: #0033CC;
+border				: solid 2px #3399FF;
+}
+
+input[type="checkbox"].com_BTNCOL_Check:checked + .com_BTNCOL_Check{
+color				: #000088;
+background-color	: #0099FF;
+border				: solid 2px #3399FF;
+}
+
+
+/*=== Button Color :: Radio ===*/
+label.com_BTNCOL_Radio{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 2px #0033CC;
+}
+
+label.com_BTNCOL_Radio:hover{
+color				: #CCFFFF;
+background-color	: #0033CC;
+border				: solid 2px #3399FF;
+}
+
+label.com_BTNCOL_Radio:after{
+border				: solid 2px #0033CC;
+}
+
+label.com_BTNCOL_Radio:before {
+background-color	: #0099FF;
+}
+
+
+/*=== Button Color :: Disabled・灰色 ===*/
+.com_BTNCOL_Def:disabled,
+.com_BTNCOL_Disabled{
+color				: #CCCCCC;
+background-color	: #202020;
+border				: solid 2px #666666;
+}
+
+
+
+
+
+
+/* 未使用 */
+
+					/* デフォルト・水色っぽい */
+.com_BTN_Miz{
+color				: #3366FF;
+background-color	: #66FFFF;
+border				: solid 2px #3399FF;
+}
+					/* デフォルト・赤っぽい */
+.com_BTN_Red{
+color				: #cccccc;
+background-color	: #330000;
+border				: solid 2px #880000;
+}
+					/* デフォルト・赤柴っぽい */
+.com_BTN_Ppl{
+color				: #FFDDFF;
+background-color	: #CC3399;
+border				: solid 2px #660066;
+}
+
+
+
+
+
+
+/* =====================================================
+   Popup Help
+===================================================== */
+
+.com_PopupHelp{
+color				: #ffffff;
+background-color	: #000033;
+border				: solid 4px #0000ff;
+}
+
+
+
+/* =====================================================
+   Popup Window
+===================================================== */
+
+.com_PopupWin{
+background-color	: #000033;
+border				: solid 4px #0000ff;
+}
+
+.com_PopupWin_Bar{
+background-color	: #0000ff;
+border				: solid 4px #0000ff;
+}
+
+.com_PopupWin_Close{
+background-color	: #ff0000;
+/*border-top		: solid 2px #ff0000;
+border-left			: solid 2px #ff0000;
+border-right		: solid 2px #ff0000;
+border-bottom		: solid 2px #0000ff;*/
+border				: solid 2px #ff0000;
+}
+.com_PopupWin_Close_On{
+background-color	: #99FFFF;
+/*border-top		: solid 2px #99FFFF;
+border-left			: solid 2px #99FFFF;
+border-right		: solid 2px #99FFFF;
+border-bottom		: solid 2px #0000ff;*/
+border				: solid 2px #99FFFF;
+}
+
+.com_PopupWin_Body{
+color				: #66CCFF;
+}
+
+.com_PopupWin_TextArea{
+color				: #66CCFF;
+background-color	: #000033;
+box-shadow			: 1px 1px 1px #000088;
+}
+
+.com_PopupWin_AutoBtn{			/* 自動送り */
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 2px #0033CC;
+}
+.com_PopupWin_AutoBtn:hover{
+color				: #33CC33;
+background-color	: #003300;
+border				: solid 2px #009900;
+}
+.com_PopupWin_AutoBtn_On{		/* 自動送り・オン */
+color				: #CCFFFF;
+background-color	: #0033CC;
+border				: solid 2px #3399FF;
+}
+.com_PopupWin_AutoBtn_Iv{		/* 自動送り・イベント中（閉じる不能） */
+color				: #3366FF;
+background-color	: #66FFFF;
+border				: solid 2px #3399FF;
+}
+
+
+
+/* =====================================================
+   Log Box
+===================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

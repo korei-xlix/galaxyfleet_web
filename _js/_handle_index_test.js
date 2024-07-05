@@ -38,6 +38,7 @@ function __handle_PageLoad()
 	//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Reason" : "(none)", "Responce" : "(none)"
 	let wRes = CLS_OSIF.sGet_Resp({ inClass:"__handle", inFunc:"__handle_PageLoad" }) ;
 	
+///	let wSubRes, wPageObj, wSTR_PopupHelp, wSTR_PopupWin ;
 	let wSubRes, wPageObj ;
 	let wFrameID, wFramePath ;
 	
@@ -64,6 +65,31 @@ function __handle_PageLoad()
 	//### 拡張システム情報の追加
 	CLS_GF_ExtSys.sSet() ;
 	
+//###########################
+//# Indexページの設定
+	
+///	/////////////////////////////
+///	// ポップアップヘルプ設定
+///	wSTR_PopupHelp = {
+///		"ARR_Data"	: top.DEF_GF_POPUPHELP_PFRAME_INDEX
+///	} ;
+///	
+///	/////////////////////////////
+///	// ポップアップWindow設定
+///	wSTR_PopupWin = {} ;
+///	
+///	//### Index
+///	wSTR_PopupWin[top.DEF_GF_POPUPWIN_ID_PFRAME_INDEX] = {
+///													//ポップアップWindow IndexID
+///		"IndexID"	: top.DEF_GF_POPUPWIN_ID_PFRAME_INDEX
+////		"Coord" : {									//初期座標
+////			"FTop"  : top.DEF_GVAL_POPUPWIN_FTOP,
+////		"FLeft" : top.DEF_GVAL_POPUPWIN_FLEFT
+////			}
+///	} ;
+///	
+///	/////////////////////////////
+///	// CSSロード
 	/////////////////////////////
 	// 親フレームの設定
 	wSubRes = CLS_WinCtrl.sSet({
@@ -75,6 +101,9 @@ function __handle_PageLoad()
 		inStylePath		: "/_css/",					//CSSカレントパス    /css/
 		inMode			: "elase",					//ボタン非表示・サイズ自動切替
 		inStyleCommPath	: top.DEF_GVAL_NULL,		//Comm Styleのカレントパス（別フォルダの場合）
+///		inPopupHelp		: wSTR_PopupHelp,			//ポップアップヘルプ設定
+///		inPopupWin		: wSTR_PopupWin,			//ポップアップWindow設定
+///		inButton		: top.gARR_RegButtonCtrl,	//ボタン設定
 		inPgIconPath	: "/_pic/icon/galaxyfleet_icon.ico",	//ページアイコン カレントパス  /_pic/icon/koreilabo_icon.ico
 		inUpIconPath	: "/_pic/icon/icon_up.gif",				//更新アイコン   カレントパス  /_pic/icon/new_icon.gif
 		inTrans			: true						//翻訳有効  true=ON（翻訳実行・翻訳モード選択ON）
@@ -85,6 +114,205 @@ function __handle_PageLoad()
 		CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
 		return wRes ;
 	}
+	
+//###########################
+//# Frame1の設定
+	wFrameID = "iFrame1" ;
+	wFramePath = "/frame/test/frame1.htm" ;
+	/////////////////////////////
+	// フレーム設定
+	wSubRes = CLS_FrameCtrl.sSet({
+		inFrameID	: wFrameID,						//フレームID
+		inPath		: wFramePath,					//HTMLファイルパス
+		inPopup		: false,						//true = ポップアップフレーム  false=インラインフレーム
+		inTitle		: false,						//true = 親フレームタイトル変更
+//		inOpen		: false,						//true = 自動オープン
+//		inTimer		: {								//カスタムタイマ（※特に設定不要）
+//			"Value" : top.DEF_GVAL_TIMERCTRL_DEFAULT_TIMEOUT,	//タイマ値(再設定用)
+//			"Retry" : top.DEF_GVAL_TIMERCTRL_DEFAULT_RETRY,		//タイタリトライ回数
+//			"tLog"  : top.DEF_GVAL_TIMERCTRL_LOG_COUNT			//テストログ出力カウント
+//			},
+		inNextProc	: {								//ロード後実行プロセス
+			"Callback"	: __handle_iframeEndProcess,
+			"Arg"		: wFrameID
+			},
+		inTrans		: false							//翻訳有効  true=ON（翻訳実行・翻訳モード選択ON）
+	}) ;
+	if( wSubRes['Result']!=true )
+	{///失敗
+		wRes['Reason'] = "CLS_FrameCtrl.sSet is failed: FrameID=" + String(wFrameID) ;
+		CLS_L.sL({ inRes:wRes, inLevel:"B" }) ;
+		return wRes ;
+	}
+	
+//###########################
+//# Frame2の設定
+	wFrameID = "iFrame2" ;
+	wFramePath = "/frame/test/frame2.htm" ;
+	/////////////////////////////
+	// フレーム設定
+	wSubRes = CLS_FrameCtrl.sSet({
+		inFrameID	: wFrameID,						//フレームID
+		inPath		: wFramePath,					//HTMLファイルパス
+		inPopup		: false,						//true = ポップアップフレーム  false=インラインフレーム
+		inTitle		: false,						//true = 親フレームタイトル変更
+//		inOpen		: false,						//true = 自動オープン
+//		inTimer		: {								//カスタムタイマ（※特に設定不要）
+//			"Value" : top.DEF_GVAL_TIMERCTRL_DEFAULT_TIMEOUT,	//タイマ値(再設定用)
+//			"Retry" : top.DEF_GVAL_TIMERCTRL_DEFAULT_RETRY,		//タイタリトライ回数
+//			"tLog"  : top.DEF_GVAL_TIMERCTRL_LOG_COUNT			//テストログ出力カウント
+//			},
+		inNextProc	: {								//ロード後実行プロセス
+			"Callback"	: __handle_iframeEndProcess,
+			"Arg"		: wFrameID
+			},
+		inTrans		: false							//翻訳有効  true=ON（翻訳実行・翻訳モード選択ON）
+	}) ;
+	if( wSubRes['Result']!=true )
+	{///失敗
+		wRes['Reason'] = "CLS_FrameCtrl.sSet is failed: FrameID=" + String(wFrameID) ;
+		CLS_L.sL({ inRes:wRes, inLevel:"B" }) ;
+		return wRes ;
+	}
+	
+//###########################
+//# Frame3の設定
+	wFrameID = "iFrame3" ;
+	wFramePath = "/frame/test/frame3.htm" ;
+	/////////////////////////////
+	// フレーム設定
+	wSubRes = CLS_FrameCtrl.sSet({
+		inFrameID	: wFrameID,						//フレームID
+		inPath		: wFramePath,					//HTMLファイルパス
+		inPopup		: false,						//true = ポップアップフレーム  false=インラインフレーム
+		inTitle		: false,						//true = 親フレームタイトル変更
+//		inOpen		: false,						//true = 自動オープン
+//		inTimer		: {								//カスタムタイマ（※特に設定不要）
+//			"Value" : top.DEF_GVAL_TIMERCTRL_DEFAULT_TIMEOUT,	//タイマ値(再設定用)
+//			"Retry" : top.DEF_GVAL_TIMERCTRL_DEFAULT_RETRY,		//タイタリトライ回数
+//			"tLog"  : top.DEF_GVAL_TIMERCTRL_LOG_COUNT			//テストログ出力カウント
+//			},
+		inNextProc	: {								//ロード後実行プロセス
+			"Callback"	: __handle_iframeEndProcess,
+			"Arg"		: wFrameID
+			},
+		inTrans		: false							//翻訳有効  true=ON（翻訳実行・翻訳モード選択ON）
+	}) ;
+	if( wSubRes['Result']!=true )
+	{///失敗
+		wRes['Reason'] = "CLS_FrameCtrl.sSet is failed: FrameID=" + String(wFrameID) ;
+		CLS_L.sL({ inRes:wRes, inLevel:"B" }) ;
+		return wRes ;
+	}
+	
+//###########################
+//# Windowフレームの設定
+	wFrameID = "iWindowFrame" ;
+	wFramePath = "/frame/test/window_frame.htm" ;
+	/////////////////////////////
+	// フレーム設定
+	wSubRes = CLS_FrameCtrl.sSet({
+		inFrameID	: wFrameID,						//フレームID
+		inPath		: wFramePath,					//HTMLファイルパス
+		inPopup		: true,							//true = ポップアップフレーム  false=インラインフレーム
+		inTitle		: false,						//true = 親フレームタイトル変更
+		inOpen		: false,						//true = 自動オープン
+//		inTimer		: {								//カスタムタイマ（※特に設定不要）
+//			"Value" : top.DEF_GVAL_TIMERCTRL_DEFAULT_TIMEOUT,	//タイマ値(再設定用)
+//			"Retry" : top.DEF_GVAL_TIMERCTRL_DEFAULT_RETRY,		//タイタリトライ回数
+//			"tLog"  : top.DEF_GVAL_TIMERCTRL_LOG_COUNT			//テストログ出力カウント
+//			},
+//		inNextProc	: {								//ロード後実行プロセス
+//			"Callback"	: __handle_iframeEndProcess,
+//			"Arg"		: wFrameID
+//			},
+		inTrans		: false							//翻訳有効  true=ON（翻訳実行・翻訳モード選択ON）
+	}) ;
+	if( wSubRes['Result']!=true )
+	{///失敗
+		wRes['Reason'] = "CLS_FrameCtrl.sSet is failed: FrameID=" + String(wFrameID) ;
+		CLS_L.sL({ inRes:wRes, inLevel:"B" }) ;
+		return wRes ;
+	}
+	
+///	//### フレームオープン
+///	wSubRes = CLS_FrameCtrl.sOpen({
+///		inFrameID	: wFrameID						//フレームID
+///	}) ;
+///	if( wSubRes['Result']!=true )
+///	{///失敗
+///		wRes['Reason'] = "CLS_FrameCtrl.sOpen is failed: FrameID=" + String(wFrameID) ;
+///		CLS_L.sL({ inRes:wRes, inLevel:"B" }) ;
+///		return wRes ;
+///	}
+	
+/////###########################
+/////# Window Frameの設定
+///	
+///	wFrameID = "iWindowFrame" ;
+///	wFramePath = "/frame/test/window_frame.htm" ;
+///	/////////////////////////////
+///	// フレーム設定
+///	wSubRes = CLS_FrameCtrl.sSet({
+///		inFrameID	: wFrameID,						//フレームID
+///		inPath		: wFramePath,					//HTMLファイルパス
+///		inPopup		: true,							//true = ポップアップフレーム  false=インラインフレーム
+///		inTitle		: true,							//true = 親フレームタイトル変更
+///		
+/////		inTimer		: {								//カスタムタイマ（※特に設定不要）
+/////			"Value" : top.DEF_GVAL_TIMERCTRL_DEFAULT_TIMEOUT,	//タイマ値(再設定用)
+/////			"Retry" : top.DEF_GVAL_TIMERCTRL_DEFAULT_RETRY,		//タイタリトライ回数
+/////			"tLog"  : top.DEF_GVAL_TIMERCTRL_LOG_COUNT			//テストログ出力カウント
+/////			},
+/////		inNextProc	: {								//ロード後実行プロセス
+/////			"Callback"	: __handle_AfterLoadProcess,
+/////			"Arg"		: new Array()
+/////			},
+///		inTrans		: false							//翻訳有効  true=ON（翻訳実行・翻訳モード選択ON）
+///	}) ;
+///	if( wSubRes['Result']!=true )
+///	{///失敗
+///		wRes['Reason'] = "CLS_FrameCtrl.sSet is failed: FrameID=" + String(wFrameID) ;
+///		CLS_L.sL({ inRes:wRes, inLevel:"B" }) ;
+///		return wRes ;
+///	}
+///	
+///	//### フレームオープン
+///	wSubRes = CLS_FrameCtrl.sOpen({
+///		inFrameID	: wFrameID						//フレームID
+///	}) ;
+///	if( wSubRes['Result']!=true )
+///	{///失敗
+///		wRes['Reason'] = "CLS_FrameCtrl.sOpen is failed: FrameID=" + String(wFrameID) ;
+///		CLS_L.sL({ inRes:wRes, inLevel:"B" }) ;
+///		return wRes ;
+///	}
+	
+//###########################
+	
+///	/////////////////////////////
+///	// システム状態変更（→運用へ）
+///	wSubRes = CLS_Sys.sChg({
+///		inStatus	: top.DEF_GVAL_SYS_STAT_RUN
+///	}) ;
+///	if( wSubRes['Result']!=true )
+///	{///失敗
+///		wRes['Reason'] = "CLS_Sys.sChg is failed" ;
+///		CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
+///		return wRes ;
+///	}
+///	
+///	/////////////////////////////
+///	// スタートボタン制御（表示）
+///	CLS_GF_ExtSys.sStartButtonCtrl({
+///		inPageObj	: top.gSTR_WinCtrlInfo.PageObj,
+///		inStart		: true
+///	}) ;
+///	
+///	/////////////////////////////
+///	// システム情報表示
+///	CLS_Sys.sView() ;
+///	
 	
 	/////////////////////////////
 	// 設定完了待ち
@@ -396,6 +624,68 @@ function __handle_Start()
 //**********************************
 
 	return ;
+}
+
+
+
+
+
+
+//#####################################################
+//# テストハンドラ
+//#####################################################
+
+///////////////////////////////////////////////////////
+//  Popup Windowオープン
+///////////////////////////////////////////////////////
+function __handle_PopupWinOpen()
+{
+	CLS_PopupCtrl.sPopupWindow_Open({
+		inFrameID : top.DEF_GVAL_PARENT_FRAME_ID,
+		inIndexID : top.DEF_GF_POPUPWIN_ID_PFRAME_INDEX,
+		inOpen    : true
+	}) ;
+}
+
+
+
+///////////////////////////////////////////////////////
+//  子フレーム側 Popup Windowオープン
+///////////////////////////////////////////////////////
+function __handle_Frame_PopupWinOpen()
+{
+	CLS_PopupCtrl.sPopupWindow_Open({
+		inFrameID : "iWindowFrame",
+		inIndexID : "iPopupWin_win",
+		inOpen    : true
+	}) ;
+}
+
+
+
+///////////////////////////////////////////////////////
+//  ハンドラ（ロード後プロセス・テスト用）
+///////////////////////////////////////////////////////
+function __handle_AfterLoadProcess()
+{
+	//###########################
+	//# 応答形式の取得
+	//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Reason" : "(none)", "Responce" : "(none)"
+	let wRes = CLS_OSIF.sGet_Resp({ inClass:"__handle", inFunc:"__handle_Circle" }) ;
+	
+	//###########################
+	//# ↓↓↓   処理     ↓↓↓
+	
+	wMessage = "Running after load process" ;
+	CLS_L.sL({ inRes:wRes, inLevel:"X", inMessage:wMessage }) ;
+	
+	//# ↑↑↑ここまで    ↑↑↑
+	//###########################
+	
+	/////////////////////////////
+	// 正常
+	wRes['Result'] = true ;
+	return wRes ;
 }
 
 

@@ -1,32 +1,45 @@
-# Galaxy Fleet　～Game Site～  
-  
+# Galaxy Fleet：Website
+
+## Website
+
+## このドキュメントについて / About this document
+
 **★このリポジトリの改造、流用、配布、クローンは禁止です★**  
-**　　Modification, appropriation, distribution, and cloning of this repository are prohibited.**  
+    **Modification, diversion, distribution, and cloning of this repository are prohibited**  
   
-
-<h1 id="aHowto">このリポジトリについて</h1>  
-このリポジトリは、Galaxy FleetのGame Siteと本体の設置用リポジトリです。  
-本体情報についてはGalaxy Fleetリポジトリのreadmeを参照ください。  
+このドキュメント群ではブラウザで動作する艦隊ストラテジゲーム「Galaxy Fleet」のWebサイトです。  
   
-  　　[[Galaxy Fleetリポジトリ]](https://github.com/korei-xlix/galaxyfleet)  
+　　This document group is the website for the fleet strategy game "Galaxy Fleet" that runs on a browser.  
   
 
 
 
 
 
-<h1 id="aRules">リポジトリの利用規約 / Repository terms</h1>  
+## 目次 / Table of contents
+
+* [readme.md](/readme.md)
+  * [リポジトリの利用規約](#リポジトリの利用規約--repository-terms)
+
+* [github:Galaxy Fleetドキュメント](https://github.com/korei-xlix/galaxyfleet_doc)
+* [github:Galaxy Fleetデータベース](https://github.com/korei-xlix/galaxyfleet_db)
+  
+
+
+
+
+
+## リポジトリの利用規約（共通） / Repository terms of use
 
 本項目では、githubの各リポジトリの共通的な利用規約について定めます。  
-
 
 * 本規約は、リポジトリ上の文章、数値などのデータ、ソースコード、  
   ユーザアカウント情報、コメント、リンク先の情報など情報全てに適用されます。  
 
 * 本リポジトリはフリーウェア規約に準拠します。
 
-* **当リポジトリのソースコードの改造、改造物の配布は自由に行えます。**  
-  **ただし、リポジトリのクローンは【禁止〗とします**。  
+* **当リポジトリのソースコードの改造、改造物の配布、クローンは禁止とします。**  
+  **ただし、フリーウェア規格には準拠するため、"非公式に配布、クローンは認め"ます。**  
 
 * リポジトリのソースコード使用の許諾、謝辞については不要です。  
 
@@ -51,33 +64,34 @@
 
 * お問い合わせについて。  
 
-  * ポジティブなご意見、ご感想があれば、開発者ホームページ記載の連絡先までお願いします。  
-    誠意あるメッセージについては、大変励みになります。  
+    * ポジティブなご意見、ご感想があれば、開発者ホームページ記載の連絡先までお願いします。  
+      誠意あるメッセージについては、大変励みになります。  
 
-  * ご要望については対応する補償はありませんが、  
-    参考ご意見として送っていただけると大変励みになります。  
+    * ご要望については対応する補償はありませんが、  
+      参考ご意見として送っていただけると大変励みになります。  
 
   * その他、仕様に関するお問い合わせ、不具合へのクレームは受け付けません。  
 
   * 第三者を介したトラブル解決の際、当方の名称を出すのはご遠慮ください。  
-  
-  　　[[連絡先ページ]](https://website.koreis-labo.com/rules/address.htm)  
-  
+  　　[[連絡先]](https://website.koreis-labo.com/rules/contact.htm)  
 
 
 
 
 
 ***
-::Game Site= https://galaxy-fleet.koreis-labo.com/  
-::github= https://github.com/korei-xlix/galaxyfleet  
-::Twitter= https://twitter.com/galaxy_fleet  
+::Game Site= [https://galaxy-fleet.koreis-labo.com/](https://galaxy-fleet.koreis-labo.com/)  
+::github= [https://github.com/korei-xlix/galaxyfleet](https://github.com/korei-xlix/galaxyfleet)  
+::Public X= [https://twitter.com/korei_sup](https://twitter.com/korei_sup)  
+  
+::Deverop= Samafeald (@samafeald)  
+::X= [https://x.com/samafeald](https://x.com/samafeald)  
   
 
 ***
 [[トップへ戻る]](/readme.md)  
   
 ::Admin= Korei (@korei-xlix)  
-::github= https://github.com/korei-xlix/  
-::Web= https://website.koreis-labo.com/  
-::Twitter= https://twitter.com/korei_xlix  
+::github= [https://github.com/korei-xlix/](https://github.com/korei-xlix/)  
+::Web= [https://website.koreis-labo.com/](https://website.koreis-labo.com/)  
+::X= [https://x.com/korei_xlix](https://x.com/korei_xlix)  
