@@ -75,58 +75,19 @@ text-decoration		: none;
 
 
 /* =====================================================
-   Contents Index
-===================================================== */
-
-#ContentsIndex{
-border				: 0px !important;
-background-color	: transparent !important;
-}
-#ContentsIndex tr{
-border				: 0px !important;
-}
-
-#ContentsIndex  td{
-border				: 0px !important;
-padding-top			: 8px;
-padding-left		: 10px;
-}
-
-#ContentsIndex .Link{
-margin				: 4px 0px;
-}
-
-#ContentsIndex .Text{
-margin				: 0px 0px 4px 6px;
-
-}
-
-#ContentsIndex a{
-/* font-size		: 20px; */
-font-weight			: bolder;
-/*
-color				: transparent !important;
-background-color	: transparent !important;
-display				: block ;
-text-decoration		: none; */
-}
-
-
-
-/* =====================================================
    Address
 ===================================================== */
 
 #Address{
-border				: solid 1px #a0a0FF;
-background-color	: #a0a0FF;
+border				: solid 1px #CC3333;
+background-color	: #CC3333;
 }
 #Address tr{
-border				: solid 1px #a0a0FF;
+border				: solid 1px #CC3333;
 }
 
 #Address  td{
-border				: solid 1px #a0a0FF;
+border				: solid 1px #CC3333;
 padding-top			: 8px;
 padding-left		: 10px;
 }
@@ -140,7 +101,7 @@ text-decoration		: none;
 
 #Address div.Address{
 color				: #ffffff;
-background-color	: #8080ff;
+background-color	: #FF3333;
 margin				: 4px 32px 8px 0px;
 padding				: 2px;
 text-decoration		: underline;
@@ -153,15 +114,15 @@ text-decoration		: underline;
 ===================================================== */
 
 #Thanks{
-border				: solid 1px #a0a0FF;
-background-color	: #a0a0FF;
+border				: solid 1px #CC3333;
+background-color	: #CC3333;
 }
 #Thanks tr{
-border				: solid 1px #a0a0FF;
+border				: solid 1px #CC3333;
 }
 
 #Thanks  td{
-border				: solid 1px #a0a0FF;
+border				: solid 1px #CC3333;
 padding-top			: 8px;
 padding-left		: 10px;
 }
@@ -242,19 +203,19 @@ background-color	: white;
 ===================================================== */
 
 header{
-background-color	: #6699FF;
-border-top			: solid 6px #0066CC;
-border-bottom		: solid 6px #0066CC;
+background-color	: #CC3333;
+border-top			: solid 6px #660000;
+border-bottom		: solid 6px #660000;
 }
 
 header span.com_Menu_Select{
-color				: #0033FF;
-background-color	: #CCFFFF;
+color				: #FF0000;
+background-color	: #FFDDFF;
 }
 
 header a.com_Menu_Cel{
 color				: #FFFFFF;
-background-color	: #0066FF;
+background-color	: #FF3300;
 
 }
 
@@ -264,7 +225,7 @@ color				: #FFFFFF;
 
 header a.com_CSS_Mode{
 color				: #FFFFFF;
-background-color	: #006699;
+background-color	: #FF3300;
 }
 
 
@@ -274,9 +235,9 @@ background-color	: #006699;
 ===================================================== */
 
 footer{
-background-color	: cornflowerblue;
-border-top			: solid 6px darkblue;
-border-bottom		: solid 8px darkblue;
+background-color	: #CC3333;
+border-top			: solid 6px #660000;
+border-bottom		: solid 8px #660000;
 }
 
 footer div.com_Menu_Description{
@@ -284,8 +245,8 @@ color				: paleturquoise;
 }
 
 footer a.com_Menu_Cel{
-color				: paleturquoise;
-background-color	: royalblue;
+color				: #FFFFFF;
+background-color	: #FF3300;
 }
 
 
@@ -486,14 +447,11 @@ background-color	: transparent;
 #com_Navigation{
 color				: blue;
 background-color	: transparent;
-/*
-background-color	: cyan;
-*/
 }
 
 #com_Navigation div.com_NavigationTitle{
 color				: #FFFFFF;
-background-color	: #000066;
+background			: #FF3333;
 }
 
 #com_Navigation a{
@@ -514,14 +472,14 @@ background-color	: #DDDDDD;
 
 .com_ContentsTitle{
 color				: #FFFFFF;
-background			: #0099FF;
+background			: #FF3333;
 }
 .com_ContentsTitle:before{
-border-bottom		: solid 10px #0099FF;
+border-bottom		: solid 10px #990000;
 border-right		: solid 20px transparent;
 }
 .com_ContentsTitle:after{
-border-top			: solid 10px #0099FF;
+border-top			: solid 10px #990000;
 border-left			: solid 20px transparent;
 }
 
@@ -536,37 +494,6 @@ color				: #FFFFFF;
 .com_ContentsTitle_Bunner:hover{
 color				: #0000FF;
 background			: #FFFFFF;
-}
-
-
-
-/* =====================================================
-   Transrate
-===================================================== */
-
-#iRAD_Transrate{
-/* color			: #000000; */
-background-color	: #ffffff;
-}
-
-#iRAD_Transrate label.Label{
-color				: #0000EE;
-background-color	: #BAD3FF;
-border				: 1px solid #0000EE;
-}
-
-#iRAD_Transrate label.Label:after{
-border				: 1px solid #0000EE;
-}
-
-#iRAD_Transrate label.Label:before {
-background-color	: #0000EE;
-}
-
-#iRAD_Transrate input[type="radio"].Button{
-}
-
-#iRAD_Transrate input[type="radio"].Button:checked + label.Label:before {
 }
 
 

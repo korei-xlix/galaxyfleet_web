@@ -166,10 +166,29 @@
 
 
 
+<section class="com_ContentsSection_Center com_NonMobileOpen">
+
+	<img class="com_PopupHelp_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SHelp({
+		inID : 'gf_TestBtn', inLang : { 'JP':'テストです', 'EN':'Test Button' } });" />
+	<p>
+		<a class="StartButton" href="javascript:void(0)" id="gf_TestBtn">TEST</a>
+	</p>
+
+	<img class="com_PopupHelp_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SHelp({
+		inID : 'gf_TestBtn2', inLang : { 'JP':'テストですが何か', 'EN':'Happen the Test ?' } });" />
+	<p>
+		<a class="StartButton" href="javascript:void(0)" id="gf_TestBtn2">TEST 2</a>
+	</p>
+
+</section>
+
+
+
 
 
 
 <section id="gf_Transrate" class="com_ContentsSection_Center com_NonMobileOpen">
+
 	<div id="iRAD_Transrate"></div>
 
 	<div class="wordTrans_JP">
@@ -178,8 +197,11 @@
 	<div class="wordTrans_EN">
 		Please select your language.<br />
 	</div>
-</section>
 
+<!--
+	<a href="javascript:CLS_ClientInfo_getIPinfo({inCallback:CLS_ClientInfo_test})">[取得]</a><br />
+//-->
+</section>
 
 
 
@@ -419,9 +441,196 @@
 
 
 
+<!-- *** テスト用フレーム *** -->
+<!--
+<iframe id="iFrame1" height="480" width="1000" src="/frame/dummy.htm"></iframe>
+<iframe id="iFrame2" height="480" width="1000" src="/frame/dummy.htm"></iframe>
+<iframe id="iFrame3" height="480" width="1000" src="/frame/dummy.htm"></iframe>
+//-->
+<iframe id="iFrame1" class="gf_IndexFrame1" src="/frame/dummy.htm"></iframe>
+<iframe id="iFrame2" class="gf_IndexFrame2" src="/frame/dummy.htm"></iframe>
+<iframe id="iFrame3" class="gf_IndexFrame3" src="/frame/dummy.htm"></iframe>
+
+
+
+
+
 <!-- *** ポップアップヘルプ *** -->
 <div id="iPopupHelp" class="com_PopupHelp"></div>
 
+
+
+
+
+
+<!-- *** ポップアップWindow *** -->
+
+<img class="com_PopupWin_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SWin({
+	inID : 'iPopupWin', inCoord : { 'FTop':100, 'FLeft':100 } });" />
+<div id="iPopupWin" class="com_PopupWin">
+	<div class="com_PopupWin_Bar" id="iPopupWin-PUWINBAR"></div>
+	<div class="com_PopupWin_Close" id="iPopupWin-PUWINCLS"></div>
+	<br class="com_PopupWin_Bar_End" />
+
+	<div class="com_PopupWin_Body_Up">
+		<img class="com_PopupWin_People" alt="人物 (human)" src="/_pic/human/opeko.jpg" id="iPopupWin-PUWINHM" />
+		
+		<input type="button" class="com_PopupWin_AutoBtn" id="iPopupWin-PUWINAUTO" value="自動送り">
+		
+		<br class="com_PopupWin_Body_Up_End" />
+	</div>
+
+	<div class="com_PopupWin_Body">
+		<textarea class="com_PopupWin_TextArea" rows="5" id="iPopupWin-PUWINTA" readonly>あああああ</textarea>
+	</div>
+
+	<div class="com_PopupWin_Body_Dw" id="iPopupWin-PUWINFT">
+
+
+<!--
+		<div class="com_ButtonGroup" id="iPopupWin-PUWINGRP_1">
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_1','iB001_1-NBTN')" />
+			<input type="button" class="com_BTN_Def" id="iB001_1-NBTN" value="ノーマル１">
+			
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_1','iB002_1-NBTN')" />
+			<input type="button" class="com_BTN_Def" id="iB002_1-NBTN" value="ノーマル２" disabled>
+			
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_1','iB003_1-HBTN')" />
+			<input type="button" class="com_HBTN_Def" id="iB003_1-HBTN" value="ホールド１">
+			
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_1','iB004_1-CBTN')" />
+			<input type="button" class="com_CBTN_Def" id="iB004_1-CBTN" value="クリック１">
+		</div>
+
+
+
+		<div class="com_ButtonGroup" id="iPopupWin-PUWINGRP_2">
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_2','iB005_1-NBTN')" />
+			<input type="button" class="com_BTN_Def" id="iB005_1-NBTN" value="ノーマル５">
+			
+
+
+		</div>
+
+
+
+		<div class="com_ButtonGroup" id="iPopupWin-PUWINGRP_3">
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_3','iB006_1-RADB')" />
+			<input type="radio" class="com_RAD_Def" name="aB006-RADB" id="iB006_1-GROUP" checked>
+			<label class="com_RAD_Def" for="iB006_1-GROUP" id="iB006_1-RADB">ラジオ１</label>
+			
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_3','iB006_2-RADB')" />
+			<input type="radio" class="com_RAD_Def" name="aB006-RADB" id="iB006_2-GROUP">
+			<label class="com_RAD_Def" for="iB006_2-GROUP" id="iB006_2-RADB">ラジオ２</label>
+			
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_3','iB006_3-RADB')" />
+			<input type="radio" class="com_RAD_Def" name="aB006-RADB" id="iB006_3-GROUP">
+			<label class="com_RAD_Def" for="iB006_3-GROUP" id="iB006_3-RADB">ラジオ３</label>
+			
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_3','iB006_4-RADB')" />
+			<input type="radio" class="com_RAD_Def" name="aB006-RADB" id="iB006_4-GROUP">
+			<label class="com_RAD_Def" for="iB006_4-GROUP" id="iB006_4-RADB">ラジオ３</label>
+			
+			<div class="com_PopupWin_Body_Blank">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_3','iB006_5-RADB')" />
+				<input type="button" class="com_MBTN_Def" id="iB006_5-RADB" value="決　　　定">
+			</div>
+		</div>
+
+
+
+		<div class="com_ButtonGroup" id="iPopupWin-PUWINGRP_4">
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_4','iB007_1-CBXB')" />
+			<input type="checkbox" class="com_CBX_Def" name="aB007-CBXB" id="iB007_1-GROUP">
+			<label class="com_CBX_Def" for="iB007_1-GROUP" id="iB007_1-CBXB">チェック１</label>
+			
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_4','iB007_2-CBXB')" />
+			<input type="checkbox" class="com_CBX_Def" name="aB007-CBXB" id="iB007_2-GROUP">
+			<label class="com_CBX_Def" for="iB007_2-GROUP" id="iB007_2-CBXB">チェック２</label>
+			
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_4','iB007_3-CBXB')" />
+			<input type="checkbox" class="com_CBX_Def" name="aB007-CBXB" id="iB007_3-GROUP">
+			<label class="com_CBX_Def" for="iB007_3-GROUP" id="iB007_3-CBXB">チェック３</label>
+			
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_4','iB007_4-CBXB')" />
+			<input type="checkbox" class="com_CBX_Def" name="aB007-CBXB" id="iB007_4-GROUP">
+			<label class="com_CBX_Def" for="iB007_4-GROUP" id="iB007_4-CBXB">チェック３</label>
+			
+			<div class="com_PopupWin_Body_Blank">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_4','iB007_5-CBXB')" />
+				<input type="button" class="com_MBTN_Def" id="iB007_5-CBXB" value="決　　　定">
+			</div>
+		</div>
+
+
+		<div class="com_ButtonGroup_x" id="iPopupWin-PUWINGRP_5">
+			<div class="com_PopupWin_Body_Blank">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_5','iB008_1-MSGB')" />
+				<input type="button" class="com_MBTN_Def" id="iB008_1-MSGB" value="メッセージ１">
+			</div>
+			<div class="com_PopupWin_Body_Blank">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_5','iB008_2-MSGB')" />
+				<input type="button" class="com_MBTN_Def" id="iB008_2-MSGB" value="メッセージ１">
+			</div>
+			<div class="com_PopupWin_Body_Blank">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_5','iB008_3-MSGB')" />
+				<input type="button" class="com_MBTN_Def" id="iB008_3-MSGB" value="メッセージ１">
+			</div>
+			<div class="com_PopupWin_Body_Blank">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_5','iB008_4-MSGB')" />
+				<input type="button" class="com_MBTN_Def" id="iB008_4-MSGB" value="メッセージ１">
+			</div>
+			<div class="com_PopupWin_Body_Blank">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_5','iB008_5-MSGB')" />
+				<input type="button" class="com_MBTN_Def" id="iB008_5-MSGB" value="メッセージ１">
+			</div>
+		</div>
+//-->
+
+
+
+		<div class="com_ButtonGroup_x" id="iPopupWin-Message">
+			<div class="com_PopupWin_BtnFrame">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn({
+					inID : 'iPopupWin-Message-B001-MSGBTN', inStyle : { 'Def':'com_MSGBTN com_BTNCOL_Def' } });" />
+				<input type="button" id="iPopupWin-Message-B001-MSGBTN" value="メッセージ１">
+			</div>
+			<div class="com_PopupWin_BtnFrame">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn({
+					inID : 'iPopupWin-Message-B002-MSGBTN', inStyle : { 'Def':'com_MSGBTN com_BTNCOL_Def' } });" />
+				<input type="button" id="iPopupWin-Message-B002-MSGBTN" value="メッセージ２">
+			</div>
+			<div class="com_PopupWin_BtnFrame">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn({
+					inID : 'iPopupWin-Message-B003-MSGBTN', inStyle : { 'Def':'com_MSGBTN com_BTNCOL_Def' } });" />
+				<input type="button" id="iPopupWin-Message-B003-MSGBTN" value="メッセージ３">
+			</div>
+			<div class="com_PopupWin_BtnFrame">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn({
+					inID : 'iPopupWin-Message-B004-MSGBTN', inStyle : { 'Def':'com_MSGBTN com_BTNCOL_Def' } });" />
+				<input type="button" id="iPopupWin-Message-B004-MSGBTN" value="メッセージ４">
+			</div>
+		</div>
+
+
+
+	</div>
+
+</div>
+
+
+
+
+
+<!-- *** ログボックス *** -->
+<div id="iLogbox" class="com_LogBox">
+	<div class="com_LogBoxBar" onclick="__handle_LogBoxBarClick()"></div>
+	<div class="com_LogBoxClose" onclick="__handle_LogBoxCloseClick()"></div>
+	<br class="com_LogBoxBarEnd" />
+	
+	<textarea class="com_LogBoxArea" id="iLogboxArea" cols="40" readonly></textarea>
+	
+</div>
 
 
 

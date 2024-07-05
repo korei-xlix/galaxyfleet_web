@@ -85,7 +85,7 @@
 ::Public X= [https://twitter.com/korei_sup](https://twitter.com/korei_sup)  
   
 ::Deverop= Samafeald (@samafeald)  
-::X= [https://twitter.com/samafeald](https://twitter.com/samafeald)  
+::X= [https://x.com/samafeald](https://x.com/samafeald)  
   
 
 ***
@@ -94,4 +94,4 @@
 ::Admin= Korei (@korei-xlix)  
 ::github= [https://github.com/korei-xlix/](https://github.com/korei-xlix/)  
 ::Web= [https://website.koreis-labo.com/](https://website.koreis-labo.com/)  
-::X= [https://twitter.com/korei_xlix](https://twitter.com/korei_xlix)  
+::X= [https://x.com/korei_xlix](https://x.com/korei_xlix)  

@@ -2,7 +2,7 @@
  ::Project  : web page
  ::Admin    : Korei (@korei-xlix)
  ::github   : https://github.com/korei-xlix/galaxyfleet/
- ::Style    : Default Style - Mini
+ ::Style    : Curse Gray - Wide
 ***************************************************** */
 
 /* margin / padding
@@ -28,6 +28,7 @@ border				: 0px !important;
 border				: 0px !important;
 padding-top			: 8px;
 padding-left		: 10px;
+white-space			: normal !important;
 }
 
 #Profile a.Icon{
@@ -45,6 +46,11 @@ margin				: 8px 0px;
 padding				: 0px;
 }
 
+#Profile img.AccountIcon{
+border				: 4px solid #8f0000;
+}
+
+
 
 
 /* =====================================================
@@ -55,7 +61,7 @@ padding				: 0px;
 border				: 0px !important;
 background-color	: transparent !important;
 }
-#Profile tr{
+#ProfileIndex tr{
 border				: 0px !important;
 }
 
@@ -63,6 +69,7 @@ border				: 0px !important;
 border				: 0px !important;
 padding-top			: 8px;
 padding-left		: 10px;
+white-space			: normal !important;
 }
 
 #ProfileIndex a{
@@ -90,6 +97,7 @@ border				: 0px !important;
 border				: 0px !important;
 padding-top			: 8px;
 padding-left		: 10px;
+white-space			: normal !important;
 }
 
 #ContentsIndex .Link{
@@ -97,12 +105,12 @@ margin				: 4px 0px;
 }
 
 #ContentsIndex .Text{
-margin				: 0px 0px 4px 6px;
+margin				: 0px 0px 4px 12px;
 
 }
 
 #ContentsIndex a{
-/* font-size		: 20px; */
+font-size			: 20px;
 font-weight			: bolder;
 /*
 color				: transparent !important;
@@ -196,16 +204,20 @@ text-decoration		: underline;
 ===================================================== */
 
 #com_PageTitle div.com_TitleImage{
-background-image	: url(../_pic/title/koreilabo_title_bunner.png);
-width				: 200px;
-height				: 95px;
+background-image	: url(../_pic/title/koreilabo_title.png);
+width				: 800px;
+height				: 380px;
 }
 
 #com_PageTitle div.com_TitleText{
-color				: #000000;
+color				: #999999;
 background-color	: transparent;
 /*	font-size			: 32px !important;	*/
 /*	line-height			: 40px !important;	*/
+}
+
+div.com_MobileCaution{
+background-color	: red;
 }
 
 
@@ -224,15 +236,19 @@ height				: 100px;
    Body
 ===================================================== */
 
+/*
 body{
-color				: black;
-background-color	: white;
+background-color	: #DDDDDD;
 }
 
 #com_bodyOutline{
+background-color	: #DDDDDD;
 }
+*/
 
 #com_bodyInline{
+color				: #000000;
+background-color	: #FFFFFF;
 }
 
 
@@ -242,20 +258,25 @@ background-color	: white;
 ===================================================== */
 
 header{
-background-color	: #6699FF;
-border-top			: solid 6px #0066CC;
-border-bottom		: solid 6px #0066CC;
+background-color	: #a9a9a9;
+border-top			: solid 12px #444444;
+border-bottom		: solid 12px #444444;
 }
 
 header span.com_Menu_Select{
-color				: #0033FF;
-background-color	: #CCFFFF;
+color				: #000000;
+background-color	: #E6E6FA;
 }
 
 header a.com_Menu_Cel{
 color				: #FFFFFF;
-background-color	: #0066FF;
+background-color	: #666666;
 
+}
+
+header a.com_Menu_Cel:hover{
+color				: #330033;
+background-color	: #ffccff;
 }
 
 header div.com_CSS_Menu{
@@ -264,7 +285,12 @@ color				: #FFFFFF;
 
 header a.com_CSS_Mode{
 color				: #FFFFFF;
-background-color	: #006699;
+background-color	: #660066;
+}
+
+header a.com_CSS_Mode:hover{
+color				: #ff6666;
+background-color	: #ffccff;
 }
 
 
@@ -274,18 +300,23 @@ background-color	: #006699;
 ===================================================== */
 
 footer{
-background-color	: cornflowerblue;
-border-top			: solid 6px darkblue;
-border-bottom		: solid 8px darkblue;
+background-color	: #a9a9a9;
+border-top			: solid 12px #444444;
+border-bottom		: solid 12px #444444;
 }
 
 footer div.com_Menu_Description{
-color				: paleturquoise;
+color				: #EEFFFF;
 }
 
 footer a.com_Menu_Cel{
-color				: paleturquoise;
-background-color	: royalblue;
+color				: #FFFFFF;
+background-color	: #666666;
+}
+
+footer a.com_Menu_Cel:hover{
+color				: #330033;
+background-color	: #ffccff;
 }
 
 
@@ -465,6 +496,10 @@ background-color	: #7491FF;
 color				: #0000FF;
 background-color	: #FFFFFF;
 }
+#com_CopyrightFooter a.com_Menu_TwitterFT:hover{
+color				: #FFFFFF;
+background-color	: #0000FF;
+}
 
 
 
@@ -484,26 +519,38 @@ background-color	: transparent;
 ===================================================== */
 
 #com_Navigation{
-color				: blue;
 background-color	: transparent;
 /*
+color				: blue;
+border-bottom		: solid 8px dimgray;
+border-top			: solid 8px dimgray;
 background-color	: cyan;
 */
 }
 
 #com_Navigation div.com_NavigationTitle{
 color				: #FFFFFF;
-background-color	: #000066;
+background-color	: #333333;
 }
 
 #com_Navigation a{
-color				: blue;
+color				: #333333;
 background-color	: transparent;
 }
 
+#com_Navigation a:hover{
+color				: #ffffff;
+background-color	: #666666;
+}
+
 a.com_Nav{
-color				: #444444;
+color				: #333333;
 background-color	: #DDDDDD;
+}
+
+a.com_Nav:hover{
+color				: #330033;
+background-color	: #ffccff;
 }
 
 
@@ -513,15 +560,19 @@ background-color	: #DDDDDD;
 ===================================================== */
 
 .com_ContentsTitle{
-color				: #FFFFFF;
-background			: #0099FF;
+/*
+color				: white;
+background-color	: cornflowerblue;
+*/
+color				: #ffffff;
+background			: #aaaaaa;
 }
 .com_ContentsTitle:before{
-border-bottom		: solid 10px #0099FF;
+border-bottom		: solid 10px #666666;
 border-right		: solid 20px transparent;
 }
 .com_ContentsTitle:after{
-border-top			: solid 10px #0099FF;
+border-top			: solid 10px #222222;
 border-left			: solid 20px transparent;
 }
 
@@ -541,37 +592,6 @@ background			: #FFFFFF;
 
 
 /* =====================================================
-   Transrate
-===================================================== */
-
-#iRAD_Transrate{
-/* color			: #000000; */
-background-color	: #ffffff;
-}
-
-#iRAD_Transrate label.Label{
-color				: #0000EE;
-background-color	: #BAD3FF;
-border				: 1px solid #0000EE;
-}
-
-#iRAD_Transrate label.Label:after{
-border				: 1px solid #0000EE;
-}
-
-#iRAD_Transrate label.Label:before {
-background-color	: #0000EE;
-}
-
-#iRAD_Transrate input[type="radio"].Button{
-}
-
-#iRAD_Transrate input[type="radio"].Button:checked + label.Label:before {
-}
-
-
-
-/* =====================================================
    Selector
 ===================================================== */
 
@@ -582,11 +602,21 @@ background			: #0099FF;
 border				: inset 6px #0066FF;
 }
 
+input[type="checkbox"].com_ContentsSelector_CBX:hover + .com_ContentsSelector_LAB{
+color				: #003333;
+background-color	: #CCFFCC;
+}
+
 							/* Open */
 input[type="checkbox"].com_ContentsSelector_CBX:checked + .com_ContentsSelector_LAB{
 color				: #FFFFFF;
 background-color	: #009900;
 border				: inset 6px #009900;
+}
+
+input[type="checkbox"].com_ContentsSelector_CBX:checked:hover + .com_ContentsSelector_LAB{
+color				: forestgreen;
+background-color	: lawngreen;
 }
 
 							/* Body */
@@ -625,6 +655,7 @@ cursor				: col-resize;
 cursor				: row-resize;
 */
 }
+
 
 
 /* =====================================================
