@@ -13,6 +13,11 @@
 //# 1.1.1.5		2024-06-26	ポップアップWindowの改修（移動、開閉）
 //# 1.1.2.0		2024-06-28	ボタン制御の追加
 //# 1.2.0.0		2024-07-05	ポップアップヘルプ/制御/ボタン の設定I/F変更
+//# 1.2.1.0		2024-07-09	Window制御でタイトル、CSS切替スイッチがない場合正常で終わるようにした
+//# 1.2.2.0		2024-07-15	Hotfix
+//# 1.2.3.0		2024-07-21	Galaxy Fleetに合わせた対応 (仮対応)
+	
+//# 1.xxxxx		2024-07-xx	Window制御 設定完了待ち後処理の外部設定
 //#
 //#####################################################
 
@@ -20,7 +25,7 @@
 //# ※ユーザ自由変更※
 
 //### システム情報
-var DEF_USER_VERSION	= "1.2.0.0" ;
+var DEF_USER_VERSION	= "1.2.3.0" ;
 var DEF_USER_AUTHOR		= 'korei (X:@korei_xlix)' ;	//HTMLのauthor表示
 var DEF_USER_GITHUB		= "https://github.com/korei-xlix/website/" ;
 var DEF_USER_SITEURL	= "https://website.koreis-labo.com/" ;
@@ -79,9 +84,7 @@ var DEF_GVAL_IDX_ICON			= "iIcon" ;
 // ページタイトル
 var DEF_GVAL_IDX_TITLE_UP		= "iTitleUp" ;
 var DEF_GVAL_IDX_TITLE_DW		= "iTitleDw" ;
-var DEF_GVAL_IDX_TITLE_SUB		= "iTitleSub" ;
-///var DEF_GVAL_IDX_TITLE_SUB_TRANS_JP = "iTitleSubJP" ;
-///var DEF_GVAL_IDX_TITLE_SUB_TRANS_EN = "iTitleSubEN" ;
+var DEF_GVAL_IDX_TITLE_MAIN		= "iTitleMain" ;
 
 /////////////////////////////
 // CSS切替スイッチ
@@ -160,6 +163,10 @@ var DEF_GVAL_TRANSRATE_SYSTEM_IS_NOT_RUN = {	//運用中ではない時の操作
 //#####################################################
 
 /////////////////////////////
+// 文字コード
+var DEF_GVAL_MOJICODE			= "utf-8" ;
+
+/////////////////////////////
 // 親フレーム名
 var DEF_GVAL_PARENT_FRAME_ID	= "iPFrame" ;
 
@@ -183,10 +190,10 @@ var DEF_GVAL_SYSTEM_EXIT		= "● System Exit (User call) ●" ;
 var DEF_GVAL_LOG_HEADER			= "***********************" ;
 var DEF_GVAL_LOG_ERROR_HEADER	= "**** ERROR ************" ;
 var DEF_GVAL_LOG_DUMP_HEADER	= "**** DUMP DATA ********" ;
-var DEF_GVAL_LOG_SYSRUN_HEADER	= "==== SYSTEM RUN ====" ;
-var DEF_GVAL_LOG_SYSCTRL_HEADER	= "++++ SYSTEM CTRL ++++" ;
-var DEF_GVAL_LOG_USECTRL_HEADER = "---- USER CTRL ----" ;
-var DEF_GVAL_LOG_LOGIN_HEADER	= "<<<< LOGIN >>>>" ;
+var DEF_GVAL_LOG_SYSRUN_HEADER	= "#### SYSTEM RUN #######" ;
+var DEF_GVAL_LOG_SYSCTRL_HEADER	= "#### SYSTEM CTRL ######" ;
+var DEF_GVAL_LOG_USECTRL_HEADER = "==== USER CTRL ========" ;
+var DEF_GVAL_LOG_LOGIN_HEADER	= "==<< LOGIN >>==========" ;
 
 
 //#####################################################
@@ -204,12 +211,12 @@ var DEF_GVAL_SYS_STAT_STBY		= "STBY" ;						//   初期化完了（起動待ち�
 var DEF_GVAL_SYS_STAT_RUN		= "RUN" ;						//   通常運用中
 var DEF_GVAL_SYS_STAT_IDLE		= "IDLE" ;						//   アイドル中（空運転中）
 	
-var DEF_GVAL_SYS_STAT			= new Array(					// チェック用
-	top.DEF_GVAL_SYS_STAT_STOP,
-	top.DEF_GVAL_SYS_STAT_INIT,
-	top.DEF_GVAL_SYS_STAT_STBY,
-	top.DEF_GVAL_SYS_STAT_RUN,
-	top.DEF_GVAL_SYS_STAT_IDLE,
+var DEF_GVAL_ARR_SYS_STAT		= new Array(					// チェック用
+		top.DEF_GVAL_SYS_STAT_STOP,
+		top.DEF_GVAL_SYS_STAT_INIT,
+		top.DEF_GVAL_SYS_STAT_STBY,
+		top.DEF_GVAL_SYS_STAT_RUN,
+		top.DEF_GVAL_SYS_STAT_IDLE,
 	) ;
 
 var DEF_GVAL_SYS_TID_TIMER		= "tid_SysTimer" ;				// システムタイマ
@@ -301,16 +308,21 @@ var gSTR_Time = new gSTR_Time_Str() ;
 
 //###########################
 //# タイマ情報
-var DEF_GVAL_TIMERCTRL_DEFAULT_TIMEOUT	= 1000 ;				//タイムアウト秒数(デフォルト)
-var DEF_GVAL_TIMERCTRL_DEFAULT_RETRY	= 30 ;					//リトライ回数
-var DEF_GVAL_TIMERCTRL_LOG_COUNT		= 10 ;					//テストログ出力カウント
-
+																//デフォルトタイマ値
+var DEF_GVAL_TIMERCTRL_DEFAULT_TIMEOUT	= 1000 ;				//  タイムアウト秒数(デフォルト)
+var DEF_GVAL_TIMERCTRL_DEFAULT_RETRY	= 30 ;					//  リトライ回数
+var DEF_GVAL_TIMERCTRL_LOG_COUNT		= 10 ;					//  テストログ出力カウント
 																//状態遷移管理
 var DEF_GVAL_TIMERCTRL_TST_IDLE			= "ts_IDLE" ;			//  待機（無遷移）
-																//  フレーム管理用
-var DEF_GVAL_TIMERCTRL_TST_FRM_LOCATION	= "ts_frmLocation" ;	//    フレームロード中
-var DEF_GVAL_TIMERCTRL_TST_FRM_INIT		= "ts_frmInit" ;		//    フレームページ設定中
-var DEF_GVAL_TIMERCTRL_TST_FRM_PROOESS	= "ts_frmProc" ;		//    ロード後プロセス中
+	
+																//フレームタイマ
+var DEF_GVAL_TIMERCTRL_FRAME_TIMEOUT	= 100 ;					//  タイムアウト秒数(デフォルト)
+var DEF_GVAL_TIMERCTRL_FRAME_RETRY		= 300 ;					//  リトライ回数
+var DEF_GVAL_TIMERCTRL_FRAME_COUNT		= 100 ;					//  テストログ出力カウント
+																//状態遷移管理
+var DEF_GVAL_TIMERCTRL_TST_FRM_LOCATION	= "ts_frmLocation" ;	//  フレームロード中
+var DEF_GVAL_TIMERCTRL_TST_FRM_INIT		= "ts_frmInit" ;		//  フレームページ設定中
+var DEF_GVAL_TIMERCTRL_TST_FRM_PROOESS	= "ts_frmProc" ;		//  ロード後プロセス中
 
 var DEF_GVAL_TIMERCTRL_KIND	= new Array(						//タイマ種類
 	"normal",													//  ノーマルタイマ（リトライなし 1回タイマ）    Retry=未設定
@@ -366,6 +378,25 @@ function gSTR_StorageInfo_Str()
 	this.FLG_Use_Session		= false ;						//  SessionStorage
 }
 var gSTR_StorageInfo = new gSTR_StorageInfo_Str() ;
+
+
+
+//###########################
+//# ファイル制御
+																//ファイルロードタイマ
+var DEF_GVAL_FILE_TID_TIMER		= "tid_FileLoad" ;				//  タイマID
+var DEF_GVAL_FILE_TIMEOUT		= 10000 ;						//  タイムアウト秒数(デフォルト)
+//var DEF_GVAL_FILE_RETRY			= 300 ;							//  リトライ回数
+//var DEF_GVAL_FILE_COUNT			= 100 ;							//  テストログ出力カウント
+
+function gSTR_File_Str()
+{
+	this.OBJ_Info				= top.DEF_GVAL_NULL ;			// ファイル情報オブジェクト
+	
+	this.FLG_Comp				= false ;						// true=ロード完了
+	this.Data					= new Array() ;					// データ
+}
+var gSTR_File = new gSTR_File_Str() ;
 
 
 
@@ -435,6 +466,7 @@ function gSTR_ButtonCtrl_Str()
 	
 	this.Init					= false ;						//  true=ボタン設定完了
 	this.FLG_Open				= true ;						//  ボタン表示  true=表示  false=非表示
+	this.FLG_Disabled			= false ;						//  ボタン有効/無効  true=無効  false=有効
 	this.FLG_On					= false ;						//  ボタン点灯(On) / 消灯(Off)
 	this.FLG_Sw					= false ;						//  ボタン入力中(ホールド/ブリンク)
 	
@@ -542,6 +574,9 @@ var gSTR_PopupWindow = {} ;
 var DEF_GVAL_WINCTRL_DUMMY_FRAME		= "/frame/_blank/_blank.htm" ;
 var DEF_GVAL_WINCTRL_URL_PARAM_FRAMEID	= "inFrameID" ;
 
+var DEF_GVAL_FRAMECTRL_PAGE_HEIGHT		= "100%" ;
+var DEF_GVAL_FRAMECTRL_PAGE_WIDTH		= "100%" ;
+
 var DEF_GVAL_WINCTRL_CSS_MODE	= new Array(					//CSSモード
 	"normal",													//  CSS変更可・サイズ自動切替
 	"pconly",													//  CSS変更可・PCサイズのみ
@@ -553,6 +588,11 @@ var DEF_GVAL_WINCTRL_CSS_MODE	= new Array(					//CSSモード
 
 var DEF_GVAL_WINCTRL_CSS_FOOTER_PC = "_wide.css" ;				//CSSファイル名後尾（PC用）
 var DEF_GVAL_WINCTRL_CSS_FOOTER_MB = "_mini.css" ;				//CSSファイル名後尾（スマホ用）
+
+																//インラインフレーム完了待ち状態管理
+var DEF_GVAL_WINCTRL_IFSTAT_IDLE		= "ifstat_Idle" ;		//  待機
+var DEF_GVAL_WINCTRL_IFSTAT_MAIN		= "ifstat_Main" ;		//  メインロード
+///***カスタム待ちあり***///
 
 
 //### マウスムーブ情報
@@ -608,6 +648,10 @@ function gSTR_FrameCtrlInfo_Str()
 	this.FLG_Init				= false ;						//  true = ページ設定完了（ロード後処理）
 	this.FLG_Run				= false ;						//  コールバック処理中  true=処理中
 	this.FLG_Comp				= false ;						//  true = フレーム全設定完了
+	this.FLG_View				= false ;						//  true = iframe表示  false=iframe非表示
+	
+	this.IF_Height		= top.DEF_GVAL_FRAMECTRL_PAGE_HEIGHT ;	//  iframe 高さ
+	this.IF_Width		= top.DEF_GVAL_FRAMECTRL_PAGE_WIDTH ;	//  iframe 横幅
 	
 	this.PageInfo 		= new gSTR_PageInfo_Str() ;				//  ページ情報
 	this.WindowBarInfo	= new gSTR_FrameCtrl_BarInfo_Str() ;	//  windowバー情報
@@ -647,6 +691,12 @@ function gSTR_WinCtrl_TransInfo_Str()
 	this.FLG_Trans				= false ;						//  翻訳有効  true=ON（翻訳実行・翻訳モード選択ON）
 }
 
+function gSTR_WinCtrl_IFrameInfo_Str()
+{																//インラインフレーム情報
+	this.Status			= top.DEF_GVAL_WINCTRL_IFSTAT_IDLE ;	//  ロード完了待ち状態
+	this.ARR_Load		= {} ;									//  ロード完了
+}
+
 
 //### メイン情報
 function gSTR_WinCtrlInfo_Str()
@@ -667,9 +717,11 @@ function gSTR_WinCtrlInfo_Str()
 	this.UpdateInfo 	= new gSTR_WinCtrl_Update_Str() ;		//  更新情報
 	this.SelInfo		= {} ;									//  セレクタ情報
 	this.MouseMove		= new gSTR_WinCtrl_MouseMove_Str() ;	//  マウスムーブ情報
+	this.CompProcess	= new gSTR_CallbackInfo_Str() ;			//  コールバック情報
 	this.TransInfo		= new gSTR_WinCtrl_TransInfo_Str() ;	//  翻訳情報
-	
-	this.IFrameLoad		= {} ;									//  インラインフレーム ロードフラグ  true=Load完了
+///	
+///	this.IFrameLoad		= {} ;									//  インラインフレーム ロードフラグ  true=Load完了
+	this.IFrameInfo		= {} ;									//  インラインフレーム情報
 }
 var gSTR_WinCtrlInfo = new gSTR_WinCtrlInfo_Str() ;
 
@@ -745,6 +797,8 @@ var gSTR_PreReg_ButtonCtrl = {} ;	//ボタン情報 仮登録
 //# クラス 外部参照用オブジェクト
 //#####################################################
 
+var gCLS_FileCtrl	= new CLS_File() ;
+var gCLS_ButtonCtrl	= new CLS_ButtonCtrl() ;
 var gCLS_PageObj	= new CLS_PageObj() ;
 var gCLS_OSIF		= new CLS_OSIF() ;
 var gCLS_Sys		= new CLS_Sys() ;

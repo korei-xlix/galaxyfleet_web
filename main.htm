@@ -4,40 +4,38 @@
 <meta name="viewport" content="width=device-width">
 
 <meta name="author" content="Korei">
-<meta name="copyright" content="Copyright 2022 Korei Industry">
+<meta name="copyright" content="Copyright 2024 Korei's Labo">
 <meta name="generator" content="EmEditor">
 <meta name="robots" content="noindex,nofollow">
 
 <link rel="shortcut icon" type="image/x-icon" id="iIcon" href="#">
-<link rel="alternate" type="application/rss+xml" href="sr_rss.xml" title="RSS 2.0">
 <link rel="stylesheet" type="text/css" id="iCSS_Com" href="#">
 <link rel="stylesheet" type="text/css" id="iCSS_Org" href="#">
 
 <title>Galaxy Fleet</title>
 <meta name="description" content="Galaxy Fleetのメインページです。">
 
-<script src="_js/info/home_info.js"></script>
+<script src="/_js/com/log.js"></script>
+<script src="/_js/com/pageobj.js"></script>
+<script src="/_js/com/storage.js"></script>
+<script src="/_js/com/systemif.js"></script>
+<script src="/_js/com/file_ctrl.js"></script>
+<script src="/_js/com/osif.js"></script>
+<script src="/_js/com/timer_ctrl.js"></script>
+<script src="/_js/com/sel_ctrl.js"></script>
+<script src="/_js/com/button_ctrl.js"></script>
+<script src="/_js/com/popup_ctrl.js"></script>
+<script src="/_js/com/frame_ctrl.js"></script>
+<script src="/_js/com/window_ctrl.js"></script>
 
-<script src="_js/com/popup_ctrl.js"></script>
-<script src="_js/com/log.js"></script>
-<script src="_js/com/path.js"></script>
-<script src="_js/com/time.js"></script>
-<script src="_js/com/timer_ctrl.js"></script>
-<script src="_js/com/pageobj.js"></script>
-<script src="_js/com/math.js"></script>
-<script src="_js/com/storage.js"></script>
-<script src="_js/com/window_ctrl.js"></script>
+<script src="/_js/gf/sys/ext_sys.js"></script>
+<!-- <script src="/_js/gf/sys/ext_frame_ctrl.js"></script> -->
 
-<script src="_js/global.js"></script>
-<script src="_js/global_gf.js"></script>
+<script src="/_js/_handle_index.js"></script>
+<script src="/_js/global.js"></script>
+<script src="/_js/global_gf.js"></script>
 
-<script src="_js/_handle_main.js"></script>
-<script src="frame/home/_handle_menu.js"></script>
-<script src="frame/home/map/_handle_map.js"></script>
-<script src="frame/home/comm/_handle_comm.js"></script>
-<script src="frame/home/bat/_handle_bat.js"></script>
-
-</head><body onLoad="__handle_PageLoad()"><div id="com_bodyOutline"><div id="com_bodyInline">
+</head><body onLoad="__handle_Main_PageLoad()" onresize="__handle_PageResize()"><div id="com_bodyOutline"><div id="com_bodyInline">
 
 
 
@@ -53,7 +51,8 @@
 	</div>
 
 	<div class="com_Corp">
-		Copyright 2022 Korei Industry<br />
+		Copyright 2024 Korei's Labo<br />
+		<span id="iSystemTD"></span><br />
 	</div>
 
 <br class="com_End" /></div>
@@ -62,38 +61,72 @@
 
 
 
-<header class="gf_Main">
-	<div class="com_Menu">
 
-		<div class="gf_SubTitle" id="iTitleSub">aaa
-		</div>
+<header>
+	<div class="com_Title" id="iTitleMain">
+	</div>
+</header>
+
+
+
+
+
+
+<!-- *** メイン画面 *** -->
+<main class="gf_Main_Main">
+
+	<!-- *** メイン画面 トップ *** -->
+	<div class="gf_Main_MainTop">
+
+		<!-- *** iframe メイン画面トップ用 *** -->
+		<iframe id="iFrameTop" class="gf_iFrameTop"
+				sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts allow-modals allow-popups allow-pointer-lock"></iframe>
 
 	</div>
 
-<br class="com_End" /></header>
+	<!-- *** メイン画面 中央 *** -->
+	<div class="gf_Main_MainCenter">
+
+		<!-- *** iframe メニュー画面用 *** -->
+		<div class="gf_Main_MainCenter_Menu">
+			<iframe id="iFrameMenu" class="gf_iFrameMenu"
+					sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts allow-modals allow-popups allow-pointer-lock"></iframe>
+		</div>
+
+		<!-- *** iframe メイン画面用 *** -->
+		<div class="gf_Main_MainCenter_Main">
+			<iframe id="iFrameMain" class="gf_iFrameMain"
+					sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts allow-modals allow-popups allow-pointer-lock"></iframe>
+		</div>
+
+		<br class="gf_Main_End" />
+	</div>
+
+</main>
 
 
 
-<!-- ////////// メイン画面用 ////////// -->
-<iframe id="iMain" class="gf_iframe_Main" src="frame/_blank/_blank.htm" sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts allow-modals allow-popups allow-pointer-lock"></iframe>
 
 
 
-<!-- ////////// python実行用 ////////// -->
-<iframe id="iPython" class="gf_iframe_Hidden" src="frame/_blank/_blank.htm" sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts allow-modals allow-popups allow-pointer-lock"></iframe>
+<!-- *** 隠しフレーム *** -->
+<section class="gf_Main_Hidden">
+
+	<!-- *** iframe python実行用(隠しフレーム) *** -->
+	<iframe id="iFramePython" class="gf_iFrameHidden"></iframe>
+
+	<!-- *** iframe イベントロード用(隠しフレーム) *** -->
+	<iframe id="iFrameIvent" class="gf_iFrameHidden"></iframe>
+
+</section>
 
 
 
-<!-- ////////// イベントロード用 ////////// -->
-<iframe id="iIvent" class="gf_iframe_Hidden" src="frame/_blank/_blank.htm" sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts allow-modals allow-popups allow-pointer-lock"></iframe>
 
 
 
-<a name="aBottom" class="com_AnchorTag"></a>
-<footer class="gf_Main">
-	
+<footer class="gf_Main">　</footer>
 
-</footer>
 
 
 
@@ -108,38 +141,229 @@
 
 		<div class="com_Menu_Buttons">
 
-			<div class="com_Menu_Cel com_Menu_Ope"><a class="com_Menu_Cel com_Menu_Ope"  target="_blank" title="サイト全体を含めた運用情報 (Operational information including the entire site)" href="ope_rss.xml">
-			INFO</a></div>
+			<div class="com_Menu_Cel com_Menu_Index"><a class="com_Menu_Cel com_Menu_Index"  target="_blank" title="サイトTOP (Site Index)" href="https://website.koreis-labo.com/">
+			INDEX</a></div>
 
-			<div class="com_Menu_Cel com_Menu_Rule"><a class="com_Menu_Cel com_Menu_Rule" target="_blank" title="利用ルール (Usage rules)" href="https://koreixlix.wixsite.com/profile/siterule">
-			RULES</a></div>
+			<div class="com_Menu_Cel com_Menu_Howto"><a class="com_Menu_Cel com_Menu_Howto" target="_blank" title="使い方 (How to Use)" href="https://website.koreis-labo.com/rules/rule_web.htm">
+			HOW TO</a></div>
 
-			<div class="com_Menu_Cel com_Menu_RSS"><a class="com_Menu_Cel com_Menu_RSS"  target="_blank" title="更新履歴(RSS) ( Change log (RSS) )" href="rss.xml">
-			UPDATE</a></div>
+			<div class="com_Menu_Cel com_Menu_Rule"><a class="com_Menu_Cel com_Menu_Rule" target="_blank" title="利用規約 (Therms)" href="https://website.koreis-labo.com/rules/rule_web.htm">
+			THERMS</a></div>
 
-			<div class="com_Menu_Cel com_Menu_Github"><a class="com_Menu_Cel com_Menu_Github"  target="_blank" title="開発Github (for Github)" href="https://github.com/korei-xlix">
-			Github</a></div>
+			<div class="com_Menu_Cel com_Menu_Warnlist"><a class="com_Menu_Cel com_Menu_Warnlist"  target="_blank" title="警告リスト（Warnlists）" href="https://website.koreis-labo.com/rules/rule_web.htm#aWarnlist">
+			WARNS</a></div>
 
-			<div class="com_Menu_Cel com_Menu_TwitterGF"><a class="com_Menu_Cel com_Menu_TwitterGF"  target="_blank" title="Twitter(for Galaxy Fleet)" href="https://twitter.com/galaxy_fleet">
-			Twitter</a></div>
+			<div class="com_Menu_Cel com_Menu_Contact"><a class="com_Menu_Cel com_Menu_Contact"  target="_blank" title="連絡先（Contact）" href="https://website.koreis-labo.com/rules/contact.htm">
+			CONTACT</a></div>
+
+			<div class="com_Menu_Cel com_Menu_X_Pub"><a class="com_Menu_Cel com_Menu_X_Pub"  target="_blank" title="for Public X" href="https://website.koreis-labo.com/profile/korei_sup.htm">
+			PUBLIC</a></div>
+
+			<div class="com_Menu_Cel com_Menu_X_Auth"><a class="com_Menu_Cel com_Menu_X_Auth"  target="_blank" title="for Author X" href="https://website.koreis-labo.com/profile/korei_xlix.htm">
+			AUTHOR</a></div>
 
 			<br class="com_Menu_End" />
 
 		</div>
 
-		<div class="com_Menu_Twitter">
-			<address>Twitter(Deveropper): 
-			<a class="com_Menu_Twitter" target="_blank" title="開発用Twitter (for Deveropper Twitter)" href="https://twitter.com/korei_dev">
-			korei_dev@twitter.com</a></address>
+		<div class="com_Menu_TwitterFT">
+			<address>X(auther): 
+			<a class="com_Menu_TwitterFT" target="_blank" title="for Twitter" href="https://x.com/korei_xlix">
+			korei_xlix@twitter.com</a></address>
 		</div>
 
 	</div>
 
 	<div class="com_Corp">
-		Copyright 2022 Korei Industry<br />
+		Copyright 2024 Korei's Labo<br />
 	</div>
 
 <br class="com_End" /></div>
+
+
+
+
+
+
+<!-- *** ポップアップヘルプ *** -->
+<div id="iPopupHelp" class="com_PopupHelp"></div>
+
+
+
+
+
+
+
+<!-- *** ポップアップWindow *** -->
+
+<img class="com_PopupWin_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SWin({
+	inID : 'iPopupWin', inCoord : { 'FTop':100, 'FLeft':100 } });" />
+<div id="iPopupWin" class="com_PopupWin">
+	<div class="com_PopupWin_Bar" id="iPopupWin-PUWINBAR"></div>
+	<div class="com_PopupWin_Close" id="iPopupWin-PUWINCLS"></div>
+	<br class="com_PopupWin_Bar_End" />
+
+	<div class="com_PopupWin_Body_Up">
+		<img class="com_PopupWin_People" alt="人物 (human)" src="/_pic/human/opeko.jpg" id="iPopupWin-PUWINHM" />
+		
+		<input type="button" class="com_PopupWin_AutoBtn" id="iPopupWin-PUWINAUTO" value="自動送り">
+		
+		<br class="com_PopupWin_Body_Up_End" />
+	</div>
+
+	<div class="com_PopupWin_Body">
+		<textarea class="com_PopupWin_TextArea" rows="5" id="iPopupWin-PUWINTA" readonly>あああああ</textarea>
+	</div>
+
+	<div class="com_PopupWin_Body_Dw" id="iPopupWin-PUWINFT">
+
+
+<!--
+		<div class="com_ButtonGroup" id="iPopupWin-PUWINGRP_1">
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_1','iB001_1-NBTN')" />
+			<input type="button" class="com_BTN_Def" id="iB001_1-NBTN" value="ノーマル１">
+			
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_1','iB002_1-NBTN')" />
+			<input type="button" class="com_BTN_Def" id="iB002_1-NBTN" value="ノーマル２" disabled>
+			
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_1','iB003_1-HBTN')" />
+			<input type="button" class="com_HBTN_Def" id="iB003_1-HBTN" value="ホールド１">
+			
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_1','iB004_1-CBTN')" />
+			<input type="button" class="com_CBTN_Def" id="iB004_1-CBTN" value="クリック１">
+		</div>
+
+
+
+		<div class="com_ButtonGroup" id="iPopupWin-PUWINGRP_2">
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_2','iB005_1-NBTN')" />
+			<input type="button" class="com_BTN_Def" id="iB005_1-NBTN" value="ノーマル５">
+			
+
+
+		</div>
+
+
+
+		<div class="com_ButtonGroup" id="iPopupWin-PUWINGRP_3">
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_3','iB006_1-RADB')" />
+			<input type="radio" class="com_RAD_Def" name="aB006-RADB" id="iB006_1-GROUP" checked>
+			<label class="com_RAD_Def" for="iB006_1-GROUP" id="iB006_1-RADB">ラジオ１</label>
+			
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_3','iB006_2-RADB')" />
+			<input type="radio" class="com_RAD_Def" name="aB006-RADB" id="iB006_2-GROUP">
+			<label class="com_RAD_Def" for="iB006_2-GROUP" id="iB006_2-RADB">ラジオ２</label>
+			
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_3','iB006_3-RADB')" />
+			<input type="radio" class="com_RAD_Def" name="aB006-RADB" id="iB006_3-GROUP">
+			<label class="com_RAD_Def" for="iB006_3-GROUP" id="iB006_3-RADB">ラジオ３</label>
+			
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_3','iB006_4-RADB')" />
+			<input type="radio" class="com_RAD_Def" name="aB006-RADB" id="iB006_4-GROUP">
+			<label class="com_RAD_Def" for="iB006_4-GROUP" id="iB006_4-RADB">ラジオ３</label>
+			
+			<div class="com_PopupWin_Body_Blank">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_3','iB006_5-RADB')" />
+				<input type="button" class="com_MBTN_Def" id="iB006_5-RADB" value="決　　　定">
+			</div>
+		</div>
+
+
+
+		<div class="com_ButtonGroup" id="iPopupWin-PUWINGRP_4">
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_4','iB007_1-CBXB')" />
+			<input type="checkbox" class="com_CBX_Def" name="aB007-CBXB" id="iB007_1-GROUP">
+			<label class="com_CBX_Def" for="iB007_1-GROUP" id="iB007_1-CBXB">チェック１</label>
+			
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_4','iB007_2-CBXB')" />
+			<input type="checkbox" class="com_CBX_Def" name="aB007-CBXB" id="iB007_2-GROUP">
+			<label class="com_CBX_Def" for="iB007_2-GROUP" id="iB007_2-CBXB">チェック２</label>
+			
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_4','iB007_3-CBXB')" />
+			<input type="checkbox" class="com_CBX_Def" name="aB007-CBXB" id="iB007_3-GROUP">
+			<label class="com_CBX_Def" for="iB007_3-GROUP" id="iB007_3-CBXB">チェック３</label>
+			
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_4','iB007_4-CBXB')" />
+			<input type="checkbox" class="com_CBX_Def" name="aB007-CBXB" id="iB007_4-GROUP">
+			<label class="com_CBX_Def" for="iB007_4-GROUP" id="iB007_4-CBXB">チェック３</label>
+			
+			<div class="com_PopupWin_Body_Blank">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_4','iB007_5-CBXB')" />
+				<input type="button" class="com_MBTN_Def" id="iB007_5-CBXB" value="決　　　定">
+			</div>
+		</div>
+
+
+		<div class="com_ButtonGroup_x" id="iPopupWin-PUWINGRP_5">
+			<div class="com_PopupWin_Body_Blank">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_5','iB008_1-MSGB')" />
+				<input type="button" class="com_MBTN_Def" id="iB008_1-MSGB" value="メッセージ１">
+			</div>
+			<div class="com_PopupWin_Body_Blank">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_5','iB008_2-MSGB')" />
+				<input type="button" class="com_MBTN_Def" id="iB008_2-MSGB" value="メッセージ１">
+			</div>
+			<div class="com_PopupWin_Body_Blank">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_5','iB008_3-MSGB')" />
+				<input type="button" class="com_MBTN_Def" id="iB008_3-MSGB" value="メッセージ１">
+			</div>
+			<div class="com_PopupWin_Body_Blank">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_5','iB008_4-MSGB')" />
+				<input type="button" class="com_MBTN_Def" id="iB008_4-MSGB" value="メッセージ１">
+			</div>
+			<div class="com_PopupWin_Body_Blank">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn('iPopupWin-PUWINGRP_5','iB008_5-MSGB')" />
+				<input type="button" class="com_MBTN_Def" id="iB008_5-MSGB" value="メッセージ１">
+			</div>
+		</div>
+//-->
+
+
+
+		<div class="com_ButtonGroup_x" id="iPopupWin-Message">
+			<div class="com_PopupWin_BtnFrame">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn({
+					inID : 'iPopupWin-Message-B001-MSGBTN', inStyle : { 'Def':'com_MSGBTN com_BTNCOL_Def' } });" />
+				<input type="button" id="iPopupWin-Message-B001-MSGBTN" value="メッセージ１">
+			</div>
+			<div class="com_PopupWin_BtnFrame">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn({
+					inID : 'iPopupWin-Message-B002-MSGBTN', inStyle : { 'Def':'com_MSGBTN com_BTNCOL_Def' } });" />
+				<input type="button" id="iPopupWin-Message-B002-MSGBTN" value="メッセージ２">
+			</div>
+			<div class="com_PopupWin_BtnFrame">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn({
+					inID : 'iPopupWin-Message-B003-MSGBTN', inStyle : { 'Def':'com_MSGBTN com_BTNCOL_Def' } });" />
+				<input type="button" id="iPopupWin-Message-B003-MSGBTN" value="メッセージ３">
+			</div>
+			<div class="com_PopupWin_BtnFrame">
+				<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SBtn({
+					inID : 'iPopupWin-Message-B004-MSGBTN', inStyle : { 'Def':'com_MSGBTN com_BTNCOL_Def' } });" />
+				<input type="button" id="iPopupWin-Message-B004-MSGBTN" value="メッセージ４">
+			</div>
+		</div>
+
+
+
+	</div>
+
+</div>
+
+
+
+
+
+
+<!-- *** ログボックス *** -->
+<div id="iLogbox" class="com_LogBox">
+	<div class="com_LogBoxBar" onclick="__handle_LogBoxBarClick()"></div>
+	<div class="com_LogBoxClose" onclick="__handle_LogBoxCloseClick()"></div>
+	<br class="com_LogBoxBarEnd" />
+	
+	<textarea class="com_LogBoxArea" id="iLogboxArea" cols="40" readonly></textarea>
+	
+</div>
+
 
 
 

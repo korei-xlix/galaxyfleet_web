@@ -29,14 +29,14 @@
 <script src="/_js/com/frame_ctrl.js"></script>
 <script src="/_js/com/window_ctrl.js"></script>
 
-<script src="/_js/gf/sys/extsys.js"></script>
+<script src="/_js/gf/sys/ext_sys.js"></script>
 
-<script src="/_js/zzunyozz.js"></script>
+<script src="/_unyo/zzunyozz.js"></script>
 <script src="/_js/_handle_index.js"></script>
 <script src="/_js/global.js"></script>
 <script src="/_js/global_gf.js"></script>
 
-</head><body onLoad="__handle_PageLoad()" onresize="__handle_PageResize()"><div id="com_bodyOutline"><div id="com_bodyInline">
+</head><body onLoad="__handle_Index_PageLoad()" onresize="__handle_PageResize()"><div id="com_bodyOutline"><div id="com_bodyInline">
 
 
 
@@ -149,16 +149,17 @@
 
 
 
-<img class="com_PopupHelp_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SHelp({
-	inID : 'gf_Start_a', inLang : { 'JP':'ゲームを始めます', 'EN':'Game Start' } });" />
-<section id="gf_Start" class="com_ContentsSection_Center com_NonMobileOpen">
-	<a class="StartButton" target="_self" href="javascript:__handle_Start();" id="gf_Start_a">START</a>
-</section>
-
-<img class="com_PopupHelp_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SHelp({
-	inID : 'gf_Mente_a', inLang : { 'JP':'メンテナンス中です', 'EN':'Now Mentenunce' } });" />
-<section id="gf_Mente" class="com_ContentsSection_Center com_NonMobileOpen">
-	<a class="MenteButton" target="_self" href="javascript:void(0);" id="gf_Mente_a">NOW MENTE</a>
+<section class="com_ContentsSection_Center com_NonMobileOpen">
+	<div id="gf_Start">
+<!--	<img class="com_PopupHelp_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SHelp({
+			inID : 'gf_Start_a', inLang : { 'JP':'ゲームを始めます', 'EN':'Game Start' } });" /> //-->
+		<a class="StartButton" target="_self" href="javascript:__handle_Start();" id="gf_Start_a">START</a>
+	</div>
+	<div id="gf_Mente">
+		<img class="com_PopupHelp_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_SHelp({
+			inID : 'gf_Mente_a', inLang : { 'JP':'メンテナンス中です', 'EN':'Now Mentenunce' } });" />
+		<a class="MenteButton" target="_self" href="javascript:void(0);" id="gf_Mente_a">NOW MENTE</a>
+	</div>
 </section>
 
 

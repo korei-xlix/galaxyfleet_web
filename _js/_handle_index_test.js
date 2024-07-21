@@ -35,7 +35,7 @@ function __handle_PageLoad()
 {
 	//###########################
 	//# 応答形式の取得
-	//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Reason" : "(none)", "Responce" : "(none)"
+	//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Result" : false, "Reason" : "(none)", "Responce" : "(none)"
 	let wRes = CLS_OSIF.sGet_Resp({ inClass:"__handle", inFunc:"__handle_PageLoad" }) ;
 	
 ///	let wSubRes, wPageObj, wSTR_PopupHelp, wSTR_PopupWin ;
@@ -339,7 +339,7 @@ function __handle_PageLoad_Complete()
 {
 	//###########################
 	//# 応答形式の取得
-	//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Reason" : "(none)", "Responce" : "(none)"
+	//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Result" : false, "Reason" : "(none)", "Responce" : "(none)"
 	let wRes = CLS_OSIF.sGet_Resp({ inClass:"__handle", inFunc:"__handle_PageLoad_Complete" }) ;
 	
 	let wSubRes ;
@@ -489,7 +489,7 @@ function __handle_Circle()
 {
 	//###########################
 	//# 応答形式の取得
-	//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Reason" : "(none)", "Responce" : "(none)"
+	//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Result" : false, "Reason" : "(none)", "Responce" : "(none)"
 	let wRes = CLS_OSIF.sGet_Resp({ inClass:"__handle", inFunc:"__handle_Circle" }) ;
 	
 	let wSubRes, wMessage ;
@@ -670,7 +670,7 @@ function __handle_AfterLoadProcess()
 {
 	//###########################
 	//# 応答形式の取得
-	//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Reason" : "(none)", "Responce" : "(none)"
+	//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Result" : false, "Reason" : "(none)", "Responce" : "(none)"
 	let wRes = CLS_OSIF.sGet_Resp({ inClass:"__handle", inFunc:"__handle_Circle" }) ;
 	
 	//###########################

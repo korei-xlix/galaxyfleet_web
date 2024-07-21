@@ -119,10 +119,6 @@ padding				: 3px !important;
 border-radius		: 0px !important;
 }
 
-/*=== Frame ===*/
-header .com_headerFrame{
-}
-
 
 
 /* =====================================================
@@ -144,10 +140,6 @@ footer a.com_Menu_Cel{
 color				: #66FFFF;
 background-color	: transparent;
 border-radius		: 0px !important;
-}
-
-/*=== Frame ===*/
-footer .com_footerFrame{
 }
 
 
