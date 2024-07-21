@@ -26,17 +26,227 @@ var DEF_INDEX_TEST				= true ;
 
 
 //#####################################################
-//# ハンドラ（共通）
+//# ハンドラ（main）
 //#####################################################
 ///////////////////////////////////////////////////////
 //  ページロード
 ///////////////////////////////////////////////////////
-function __handle_PageLoad()
+function __handle_Main_PageLoad()
 {
 	//###########################
 	//# 応答形式の取得
-	//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Reason" : "(none)", "Responce" : "(none)"
-	let wRes = CLS_OSIF.sGet_Resp({ inClass:"__handle", inFunc:"__handle_PageLoad" }) ;
+	//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Result" : false, "Reason" : "(none)", "Responce" : "(none)"
+	let wRes = CLS_OSIF.sGet_Resp({ inClass:"__handle", inFunc:"__handle_Main_PageLoad" }) ;
+	
+	let wSubRes, wPageObj, wSTR_iFrame ;
+	let wFrameID ;
+	
+	wPageObj = self.document ;
+	/////////////////////////////
+	// システム情報設定
+	wSubRes = CLS_Sys.sSet({
+		inUserID		: top.DEF_GF_SYS_USERID,	//ユーザID
+		inSystemName	: top.DEF_GF_SYS_SYSNAME,	//システム名
+		inPageObj		: wPageObj,
+		inUseTimer		: true					//システムタイマ使用有無  true=使用
+//		inUseCircle		: true,					//定期処理使用有無        true=使用（システムタイマ有効時）
+//		inExitProc		= {						//終了時処理
+//			"Callback"	: top.DEF_GVAL_NULL,
+//			"Arg"		: new Array()
+//			}
+	}) ;
+	if( wSubRes['Result']!=true )
+	{///失敗
+		wRes['Reason'] = "CLS_Sys.sSet is failed" ;
+		CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
+		return wRes ;
+	}
+	//### 拡張システム情報の追加
+	CLS_GF_ExtSys.sSet() ;
+	
+//###########################
+//# 親フレームの設定
+	wSubRes = CLS_WinCtrl.sSet({
+		inPageObj		: wPageObj,					//ページオブジェクト
+		inSTR_CSSinfo	: {							//CSSファイル情報
+							"galaxyfleet_index"	: "Default"
+							},
+		inOtherDomain	: top.DEF_GVAL_NULL,		//外部ドメインのCSS  https://www.example.com
+		inStylePath		: "/_css/",					//CSSカレントパス    /css/
+		inMode			: "elase",					//ボタン非表示・サイズ自動切替
+		inStyleCommPath	: top.DEF_GVAL_NULL,		//Comm Styleのカレントパス（別フォルダの場合）
+		inPgIconPath	: "/_pic/icon/galaxyfleet_icon.ico",	//ページアイコン カレントパス  /_pic/icon/koreilabo_icon.ico
+		inUpIconPath	: "/_pic/icon/icon_up.gif",				//更新アイコン   カレントパス  /_pic/icon/new_icon.gif
+		inCompProc		: {							//設定完了待ち後実行プロセス
+			"Callback"	: __handle_Main_PageLoad_Complete
+//			"Arg"		: new Array()
+			},
+		inTrans			: true						//翻訳有効  true=ON（翻訳実行・翻訳モード選択ON）
+	}) ;
+	if( wSubRes['Result']!=true )
+	{///失敗
+		wRes['Reason'] = "CLS_WinCtrl.sSet is failer" ;
+		CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
+		return wRes ;
+	}
+	
+	wSTR_iFrame = {} ;
+//###########################
+//# 子フレームの設定
+	
+	//### メイン画面
+	wSTR_iFrame[top.DEF_GF_IDX_MAIN_FRAME_MAIN]  = {
+		"Path"	: top.DEF_GF_FILEPATH_LOGIN,
+	"Popup"	: false, "Title" : true, "Open" : true, "Height": 840, "Width": "100%" } ;
+	//### トップ画面
+	wSTR_iFrame[top.DEF_GF_IDX_MAIN_FRAME_TOP]  = {
+		"Path"	: top.DEF_GF_FILEPATH_DUMMY,
+		"Popup"	: false, "Title" : false, "Open" : false, "Height": 0, "Width": 0 } ;
+	//### メニュー画面
+	wSTR_iFrame[top.DEF_GF_IDX_MAIN_FRAME_MENU]  = {
+		"Path"	: top.DEF_GF_FILEPATH_DUMMY,
+		"Popup"	: false, "Title" : false, "Open" : false, "Height": 0, "Width": 0 } ;
+	//### Pythonフレーム
+	wSTR_iFrame[top.DEF_GF_IDX_MAIN_FRAME_PYTHON]  = {
+		"Path"	: top.DEF_GF_FILEPATH_DUMMY,
+		"Popup"	: false, "Title" : false, "Open" : false, "Height": 0, "Width": 0 } ;
+	//### Iventフレーム
+	wSTR_iFrame[top.DEF_GF_IDX_MAIN_FRAME_IVENT]  = {
+		"Path"	: top.DEF_GF_FILEPATH_DUMMY,
+		"Popup"	: false, "Title" : false, "Open" : false, "Height": 0, "Width": 0 } ;
+	//### ポップアップ
+	wSTR_iFrame[top.DEF_GF_IDX_MAIN_FRAME_WIN]  = {
+		"Path"	: top.DEF_GF_FILEPATH_DUMMY,
+		"Popup"	: true, "Title" : false, "Open" : false, "Height": 0, "Width": 0 } ;
+	
+	//### フレーム設定
+	for( wFrameID in wSTR_iFrame )
+	{
+		wSubRes = CLS_FrameCtrl.sSet({
+			inFrameID	: wFrameID,							//フレームID
+			inPath		: wSTR_iFrame[wFrameID]['Path'],	//HTMLファイルパス
+			inPopup		: wSTR_iFrame[wFrameID]['Popup'],	//true = ポップアップフレーム  false=インラインフレーム
+			inTitle		: wSTR_iFrame[wFrameID]['Title'],	//true = 親フレームタイトル変更
+			inNextProc	: {									//ロード後実行プロセス
+				"Callback"	: __handle_iframeEndProcess,
+				"Arg"		: wFrameID
+				},
+			inIFrame	: {									//iframe設定
+				"Height"	: wSTR_iFrame[wFrameID]['Height'],	//  iframe 高さ
+				"Width"		: wSTR_iFrame[wFrameID]['Width'],	//  iframe 横幅
+				"FLG_View"	: wSTR_iFrame[wFrameID]['Open']		//  フレーム表示/非表示  true=表示
+				},
+			inTrans		: true								//翻訳有効  true=ON（翻訳実行・翻訳モード選択ON）
+		}) ;
+		if( wSubRes['Result']!=true )
+		{///失敗
+			wRes['Reason'] = "CLS_FrameCtrl.sSet is failed: FrameID=" + String(wFrameID) ;
+			CLS_L.sL({ inRes:wRes, inLevel:"B" }) ;
+			return wRes ;
+		}
+	}
+	
+	/////////////////////////////
+	// 設定完了待ち
+	wSubRes = CLS_WinCtrl.sStby({
+		inSTR_Info : wSTR_iFrame
+	}) ;
+	if( wSubRes['Result']!=true )
+	{///失敗
+		wRes['Reason'] = "CLS_WinCtrl.sStby is failer" ;
+		CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
+		return wRes ;
+	}
+	
+	/////////////////////////////
+	// 正常
+	wRes['Result'] = true ;
+	return ;
+}
+
+
+
+///////////////////////////////////////////////////////
+//  ページロード完了
+///////////////////////////////////////////////////////
+function __handle_Main_PageLoad_Complete()
+{
+	//###########################
+	//# 応答形式の取得
+	//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Result" : false, "Reason" : "(none)", "Responce" : "(none)"
+	let wRes = CLS_OSIF.sGet_Resp({ inClass:"__handle", inFunc:"__handle_Main_PageLoad_Complete" }) ;
+	
+	let wSubRes ;
+	
+///	/////////////////////////////
+///	// システム開始
+///	wSubRes = CLS_Sys.sStart() ;
+///	if( wSubRes['Result']!=true )
+///	{///失敗
+///		wRes['Reason'] = "CLS_Sys.sStart is failed" ;
+///		CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
+///		return wRes ;
+///	}
+///	
+///	/////////////////////////////
+///	// システム情報表示
+///	CLS_Sys.sView() ;
+///	
+	//###########################
+	//# メインロード待ち
+	if( top.gSTR_WinCtrlInfo.IFrameInfo.Status==top.DEF_GVAL_WINCTRL_IFSTAT_MAIN )
+	{
+		/////////////////////////////
+		// システム開始
+		wSubRes = CLS_Sys.sStart() ;
+		if( wSubRes['Result']!=true )
+		{///失敗
+			wRes['Reason'] = "CLS_Sys.sStart is failed" ;
+			CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
+			return wRes ;
+		}
+		
+		/////////////////////////////
+		// システム情報表示
+		CLS_Sys.sView() ;
+	}
+	//###########################
+	//# ニューゲーム画面 待ち
+	else if( top.gSTR_WinCtrlInfo.IFrameInfo.Status==top.DEF_GF_FILEPATH_NEWGAME )
+	{
+		/////////////////////////////
+		// ユーザ情報の初期化
+		top.STR_GF_UserInfo = new STR_GF_UserInfo_Str() ;
+		
+		/////////////////////////////
+		// 規約情報の初期化
+		top.STR_GF_AgreeInfo = new STR_GF_AgreeInfo_Str() ;
+	}
+	
+	/////////////////////////////
+	// フレームロード待ちをアイドルにする
+	top.gSTR_WinCtrlInfo.IFrameInfo.Status = top.DEF_GVAL_WINCTRL_IFSTAT_IDLE ;
+	
+	/////////////////////////////
+	// 正常
+	wRes['Result'] = true ;
+	return ;
+}
+
+
+
+//#####################################################
+//# ハンドラ（index）
+//#####################################################
+///////////////////////////////////////////////////////
+//  ページロード
+///////////////////////////////////////////////////////
+function __handle_Index_PageLoad()
+{
+	//###########################
+	//# 応答形式の取得
+	//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Result" : false, "Reason" : "(none)", "Responce" : "(none)"
+	let wRes = CLS_OSIF.sGet_Resp({ inClass:"__handle", inFunc:"__handle_Index_PageLoad" }) ;
 	
 	let wSubRes, wPageObj ;
 	let wFrameID, wFramePath ;
@@ -45,8 +255,8 @@ function __handle_PageLoad()
 	/////////////////////////////
 	// システム情報設定
 	wSubRes = CLS_Sys.sSet({
-		inUserID		: "webmain",			//ユーザID
-		inSystemName	: "GalaxyFleet",		//システム名
+		inUserID		: top.DEF_GF_SYS_USERID,	//ユーザID
+		inSystemName	: top.DEF_GF_SYS_SYSNAME,	//システム名
 		inPageObj		: wPageObj,
 		inUseTimer		: true					//システムタイマ使用有無  true=使用
 //		inUseCircle		: true,					//定期処理使用有無        true=使用（システムタイマ有効時）
@@ -77,6 +287,10 @@ function __handle_PageLoad()
 		inStyleCommPath	: top.DEF_GVAL_NULL,		//Comm Styleのカレントパス（別フォルダの場合）
 		inPgIconPath	: "/_pic/icon/galaxyfleet_icon.ico",	//ページアイコン カレントパス  /_pic/icon/koreilabo_icon.ico
 		inUpIconPath	: "/_pic/icon/icon_up.gif",				//更新アイコン   カレントパス  /_pic/icon/new_icon.gif
+		inCompProc		: {							//設定完了待ち後実行プロセス
+			"Callback"	: __handle_Index_PageLoad_Complete
+//			"Arg"		: new Array()
+			},
 		inTrans			: true						//翻訳有効  true=ON（翻訳実行・翻訳モード選択ON）
 	}) ;
 	if( wSubRes['Result']!=true )
@@ -88,7 +302,9 @@ function __handle_PageLoad()
 	
 	/////////////////////////////
 	// 設定完了待ち
-	wSubRes = CLS_WinCtrl.sStby() ;
+	wSubRes = CLS_WinCtrl.sStby({
+		inSTR_Info : {}
+	}) ;
 	if( wSubRes['Result']!=true )
 	{///失敗
 		wRes['Reason'] = "CLS_WinCtrl.sStby is failer" ;
@@ -107,12 +323,12 @@ function __handle_PageLoad()
 ///////////////////////////////////////////////////////
 //  ページロード完了
 ///////////////////////////////////////////////////////
-function __handle_PageLoad_Complete()
+function __handle_Index_PageLoad_Complete()
 {
 	//###########################
 	//# 応答形式の取得
-	//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Reason" : "(none)", "Responce" : "(none)"
-	let wRes = CLS_OSIF.sGet_Resp({ inClass:"__handle", inFunc:"__handle_PageLoad_Complete" }) ;
+	//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Result" : false, "Reason" : "(none)", "Responce" : "(none)"
+	let wRes = CLS_OSIF.sGet_Resp({ inClass:"__handle", inFunc:"__handle_Index_PageLoad_Complete" }) ;
 	
 	let wSubRes ;
 	
@@ -131,8 +347,7 @@ function __handle_PageLoad_Complete()
 	/////////////////////////////
 	// スタートボタン制御（表示）
 	CLS_GF_ExtSys.sStartButtonCtrl({
-		inPageObj	: top.gSTR_WinCtrlInfo.PageObj,
-		inStart		: true
+		inPageObj	: top.gSTR_WinCtrlInfo.PageObj
 	}) ;
 	
 	/////////////////////////////
@@ -147,6 +362,9 @@ function __handle_PageLoad_Complete()
 
 
 
+//#####################################################
+//# ハンドラ（共通）
+//#####################################################
 ///////////////////////////////////////////////////////
 //  ページリサイズ
 ///////////////////////////////////////////////////////
@@ -242,14 +460,146 @@ function __handle_Sel( inNumber )
 //  ボタンクリック イベント
 ///////////////////////////////////////////////////////
 function __handle_BtnClick({
-	inFrameID,
-	inButtonID
+	inFrameID  = top.DEF_GVAL_NULL,
+	inButtonID = top.DEF_GVAL_NULL
 })
 {
+	//###########################
+	//# 応答形式の取得
+	//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Result" : false, "Reason" : "(none)", "Responce" : "(none)"
+	let wRes = CLS_OSIF.sGet_Resp({ inClass:"__handle", inFunc:"__handle_BtnClick" }) ;
+	
+	let wSubRes, wMessage ;
+	let wOBJ_Cld ;
+	
+	wOBJ_Cld = top.gARR_FrameCtrlInfo[inFrameID].WindowObj ;
+	/////////////////////////////
+	// ボタン解析
+	wSubRes = CLS_ButtonCtrl.sAnalysis({
+		inFrameID  : inFrameID,
+		inButtonID : inButtonID
+	}) ;
+	if( wSubRes['Result']!=true )
+	{///失敗
+		wRes['Reason'] = "CLS_OSIF.sSplit is failed: inFrameID=" + String(inFrameID) + " inButtonID=" + String(inButtonID) ;
+		CLS_L.sL({ inRes:wRes, inLevel:"A", inLine:__LINE__ }) ;
+		return false ;
+	}
+///	if( top.DEF_INDEX_TEST==true )
+///	{
+///		wMessage = "Button click: inButtonID=" + String(inButtonID) ;
+///		wMessage = wMessage + '\n' + "  inFrameID = " + String(inFrameID) ;
+///		wMessage = wMessage + '\n' + "  Index  = " + String(wSubRes['Responce']['Index']) ;
+///		wMessage = wMessage + '\n' + "  Group  = " + String(wSubRes['Responce']['Group']) ;
+///		wMessage = wMessage + '\n' + "  Button = " + String(wSubRes['Responce']['Button']) ;
+///		wMessage = wMessage + '\n' + "  Kind   = " + String(wSubRes['Responce']['Kind']) ;
+///		CLS_L.sL({ inRes:wRes, inLevel:"X", inMessage:wMessage }) ;
+///	}
+	
+//###########################
+//# メイン画面系
+	if( inFrameID==top.DEF_GF_IDX_MAIN_FRAME_MAIN )
+	{
+		//###########################
+		//# ログイン画面
+		if( wSubRes['Responce']['Index']=="gf_Login" )
+		{
+			//### [CLOSE] : Indexページへ
+			if( wSubRes['Responce']['Button']=="BTN_Close" )
+			{
+				CLS_WinCtrl.sLocation({
+					inPath		: top.DEF_GF_FILEPATH_INDEX,
+					inRireki	: false
+				}) ;
+				return true ;
+			}
+			//### [NEW] : ニューゲーム画面へ
+			else if( wSubRes['Responce']['Button']=="BTN_New" )
+			{
+				top.gSTR_WinCtrlInfo.IFrameInfo.Status = top.DEF_GF_FILEPATH_NEWGAME ;
+				top.gSTR_WinCtrlInfo.IFrameInfo.ARR_Load[top.DEF_GF_IDX_MAIN_FRAME_MAIN] = false ;
+				
+				CLS_FrameCtrl.sOpen({
+					inFrameID	: top.DEF_GF_IDX_MAIN_FRAME_MAIN,
+					inPath		: top.DEF_GF_FILEPATH_NEWGAME
+				}) ;
+				return true ;
+			}
+			//### [LOGIN] : ログイン処理
+			else if( wSubRes['Responce']['Button']=="BTN_Login" )
+			{
+				wSubRes = wOBJ_Cld.gCLS_GF_Confirm.sLogin() ;
+				if(( wSubRes['Result']!=true )||( wSubRes['Responce']!=true ))
+				{///失敗か認証NG
+					console.log("comfirm is NG");
+					return false ;
+				}
+//////////////////
+				alert("ログイン成功!!!");
+//////////////////
+				return true ;
+			}
+		}
+		//###########################
+		//# ニューゲーム画面
+		else if( wSubRes['Responce']['Index']=="gf_NewGame" )
+		{
+			//### [CLOSE] : Indexページへ
+			if( wSubRes['Responce']['Button']=="BTN_Close" )
+			{
+				CLS_WinCtrl.sLocation({
+					inPath		: top.DEF_GF_FILEPATH_INDEX,
+					inRireki	: false
+				}) ;
+				return true ;
+			}
+			//### [REGIST] : ユーザ登録処理＆ログイン処理
+			else if( wSubRes['Responce']['Button']=="BTN_Regist" )
+			{
+				wSubRes = wOBJ_Cld.gCLS_GF_CreateUser.sCreate() ;
+				if(( wSubRes['Result']!=true )||( wSubRes['Responce']!=true ))
+				{///失敗か認証NG
+					console.log("comfirm is NG");
+					return false ;
+				}
+//////////////////
+				alert("ユーザ作成＆ログイン成功!!!");
+//////////////////
+				top.gSTR_WinCtrlInfo.IFrameInfo.Status = top.DEF_GF_FILEPATH_LOGIN ;
+				top.gSTR_WinCtrlInfo.IFrameInfo.ARR_Load[top.DEF_GF_IDX_MAIN_FRAME_MAIN] = false ;
+				
+				CLS_FrameCtrl.sOpen({
+					inFrameID	: top.DEF_GF_IDX_MAIN_FRAME_MAIN,
+					inPath		: top.DEF_GF_FILEPATH_LOGIN
+				}) ;
+//////////////////
+				return true ;
+			}
+		}
+
+
+
+
+	}
+//###########################
+//# メニュー画面系
+	else if( inFrameID==top.DEF_GF_IDX_MAIN_FRAME_MENU )
+	{
+	}
+//###########################
+//# トップ画面系
+	else if( inFrameID==top.DEF_GF_IDX_MAIN_FRAME_TOP )
+	{
+	}
+	
+	/////////////////////////////
+	// イベントなし
 //**********************************
-	console.log( "Button click: inFrameID=" + String(inFrameID) + " inButtonID=" + String(inButtonID) );
+//	console.log( "Button click: inFrameID=" + String(inFrameID) + " inButtonID=" + String(inButtonID) );
 //**********************************
-	return ;
+	wRes['Reason'] = "Button ivent is not found: inFrameID=" + String(inFrameID) + " inButtonID=" + String(inButtonID) ;
+	CLS_L.sL({ inRes:wRes, inLevel:"D", inLine:__LINE__ }) ;
+	return false ;
 }
 
 
@@ -261,7 +611,7 @@ function __handle_Circle()
 {
 	//###########################
 	//# 応答形式の取得
-	//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Reason" : "(none)", "Responce" : "(none)"
+	//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Result" : false, "Reason" : "(none)", "Responce" : "(none)"
 	let wRes = CLS_OSIF.sGet_Resp({ inClass:"__handle", inFunc:"__handle_Circle" }) ;
 	
 	let wSubRes, wMessage ;
@@ -392,9 +742,10 @@ function __handle_iframeEndProcess( inFrameID )
 ///////////////////////////////////////////////////////
 function __handle_Start()
 {
-
-//**********************************
-
+	CLS_WinCtrl.sLocation({
+		inPath		: top.DEF_GF_FILEPATH_MAIN,
+		inRireki	: false
+	}) ;
 	return ;
 }
 

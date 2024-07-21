@@ -16,6 +16,210 @@
    Galaxy Fleet Style
 ===================================================== */
 
+/*=== Main Title ===*/
+header div.gf_Title{
+color				: #FFFFFF;
+background-color	: #0033FF;
+/*padding			: 2px !important;
+border-radius		: 0px !important;*/
+font-size			: 16px ;
+font-weight			: bolder ;
+font-family			: "Arial Black";
+/*text-decoration	: none;*/
+padding				: 4px 24px ;
+/*border-radius		: 8px;*/
+}
+
+/*=== Button Font ===*/
+.gf_ButtonFont{
+font-family			: "Arial Black";
+}
+
+
+
+/* =====================================================
+   Galaxy Fleet Style :: User Config (New Game / Login / Change)
+===================================================== */
+
+#gf_NewGame table,
+#gf_Login table{
+color				: #00FF00;
+background-color	: #000033;
+width				: 480px;
+border				: 0px !important;
+vertical-align		: middle !important;
+}
+
+#gf_NewGame tr, #gf_NewGame td,
+#gf_Login tr, #gf_Login td{
+color				: #00FF00;
+background-color	: #000033;
+border				: 0px !important;
+padding				: 2px 12px 2px;
+vertical-align		: middle !important;
+}
+
+#gf_NewGame input.gf_Textbox,
+#gf_Login input.gf_Textbox{
+color				: #66CCFF;
+background-color	: #000000;
+width				: 200px;
+}
+
+#gf_NewGame td.gf_Agree_Cell{
+text-align			: right;
+}
+
+#gf_NewGame td.gf_Buttons,
+#gf_Login td.gf_Buttons{
+text-align			: center;
+}
+
+#gf_NewGame td.gf_FileButttonCell,
+#gf_Login td.gf_FileButttonCell{
+padding				: 24px 0px 8px !important;
+text-align			: center;
+}
+
+#gf_NewGame label > input,
+#gf_Login label > input{
+display				: none;
+}
+
+#gf_NewGame .gf_FileButton,
+#gf_Login .gf_FileButton{
+font-size			: 16px !important;
+padding				: 4px 30px 4px !important;
+font-family			: "Arial Black";
+}
+
+#gf_NewGame input.gf_Button,
+#gf_Login input.gf_Button{
+font-size			: 16px !important;
+width				: 80px !important;
+height				: 32px !important;
+margin				: 8px !important;
+padding				: 4px !important;
+font-family			: "Arial Black";
+}
+
+#gf_Login table.gf_Login_Save{
+width				: 480px;
+margin				: 36px auto 0px;
+padding				: 0px;
+}
+
+
+
+/*=== Button Form :: Radio Button ===*/
+input.gf_Agree_RADBTN{
+color				: #66CCFF;
+background-color	: #000033;
+border				: solid 2px #0099CC;
+position			: relative ;
+width				: 16px ;
+height				: 16px ;
+-webkit-appearance	: none ;
+-moz-appearance		: none ;
+appearance			: none ;
+vertical-align		: -5px ;
+}
+
+input.gf_Agree_RADBTN:hover{
+color				: #CCFFFF;
+background-color	: #0033CC;
+border				: solid 2px #3399FF;
+}
+
+input.gf_Agree_RADBTN:disabled{
+color				: #CCCCCC;
+background-color	: #202020;
+border				: solid 2px #666666;
+}
+
+input.gf_Agree_RADBTN:checked:before{
+background-color	: #ffff00;
+border-right		: 2px solid #ffff00;
+border-bottom		: 2px solid #ffff00;
+position			: absolute ;
+width				: 4px ;
+height				: 8px ;
+top					: 1px ;
+left				: 4px ;
+transform			: rotate(50deg) ;
+content				: '' ;
+}
+
+a.gf_Agree_Link{
+color				: #ff8800;
+}
+
+a.gf_Agree_Link:hover{
+color				: #CCFFFF;
+}
+
+
+
+/* =====================================================
+   Galaxy Fleet Style :: Main Page
+===================================================== */
+
+/*=== Main Body ===*/
+main.gf_Main_Main{
+width				: 100% ;
+}
+
+div.gf_Main_MainTop{
+width				: 100% ;
+margin				: 0px;
+padding				: 0px;
+}
+
+div.gf_Main_MainCenter{
+width				: 100% ;
+margin				: 0px;
+padding				: 0px;
+}
+
+div.gf_Main_MainCenter_Menu{
+width				: 100% ;
+margin				: 0px;
+padding				: 0px;
+float				: left;
+}
+
+div.gf_Main_MainCenter_Main{
+width				: 100% ;
+margin				: 0px;
+padding				: 0px;
+float				: left;
+}
+
+br.gf_Main_End{
+clear				: both;
+}
+
+/*=== Inline Frame :: Main ===*/
+iframe.gf_iFrameTop,
+iframe.gf_iFrameMenu,
+iframe.gf_iFrameMain{
+border				: 0px;
+height				: 480px;
+width				: 100%;
+}
+
+/*=== Inline Frame :: Hidden Frame ===*/
+.gf_Main_Hidden,
+iframe.gf_iFrameHidden{
+display				: none;
+}
+
+
+
+/* =====================================================
+   Galaxy Fleet Style :: Index
+===================================================== */
+
 /*=== Inline Frame :: Index ===*/
 
 iframe.gf_IndexFrame1,
@@ -37,11 +241,11 @@ font-weight			: bolder;
 }
 
 /*=== Start Button ===*/
-#gf_Mente a{
-display				: inline;
+#gf_Mente{
+display				: block;
 }
 
-#gf_Start a{
+#gf_Start{
 display				: none;
 }
 
@@ -80,6 +284,12 @@ margin				: 8px 0px 16px 32px;
 }
 
 
+
+
+
+
+/* ================================================== */
+/* ================================================== */
 
 /* =====================================================
    Page Title
@@ -140,6 +350,12 @@ border-bottom		: solid 4px blue;
 font-family			: "Arial Black";
 }
 
+header div.com_Title{
+color				: #FFFFFF;
+background-color	: #0033FF;
+font-family			: "Arial Black";
+}
+
 header span.com_Menu_Select{
 color				: #FFFFFF;
 background-color	: #0033FF;
@@ -174,10 +390,6 @@ color				: #0000FF;
 background-color	: #00ECFF;
 }
 
-/*=== Frame ===*/
-header .com_headerFrame{
-}
-
 
 
 /* =====================================================
@@ -204,10 +416,6 @@ border-radius		: 0px !important;
 footer a.com_Menu_Cel:hover{
 color				: #33CC33 ;
 background-color	: #003300 ;
-}
-
-/*=== Frame ===*/
-footer .com_footerFrame{
 }
 
 

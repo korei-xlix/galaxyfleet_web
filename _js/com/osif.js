@@ -10,7 +10,7 @@
 //#	CLS_OSIF.sGet_Resp({ inClass:"Class", inFunc="Func" })
 //#		//###########################
 //#		//# 応答形式の取得
-//#		//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Reason" : "(none)", "Responce" : "(none)"
+//#		//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Result" : false, "Reason" : "(none)", "Responce" : "(none)"
 //#		let wRes = CLS_OSIF.sGet_Resp({ inClass:"Class", inFunc:"Func" }) ;
 //#
 //# 処理停止
@@ -136,6 +136,10 @@
 //#					inDD 	   true=辞書型のデータ重複チェック false=キー重複チェック
 //#			out:	true=含む  false=含まないor例外
 //#
+//# 整数かチェック
+//#		CLS_OSIF.sCheckVal
+//#			in:		inValue    整数？
+//#			out:	true=整数  false=整数ではないor例外
 //# 整数変換
 //#		CLS_OSIF.sValParse({
 //#			in:		inValue	//数値（String）
@@ -171,7 +175,7 @@ class CLS_OSIF {
 
 //		//###########################
 //		//# 応答形式の取得
-//		//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Reason" : "(none)", "Responce" : "(none)"
+//		//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Result" : false, "Reason" : "(none)", "Responce" : "(none)"
 //		let wRes = CLS_OSIF.sGet_Resp({ inClass:"Class", inFunc:"Func" }) ;
 
 	static sGet_Resp({
@@ -228,7 +232,8 @@ class CLS_OSIF {
 		
 		if( top.DEF_INDEX_TEST==true )
 		{
-			wSubRes = this.sGetInObject({
+///			wSubRes = this.sGetInObject({
+			wSubRes = this.sGetInArray({
 				inObject : top.DEF_GVAL_OSIF_DEL_CALLBACK_LOG,
 				inKey	 : wName
 			}) ;
@@ -713,7 +718,9 @@ class CLS_OSIF {
 		{
 			/////////////////////////////
 			// 辞書型の場合
-			if( ( inObject instanceof Object )==true )
+///			if( ( inObject instanceof Object )==true )
+			if((( inObject instanceof Object )==true ) ||
+			   ( (typeof inObject)=="object" ) )
 			{
 				wValue = Object.keys( inObject ) ;
 			}
@@ -746,7 +753,9 @@ class CLS_OSIF {
 			}
 			/////////////////////////////
 			// 辞書型の場合
-			else if( ( inObject instanceof Object )==true )
+///			else if( ( inObject instanceof Object )==true )
+			else if(( ( inObject instanceof Object )==true ) ||
+				    ( (typeof inObject)=="object" ) )
 			{
 				wValue = Object.keys(inObject).length ;
 			}
@@ -773,7 +782,9 @@ class CLS_OSIF {
 		{
 			/////////////////////////////
 			// 辞書型の場合
-			if( ( inObject instanceof Object )==true )
+///			if( ( inObject instanceof Object )==true )
+			if(( ( inObject instanceof Object )==true ) ||
+			   ( (typeof inObject)=="object" ) )
 			{
 				wValue = true ;
 			}
@@ -787,7 +798,33 @@ class CLS_OSIF {
 
 
 //#####################################################
-//# Array型・辞書型にKeyを含むか
+//# Array型にKeyを含むか
+//#####################################################
+	static sGetInArray({
+		inObject,
+		inKey
+	})
+	{
+		let wValue, wKey ;
+		
+		wValue = false ;
+		try
+		{
+			if( inObject.includes( inKey )==true )
+			{
+				wValue = true ;
+			}
+		}
+		catch(e)
+		{///例外
+		}
+		return wValue ;
+	}
+
+
+
+//#####################################################
+//# 辞書型にKeyを含むか
 //#####################################################
 	static sGetInObject({
 		inObject,
@@ -800,37 +837,64 @@ class CLS_OSIF {
 		wValue = false ;
 		try
 		{
-			/////////////////////////////
-			// Array型の場合
-			if( ( inObject instanceof Array )==true )
-			{
-				if( inObject.includes( inKey )==true )
+///			/////////////////////////////
+///			// Array型の場合
+///			if( ( inObject instanceof Array )==true )
+///			{
+///				if( inObject.includes( inKey )==true )
+///				{
+///					wValue = true ;
+///				}
+///			}
+///			/////////////////////////////
+///			// 辞書型の場合
+///			else if( ( inObject instanceof Object )==true )
+///			else if(( ( inObject instanceof Object )==true ) ||
+///				    ( (typeof inObject)=="object" ) )
+///			{
+			if( inDD==true )
+			{///データ重複チェック
+				for( wKey in inObject )
+				{
+					if( inObject[wKey]==inKey )
+					{
+						wValue = true ;
+						break ;
+					}
+				}
+			}
+			else
+			{///キー重複チェック
+				if( inKey in inObject )
 				{
 					wValue = true ;
 				}
 			}
-			/////////////////////////////
-			// 辞書型の場合
-			else if( ( inObject instanceof Object )==true )
-			{
-				if( inDD==true )
-				{///データ重複チェック
-					for( wKey in inObject )
-					{
-						if( inObject[wKey]==inKey )
-						{
-							wValue = true ;
-							break ;
-						}
-					}
-				}
-				else
-				{///キー重複チェック
-					if( inKey in inObject )
-					{
-						wValue = true ;
-					}
-				}
+///			}
+		}
+		catch(e)
+		{///例外
+		}
+		return wValue ;
+	}
+
+
+
+//#####################################################
+//# 整数かチェック
+//#####################################################
+	static sCheckVal({
+		inValue
+	})
+	{
+		let wValue ;
+		
+		wValue = false ;
+		try
+		{
+			if( isNaN( inValue )==false )
+			{///数値
+				wValue = true ;
 			}
 		}
 		catch(e)

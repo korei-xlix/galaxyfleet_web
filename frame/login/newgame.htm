@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<meta name="author" content="Korei">
+<meta name="copyright" content="Copyright 2024 Korei's Labo">
+<meta name="generator" content="EmEditor">
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="shortcut icon" type="image/x-icon" id="iIcon" href="#">
+<link rel="stylesheet" type="text/css" id="iCSS_Com" href="#">
+<link rel="stylesheet" type="text/css" id="iCSS_Org" href="#">
+
+<title>Galaxy Fleet - JP:ニューゲーム :: EN:New Game</title>
+<meta name="description" content="Galaxy Fleetのニューゲーム画面です。">
+
+<script src="/_js/3rd/md5.js"></script>
+<script src="/_js/gf/user/confirm.js"></script>
+<script src="/_js/gf/user/createuser.js"></script>
+
+<script src="/_js/com/frame_child.js"></script>
+<script src="/_js/gf/handle/_handle_newgame.js"></script>
+
+</head><body onLoad="__handle_FrameLoad()" onUnload="__handle_FrameUnLoad()"><div id="com_bodyFrameOutline"><div id="com_bodyFrameInline">
+
+
+
+<header class="com_headerFrame"></header>
+
+
+
+
+
+
+<main id="gf_NewGame" class="com_ContentsSection_Center">
+	<div class="com_ContentsBody_Center">
+
+	<form><table class="com_Center" id="gf_NewGame-Main">
+	<tr>
+		<td>
+			<span class="wordTrans_JP">ユーザID</span><span class="wordTrans_EN">USER ID</span>
+		</td>
+		<td>
+			<input class="gf_Textbox" type="text" id="iUserID" value="">
+<!--			<input class="gf_Textbox" type="text" id="iUserID" value="testuser"> -->
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="wordTrans_JP">ユーザ名</span><span class="wordTrans_EN">USER NAME</span>
+		</td>
+		<td>
+			<input class="gf_Textbox" type="text" id="iUserName" value="">
+<!--			<input class="gf_Textbox" type="text" id="iUserName" value="mytest"> -->
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="wordTrans_JP">パスワード</span><span class="wordTrans_EN">PASSWORD</span>
+		</td>
+		<td>
+			<input class="gf_Textbox" type="password" id="iPassWD" value="" autocomplete="off" name="password">
+<!--			<input class="gf_Textbox" type="password" id="iPassWD" value="1234567890ab" autocomplete="off" name="password"> -->
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="wordTrans_JP">パスワード(再)</span><span class="wordTrans_EN">PASSWORD(RE)</span>
+		</td>
+		<td>
+			<input class="gf_Textbox" type="password" id="iPassWD2" value="" autocomplete="off" name="password2">
+<!--			<input class="gf_Textbox" type="password" id="iPassWD2" value="1234567890ab" autocomplete="off" name="password2"> -->
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="wordTrans_JP">セーブデータパス</span><span class="wordTrans_EN">Save Data Path</span>
+		</td>
+		<td>
+			<input class="gf_Textbox" type="text" id="iSaveDataPath" value="" name="savedatapath" readonly>
+		</td>
+	</tr>
+	<tr>
+		<td>　
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan="2">
+			<div class="wordTrans_JP">
+			ゲームをプレイしていただくにあたっては、<br />
+			以下の各項目（利用規約）に同意していただく必要があります。<br />
+			</div>
+			<div class="wordTrans_EN">
+			To play the game,<br />
+			you must agree to the following terms of use.<br />
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="gf_Agree_Cell">
+			<input class="gf_Agree_RADBTN" type="checkbox" id="iAgree1" value=""
+				onclick="__handle_NewGame_AgreeClick()" disabled>
+		</td>
+		<td>
+			<a target="_blank" class="gf_Agree_Link" href="/rule/rule_gf.htm"
+				onclick="__handle_NewGame_AgreeLinkClick('iAgree1')">
+			<span class="wordTrans_JP">ユーザ利用規約</span>
+			<span class="wordTrans_EN">Disclaimer</span>
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="gf_Agree_Cell">
+			<input class="gf_Agree_RADBTN" type="checkbox" id="iAgree2" value=""
+				onclick="__handle_NewGame_AgreeClick()" disabled>
+		</td>
+		<td>
+			<a target="_blank" class="gf_Agree_Link" href="https://website.koreis-labo.com/rules/rule_web.htm#aSelecttor_1"
+				onclick="__handle_NewGame_AgreeLinkClick('iAgree2')">
+			<span class="wordTrans_JP">免責事項</span>
+			<span class="wordTrans_EN">Disclaimer</span>
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="gf_Agree_Cell">
+			<input class="gf_Agree_RADBTN" type="checkbox" id="iAgree3" value=""
+				onclick="__handle_NewGame_AgreeClick()" disabled>
+		</td>
+		<td>
+			<a target="_blank" class="gf_Agree_Link" href="https://website.koreis-labo.com/rules/rule_web.htm"
+				onclick="__handle_NewGame_AgreeLinkClick('iAgree3')">
+			<span class="wordTrans_JP">サイト規約</span>
+			<span class="wordTrans_EN">Site terms</span>
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td>　
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan="2" class="gf_FileButttonCell">
+			<label for="gf_iFileDialog" id="iBTN_FileDialog" class="gf_FileButton com_BTNCOL_Def">
+			Select Save File
+			<input type="file" id="gf_iFileDialog" onchange="__handle_NewGame_SelectFile(event)">
+			</label>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="gf_Buttons">
+			
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_FrameButton_RegVall({
+			inID : 'gf_NewGame-Main-BTN_Regist-DEFBTN', inStyle : { 'Def':'com_DEFBTN com_BTNCOL_Def gf_ButtonFont', 'Disabled' : true } });" />
+<!--			inID : 'gf_NewGame-Main-BTN_Regist-DEFBTN', inStyle : { 'Def':'com_DEFBTN com_BTNCOL_Def gf_ButtonFont' } });" /> -->
+
+			<input type="button" id="gf_NewGame-Main-BTN_Regist-DEFBTN" value="REGIST">
+			
+			<img class="com_BTN_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_FrameButton_RegVall({
+				inID : 'gf_NewGame-Main-BTN_Close-DEFBTN', inStyle : { 'Def':'com_DEFBTN com_BTNCOL_Def gf_ButtonFont' } });" />
+			<input type="button" id="gf_NewGame-Main-BTN_Close-DEFBTN" value="CLOSE">
+			
+		</td>
+	</tr>
+	<tr>
+		<td>　
+		</td>
+	</tr>
+	</table></form>
+
+	</div>
+</main>
+
+
+
+
+
+
+<!--
+<a name="aContents" class="com_AnchorTag"></a>
+<div class="com_ContentsTitle">ゲームのはじめ方 / How to start the game</div>
+
+<section class="com_ContentsSection">
+	<img class="com_ContentsSelector_Img" alt="dum" src="/_pic/icon/dummy.jpg" onload="__handle_FrameSel_RegVal('001')" />
+	<div class="com_ContentsSelector_Title" id="iSelectorTitle-001">▼ ゲームのはじめ方 / How to start the game ▼</div>
+	<input type="checkbox" id="iP-001" class="com_ContentsSelector_CBX">
+	<label class="com_ContentsSelector_LAB" id="iSelectorSet-001" for="iP-001"></label>
+//-->
+
+
+<a name="aSub" class="com_AnchorTag"></a>
+<section class="com_ContentsSection">
+	<div class="com_ContentsTitle">ゲームのはじめ方 :: How to start the game</div>
+	<div class="com_ContentsBody">
+
+		<div class="wordTrans_JP">
+		新規でゲームを始めます。まずこの画面でユーザ登録をしてください。<br />
+		ユーザID、ユーザ名、パスワードを入力してください。<br />
+		
+		<ul>
+			<li>ユーザID	<p>
+				ログインに必要なIDキーです。（半角英数字 8文字以上）<br />
+				</p></li>
+			<li>ユーザ名	<p>
+				ゲーム内に表示される司令官名を指定できます。（全角16文字まで）<br />
+				</p></li>
+			<li>パスワード	<p>
+				ログインに必要なパスワードです。（12文字以上）<br />
+				　　パスワードに使用可能な文字　半角英数字 &lt; &gt; ( ) { } ! ? @ + - * / = % # & $<br />
+				</p></li>
+		</ul>
+		
+		全て入力したあと、規約３箇条に同意してください（チェック）。<br />
+		全てチェックし、[START]を押すと、ゲームが始まります !!<br />
+		</div>
+		<div class="wordTrans_EN">
+		Start a new game. First, register as a user on this screen. <br />
+		Please enter your user ID, user name, and password. <br />
+		
+		<ul>
+			<li>User ID	<p>
+				This is the ID key required for logging in.<br />
+				　(8 or more alphanumeric characters) <br />
+				</p></li>
+			<li>User name <p>
+				You can specify the commander name that will be displayed in the game.<br />
+				　(Up to 16 full-width characters) <br />
+				</p></li>
+			<li>Password <p>
+				This is the password required for logging in. (12 or more characters) <br />
+				Characters that can be used in passwords:<br />
+				　Half-width alphanumeric characters &lt; &gt; ( ) { } ! ? @ + - * / = % # & $<br />
+				</p></li>
+			</ul>
+			
+			After entering all the information,<br />
+			please agree to the three terms and conditions (check). <br />
+			Check all the boxes and press [START] to start the game !! <br />
+		</div>
+	</div>
+
+<div class="com_Nav"><a class="com_Nav" href="#aTop">[RETURN]</a></div>
+</section>
+
+
+
+
+
+
+<footer class="com_footerFrame"></footer>
+
+
+
+</div></div></body></html>
