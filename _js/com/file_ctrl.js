@@ -25,7 +25,6 @@ class CLS_File {
 		
 		let wMessage ;
 		
-///		wRes['Responce'] = false ;
 		wRes['Responce'] = {
 			"File"		 : false,
 			"FileList"	 : false,
@@ -38,13 +37,10 @@ class CLS_File {
 		try
 		{
 			//### File API使用可能
-///			if( window.File==true )
 			if( window.File )
 			{
-///				//### File API使用可能
 				wRes['Result'] = true ;
 				wRes['Responce']['File'] = true ;
-///				wRes['Responce'] = true ;
 			}
 			
 			//### FileList使用可能
@@ -73,7 +69,6 @@ class CLS_File {
 		//### コンソールへ表示
 		if( top.DEF_INDEX_TEST==true )
 		{
-///			let wMessage = "File API use=" + String(wRes['Responce']) ;
 			wMessage = "File API use=" + String(wRes['Result']) ;
 			wMessage = wMessage + '\n' + "  File API   =" + String(wRes['Responce']['File']) ;
 			wMessage = wMessage + '\n' + "  FileList   =" + String(wRes['Responce']['FileList']) ;
@@ -84,7 +79,6 @@ class CLS_File {
 		
 		/////////////////////////////
 		// 正常終了
-///		wRes['Result'] = true ;
 		return wRes ;
 	}
 
@@ -111,7 +105,6 @@ class CLS_File {
 		/////////////////////////////
 		// File API使用可否チェック
 		wSubRes = this.sCheck() ;
-///		if(( wSubRes['Result']!=true ) || ( wSubRes['Responce']!=true ))
 		if( wSubRes['Result']!=true )
 		{///失敗か使用不可
 			wRes['Reason'] = "File API is not use" ;
@@ -175,16 +168,12 @@ class CLS_File {
 		//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Result" : false, "Reason" : "(none)", "Responce" : "(none)"
 		let wRes = CLS_OSIF.sGet_Resp({ inClass:"CLS_File", inFunc:"sSelectFile" }) ;
 		
-///		let wSubRes, pSTR_Info, wDataTransfer ;
 		let wSubRes, wSTR_Info, wDataTransfer ;
 		let wObj ;
 		
-///		pSTR_Info = outSTR_Info ;
-///		
 		/////////////////////////////
 		// File API使用可否チェック
 		wSubRes = this.sCheck() ;
-///		if(( wSubRes['Result']!=true ) || ( wSubRes['Responce']!=true ))
 		if( wSubRes['Result']!=true )
 		{///失敗か使用不可
 			wRes['Reason'] = "File API is not use" ;
@@ -194,7 +183,6 @@ class CLS_File {
 		
 		/////////////////////////////
 		// 入力チェック
-///		if( inFileName!=top.DEF_GVAL_NULL )
 		if( inFileName==top.DEF_GVAL_NULL )
 		{///失敗
 			wRes['Reason'] = "inFileName is null" ;
@@ -226,7 +214,6 @@ class CLS_File {
 			//### ファイル生成
 			wSubRes = this.sCreateFile({
 				inFileName	: inFileName,
-///				outSTR_Info	: pSTR_Info
 				outSTR_Info	: wSTR_Info
 			}) ;
 			if( wSubRes['Result']!=true )
@@ -238,7 +225,6 @@ class CLS_File {
 			
 			//### データトランスファー作成
 			wDataTransfer = new DataTransfer() ;
-///			wDataTransfer.items.add( pSTR_Info['Obj'] ) ;
 			wDataTransfer.items.add( wSTR_Info['Obj'] ) ;
 			
 			//### inputに追加
@@ -248,7 +234,6 @@ class CLS_File {
 			if( top.DEF_INDEX_TEST==true )
 			{
 				CLS_OSIF.sConsInfo({ inText:"*** Input File ***" }) ;
-///				CLS_OSIF.sViewObj({ inObj:pSTR_Info }) ;
 				CLS_OSIF.sViewObj({ inObj:wSTR_Info }) ;
 			}
 		}
@@ -263,7 +248,6 @@ class CLS_File {
 		
 		/////////////////////////////
 		// ファイル選択済みか
-///		if( ( pSTR_Info['Name']=="" )||( pSTR_Info['Name']==top.DEF_GVAL_NULL ) )
 		if( ( wSTR_Info['Name']=="" )||( wSTR_Info['Name']==top.DEF_GVAL_NULL ) )
 		{///未選択
 			wRes['Result'] = true ;
@@ -300,7 +284,6 @@ class CLS_File {
 		/////////////////////////////
 		// File API使用可否チェック
 		wSubRes = this.sCheck() ;
-///		if(( wSubRes['Result']!=true ) || ( wSubRes['Responce']!=true ))
 		if( wSubRes['Result']!=true )
 		{///失敗か使用不可
 			wRes['Reason'] = "File API is not use" ;
@@ -385,13 +368,11 @@ class CLS_File {
 		//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Result" : false, "Reason" : "(none)", "Responce" : "(none)"
 		let wRes = CLS_OSIF.sGet_Resp({ inClass:"CLS_File", inFunc:"sRead" }) ;
 		
-///		let wSubRes, wSTR_Option, wOBJ_Reader, wARR_GetFile, wMessage ;
 		let wSubRes, wSTR_Option, wOBJ_Reader, wMessage ;
 		
 		/////////////////////////////
 		// File API使用可否チェック
 		wSubRes = this.sCheck() ;
-///		if(( wSubRes['Result']!=true ) || ( wSubRes['Responce']!=true ))
 		if( wSubRes['Result']!=true )
 		{///失敗か使用不可
 			wRes['Reason'] = "File API is not use" ;
@@ -458,9 +439,6 @@ class CLS_File {
 			inTimerID	: top.DEF_GVAL_FILE_TID_TIMER,
 			inTimerKind	: "normal",
 			inValue		: top.DEF_GVAL_FILE_TIMEOUT
-//			inNextProc	: {
-//				"Callback"	: inCompProc
-//			}
 		}) ;
 		if( wSubRes['Result']!=true )
 		{///失敗
@@ -482,11 +460,7 @@ class CLS_File {
 			wOBJ_Reader['Option']['Trim']	= wSTR_Option['Trim'] ;
 			wOBJ_Reader['Option']['Line']	= wSTR_Option['Line'] ;
 			wOBJ_Reader['Callback']			= inCompProc ;
-///			wOBJ_Reader['GetFile'] = new Array() ;
-///			wOBJ_Reader['FLG_Comp'] = false ;
 			
-///			wOBJ_Reader.readAsText( inOBJ_File, inEncoding ) ;
-///			
 			//### ファイル情報初期化
 			top.gSTR_File = new gSTR_File_Str() ;
 			top.gSTR_File.OBJ_Info = inOBJ_File ;
@@ -494,10 +468,8 @@ class CLS_File {
 		/////////////////////////////
 		// FileReaderのイベント設定
 			
-///			wARR_GetFile = new Array() ;
 			/////////////////////////////
 			// onload  リード処理
-///			wOBJ_Reader.onload = function( ev, wARR_GetFile )
 			wOBJ_Reader.onload = function( ev )
 			{
 				//###########################
@@ -505,21 +477,15 @@ class CLS_File {
 				//#   "Result" : false, "Class" : "(none)", "Func" : "(none)", "Result" : false, "Reason" : "(none)", "Responce" : "(none)"
 				let wRes = CLS_OSIF.sGet_Resp({ inClass:"CLS_File", inFunc:"sRead.onload" }) ;
 				
-///				let wSubRes, wARR_Text, wARR_GetFile, wLength, wMessage ;
-///				let wSubRes, wARR_Text, pGetFile, wLength ;
-///				let wSubRes, wARR_Text, wARR_GetText, wLength ;
 				let wSubRes, wARR_Text, wLength, wMessage ;
 				let wI, wCHR_Line ;
 				
-///				pGetFile = wARR_GetFile ;
-///				wARR_GetText = new Array() ;
 				/////////////////////////////
 				// 改行で区切る
 				wSubRes = CLS_OSIF.sSplit({
 					inString  : this.result,
 					inPattern : '\n'
 				}) ;
-///				if( wARR_Text['Result']!=true )
 				if( wSubRes['Result']!=true )
 				{///失敗
 					wRes['Reason'] = "CLS_OSIF.sSplit is failed" ;
@@ -531,13 +497,11 @@ class CLS_File {
 				
 				/////////////////////////////
 				// データの読み出し
-///				wARR_GetFile = new Array() ;
 				for( wI=0 ; wI<wLength ; wI++ )
 				{
 					wCHR_Line = wARR_Text[wI] ;
 					
 					//### スペース文字削除
-///					if( wSTR_Option['Spane']==true )
 					if( this['Option']['Space']==true )
 					{
 						wCHR_Line = wCHR_Line.replace(/\s+/g, "") ;
@@ -545,7 +509,6 @@ class CLS_File {
 					else
 					{
 						//### トリム（両端のスペース削除）
-///						if( wSTR_Option['Trim']==true )
 						if( this['Option']['Trim']==true )
 						{
 							wCHR_Line = wCHR_Line.trim() ;
@@ -553,7 +516,6 @@ class CLS_File {
 					}
 					
 					//### 空白行のスキップ
-///					if(( wSTR_Option['Line']==true )&&
 					if(( this['Option']['Line']==true )&&
 					   ( wCHR_Line.length==0 ) )
 					{
@@ -561,33 +523,14 @@ class CLS_File {
 					}
 					
 					//### 配列に詰める
-///					wARR_GetFile.push( wCHR_Line ) ;
-///					pGetFile.push( wCHR_Line ) ;
-///					wARR_GetText.push( wCHR_Line ) ;
-///					this['GetFile'].push( wCHR_Line ) ;
 					top.gSTR_File.Data.push( wCHR_Line ) ;
 					
 				}
-///				this['GetFile'] = wARR_GetText ;
 				
-///				/////////////////////////////
-///				// 読み込み終了
-///				if( wARR_GetFile.length>0 )
-///				{
-///					//### ログの記録
-///					wMessage = "File load complete" ;
-///					wStatus = wStatus + " path=" + inInfo['Name'] ;
-///					wStatus = wStatus + " type=" + inInfo['Type'] ;
-///					wStatus = wStatus + " size=" + inInfo['Size'] ;
-///					wStatus = wStatus + " date=" + inInfo['Date'] ;
-///					top.CLS_L({ inRes:wRes, inLevel: "SC", inMessage: wMessage }) ;
-///					
-///				}
 				/////////////////////////////
 				// 読み込み終了
 				wMessage = "File loaded" ;
 				CLS_L.sL({ inRes:wRes, inLevel:"SR", inMessage: wMessage }) ;
-///				this['FLG_Comp'] = true ;
 				top.gSTR_File.FLG_Comp = true ;
 				
 				/////////////////////////////
@@ -635,16 +578,6 @@ class CLS_File {
 			CLS_L.sL({ inRes:wRes, inLevel:"A", inLine:__LINE__ }) ;
 			return wRes ;
 		}
-		
-///		/////////////////////////////
-///		// ロード待ちループ
-///		for( let wRoop=0 ; 1000>wRoop ; wRoop++ )
-///		{
-///			if( wOBJ_Reader['FLG_Comp']==true )
-///			{
-///				break ;
-///			}
-///		}
 		
 		/////////////////////////////
 		// タイマ起動
@@ -714,7 +647,6 @@ class CLS_File {
 		/////////////////////////////
 		// File API使用可否チェック
 		wSubRes = this.sCheck() ;
-///		if(( wSubRes['Result']!=true ) || ( wSubRes['Responce']!=true ))
 		if( wSubRes['Result']!=true )
 		{///失敗か使用不可
 			wRes['Reason'] = "File API is not use" ;
@@ -748,7 +680,6 @@ class CLS_File {
 		
 		//### メッセージ表示
 		wMessage = "Output File complete: PC download folder\\" + String(wOBJ_Link.download) ;
-///		top.CLS_L({ inRes:wRes, inLevel: "SC", inMessage: wMessage }) ;
 		CLS_L.sL({ inRes:wRes, inLevel:"SC", inMessage: wMessage }) ;
 		
 		/////////////////////////////

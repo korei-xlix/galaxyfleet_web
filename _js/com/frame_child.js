@@ -118,7 +118,6 @@ function __handle_FrameButton_RegVall({ inID = top.DEF_CLD_NULL, inStyle = {} })
 ///////////////////////////////////////////////////////
 function __handle_FrameSel_RegVal( inNumber )
 {
-///	CLS_FrameCld.sPreRegVal({
 	CLS_FrameCld.sSel_PreRegVal({
 		inNum : inNumber
 	}) ;

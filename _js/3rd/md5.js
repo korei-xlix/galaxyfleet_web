@@ -114,31 +114,26 @@ class CLS_MD5 {
 ///////////////////////////////////////////////////////
 //  MD5処理 関数群
 ///////////////////////////////////////////////////////
-///	function __MD5_F(x, y, z)
 	__MD5_F(x, y, z)
 	{
 		return (x & y) | (~x & z) ;
 	}
 
-///	function __MD5_G(x, y, z)
 	__MD5_G(x, y, z)
 	{
 		return (x & z) | (y & ~z) ;
 	}
 
-///	function __MD5_H(x, y, z)
 	__MD5_H(x, y, z)
 	{
 		return x ^ y ^ z ;
 	}
 
-///	function __MD5_I(x, y, z)
 	__MD5_I(x, y, z)
 	{
 		return y ^ (x | ~z) ;
 	}
 
-///	function __MD5_pack( inN32 )
 	__MD5_pack( inN32 )
 	{
 		return String.fromCharCode(inN32 & 0xff) +
@@ -156,7 +151,6 @@ class CLS_MD5 {
 //			(inS4.charCodeAt(3) << 24) ;
 //	}
 	
-///	function __MD5_number( wN )
 	__MD5_number( wN )
 	{
 		while( wN<0 )
@@ -170,7 +164,6 @@ class CLS_MD5 {
 		return wN ;
 	}
 	
-///	function __MD5_apply_round( inX, outS, inF, inABCD, inR )
 	__MD5_apply_round( inX, outS, inF, inABCD, inR )
 	{
 		let wA, wB, wC, wD ;
@@ -196,7 +189,6 @@ class CLS_MD5 {
 		return ;
 	}
 	
-///	function __MD5_hash( inPass )
 	__MD5_hash( inPass )
 	{
 		let wData, wState ;
@@ -266,7 +258,6 @@ class CLS_MD5 {
 //#####################################################
 //# MD5処理 実行本体
 //#####################################################
-///	function MD5_hexhash({
 	MD5_hexhash({
 		inPass
 	})

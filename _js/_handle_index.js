@@ -178,20 +178,6 @@ function __handle_Main_PageLoad_Complete()
 	
 	let wSubRes ;
 	
-///	/////////////////////////////
-///	// システム開始
-///	wSubRes = CLS_Sys.sStart() ;
-///	if( wSubRes['Result']!=true )
-///	{///失敗
-///		wRes['Reason'] = "CLS_Sys.sStart is failed" ;
-///		CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
-///		return wRes ;
-///	}
-///	
-///	/////////////////////////////
-///	// システム情報表示
-///	CLS_Sys.sView() ;
-///	
 	//###########################
 	//# メインロード待ち
 	if( top.gSTR_WinCtrlInfo.IFrameInfo.Status==top.DEF_GVAL_WINCTRL_IFSTAT_MAIN )
@@ -332,23 +318,33 @@ function __handle_Index_PageLoad_Complete()
 	
 	let wSubRes ;
 	
-	/////////////////////////////
-	// システム状態変更（→運用へ）
-	wSubRes = CLS_Sys.sChg({
-		inStatus	: top.DEF_GVAL_SYS_STAT_RUN
-	}) ;
-	if( wSubRes['Result']!=true )
-	{///失敗
-		wRes['Reason'] = "CLS_Sys.sChg is failed" ;
-		CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
-		return wRes ;
-	}
-	
+///	/////////////////////////////
+///	// システム状態変更（→運用へ）
+///	wSubRes = CLS_Sys.sChg({
+///		inStatus	: top.DEF_GVAL_SYS_STAT_RUN
+///	}) ;
+///	if( wSubRes['Result']!=true )
+///	{///失敗
+///		wRes['Reason'] = "CLS_Sys.sChg is failed" ;
+///		CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
+///		return wRes ;
+///	}
+///	
 	/////////////////////////////
 	// スタートボタン制御（表示）
 	CLS_GF_ExtSys.sStartButtonCtrl({
 		inPageObj	: top.gSTR_WinCtrlInfo.PageObj
 	}) ;
+	
+	/////////////////////////////
+	// システム開始
+	wSubRes = CLS_Sys.sStart() ;
+	if( wSubRes['Result']!=true )
+	{///失敗
+		wRes['Reason'] = "CLS_Sys.sStart is failed" ;
+		CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
+		return wRes ;
+	}
 	
 	/////////////////////////////
 	// システム情報表示
@@ -485,16 +481,6 @@ function __handle_BtnClick({
 		CLS_L.sL({ inRes:wRes, inLevel:"A", inLine:__LINE__ }) ;
 		return false ;
 	}
-///	if( top.DEF_INDEX_TEST==true )
-///	{
-///		wMessage = "Button click: inButtonID=" + String(inButtonID) ;
-///		wMessage = wMessage + '\n' + "  inFrameID = " + String(inFrameID) ;
-///		wMessage = wMessage + '\n' + "  Index  = " + String(wSubRes['Responce']['Index']) ;
-///		wMessage = wMessage + '\n' + "  Group  = " + String(wSubRes['Responce']['Group']) ;
-///		wMessage = wMessage + '\n' + "  Button = " + String(wSubRes['Responce']['Button']) ;
-///		wMessage = wMessage + '\n' + "  Kind   = " + String(wSubRes['Responce']['Kind']) ;
-///		CLS_L.sL({ inRes:wRes, inLevel:"X", inMessage:wMessage }) ;
-///	}
 	
 //###########################
 //# メイン画面系
