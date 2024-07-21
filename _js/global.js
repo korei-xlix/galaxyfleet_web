@@ -719,8 +719,6 @@ function gSTR_WinCtrlInfo_Str()
 	this.MouseMove		= new gSTR_WinCtrl_MouseMove_Str() ;	//  マウスムーブ情報
 	this.CompProcess	= new gSTR_CallbackInfo_Str() ;			//  コールバック情報
 	this.TransInfo		= new gSTR_WinCtrl_TransInfo_Str() ;	//  翻訳情報
-///	
-///	this.IFrameLoad		= {} ;									//  インラインフレーム ロードフラグ  true=Load完了
 	this.IFrameInfo		= {} ;									//  インラインフレーム情報
 }
 var gSTR_WinCtrlInfo = new gSTR_WinCtrlInfo_Str() ;

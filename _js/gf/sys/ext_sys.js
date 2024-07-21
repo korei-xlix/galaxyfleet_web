@@ -55,7 +55,6 @@ class CLS_GF_ExtSys {
 //#####################################################
 	static sStartButtonCtrl({
 		inPageObj = self.document
-///		inStart   = false			// false=非スタート（スタートを消す・メンテ表示）
 	})
 	{
 		//###########################
@@ -65,30 +64,6 @@ class CLS_GF_ExtSys {
 		
 		let wSubRes, wMessage ;
 		
-///		/////////////////////////////
-///		// スタートボタンを非表示にする
-///		wSubRes = CLS_PageObj.sSetDisplay({
-///			inPageObj	: inPageObj,
-///			inKey		: top.DEF_GF_IDX_INDEX_START,
-///			inCode		: false
-///		}) ;
-///		if( wSubRes['Result']!=true )
-///		{///失敗
-///			wRes['Reason'] = "CLS_PageObj.sSetDisplay is failed(1)" ;
-///			CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
-///			return wRes ;
-///		}
-///		
-///		/////////////////////////////
-///		// スタート非表示なら、終わる
-///		if( inStart==true )
-///		{
-///			/////////////////////////////
-///			// 正常終了
-///			wRes['Result'] = true ;
-///			return wRes ;
-///		}
-///		
 		/////////////////////////////
 		// メンテ表示なら、終わる
 		if( top.DEF_GFUNYO_MENTE==true )
@@ -165,7 +140,6 @@ class CLS_GF_ExtSys {
 		
 		/////////////////////////////
 		// 入力チェック
-///		wSubRes = CLS_OSIF.sGetInObject({
 		wSubRes = CLS_OSIF.sGetInArray({
 			inObject	: top.DEF_GF_ARR_SYS_STAT,
 			inKey		: inStatus

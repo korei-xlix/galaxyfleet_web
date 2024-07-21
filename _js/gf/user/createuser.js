@@ -191,7 +191,6 @@ class CLS_GF_CreateUser {
 		outData
 	})
 	{
-///		let wSubRes, pInput, wSTR_Data ;
 		let wSubRes, pInput ;
 		let wKey ;
 		
@@ -213,7 +212,6 @@ class CLS_GF_CreateUser {
 		
 		pInput = outData ;
 		
-///		wSTR_Data = {} ;
 		/////////////////////////////
 		// 入力取得
 		for( wKey of wOBJ_Op.DEF_GF_ARR_NEWGAME_USERINFO )
@@ -229,7 +227,6 @@ class CLS_GF_CreateUser {
 				wOBJ_Win.gCLS_L.sL({ inRes:wRes, inLevel:"D", inLine:wOBJ_Op.__LINE__ }) ;
 				return wRes ;
 			}
-///			wSTR_Data[wKey] = wSubRes['Responce'] ;
 			pInput[wKey] = wSubRes['Responce'] ;
 		}
 		//	pInput[wOBJ_Op.DEF_GF_IDX_NEWGAME_USERID]
@@ -250,12 +247,10 @@ class CLS_GF_CreateUser {
 		/////////////////////////////
 		// 取得値のチェック：ユーザID
 		wSubRes = CLS_GF_Confirm.sCheckUserID({
-///			inID : wSTR_Data[wOBJ_Op.DEF_GF_IDX_NEWGAME_USERID]
 			inID : pInput[wOBJ_Op.DEF_GF_IDX_NEWGAME_USERID]
 		}) ;
 		if(( wSubRes['Result']!=true ) || ( wSubRes['Responce']!=true ))
 		{///失敗か認証NG
-///			wRes['Reason'] = "CLS_GF_Confirm.sCheckUserID is failed: UserID=" + String(wSTR_Data[wOBJ_Op.DEF_GF_IDX_NEWGAME_USERID]) ;
 			wRes['Reason'] = "CLS_GF_Confirm.sCheckUserID is failed: UserID=" + String(pInput[wOBJ_Op.DEF_GF_IDX_NEWGAME_USERID]) ;
 			wOBJ_Win.gCLS_L.sL({ inRes:wRes, inLevel:"B", inLine:wOBJ_Op.__LINE__ }) ;
 			return wRes ;
@@ -264,12 +259,10 @@ class CLS_GF_CreateUser {
 		/////////////////////////////
 		// 取得値のチェック：ユーザ名
 		wSubRes = CLS_GF_Confirm.sCheckUserName({
-///			inName : wSTR_Data[wOBJ_Op.DEF_GF_IDX_NEWGAME_USERNAME]
 			inName : pInput[wOBJ_Op.DEF_GF_IDX_NEWGAME_USERNAME]
 		}) ;
 		if(( wSubRes['Result']!=true ) || ( wSubRes['Responce']!=true ))
 		{///失敗か認証NG
-///			wRes['Reason'] = "CLS_GF_Confirm.sCheckUserName is failed: UserName=" + String(wSTR_Data[wOBJ_Op.DEF_GF_IDX_NEWGAME_USERNAME]) ;
 			wRes['Reason'] = "CLS_GF_Confirm.sCheckUserName is failed: UserName=" + String(pInput[wOBJ_Op.DEF_GF_IDX_NEWGAME_USERNAME]) ;
 			wOBJ_Win.gCLS_L.sL({ inRes:wRes, inLevel:"B", inLine:wOBJ_Op.__LINE__ }) ;
 			return wRes ;
@@ -278,8 +271,6 @@ class CLS_GF_CreateUser {
 		/////////////////////////////
 		// 取得値のチェック：パスワード
 		wSubRes = CLS_GF_Confirm.sCheckPassWD({
-///			inPW1 : wSTR_Data[wOBJ_Op.DEF_GF_IDX_NEWGAME_PASSWORD],
-///			inPW2 : wSTR_Data[wOBJ_Op.DEF_GF_IDX_NEWGAME_PASSWORD2]
 			inPW1 : pInput[wOBJ_Op.DEF_GF_IDX_NEWGAME_PASSWORD],
 			inPW2 : pInput[wOBJ_Op.DEF_GF_IDX_NEWGAME_PASSWORD2]
 		}) ;
@@ -356,7 +347,6 @@ class CLS_GF_CreateUser {
 			wMessage = wMessage + '\n' + "  LotDate = " + String(wOBJ_Op.STR_GF_UserInfo.LotDate) ;
 			wMessage = wMessage + '\n' + "  ChgDate = " + String(wOBJ_Op.STR_GF_UserInfo.ChgDate) ;
 			wMessage = wMessage + '\n' + "  PwdDate = " + String(wOBJ_Op.STR_GF_UserInfo.PwdDate) ;
-///			CLS_L.sL({ inRes:wRes, inLevel:"X", inMessage:wMessage }) ;
 			wOBJ_Win.gCLS_L.sL({ inRes:wRes, inLevel:"X", inMessage:wMessage }) ;
 		}
 		

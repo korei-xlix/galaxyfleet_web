@@ -349,6 +349,7 @@ class CLS_GF_Confirm {
 		if( top.DEF_INDEX_TEST==true )
 		{
 			wMessage = wMessage + '\n' + "  Name    = " + String(wOBJ_Op.STR_GF_UserInfo.Name) ;
+//** Hashは非表示
 //			wMessage = wMessage + '\n' + "  Hash    = " + String(wOBJ_Op.STR_GF_UserInfo.PassWD) ;
 			wMessage = wMessage + '\n' + "  RegDate = " + String(wOBJ_Op.STR_GF_UserInfo.RegDate) ;
 			wMessage = wMessage + '\n' + "  LinDate = " + String(wOBJ_Op.STR_GF_UserInfo.LinDate) ;
@@ -399,7 +400,6 @@ class CLS_GF_Confirm {
 		
 		/////////////////////////////
 		// 入力チェック
-///		wSubRes = wOBJ_Win.gCLS_OSIF.sGetInObject({
 		wSubRes = wOBJ_Win.gCLS_OSIF.sGetInArray({
 			inObject	: wOBJ_Op.DEF_GF_ARR_NEWGAME_AGREE,
 			inKey		: inID
@@ -477,7 +477,6 @@ class CLS_GF_Confirm {
 		//   1つでも未チェックなら
 		//   wFLG_UnAgree = true とする
 		wFLG_UnAgree = false ;
-///		for( wKey of wOBJ_Op.DEF_GF_IDX_NEWGAME_ARR_AGREE )
 		for( wKey of wOBJ_Op.DEF_GF_ARR_NEWGAME_AGREE )
 		{
 			/////////////////////////////
@@ -494,12 +493,6 @@ class CLS_GF_Confirm {
 			}
 			wARR_Agree[wKey] = wSubRes['Responce'] ;
 			
-///			//### 規約チェック記録
-///			wOBJ_Op.STR_GF_AgreeInfo.Agree[wKey] = wSubRes['Responce'] ;
-///			
-///			/////////////////////////////
-///			// 1つでも未チェックなら
-///			//   フラグON
 			/////////////////////////////
 			// 規約チェック記録
 			if( wARR_Agree[wKey]==false )
@@ -673,8 +666,6 @@ class CLS_GF_Confirm {
 				inKey	 : wCHR_Text
 			}) ;
 			if( wSubRes!=true )
-///			if( ( wCHR_Text in wOBJ_Win.DEF_GF_CONFIRM_PATTERN_USERID )!=true )
-///			if( wOBJ_Win.DEF_GF_CONFIRM_PATTERN_USERID.includes( wCHR_Text )!=true )
 			{///使用できない文字がある
 				wRes['Reason'] = "There are invalid characters in the user ID: inID=" + String(inID) ;
 				wOBJ_Win.gCLS_L.sL({ inRes:wRes, inLevel:"I", inLine:wOBJ_Op.__LINE__ }) ;
@@ -832,7 +823,6 @@ class CLS_GF_Confirm {
 			wCHR_Text = inPW1.charAt(wI) ;
 			
 			//### パターン照合
-///			wSubRes = wOBJ_Win.gCLS_OSIF.sGetInObject({
 			wSubRes = wOBJ_Win.gCLS_OSIF.sGetInArray({
 				inObject : wOBJ_Win.DEF_GF_CONFIRM_PATTERN_PASSWORD,
 				inKey	 : wCHR_Text
@@ -912,7 +902,6 @@ class CLS_GF_Confirm {
 			wCHR_Text = inID.charAt(wI) ;
 			
 			//### パターン照合
-///			wSubRes = wOBJ_Win.gCLS_OSIF.sGetInObject({
 			wSubRes = wOBJ_Win.gCLS_OSIF.sGetInArray({
 				inObject : wOBJ_Win.DEF_GF_CONFIRM_NOT_PATTERN_COMMENT,
 				inKey	 : wCHR_Text

@@ -1645,7 +1645,6 @@ class CLS_PageObj {
 		// 入力チェック
 		if( inHeight!=top.DEF_GVAL_NULL )
 		{
-///			wARR_Value['Height'] = inHeight ;
 			if( CLS_OSIF.sCheckVal({ inValue:inHeight })==true )
 			{
 				wARR_Value['Height'] = inHeight + "pt" ;
@@ -1657,7 +1656,6 @@ class CLS_PageObj {
 		}
 		if( inWidth!=top.DEF_GVAL_NULL )
 		{
-///			wARR_Value['Width'] = inWidth ;
 			if( CLS_OSIF.sCheckVal({ inValue:inWidth })==true )
 			{
 				wARR_Value['Width'] = inWidth + "pt" ;
@@ -1706,7 +1704,6 @@ class CLS_PageObj {
 			wObj.style.width  = wARR_Value['Width'] ;
 			
 			//### コンソール表示
-///			let wMessage = "Change Frame Size: inKey=" + String(inKey) + " inHeight=" + String(inHeight) + " inWidth=" + String(inWidth) ;
 			wMessage = "Change Frame Size: inKey=" + String(inKey) ;
 			wMessage = wMessage + '\n' + "  inHeight = " + String(inHeight) ;
 			wMessage = wMessage + '\n' + "  inWidth  = " + String(inWidth) ;

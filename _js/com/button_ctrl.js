@@ -107,13 +107,6 @@ class CLS_ButtonCtrl {
 				continue ;
 			}
 			
-///			wSTR_Style = {
-///				"Def" : top.DEF_GVAL_NULL,
-///				"On"  : top.DEF_GVAL_NULL,
-///				"Off" : top.DEF_GVAL_NULL,
-///				"Display"  : true,
-///				"Disabled" : false
-///			} ;
 			wSTR_Style = this.__sGetButtonStyleStr() ;
 			/////////////////////////////
 			// スタイルの取得
@@ -633,7 +626,6 @@ class CLS_ButtonCtrl {
 		}
 		
 		//### ボタン種別のチェック
-///		wSubRes = CLS_OSIF.sGetInObject({
 		wSubRes = CLS_OSIF.sGetInArray({
 			inObject : top.DEF_GVAL_BTN_KIND,
 			inKey	 : wARR_ID[3]
@@ -765,13 +757,6 @@ class CLS_ButtonCtrl {
 		wOBJ_CldWin = top.gARR_FrameCtrlInfo[inFrameID].WindowObj ;
 		for( wKey in wOBJ_CldWin.gSTR_CldPreReg_ButtonCtrl )
 		{
-///			wSTR_Style = {
-///				"Def" : top.DEF_GVAL_NULL,
-///				"On"  : top.DEF_GVAL_NULL,
-///				"Off" : top.DEF_GVAL_NULL,
-///				"Display"  : true,
-///				"Disabled" : false
-///			} ;
 			wSTR_Style = this.__sGetButtonStyleStr() ;
 			wFLG_Def  = false ;
 			wButtonID = String(wKey) ;		// ボタンID
@@ -873,13 +858,6 @@ class CLS_ButtonCtrl {
 			return wRes ;
 		}
 		
-///		wSTR_Style = {
-///			"Def" : top.DEF_GVAL_NULL,
-///			"On"  : top.DEF_GVAL_NULL,
-///			"Off" : top.DEF_GVAL_NULL,
-///			"Display"  : true,
-///			"Disabled" : false
-///		} ;
 		wSTR_Style = this.__sGetButtonStyleStr() ;
 		wFLG_Def   = false ;
 		/////////////////////////////
