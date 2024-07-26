@@ -565,7 +565,7 @@ class CLS_Sys {
 		
 		/////////////////////////////
 		// 入力チェック
-		wSubRes = CLS_OSIF.sGetInArray({
+		wSubRes = CLS_OSIF.sGetInObject({
 			inObject	: top.DEF_GVAL_ARR_SYS_STAT,
 			inKey		: inStatus
 		}) ;

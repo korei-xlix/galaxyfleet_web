@@ -140,7 +140,7 @@ class CLS_GF_ExtSys {
 		
 		/////////////////////////////
 		// 入力チェック
-		wSubRes = CLS_OSIF.sGetInArray({
+		wSubRes = CLS_OSIF.sGetInObject({
 			inObject	: top.DEF_GF_ARR_SYS_STAT,
 			inKey		: inStatus
 		}) ;

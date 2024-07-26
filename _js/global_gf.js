@@ -6,8 +6,7 @@
 //#####################################################
 //# 更新履歴
 //# 0.1.0.0		2024-07-21	ログイン画面実装
-
-
+//# 0.1.0.1		2024-07-26	一部処理の修正
 
 //# 1.0.0.0		2024-xx-xx	正式リリース
 //#
@@ -17,7 +16,7 @@
 //# ※ユーザ自由変更※
 
 //### システム情報
-var DEF_GF_SYS_VERSION			= "0.1.0.0" ;				// ゲームver
+var DEF_GF_SYS_VERSION			= "0.1.0.1" ;				// ゲームver
 var DEF_GF_SYS_LOAD_VERSION		= "L0000_01" ;				// ロードver
 var DEF_GF_SYS_SAVE_VERSION		= "S0000_01" ;				// セーブver
 	
@@ -28,7 +27,7 @@ var DEF_GF_SYS_GITHUB			= "https://github.com/korei-xlix/galaxyfleet_web/" ;
 var DEF_GF_SYS_SITEURL			= "https://galaxy-fleet.koreis-labo.com/" ;
 
 //### セーブデータ情報
-var DEF_GF_SAVEDATA_FILE		= "gf_savedata.dat" ;
+var DEF_GF_SAVEDATA_FILE		= "gf_savedata.save" ;
 
 
 
@@ -240,6 +239,39 @@ function STR_GF_UserInfo_Str()
 	this.STR_SaveInfo			= top.DEF_GVAL_NULL ;			//  セーブデータ情報（オブジェクト）
 }
 var STR_GF_UserInfo = new STR_GF_UserInfo_Str() ;
+
+
+
+//###########################
+//# 資源情報
+function STR_GF_MaterialInfo_Str()
+{
+	this.Fuel					= 0 ;		// 燃料
+	this.Steel					= 0 ;		// 鋼材
+	this.Fiber					= 0 ;		// 繊維
+	this.RareEarth				= 0 ;		// 希土
+	
+	this.Red					= 0 ;		// 赤液
+	this.Blue					= 0 ;		// 青片
+	this.Green					= 0 ;		// 緑粉
+	this.Purple					= 0 ;		// 柴缶
+	this.Black					= 0 ;		// 黒晶
+	
+	this.Glitter				= 0 ;		// 輝石
+	this.Core					= 0 ;		// 核石
+	
+	this.Pot					= 0 ;		// 時瓶
+	this.Capital				= 0 ;		// 資金
+	this.Food					= 0 ;		// 食料
+	this.Fabric					= 0 ;		// 建材
+	this.Scrap					= 0 ;		// 屑板
+}
+var STR_GF_MaterialInfo_Val = new STR_GF_MaterialInfo_Str() ;
+
+
+
+
+
 
 
 

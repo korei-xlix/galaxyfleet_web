@@ -16,6 +16,7 @@
 //# 1.2.1.0		2024-07-09	Window制御でタイトル、CSS切替スイッチがない場合正常で終わるようにした
 //# 1.2.2.0		2024-07-15	Hotfix
 //# 1.2.3.0		2024-07-21	Galaxy Fleetに合わせた対応 (仮対応)
+//# 1.2.3.1		2024-07-26	一部処理を最適化、コンソールのCSS化
 	
 //# 1.xxxxx		2024-07-xx	Window制御 設定完了待ち後処理の外部設定
 //#
@@ -25,7 +26,7 @@
 //# ※ユーザ自由変更※
 
 //### システム情報
-var DEF_USER_VERSION	= "1.2.3.0" ;
+var DEF_USER_VERSION	= "1.2.3.1" ;
 var DEF_USER_AUTHOR		= 'korei (X:@korei_xlix)' ;	//HTMLのauthor表示
 var DEF_USER_GITHUB		= "https://github.com/korei-xlix/website/" ;
 var DEF_USER_SITEURL	= "https://website.koreis-labo.com/" ;
@@ -187,13 +188,16 @@ var DEF_GVAL_SYSTEM_EXIT		= "● System Exit (User call) ●" ;
 
 /////////////////////////////
 // ログヘッダなど仕切り
-var DEF_GVAL_LOG_HEADER			= "***********************" ;
+///var DEF_GVAL_LOG_HEADER			= "***********************" ;
 var DEF_GVAL_LOG_ERROR_HEADER	= "**** ERROR ************" ;
 var DEF_GVAL_LOG_DUMP_HEADER	= "**** DUMP DATA ********" ;
-var DEF_GVAL_LOG_SYSRUN_HEADER	= "#### SYSTEM RUN #######" ;
-var DEF_GVAL_LOG_SYSCTRL_HEADER	= "#### SYSTEM CTRL ######" ;
-var DEF_GVAL_LOG_USECTRL_HEADER = "==== USER CTRL ========" ;
+///var DEF_GVAL_LOG_SYSRUN_HEADER	= "#### SYSTEM RUN #######" ;
+///var DEF_GVAL_LOG_SYSCTRL_HEADER	= "#### SYSTEM CTRL ######" ;
+///var DEF_GVAL_LOG_USECTRL_HEADER = "==== USER CTRL ========" ;
+var DEF_GVAL_LOG_SYS_HEADER		= "#### SYSTEM ###########" ;
+var DEF_GVAL_LOG_USER_HEADER	= "==== USER =============" ;
 var DEF_GVAL_LOG_LOGIN_HEADER	= "==<< LOGIN >>==========" ;
+var DEF_GVAL_LOG_INFO_HEADER	= "++++ INFO +++++++++++++" ;
 
 
 //#####################################################
@@ -357,6 +361,7 @@ function gSTR_TimerCtrlInfo_Str()
 var gARR_TimerCtrlInfo = {} ;
 
 
+
 //###########################
 //# OS/IFクラス
 
@@ -366,6 +371,11 @@ var DEF_GVAL_OSIF_DEL_CALLBACK_LOG	= new Array(				//コールバックログ削
 	"__handle_Circle",											//  __handle   周期処理
 	"__sCircleProcess"											//  SystemI/F  周期処理
 	) ;
+
+var DEF_GVAL_OSIF_OBJKIND_OBJECT	= "Object" ;				//CheckObject =Object
+var DEF_GVAL_OSIF_OBJKIND_ARRAY		= "Array" ;					//CheckObject =Array
+var DEF_GVAL_OSIF_OBJKIND_OTHER		= "other" ;					//CheckObject =other
+
 
 
 //###########################
@@ -465,15 +475,17 @@ function gSTR_ButtonCtrl_Str()
 	this.ButtonObj				= top.DEF_GVAL_NULL ;			//  ボタンオブジェクト
 	
 	this.Init					= false ;						//  true=ボタン設定完了
-	this.FLG_Open				= true ;						//  ボタン表示  true=表示  false=非表示
-	this.FLG_Disabled			= false ;						//  ボタン有効/無効  true=無効  false=有効
+///	this.FLG_Open				= true ;						//  ボタン表示  true=表示  false=非表示
+///	this.FLG_Disabled			= false ;						//  ボタン有効/無効  true=無効  false=有効
 	this.FLG_On					= false ;						//  ボタン点灯(On) / 消灯(Off)
 	this.FLG_Sw					= false ;						//  ボタン入力中(ホールド/ブリンク)
 	
 	this.Style					= {} ;							//  スタイルシート
-																//   ['Def']	デフォルトスタイル
-																//   ['On']		ボタン点滅スタイル
-																//   ['Off']	ボタン消灯スタイル
+																//   ['Def']		デフォルトスタイル
+																//   ['On']			ボタン点滅スタイル
+																//   ['Off']		ボタン消灯スタイル
+																//   ['Display']	ボタン表示/非表示
+																//   ['Disabled']	ボタン無効/有効
 	
 }
 var gSTR_ButtonCtrl = {} ;
@@ -727,6 +739,31 @@ var gSTR_WinCtrlInfo = new gSTR_WinCtrlInfo_Str() ;
 
 //###########################
 //# ログクラス
+
+											//コンソールCSS：デフォルト
+var DEF_GVAL_LOG_CONSCSS_LOG	= "color : #000000;   background-color : #EEEEEE;" ;						//灰色
+var DEF_GVAL_LOG_CONSCSS_ERROR	= "color : #000000;   background-color : #FFDDFF;   font-weight : bold;" ;	//赤
+var DEF_GVAL_LOG_CONSCSS_WARN	= "color : #000000;   background-color : #FFFFDD;" ;						//黄色
+var DEF_GVAL_LOG_CONSCSS_INFO	= "color : #000000;   background-color : #DDFFFF;" ;						//水色
+
+											//コンソールCSS：カスタム
+var DEF_GVAL_LOG_CONSCSS_IERR	= "color : #000000;   background-color : #FFAD90;" ;						//橙色：入力エラー
+
+var DEF_GVAL_LOG_CONSCSS_S		= "color : #FFFFFF;   background-color : #000066;   font-weight : bold;" ;	//青：起動・ログイン
+var DEF_GVAL_LOG_CONSCSS_SC		= "color : #FFFFFF;   background-color : #A4C6FF;" ;						//青：システム設定
+var DEF_GVAL_LOG_CONSCSS_SR		= "color : #000000;   background-color : #D7EEFF;" ;						//水色：システム規制
+
+var DEF_GVAL_LOG_CONSCSS_R		= "color : #FFFFFF;   background-color : #006600;   font-weight : bold;" ;	//緑：ユーザ登録・変更・削除・ログイン
+var DEF_GVAL_LOG_CONSCSS_RC		= "color : #FFFFFF;   background-color : #AEFFBD;" ;						//緑：ユーザ設定
+var DEF_GVAL_LOG_CONSCSS_RR		= "color : #000000;   background-color : #E6FFE9;" ;						//薄い緑：ユーザ規制
+
+var DEF_GVAL_LOG_CONSCSS_TS		= "color : #0000FF;   background-color : #FFFFFF;" ;						//字青：システムトラヒック
+var DEF_GVAL_LOG_CONSCSS_TU		= "color : #008000;   background-color : #FFFFFF;" ;						//字緑：ユーザトラヒック
+
+var DEF_GVAL_LOG_CONSCSS_CB		= "color : #EEEEEE;   background-color : #FFFFFF;" ;						//白：コールバック
+var DEF_GVAL_LOG_CONSCSS_N		= "color : #000000;   background-color : #FFFFFF;" ;						//白：非表示
+var DEF_GVAL_LOG_CONSCSS_X		= "color : #FFFFFF;   background-color : #666666;" ;						//濃い灰色：テストログ
+
 var DEF_GVAL_LOG_LOG_LEVEL = {
 					//システムエラー
 		"A"			: "致命的エラー",		//プログラム停止 ロジックエラーなどソフト側の問題

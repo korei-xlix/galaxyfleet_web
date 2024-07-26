@@ -24,8 +24,8 @@ class CLS_ButtonCtrl {
 		
 		let wSubRes, wSTR_ButtonGroup, wSTR_Button, wSTR_Style, wMessage ;
 		let wPageObj, wGroupObj, wButtonObj, wGroupNum, wButtonNum ;
-		let wGroupID, wButtonID, wPopupWinID ;
-		let wARR_Data, wFLG_Group, wKey, wKey2 ;
+		let wGroupID, wButtonID, wPopupWinID, wKind ;
+		let wARR_Data, wFLG_Group, wFLG_Button, wKey, wKey2 ;
 		
 		/////////////////////////////
 		// 入力チェック
@@ -84,10 +84,12 @@ class CLS_ButtonCtrl {
 		
 		wGroupNum  = 0 ;
 		wButtonNum = 0 ;
+		wFLG_Group = false ;
 		/////////////////////////////
 		// ボタンの設定
 		for( wKey in inSTR_Data )
 		{
+			wFLG_Button = false ;
 			/////////////////////////////
 			// ボタンIDの生成
 			wButtonID = String(wKey) ;
@@ -97,60 +99,12 @@ class CLS_ButtonCtrl {
 				inFrameID : inFrameID,
 				inID	  : wButtonID
 			}) ;
-/////////////////////////
-//			if(( wSubRes['Result']!=true ) || ( wSubRes['Responce']==true ))
-			if( wSubRes['Result']!=true )
-/////////////////////////
-			{///失敗か重複
-				wRes['Reason'] = "__sCheckButtonGroupID is failer: ButtonID=" + String(wButtonID) ;
-				CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
-				continue ;
-			}
-			
-			wSTR_Style = this.__sGetButtonStyleStr() ;
-			/////////////////////////////
-			// スタイルの取得
-			for( wKey2 in inSTR_Data[wKey] )
-			{
-				//### 要素 Style のチェック
-				wSubRes = CLS_OSIF.sGetInObject({
-					inObject : wSTR_Style,
-					inKey    : wKey2
-				}) ;
-				if( wSubRes!=true )
-				{///失敗か重複
-					wRes['Reason'] = "Style is not exist: ButtonID=" + String(wButtonID) ;
-					CLS_L.sL({ inRes:wRes, inLevel:"D", inLine:__LINE__ }) ;
-					continue ;
-				}
-				
-				//### スタイル取得
-				wSTR_Style[wKey2] = inSTR_Data[wKey][wKey2] ;
-			}
-			
-			/////////////////////////////
-			// 分解
-			wARR_Data = CLS_OSIF.sSplit({
-				inString  : wButtonID,
-				inPattern : "-"
-			}) ;
-			if(( wARR_Data['Result']!=true ) || ( wARR_Data['Length']!=4 ))
-			{///失敗
-				wRes['Reason'] = "inSTR_Data is error: ButtonID=" + String(wButtonID) ;
-				CLS_L.sL({ inRes:wRes, inLevel:"D", inLine:__LINE__ }) ;
-				continue ;
-			}
-			
-			wFLG_Group = false ;
-			/////////////////////////////
-			// ボタングループIDの生成
-			wGroupID = wARR_Data['Data'][0] + "-" + wARR_Data['Data'][1] ;
-			
-			//### ボタングループIDチェック
-			wSubRes = this.__sCheckButtonGroupID({
-				inFrameID : inFrameID,
-				inGroupID : wGroupID
-			}) ;
+///			if(( wSubRes['Result']!=true ) || ( wSubRes['Responce']==true ))
+///			{///失敗か重複
+///				wRes['Reason'] = "__sCheckButtonGroupID is failer: ButtonID=" + String(wButtonID) ;
+///				CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
+///				continue ;
+///			}
 			if( wSubRes['Result']!=true )
 			{///失敗
 				wRes['Reason'] = "__sCheckButtonGroupID is failer: ButtonID=" + String(wButtonID) ;
@@ -159,29 +113,207 @@ class CLS_ButtonCtrl {
 			}
 			if( wSubRes['Responce']==true )
 			{
-				//### 既にボタングループは存在するので、グループは登録しないようにする
-				wFLG_Group = true ;
+				//### ボタン情報が既に登録されている
+				wFLG_Button = true ;
+///				wFLG_Group  = true ; //ボタングループも登録済みとみなす
 			}
 			
 			/////////////////////////////
-			// 所属ポップアップWindow IDの生成
-			wPopupWinID = wARR_Data['Data'][0] + "-" + inFrameID ;
-			
-			//### ポップアップWindowID チェック
-			wSubRes = CLS_PopupCtrl.__sCheckPopupWinID({
-				inPopupID : wPopupWinID
-			}) ;
-			if( wSubRes['Result']!=true )
-			{///失敗
-				wRes['Reason'] = "__sCheckPopupWinID is failed: ButtonID=" + String(wButtonID) + " PopupWinID=" + String(wPopupWinID) ;
-				CLS_L.sL({ inRes:wRes, inLevel:"D", inLine:__LINE__ }) ;
-				continue ;
+			// ボタン情報が登録されてない場合、
+			// ボタン情報を生成する
+			if( wFLG_Button==false )
+			{
+				wSTR_Style = this.__sGetButtonStyleStr() ;
+				/////////////////////////////
+				// スタイルの取得
+				for( wKey2 in inSTR_Data[wKey] )
+				{
+					//### 要素 Style のチェック
+					wSubRes = CLS_OSIF.sGetInObject({
+						inObject : wSTR_Style,
+						inKey    : wKey2
+					}) ;
+					if( wSubRes!=true )
+					{///失敗か重複
+						wRes['Reason'] = "Style is not exist: ButtonID=" + String(wButtonID) ;
+						CLS_L.sL({ inRes:wRes, inLevel:"D", inLine:__LINE__ }) ;
+						continue ;
+					}
+					
+					//### スタイル取得
+					wSTR_Style[wKey2] = inSTR_Data[wKey][wKey2] ;
+				}
+				
+				/////////////////////////////
+				// 分解
+				wARR_Data = CLS_OSIF.sSplit({
+					inString  : wButtonID,
+					inPattern : "-"
+				}) ;
+				if(( wARR_Data['Result']!=true ) || ( wARR_Data['Length']!=4 ))
+				{///失敗
+					wRes['Reason'] = "inSTR_Data is error: ButtonID=" + String(wButtonID) ;
+					CLS_L.sL({ inRes:wRes, inLevel:"D", inLine:__LINE__ }) ;
+					continue ;
+				}
+				
+				/////////////////////////////
+				// ボタングループIDの生成
+				wGroupID = wARR_Data['Data'][0] + "-" + wARR_Data['Data'][1] ;
+				
+				/////////////////////////////
+				// ボタン種別
+				wKind = wARR_Data['Data'][3] ;
+				
+///				//### ボタングループIDチェック
+///				wSubRes = this.__sCheckButtonGroupID({
+///					inFrameID : inFrameID,
+///					inGroupID : wGroupID
+///				}) ;
+///				if( wSubRes['Result']!=true )
+///				{///失敗
+///					wRes['Reason'] = "__sCheckButtonGroupID is failer: ButtonID=" + String(wButtonID) ;
+///					CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
+///					continue ;
+///				}
+///				if( wSubRes['Responce']==true )
+///				{
+///					//### 既にボタングループは存在するので、グループは登録しないようにする
+///					wFLG_Group = true ;
+///				}
+///				
+				/////////////////////////////
+				// 所属ポップアップWindow IDの生成
+				wPopupWinID = wARR_Data['Data'][0] + "-" + inFrameID ;
+				
+				//### ポップアップWindowID チェック
+				wSubRes = CLS_PopupCtrl.__sCheckPopupWinID({
+					inPopupID : wPopupWinID
+				}) ;
+				if( wSubRes['Result']!=true )
+				{///失敗
+					wRes['Reason'] = "__sCheckPopupWinID is failed: ButtonID=" + String(wButtonID) + " PopupWinID=" + String(wPopupWinID) ;
+					CLS_L.sL({ inRes:wRes, inLevel:"D", inLine:__LINE__ }) ;
+					continue ;
+				}
+				if( wSubRes['Responce']==false )
+				{///ポップアップWindow所属ではない
+					wPopupWinID = top.DEF_GVAL_NULL ;
+				}
 			}
-			if( wSubRes['Responce']==false )
-			{///ポップアップWindow所属ではない
-				wPopupWinID = top.DEF_GVAL_NULL ;
+			/////////////////////////////
+			// ボタン情報が登録されている場合、
+			// ボタン情報をロードする
+			else
+			{
+				top.gSTR_ButtonCtrl[inFrameID][wButtonID].Init = false ;	//一旦初期状態にする
+				
+				wSTR_Style = this.__sGetButtonStyleStr() ;
+				/////////////////////////////
+				// スタイルの取得
+				for( wKey2 in top.gSTR_ButtonCtrl[inFrameID][wButtonID].Style )
+				{
+					//### 要素 Style のチェック
+					wSubRes = CLS_OSIF.sGetInObject({
+						inObject : wSTR_Style,
+						inKey    : wKey2
+					}) ;
+					if( wSubRes!=true )
+					{///失敗か重複
+						wRes['Reason'] = "Style is load fail(not exist): ButtonID=" + String(wButtonID) ;
+						CLS_L.sL({ inRes:wRes, inLevel:"D", inLine:__LINE__ }) ;
+						continue ;
+					}
+					
+					//### スタイル取得
+					wSTR_Style[wKey2] = top.gSTR_ButtonCtrl[inFrameID][wButtonID].Style[wKey2] ;
+				}
+				
+				/////////////////////////////
+				// グループIDのロード
+				wGroupID = top.gSTR_ButtonCtrl[inFrameID][wButtonID].GroupID ;
+				
+				/////////////////////////////
+				// ボタン種別
+				wKind = top.gSTR_ButtonCtrl[inFrameID][wButtonID].Kind ;
+				
 			}
 			
+///			wSTR_Style = this.__sGetButtonStyleStr() ;
+///			/////////////////////////////
+///			// スタイルの取得
+///			for( wKey2 in inSTR_Data[wKey] )
+///			{
+///				//### 要素 Style のチェック
+///				wSubRes = CLS_OSIF.sGetInObject({
+///					inObject : wSTR_Style,
+///					inKey    : wKey2
+///				}) ;
+///				if( wSubRes!=true )
+///				{///失敗か重複
+///					wRes['Reason'] = "Style is not exist: ButtonID=" + String(wButtonID) ;
+///					CLS_L.sL({ inRes:wRes, inLevel:"D", inLine:__LINE__ }) ;
+///					continue ;
+///				}
+///				
+///				//### スタイル取得
+///				wSTR_Style[wKey2] = inSTR_Data[wKey][wKey2] ;
+///			}
+///			
+///			/////////////////////////////
+///			// 分解
+///			wARR_Data = CLS_OSIF.sSplit({
+///				inString  : wButtonID,
+///				inPattern : "-"
+///			}) ;
+///			if(( wARR_Data['Result']!=true ) || ( wARR_Data['Length']!=4 ))
+///			{///失敗
+///				wRes['Reason'] = "inSTR_Data is error: ButtonID=" + String(wButtonID) ;
+///				CLS_L.sL({ inRes:wRes, inLevel:"D", inLine:__LINE__ }) ;
+///				continue ;
+///			}
+///			
+///			wFLG_Group = false ;
+///			/////////////////////////////
+///			// ボタングループIDの生成
+///			wGroupID = wARR_Data['Data'][0] + "-" + wARR_Data['Data'][1] ;
+///			
+///			//### ボタングループIDチェック
+///			wSubRes = this.__sCheckButtonGroupID({
+///				inFrameID : inFrameID,
+///				inGroupID : wGroupID
+///			}) ;
+///			if( wSubRes['Result']!=true )
+///			{///失敗
+///				wRes['Reason'] = "__sCheckButtonGroupID is failer: ButtonID=" + String(wButtonID) ;
+///				CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
+///				continue ;
+///			}
+///			if( wSubRes['Responce']==true )
+///			{
+///				//### 既にボタングループは存在するので、グループは登録しないようにする
+///				wFLG_Group = true ;
+///			}
+///			
+///			/////////////////////////////
+///			// 所属ポップアップWindow IDの生成
+///			wPopupWinID = wARR_Data['Data'][0] + "-" + inFrameID ;
+///			
+///			//### ポップアップWindowID チェック
+///			wSubRes = CLS_PopupCtrl.__sCheckPopupWinID({
+///				inPopupID : wPopupWinID
+///			}) ;
+///			if( wSubRes['Result']!=true )
+///			{///失敗
+///				wRes['Reason'] = "__sCheckPopupWinID is failed: ButtonID=" + String(wButtonID) + " PopupWinID=" + String(wPopupWinID) ;
+///				CLS_L.sL({ inRes:wRes, inLevel:"D", inLine:__LINE__ }) ;
+///				continue ;
+///			}
+///			if( wSubRes['Responce']==false )
+///			{///ポップアップWindow所属ではない
+///				wPopupWinID = top.DEF_GVAL_NULL ;
+///			}
+///			
 			/////////////////////////////
 			// ボタンオブジェクトの取得
 			
@@ -260,8 +392,10 @@ class CLS_ButtonCtrl {
 			}
 			
 			//### スタイルチェック：ホールドボタン・クリックボタン
-			if(( wARR_Data['Data'][3]==top.DEF_GVAL_BTN_KIND_HOLD ) ||
-			   ( wARR_Data['Data'][3]==top.DEF_GVAL_BTN_KIND_CLICK ) )
+///			if(( wARR_Data['Data'][3]==top.DEF_GVAL_BTN_KIND_HOLD ) ||
+///			   ( wARR_Data['Data'][3]==top.DEF_GVAL_BTN_KIND_CLICK ) )
+			if(( wKind==top.DEF_GVAL_BTN_KIND_HOLD ) ||
+			   ( wKind==top.DEF_GVAL_BTN_KIND_CLICK ) )
 			{
 				wSubRes = CLS_OSIF.sGetInObject({
 					inObject : wSTR_Style,
@@ -349,7 +483,8 @@ class CLS_ButtonCtrl {
 			
 			/////////////////////////////
 			// ボタンへのイベント設定：ホールドボタン
-			if( wARR_Data['Data'][3]==top.DEF_GVAL_BTN_KIND_HOLD )
+///			if( wARR_Data['Data'][3]==top.DEF_GVAL_BTN_KIND_HOLD )
+			if( wKind==top.DEF_GVAL_BTN_KIND_HOLD )
 			{
 				//### イベント設定：マウスダウン
 				wButtonObj.addEventListener( "mousedown", function (){
@@ -403,53 +538,147 @@ class CLS_ButtonCtrl {
 			}
 			
 			/////////////////////////////
-			// ボタングループが未登録なら
-			//   ボタングループ情報の登録
-			if( wFLG_Group==false )
+			// ボタン情報が登録されてない場合、
+			// ボタン情報を登録する
+			if( wFLG_Button==false )
 			{
-				top.gSTR_ButtonGroup[inFrameID][wGroupID] = new gSTR_ButtonGroup_Str() ;
-				top.gSTR_ButtonGroup[inFrameID][wGroupID].FrameID	= inFrameID ;
-				top.gSTR_ButtonGroup[inFrameID][wGroupID].GroupID	= wGroupID ;
-				top.gSTR_ButtonGroup[inFrameID][wGroupID].PopupID	= wPopupWinID ;
-				top.gSTR_ButtonGroup[inFrameID][wGroupID].GroupObj	= wGroupObj ;
-				top.gSTR_ButtonGroup[inFrameID][wGroupID].ARR_ButtonID.push( wButtonID ) ;
+				/////////////////////////////
+				// ボタングループが未登録なら
+				//   ボタングループ情報の登録
+///				if( wFLG_Group==false )
+				
+				//### ボタングループIDチェック
+				wSubRes = this.__sCheckButtonGroupID({
+					inFrameID : inFrameID,
+					inGroupID : wGroupID
+				}) ;
+				if( wSubRes['Result']!=true )
+				{///失敗
+					wRes['Reason'] = "__sCheckButtonGroupID is failer: ButtonID=" + String(wButtonID) ;
+					CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
+					continue ;
+				}
+				if( wSubRes['Responce']==false )
+				{
+					//### ボタングループが存在しないので、グループ登録する
+					top.gSTR_ButtonGroup[inFrameID][wGroupID] = new gSTR_ButtonGroup_Str() ;
+					top.gSTR_ButtonGroup[inFrameID][wGroupID].FrameID	= inFrameID ;
+					top.gSTR_ButtonGroup[inFrameID][wGroupID].GroupID	= wGroupID ;
+					top.gSTR_ButtonGroup[inFrameID][wGroupID].PopupID	= wPopupWinID ;
+					top.gSTR_ButtonGroup[inFrameID][wGroupID].GroupObj	= wGroupObj ;
+					top.gSTR_ButtonGroup[inFrameID][wGroupID].ARR_ButtonID.push( wButtonID ) ;
+					
+					if( top.DEF_INDEX_TEST==true )
+					{
+						wMessage = "Button Group info set complete: GroupID=" + String(wGroupID) ;
+						CLS_L.sL({ inRes:wRes, inLevel:"SC", inMessage:wMessage }) ;
+					}
+					wGroupNum++ ;
+					wFLG_Group = true ;//更新は1回だけ
+				}
+				else
+				{
+					//### ボタンIDだけ追加登録
+					top.gSTR_ButtonGroup[inFrameID][wGroupID].ARR_ButtonID.push( wButtonID ) ;
+				}
+				
+				/////////////////////////////
+				// ボタン情報の登録
+				top.gSTR_ButtonCtrl[inFrameID][wButtonID] = new gSTR_ButtonCtrl_Str() ;
+				top.gSTR_ButtonCtrl[inFrameID][wButtonID].FrameID	= inFrameID ;
+				top.gSTR_ButtonCtrl[inFrameID][wButtonID].GroupID	= wGroupID ;
+				top.gSTR_ButtonCtrl[inFrameID][wButtonID].PopupID	= wPopupWinID ;
+				top.gSTR_ButtonCtrl[inFrameID][wButtonID].ID		= wButtonID ;
+///				top.gSTR_ButtonCtrl[inFrameID][wButtonID].Kind		= wARR_Data['Data'][3] ;
+				top.gSTR_ButtonCtrl[inFrameID][wButtonID].Kind		= wKind ;
+				top.gSTR_ButtonCtrl[inFrameID][wButtonID].ButtonObj	= wButtonObj ;
+///				top.gSTR_ButtonCtrl[inFrameID][wButtonID].FLG_Open     = wSTR_Style['Display'] ;
+///				top.gSTR_ButtonCtrl[inFrameID][wButtonID].FLG_Disabled = wSTR_Style['Disabled'] ;
+				
+				//### スタイルの登録
+				for( wKey2 in wSTR_Style )
+				{
+					top.gSTR_ButtonCtrl[inFrameID][wButtonID].Style[wKey2] = wSTR_Style[wKey2] ;
+				}
+				
+				top.gSTR_ButtonCtrl[inFrameID][wButtonID].Init = true ;	//ボタン設定完了
 				
 				if( top.DEF_INDEX_TEST==true )
 				{
-					wMessage = "Button Group info set complete: GroupID=" + String(wGroupID) ;
+					wMessage = "Button ivent set complete: ButtonID=" + String(wButtonID) ;
 					CLS_L.sL({ inRes:wRes, inLevel:"SC", inMessage:wMessage }) ;
 				}
-				wGroupNum++ ;
 			}
+			/////////////////////////////
+			// ボタン情報が登録されいる場合、
+			// オブジェクトを更新する
 			else
 			{
-				//### ボタンIDだけ追加登録
-				top.gSTR_ButtonGroup[inFrameID][wGroupID].ARR_ButtonID.push( wButtonID ) ;
+				/////////////////////////////
+				// ボタングループ情報の登録
+				if( wFLG_Group==false )
+				{
+					top.gSTR_ButtonGroup[inFrameID][wGroupID].GroupObj = wGroupObj ;
+					wGroupNum++ ;
+					wFLG_Group = true ;//更新は1回だけ
+				}
+				
+				/////////////////////////////
+				// ボタン情報の登録
+				top.gSTR_ButtonCtrl[inFrameID][wButtonID].ButtonObj	= wButtonObj ;
 			}
+///			/////////////////////////////
+///			// ボタングループが未登録なら
+///			//   ボタングループ情報の登録
+///			if( wFLG_Group==false )
+///			{
+///				top.gSTR_ButtonGroup[inFrameID][wGroupID] = new gSTR_ButtonGroup_Str() ;
+///				top.gSTR_ButtonGroup[inFrameID][wGroupID].FrameID	= inFrameID ;
+///				top.gSTR_ButtonGroup[inFrameID][wGroupID].GroupID	= wGroupID ;
+///				top.gSTR_ButtonGroup[inFrameID][wGroupID].PopupID	= wPopupWinID ;
+///				top.gSTR_ButtonGroup[inFrameID][wGroupID].GroupObj	= wGroupObj ;//***
+///				top.gSTR_ButtonGroup[inFrameID][wGroupID].ARR_ButtonID.push( wButtonID ) ;
+///				
+///				if( top.DEF_INDEX_TEST==true )
+///				{
+///					wMessage = "Button Group info set complete: GroupID=" + String(wGroupID) ;
+///					CLS_L.sL({ inRes:wRes, inLevel:"SC", inMessage:wMessage }) ;
+///				}
+///				wGroupNum++ ;
+///			}
+///			else
+///			{
+///				//### ボタンIDだけ追加登録
+///				top.gSTR_ButtonGroup[inFrameID][wGroupID].ARR_ButtonID.push( wButtonID ) ;
+///			}
+///			
+///			/////////////////////////////
+///			// ボタン情報の登録
+///			top.gSTR_ButtonCtrl[inFrameID][wButtonID] = new gSTR_ButtonCtrl_Str() ;
+///			top.gSTR_ButtonCtrl[inFrameID][wButtonID].FrameID	= inFrameID ;
+///			top.gSTR_ButtonCtrl[inFrameID][wButtonID].GroupID	= wGroupID ;
+///			top.gSTR_ButtonCtrl[inFrameID][wButtonID].PopupID	= wPopupWinID ;
+///			top.gSTR_ButtonCtrl[inFrameID][wButtonID].ID		= wButtonID ;
+///			top.gSTR_ButtonCtrl[inFrameID][wButtonID].Kind		= wARR_Data['Data'][3] ;
+///			top.gSTR_ButtonCtrl[inFrameID][wButtonID].ButtonObj	= wButtonObj ;//***
+///			top.gSTR_ButtonCtrl[inFrameID][wButtonID].FLG_Open     = wSTR_Style['Display'] ;
+///			top.gSTR_ButtonCtrl[inFrameID][wButtonID].FLG_Disabled = wSTR_Style['Disabled'] ;
+///			
+///			//### スタイルの登録
+///			for( wKey2 in wSTR_Style )
+///			{
+///				top.gSTR_ButtonCtrl[inFrameID][wButtonID].Style[wKey2] = wSTR_Style[wKey2] ;
+///			}
+///			
+///			top.gSTR_ButtonCtrl[inFrameID][wButtonID].Init = true ;	//ボタン設定完了
+///			
+///			if( top.DEF_INDEX_TEST==true )
+///			{
+///				wMessage = "Button ivent set complete: ButtonID=" + String(wButtonID) ;
+///				CLS_L.sL({ inRes:wRes, inLevel:"SC", inMessage:wMessage }) ;
+///			}
 			
-			/////////////////////////////
-			// ボタン情報の登録
-			top.gSTR_ButtonCtrl[inFrameID][wButtonID] = new gSTR_ButtonCtrl_Str() ;
-			top.gSTR_ButtonCtrl[inFrameID][wButtonID].FrameID	= inFrameID ;
-			top.gSTR_ButtonCtrl[inFrameID][wButtonID].GroupID	= wGroupID ;
-			top.gSTR_ButtonCtrl[inFrameID][wButtonID].PopupID	= wPopupWinID ;
-			top.gSTR_ButtonCtrl[inFrameID][wButtonID].ID		= wButtonID ;
-			top.gSTR_ButtonCtrl[inFrameID][wButtonID].Kind		= wARR_Data['Data'][3] ;
-			top.gSTR_ButtonCtrl[inFrameID][wButtonID].ButtonObj	= wButtonObj ;
-			top.gSTR_ButtonCtrl[inFrameID][wButtonID].FLG_Open     = wSTR_Style['Display'] ;
-			top.gSTR_ButtonCtrl[inFrameID][wButtonID].FLG_Disabled = wSTR_Style['Disabled'] ;
-			for( wKey2 in wSTR_Style )
-			{
-				top.gSTR_ButtonCtrl[inFrameID][wButtonID].Style[wKey2] = wSTR_Style[wKey2] ;
-			}
-			
-			top.gSTR_ButtonCtrl[inFrameID][wButtonID].Init = true ;	//ボタン設定完了
-			
-			if( top.DEF_INDEX_TEST==true )
-			{
-				wMessage = "Button ivent set complete: ButtonID=" + String(wButtonID) ;
-				CLS_L.sL({ inRes:wRes, inLevel:"SC", inMessage:wMessage }) ;
-			}
+			//### ボタン数のカウントUP
 			wButtonNum++ ;
 		}
 		
@@ -626,7 +855,7 @@ class CLS_ButtonCtrl {
 		}
 		
 		//### ボタン種別のチェック
-		wSubRes = CLS_OSIF.sGetInArray({
+		wSubRes = CLS_OSIF.sGetInObject({
 			inObject : top.DEF_GVAL_BTN_KIND,
 			inKey	 : wARR_ID[3]
 		}) ;
@@ -973,7 +1202,8 @@ class CLS_ButtonCtrl {
 		
 		/////////////////////////////
 		// ボタン表示/非表示 情報設定
-		top.gSTR_ButtonCtrl[inFrameID][inButtonID].FLG_Open = inDisplay ;
+///		top.gSTR_ButtonCtrl[inFrameID][inButtonID].FLG_Open = inDisplay ;
+		top.gSTR_ButtonCtrl[inFrameID][inButtonID].Style['Display'] = inDisplay ;
 		
 		//### メッセージ表示
 		wMessage = "Set Button disabled: Display=" + String(inDisplay) + " inFrameID=" + String(inFrameID) + " inButtonID=" + String(inButtonID);
@@ -1053,7 +1283,8 @@ class CLS_ButtonCtrl {
 		
 		/////////////////////////////
 		// ボタン有効/無効化 情報設定
-		top.gSTR_ButtonCtrl[inFrameID][inButtonID].FLG_Disabled = inDisabled ;
+///		top.gSTR_ButtonCtrl[inFrameID][inButtonID].FLG_Disabled = inDisabled ;
+		top.gSTR_ButtonCtrl[inFrameID][inButtonID].Style['Disabled'] = inDisabled ;
 		
 		//### メッセージ表示
 		wMessage = "Set Button disabled: Disabled=" + String(inDisabled) + " inFrameID=" + String(inFrameID) + " inButtonID=" + String(inButtonID);

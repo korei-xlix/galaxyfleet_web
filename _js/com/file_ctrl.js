@@ -277,7 +277,7 @@ class CLS_File {
 		let wRes = CLS_OSIF.sGet_Resp({ inClass:"CLS_File", inFunc:"sSelectFile" }) ;
 		
 		let wSubRes, pSTR_Info, wDataTransfer ;
-		let wObj ;
+		let wObj, wNum ;
 		
 		pSTR_Info = outSTR_Info ;
 		
@@ -294,7 +294,9 @@ class CLS_File {
 		/////////////////////////////
 		// キャンセルされたか？
 		//  Mozilla系対策
-		if( inEvent.target.files.length==0 )
+///		if( inEvent.target.files.length==0 )
+		wNum = CLS_OSIF.sGetObjectNum({ inObject : inEvent.target.files }) ;
+		if( wNum==0 )
 		{///キャンセル
 			wRes['Result'] = true ;
 			return wRes ;
@@ -369,6 +371,7 @@ class CLS_File {
 		let wRes = CLS_OSIF.sGet_Resp({ inClass:"CLS_File", inFunc:"sRead" }) ;
 		
 		let wSubRes, wSTR_Option, wOBJ_Reader, wMessage ;
+		let wNum ;
 		
 		/////////////////////////////
 		// File API使用可否チェック
@@ -515,9 +518,11 @@ class CLS_File {
 						}
 					}
 					
+					wNum = CLS_OSIF.sGetObjectNum({ inObject : wCHR_Line }) ;
 					//### 空白行のスキップ
 					if(( this['Option']['Line']==true )&&
-					   ( wCHR_Line.length==0 ) )
+///					   ( wCHR_Line.length==0 ) )
+					   ( wNum==0 ) )
 					{
 						continue ;
 					}
@@ -608,6 +613,10 @@ class CLS_File {
 		let wRes = CLS_OSIF.sGet_Resp({ inClass:"CLS_File", inFunc:"sLoadComp" }) ;
 		
 		let wSubRes, wMessage ;
+		let wLine ;
+		
+		//### ファイル行数の取得
+		wLine = CLS_OSIF.sGetObjectNum({ inObject : top.gSTR_File.Data }) ;
 		
 		//### メッセージ表示
 		wMessage = "File load complete" ;
@@ -615,7 +624,8 @@ class CLS_File {
 		wMessage = wMessage + '\n' + "  Type=" + String( top.gSTR_File.OBJ_Info['Type'] ) ;	//ファイルタイプ
 		wMessage = wMessage + '\n' + "  Size=" + String( top.gSTR_File.OBJ_Info['Size'] ) ;	//サイズ
 		wMessage = wMessage + '\n' + "  Date=" + String( top.gSTR_File.OBJ_Info['Date'] ) ;	//最終更新日
-		wMessage = wMessage + '\n' + "  Len =" + String( top.gSTR_File.Data.length ) ;		//ファイル行数
+///		wMessage = wMessage + '\n' + "  Len =" + String( top.gSTR_File.Data.length ) ;		//ファイル行数
+		wMessage = wMessage + '\n' + "  Len =" + String( wLine ) ;							//ファイル行数
 		CLS_L.sL({ inRes:wRes, inLevel:"SC", inMessage: wMessage }) ;
 		
 		///////////////////////////////

@@ -25,6 +25,21 @@ var DEF_INDEX_TEST				= false ;
 
 
 
+//###########################
+//# テストログイン
+
+//### テストログイン  true=テストログイン有効
+var DEF_GF_TEST_LOGIN			= true ;
+//var DEF_GF_TEST_LOGIN			= false ;
+
+//### テストユーザ
+var DEF_GF_TEST_LOGIN_USERID	= "adminid" ;
+var DEF_GF_TEST_LOGIN_USERNAME	= "admin" ;
+var DEF_GF_TEST_LOGIN_PASSWD	= "adm1npass" ;
+var DEF_GF_TEST_LOGIN_SAVE		= "admindata.save" ;
+
+
+
 //#####################################################
 //# ハンドラ（main）
 //#####################################################
