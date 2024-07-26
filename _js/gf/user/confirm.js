@@ -400,7 +400,7 @@ class CLS_GF_Confirm {
 		
 		/////////////////////////////
 		// 入力チェック
-		wSubRes = wOBJ_Win.gCLS_OSIF.sGetInArray({
+		wSubRes = wOBJ_Win.gCLS_OSIF.sGetInObject({
 			inObject	: wOBJ_Op.DEF_GF_ARR_NEWGAME_AGREE,
 			inKey		: inID
 		}) ;
@@ -639,7 +639,8 @@ class CLS_GF_Confirm {
 		// 言語のロード
 		wLang = wOBJ_Op.gSTR_WinCtrlInfo.TransInfo.Lang ;
 		
-		wLen = inID.length ;
+///		wLen = inID.length ;
+		wLen = wOBJ_Win.gCLS_OSIF.sGetObjectNum({ inObject : inID }) ; ;
 		/////////////////////////////
 		// 長さが許容外でないか
 		if(( wOBJ_Win.DEF_GF_CONFIRM_MAXLENGTH_USERID<wLen ) || (wLen<=0 ))
@@ -661,7 +662,7 @@ class CLS_GF_Confirm {
 			wCHR_Text = inID.charAt(wI) ;
 			
 			//### パターン照合
-			wSubRes = wOBJ_Win.gCLS_OSIF.sGetInArray({
+			wSubRes = wOBJ_Win.gCLS_OSIF.sGetInObject({
 				inObject : wOBJ_Win.DEF_GF_CONFIRM_PATTERN_USERID,
 				inKey	 : wCHR_Text
 			}) ;
@@ -718,7 +719,8 @@ class CLS_GF_Confirm {
 		// 言語のロード
 		wLang = wOBJ_Op.gSTR_WinCtrlInfo.TransInfo.Lang ;
 		
-		wLen = inName.length ;
+///		wLen = inName.length ;
+		wLen = wOBJ_Win.gCLS_OSIF.sGetObjectNum({ inObject : inName }) ; ;
 		/////////////////////////////
 		// 長さが許容外でないか
 		if(( wOBJ_Win.DEF_GF_CONFIRM_MAXLENGTH_USERNAME<wLen ) || (wLen<=0 ))
@@ -788,7 +790,8 @@ class CLS_GF_Confirm {
 			return wRes ;
 		}
 		
-		wLen = inPW1.length ;
+///		wLen = inPW1.length ;
+		wLen = wOBJ_Win.gCLS_OSIF.sGetObjectNum({ inObject : inPW1 }) ; ;
 		/////////////////////////////
 		// パスワードが短すぎる
 		if( wOBJ_Win.DEF_GF_CONFIRM_MINLENGTH_PASSWORD<wLen )
@@ -823,7 +826,7 @@ class CLS_GF_Confirm {
 			wCHR_Text = inPW1.charAt(wI) ;
 			
 			//### パターン照合
-			wSubRes = wOBJ_Win.gCLS_OSIF.sGetInArray({
+			wSubRes = wOBJ_Win.gCLS_OSIF.sGetInObject({
 				inObject : wOBJ_Win.DEF_GF_CONFIRM_PATTERN_PASSWORD,
 				inKey	 : wCHR_Text
 			}) ;
@@ -880,7 +883,8 @@ class CLS_GF_Confirm {
 		// 言語のロード
 		wLang = wOBJ_Op.gSTR_WinCtrlInfo.TransInfo.Lang ;
 		
-		wLen = inText.length ;
+///		wLen = inText.length ;
+		wLen = wOBJ_Win.gCLS_OSIF.sGetObjectNum({ inObject : inText }) ; ;
 		/////////////////////////////
 		// 長さが許容外でないか
 		if(( wOBJ_Win.DEF_GF_CONFIRM_MAXLENGTH_COMMENT<wLen ) || (wLen<=0 ))
@@ -902,7 +906,7 @@ class CLS_GF_Confirm {
 			wCHR_Text = inID.charAt(wI) ;
 			
 			//### パターン照合
-			wSubRes = wOBJ_Win.gCLS_OSIF.sGetInArray({
+			wSubRes = wOBJ_Win.gCLS_OSIF.sGetInObject({
 				inObject : wOBJ_Win.DEF_GF_CONFIRM_NOT_PATTERN_COMMENT,
 				inKey	 : wCHR_Text
 			}) ;
@@ -953,7 +957,8 @@ class CLS_GF_Confirm {
 		
 		/////////////////////////////
 		// パスコードの生成
-		wLen = wOBJ_Win.DEF_GF_CONFIRM_PATTERN_PASSCODE.length ;
+///		wLen = wOBJ_Win.DEF_GF_CONFIRM_PATTERN_PASSCODE.length ;
+		wLen = wOBJ_Win.gCLS_OSIF.sGetObjectNum({ inObject : wOBJ_Win.DEF_GF_CONFIRM_PATTERN_PASSCODE }) ; ;
 		wPassCD = "" ;
 		for( wI=0 ; wOBJ_Win.DEF_GF_CONFIRM_LENGTH_PASSCODE>wI ; wI++ )
 		{

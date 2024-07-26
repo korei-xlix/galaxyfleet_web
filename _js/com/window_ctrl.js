@@ -171,7 +171,7 @@ class CLS_WinCtrl {
 			CLS_L.sL({ inRes:wRes, inLevel:"A", inLine:__LINE__ }) ;
 			return wRes ;
 		}
-		wSubRes = CLS_OSIF.sGetInArray({
+		wSubRes = CLS_OSIF.sGetInObject({
 			inObject	: top.DEF_GVAL_WINCTRL_CSS_MODE,
 			inKey		: inMode
 		}) ;
@@ -859,7 +859,8 @@ class CLS_WinCtrl {
 		//### 日付文字の取得（Webページ）
 		wSubRes = CLS_PageObj.sGetInner({
 			inPageObj	: inPageObj,
-			inKey		: top.DEF_GVAL_IDX_UPDATE_DATE
+			inKey		: top.DEF_GVAL_IDX_UPDATE_DATE,
+			inError		: false
 		}) ;
 		if( wSubRes['Result']!=true )
 		{///更新情報がない場合
@@ -986,6 +987,20 @@ class CLS_WinCtrl {
 		}
 		
 		/////////////////////////////
+		// 翻訳（取得・設置・翻訳実行）
+		wSubRes = this.sGetTransrate({
+			inPageObj		: pParam.PageObj,
+			outSubParam		: pParam.TransInfo
+		}) ;
+		if( wSubRes['Result']!=true )
+		{
+			//失敗
+			wRes['Reason'] = "sGetTransrate is failed(7)" ;
+			CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
+			return wRes ;
+		}
+		
+		/////////////////////////////
 		// タイトル変更（ヘッダ・フッタ・ページ）
 		wSubRes = this.__sSetTitle({
 			inParam	: pParam
@@ -1039,20 +1054,20 @@ class CLS_WinCtrl {
 			return wRes ;
 		}
 		
-		/////////////////////////////
-		// 翻訳（取得・設置・翻訳実行）
-		wSubRes = this.sGetTransrate({
-			inPageObj		: pParam.PageObj,
-			outSubParam		: pParam.TransInfo
-		}) ;
-		if( wSubRes['Result']!=true )
-		{
-			//失敗
-			wRes['Reason'] = "sGetTransrate is failed(7)" ;
-			CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
-			return wRes ;
-		}
-		
+///		/////////////////////////////
+///		// 翻訳（取得・設置・翻訳実行）
+///		wSubRes = this.sGetTransrate({
+///			inPageObj		: pParam.PageObj,
+///			outSubParam		: pParam.TransInfo
+///		}) ;
+///		if( wSubRes['Result']!=true )
+///		{
+///			//失敗
+///			wRes['Reason'] = "sGetTransrate is failed(7)" ;
+///			CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
+///			return wRes ;
+///		}
+///		
 		/////////////////////////////
 		// セレクタ設定
 		wSubRes = CLS_Sel.sSetSel({
@@ -1125,7 +1140,9 @@ class CLS_WinCtrl {
 		wSubRes = CLS_PageObj.sSetInner({
 			inPageObj	: pParam.PageObj,
 			inKey		: top.DEF_GVAL_IDX_CSSSW_STYLE,
-			inCode		: wHTML
+			inCode		: wHTML,
+			inError		: false
+			
 		}) ;
 		if( wSubRes['Result']!=true )
 		{///ページにCSSスイッチがない場合、正常で終わる
@@ -1358,7 +1375,8 @@ class CLS_WinCtrl {
 			wSubRes = CLS_PageObj.sSetDisplay({
 				inPageObj	: inParam.PageObj,
 				inKey		: top.DEF_GVAL_IDX_CSSSW,
-				inCode		: false
+				inCode		: false,
+				inError		: false
 			}) ;
 			if( wSubRes['Result']!=true )
 			{///切替スイッチがない場合、正常で終わる
@@ -1581,7 +1599,8 @@ class CLS_WinCtrl {
 		wSubRes = CLS_PageObj.sSetDisplay({
 			inPageObj	: inParam.PageObj,
 			inKey		: top.DEF_GVAL_IDX_UPDATE_ICON,
-			inCode		: inParam.UpdateInfo.FLG_ON
+			inCode		: inParam.UpdateInfo.FLG_ON,
+			inError		: false
 		}) ;
 		if( wSubRes['Result']!=true )
 		{
@@ -1864,15 +1883,38 @@ class CLS_WinCtrl {
 		}
 		
 		/////////////////////////////
-		// タイマ停止
-		wSubRes = CLS_Timer.sStop({
+		// タイマ状態取得
+		wSubRes = CLS_Timer.sGetStatus({
 			inTimerID	: top.DEF_GVAL_SYS_TID_COMP_TIMER
 		}) ;
 		if( wSubRes['Result']!=true )
 		{///失敗
-			wRes['Reason'] = "CLS_Timer.sStop is failed" ;
+			wRes['Reason'] = "CLS_Timer.sGetStatus is failed" ;
 			CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
 			return wRes ;
+		}
+		//	wSubRes['Responce']['FLG_Start'] = top.gARR_TimerCtrlInfo[inTimerID].FLG_Start ;
+		//	wSubRes['Responce']['FLG_Stop']	 = top.gARR_TimerCtrlInfo[inTimerID].FLG_Stop ;
+		//	wSubRes['Responce']['FLG_Tout']	 = top.gARR_TimerCtrlInfo[inTimerID].FLG_Tout ;
+		//	wSubRes['Responce']['FLG_Rout']	 = top.gARR_TimerCtrlInfo[inTimerID].FLG_Rout ;
+		//	wSubRes['Responce']['Status']	 = top.gARR_TimerCtrlInfo[inTimerID].Status ;
+		//	wSubRes['Responce']['Value']	 = top.gARR_TimerCtrlInfo[inTimerID].Value ;
+		//	wRes['Responce']['Retry']		 = top.gARR_TimerCtrlInfo[inTimerID].Retry ;
+		
+		/////////////////////////////
+		// タイマが動いていれば
+		// タイマ停止
+		if( wSubRes['Responce']['FLG_Start']==true )
+		{
+			wSubRes = CLS_Timer.sStop({
+				inTimerID	: top.DEF_GVAL_SYS_TID_COMP_TIMER
+			}) ;
+			if( wSubRes['Result']!=true )
+			{///失敗
+				wRes['Reason'] = "CLS_Timer.sStop is failed" ;
+				CLS_L.sL({ inRes:wRes, inLevel:"B", inLine:__LINE__ }) ;
+				return wRes ;
+			}
 		}
 		
 		/////////////////////////////
@@ -2263,7 +2305,7 @@ class CLS_WinCtrl {
 			}
 			if( wFLG_Det==false )
 			{///言語が見つからない
-				wRes['Reason'] = "Title is not lang: inTitle=" + inTitle 
+				wRes['Reason'] = "Title is not lang: inTitle=" + inTitle + " inLang=" + inLang ;
 				CLS_L.sL({ inRes:wRes, inLevel:"D", inLine:__LINE__ }) ;
 				return wRes ;
 			}

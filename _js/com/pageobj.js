@@ -490,7 +490,8 @@ class CLS_PageObj {
 		inPageObj,
 		inKey,
 		inCode = top.DEF_GVAL_NULL,
-		inDirect = false	//ダイレクトモード true=inPageObjは対象オブジェクト入り
+		inDirect = false,	//ダイレクトモード true=inPageObjは対象オブジェクト入り
+		inError  = true		//エラーのコンソール出力（タグ確認）  true=ON
 	})
 	{
 		//###########################
@@ -547,10 +548,13 @@ class CLS_PageObj {
 		{
 			//###########################
 			//# 例外処理
-			let wError = "inKey=" + String(inKey) + " inCode=" + String(inCode) ;
-			wRes['Reason'] = CLS_OSIF.sExpStr({ inE:e, inA:wError }) ;
-			CLS_L.sL({ inRes:wRes, inLevel:"A", inLine:__LINE__ }) ;
-			return wRes ;
+			if( inError==true )
+			{
+				let wError = "inKey=" + String(inKey) + " inCode=" + String(inCode) ;
+				wRes['Reason'] = CLS_OSIF.sExpStr({ inE:e, inA:wError }) ;
+				CLS_L.sL({ inRes:wRes, inLevel:"A", inLine:__LINE__ }) ;
+				return wRes ;
+			}
 		}
 		
 		/////////////////////////////
@@ -1460,7 +1464,8 @@ class CLS_PageObj {
 		inPageObj,
 		inKey,
 		inCode = top.DEF_GVAL_NULL,	// true=表示  false=非表示
-		inDirect = false	//ダイレクトモード true=inPageObjは対象オブジェクト入り
+		inDirect = false,	//ダイレクトモード true=inPageObjは対象オブジェクト入り
+		inError  = true		//エラーのコンソール出力（タグ確認）  true=ON
 	})
 	{
 		//###########################
@@ -1522,10 +1527,13 @@ class CLS_PageObj {
 		{
 			//###########################
 			//# 例外処理
-			let wError = "inKey=" + String(inKey) + " inCode=" + String(inCode) ;
-			wRes['Reason'] = CLS_OSIF.sExpStr({ inE:e, inA:wError }) ;
-			CLS_L.sL({ inRes:wRes, inLevel:"A", inLine:__LINE__ }) ;
-			return wRes ;
+			if( inError==true )
+			{
+				let wError = "inKey=" + String(inKey) + " inCode=" + String(inCode) ;
+				wRes['Reason'] = CLS_OSIF.sExpStr({ inE:e, inA:wError }) ;
+				CLS_L.sL({ inRes:wRes, inLevel:"A", inLine:__LINE__ }) ;
+				return wRes ;
+			}
 		}
 		
 		/////////////////////////////

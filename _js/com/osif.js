@@ -241,7 +241,7 @@ class CLS_OSIF {
 		
 		if( top.DEF_INDEX_TEST==true )
 		{
-			wSubRes = this.sGetInArray({
+			wSubRes = this.sGetInObject({
 				inObject : top.DEF_GVAL_OSIF_DEL_CALLBACK_LOG,
 				inKey	 : wName
 			}) ;
@@ -458,11 +458,15 @@ class CLS_OSIF {
 //# コンソール表示（console.log）
 //#####################################################
 	static sConsLog({
-		inText
+///		inText
+		inText,
+		inCSS = top.DEF_GVAL_LOG_CONSCSS_LOG
 	})
 	{
-		let wText = String(inText) ;
-		console.log( wText ) ;
+///		let wText = String(inText) ;
+///		console.log( wText ) ;
+		let wText = '%c' + String(inText) ;
+		console.log( wText, inCSS ) ;
 		return ;
 	}
 
@@ -472,11 +476,15 @@ class CLS_OSIF {
 //# コンソール表示（console.error）
 //#####################################################
 	static sConsError({
-		inText
+///		inText
+		inText,
+		inCSS = top.DEF_GVAL_LOG_CONSCSS_ERROR
 	})
 	{
-		let wText = String(inText) ;
-		console.error( wText ) ;
+///		let wText = String(inText) ;
+///		console.error( wText ) ;
+		let wText = '%c' + String(inText) ;
+		console.error( wText, inCSS ) ;
 		return ;
 	}
 
@@ -486,11 +494,15 @@ class CLS_OSIF {
 //# コンソール表示（console.warn）
 //#####################################################
 	static sConsWarn({
-		inText
+///		inText
+		inText,
+		inCSS = top.DEF_GVAL_LOG_CONSCSS_WARN
 	})
 	{
-		let wText = String(inText) ;
-		console.warn( wText ) ;
+///		let wText = String(inText) ;
+///		console.warn( wText ) ;
+		let wText = '%c' + String(inText) ;
+		console.warn( wText, inCSS ) ;
 		return ;
 	}
 
@@ -500,11 +512,38 @@ class CLS_OSIF {
 //# コンソール表示（console.info）
 //#####################################################
 	static sConsInfo({
-		inText
+///		inText
+		inText,
+		inCSS = top.DEF_GVAL_LOG_CONSCSS_INFO
 	})
 	{
-		let wText = String(inText) ;
-		console.info( wText ) ;
+///		let wText = String(inText) ;
+///		console.info( wText ) ;
+		let wText = '%c' + String(inText) ;
+		console.info( wText, inCSS ) ;
+		return ;
+	}
+
+
+
+//#####################################################
+//# コンソール表示（console.info）
+//#####################################################
+	static sConsTable({
+///		inText
+		inARR_Data = new Array()
+	})
+	{
+//		function ARR_OSIF_Data( name, data )
+//		{
+//			this.name = name ;
+//			this.data = data ;
+//		}
+//		let line1 = new ARR_OSIF_Data( "りんご", "Ringo" ) ;
+//		let line2 = new ARR_OSIF_Data( "ばなな", "Banana" ) ;
+//		let line3 = new ARR_OSIF_Data( "みかん", "Mikan" ) ;
+//		let wARR_Data = new ( line1, line2, line3 ) ;
+		console.table( inARR_Data ) ;
 		return ;
 	}
 
@@ -644,7 +683,8 @@ class CLS_OSIF {
 			wString = String( inString ) ;
 			wString = wString.split( inPattern ) ;
 			wRes['Data']	= wString ;
-			wRes['Length']	= wString.length ;
+///			wRes['Length']	= wString.length ;
+			wRes['Length']	= this.sGetObjectNum({ inObject : wString }) ;
 		}
 		catch(e)
 		{///例外
@@ -713,105 +753,53 @@ class CLS_OSIF {
 
 
 //#####################################################
-//# 辞書型のキー一覧を返す
+//# オブジェクトの種類を取得
 //#####################################################
-	static sGetObjectList({
+	static sGetObjectKind({
 		inObject
 	})
 	{
-		let wValue ;
+		let wKind, wValue ;
 		
-		wValue = top.DEF_GVAL_NULL ;
+		wKind = top.DEF_GVAL_OSIF_OBJKIND_OTHER ;
+		wValue = -1 ;
+		/////////////////////////////
+		// Array型か
 		try
 		{
-			/////////////////////////////
-			// 辞書型の場合
-			if((( inObject instanceof Object )==true ) ||
-			   ( (typeof inObject)=="object" ) )
+			wValue = inObject.length ;
+			if( wValue!=undefined )
 			{
-				wValue = Object.keys( inObject ) ;
+				//### Array型
+				wKind = top.DEF_GVAL_OSIF_OBJKIND_ARRAY ;
+				return wKind ;
 			}
 		}
 		catch(e)
 		{///例外
 		}
-		return wValue ;
-	}
-
-
-
-//#####################################################
-//# Array型の要素数を返す
-//#####################################################
-	static sGetArrayNum({
-		inObject
-	})
-	{
-		let wValue ;
 		
-		wValue = -1 ;
+		/////////////////////////////
+		// 辞書型か
 		try
 		{
-///			/////////////////////////////
-///			// Array型の場合
-///			if( ( inObject instanceof Array )==true )
-///			{
-///				wValue = inObject.length ;
-///			}
-///			/////////////////////////////
-///			// 辞書型の場合
-///			else if(( ( inObject instanceof Object )==true ) ||
-///				    ( (typeof inObject)=="object" ) )
-///			{
-///				wValue = Object.keys(inObject).length ;
-///			}
-			wValue = inObject.length ;
+			wValue = inObject.constructor ;
+			
+			//### Arrayじゃないなら、辞書型
+			wKind = top.DEF_GVAL_OSIF_OBJKIND_OBJECT ;
+			return wKind ;
 		}
 		catch(e)
 		{///例外
 		}
-		return wValue ;
-	}
-
-
-
-//#####################################################
-//# 辞書型の要素数を返す
-//#####################################################
-	static sGetObjectNum({
-		inObject
-	})
-	{
-		let wValue ;
 		
-		wValue = -1 ;
-		try
-		{
-///			/////////////////////////////
-///			// Array型の場合
-///			if( ( inObject instanceof Array )==true )
-///			{
-///				wValue = inObject.length ;
-///			}
-///			/////////////////////////////
-///			// 辞書型の場合
-///			else if(( ( inObject instanceof Object )==true ) ||
-///				    ( (typeof inObject)=="object" ) )
-///			{
-///				wValue = Object.keys(inObject).length ;
-///			}
-			wValue = Object.keys(inObject).length ;
-		}
-		catch(e)
-		{///例外
-		}
-		return wValue ;
+		return wKind ;
 	}
 
 
 
 //#####################################################
-//# 辞書型かチェック
+//# オブジェクトが辞書型かチェック
 //#####################################################
 	static sCheckObject({
 		inObject
@@ -824,8 +812,9 @@ class CLS_OSIF {
 		{
 			/////////////////////////////
 			// 辞書型の場合
-			if(( ( inObject instanceof Object )==true ) ||
-			   ( (typeof inObject)=="object" ) )
+///			if(( ( inObject instanceof Object )==true ) ||
+///			   ( (typeof inObject)=="object" ) )
+			if( this.sGetObjectKind({ inObject:inObject })==top.DEF_GVAL_OSIF_OBJKIND_OBJECT )
 			{
 				wValue = true ;
 			}
@@ -839,21 +828,29 @@ class CLS_OSIF {
 
 
 //#####################################################
-//# Array型にKeyを含むか
+//# 辞書型のキー一覧を返す
 //#####################################################
-	static sGetInArray({
-		inObject,
-		inKey
+	static sGetObjectList({
+		inObject
 	})
 	{
-		let wValue, wKey ;
+		let wKind, wValue ;
 		
-		wValue = false ;
+		wValue = top.DEF_GVAL_NULL ;
 		try
 		{
-			if( inObject.includes( inKey )==true )
+///			/////////////////////////////
+///			// 辞書型の場合
+///			if((( inObject instanceof Object )==true ) ||
+///			   ( (typeof inObject)=="object" ) )
+///			{
+///				wValue = Object.keys( inObject ) ;
+///			}
+			/////////////////////////////
+			// 辞書型の場合、キー一覧を返す
+			if( this.sGetObjectKind({ inObject:inObject })==top.DEF_GVAL_OSIF_OBJKIND_OBJECT )
 			{
-				wValue = true ;
+				wValue = Object.keys( inObject ) ;
 			}
 		}
 		catch(e)
@@ -863,6 +860,134 @@ class CLS_OSIF {
 	}
 
 
+
+/////#####################################################
+/////# Array型の要素数を返す
+/////# オブジェクトがArray型か
+/////#####################################################
+///	static sGetArrayNum({
+///		inObject
+///	})
+///	{
+///		let wValue ;
+///		
+///		wValue = -1 ;
+///		try
+///		{
+//////			/////////////////////////////
+//////			// Array型の場合
+//////			if( ( inObject instanceof Array )==true )
+//////			{
+//////				wValue = inObject.length ;
+//////			}
+//////			/////////////////////////////
+//////			// 辞書型の場合
+//////			else if(( ( inObject instanceof Object )==true ) ||
+//////				    ( (typeof inObject)=="object" ) )
+//////			{
+//////				wValue = Object.keys(inObject).length ;
+//////			}
+///			wValue = inObject.length ;
+///			if( wValue==undefined )
+///			{
+///				//### lengthプロパティがない=Array型ではない
+///				wValue = -1 ;
+///			}
+///		}
+///		catch(e)
+///		{///例外
+///		}
+///		return wValue ;
+///	}
+///
+///
+
+//#####################################################
+//# 辞書型orArray型の要素数を返す
+//#####################################################
+	static sGetObjectNum({
+		inObject
+	})
+	{
+		let wValue, wKind ;
+		
+		wValue = -1 ;
+		/////////////////////////////
+		// オブジェクトのタイプ取得
+		wKind = this.sGetObjectKind({ inObject:inObject }) ;
+		
+		try
+		{
+///			/////////////////////////////
+///			// Array型の場合
+///			if( ( inObject instanceof Array )==true )
+///			{
+///				wValue = inObject.length ;
+///			}
+///			/////////////////////////////
+///			// 辞書型の場合
+///			else if(( ( inObject instanceof Object )==true ) ||
+///				    ( (typeof inObject)=="object" ) )
+///			{
+///				wValue = Object.keys(inObject).length ;
+///			}
+///			wValue = Object.keys(inObject).length ;
+			/////////////////////////////
+			// Array型の場合
+			if( wKind==top.DEF_GVAL_OSIF_OBJKIND_ARRAY )
+			{
+				wValue = inObject.length ;
+				if( wValue==undefined )
+				{
+					//### lengthプロパティがない=Array型ではない
+					wValue = -1 ;
+				}
+			}
+			/////////////////////////////
+			// 辞書型の場合
+			else if( wKind==top.DEF_GVAL_OSIF_OBJKIND_OBJECT )
+			{
+				wValue = Object.keys(inObject).length ;
+				if( wValue==undefined )
+				{
+					//### lengthプロパティがない=なんだこのオブジェクト？
+					wValue = -1 ;
+				}
+			}
+		}
+		catch(e)
+		{///例外
+		}
+		return wValue ;
+	}
+
+
+
+/////#####################################################
+/////# Array型にKeyを含むか
+/////#####################################################
+///	static sGetInArray({
+///		inObject,
+///		inKey
+///	})
+///	{
+///		let wValue, wKey ;
+///		
+///		wValue = false ;
+///		try
+///		{
+///			if( inObject.includes( inKey )==true )
+///			{
+///				wValue = true ;
+///			}
+///		}
+///		catch(e)
+///		{///例外
+///		}
+///		return wValue ;
+///	}
+///
+///
 
 //#####################################################
 //# 辞書型にKeyを含むか
@@ -873,29 +998,65 @@ class CLS_OSIF {
 		inDD = false	// true=辞書型のデータ重複チェック false=キー重複チェック
 	})
 	{
-		let wValue, wKey ;
+		let wValue, wKind, wKey ;
 		
 		wValue = false ;
+		/////////////////////////////
+		// オブジェクトのタイプ取得
+		wKind = this.sGetObjectKind({ inObject:inObject }) ;
+		
 		try
 		{
-			if( inDD==true )
-			{///データ重複チェック
-				for( wKey in inObject )
-				{
-					if( inObject[wKey]==inKey )
-					{
-						wValue = true ;
-						break ;
-					}
-				}
-			}
-			else
-			{///キー重複チェック
-				if( inKey in inObject )
+			/////////////////////////////
+			// Array型の場合
+			if( wKind==top.DEF_GVAL_OSIF_OBJKIND_ARRAY )
+			{
+				if( inObject.includes( inKey )==true )
 				{
 					wValue = true ;
 				}
 			}
+			/////////////////////////////
+			// 辞書型の場合
+			else if( wKind==top.DEF_GVAL_OSIF_OBJKIND_OBJECT )
+			{
+				//### キー重複チェック
+				if( inKey in inObject )
+				{
+					wValue = true ;
+				}
+				
+				//### データ重複チェック
+				if(( inDD==true )&&( wValue==false ))
+				{
+					for( wKey in inObject )
+					{
+						if( inObject[wKey]==inKey )
+						{
+							wValue = true ;
+							break ;
+						}
+					}
+				}
+			}
+///			if( inDD==true )
+///			{///データ重複チェック
+///				for( wKey in inObject )
+///				{
+///					if( inObject[wKey]==inKey )
+///					{
+///						wValue = true ;
+///						break ;
+///					}
+///				}
+///			}
+///			else
+///			{///キー重複チェック
+///				if( inKey in inObject )
+///				{
+///					wValue = true ;
+///				}
+///			}
 		}
 		catch(e)
 		{///例外

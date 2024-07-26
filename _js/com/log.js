@@ -192,7 +192,7 @@ class CLS_L {
 			{/// テストの場合、除外あり関数は除外
 				if( wRes['Reason']!=top.DEF_GVAL_TEXT_NONE )
 				{
-					wSubRes = CLS_OSIF.sGetInArray({
+					wSubRes = CLS_OSIF.sGetInObject({
 						inObject : top.DEF_GVAL_OSIF_DEL_CALLBACK_LOG,
 						inKey	 : wRes['Reason']
 					}) ;
@@ -268,7 +268,7 @@ class CLS_L {
 		
 		//### 古いログデータを消して、上詰めする
 ///		wNum = CLS_OSIF.sGetObjectNum({ inObject:top.gARR_Log }) ;
-		wNum = CLS_OSIF.sGetArrayNum({ inObject:top.gARR_Log }) ;
+		wNum = CLS_OSIF.sGetObjectNum({ inObject:top.gARR_Log }) ;
 		if( top.DEF_USER_LOGDATA_LEN<=wNum )
 		{///一番上を削除して、詰める
 			top.gARR_Log.shift() ;
@@ -304,12 +304,12 @@ class CLS_L {
 		/////////////////////////////
 		// データ作成
 		
-		//###非表示情報のヘッダ
-		if( inData['Level']=="N" )
-		{
-			wCons = wCons + top.DEF_GVAL_LOG_HEADER + '\n' ;
-		}
-		
+///		//###非表示情報のヘッダ
+///		if( inData['Level']=="N" )
+///		{
+///			wCons = wCons + top.DEF_GVAL_LOG_HEADER + '\n' ;
+///		}
+///		
 		wCons = wCons + inData['TimeDate'] + " [" ;
 		wCons = wCons + inData['Level'] + "]" ;
 		
@@ -328,9 +328,10 @@ class CLS_L {
 				wCons = wCons + '\n' + "  Line  : " + inData['Line'] ;
 			}
 		}
-		else if(( inData['Level']=="CB" ) ||
-			    ( inData['Level']=="N" ) ||
-			    ( inData['Level']=="X" ) )
+///		else if(( inData['Level']=="CB" ) ||
+///			    ( inData['Level']=="N" ) ||
+///			    ( inData['Level']=="X" ) )
+		else if( inData['Level']=="CB" )
 		{
 			wCons = wCons + " " ;
 			wCons = wCons + inData['Class'] + " :: " ;
@@ -340,18 +341,30 @@ class CLS_L {
 				wCons = wCons + '\n' + "  Line  : " + inData['Line'] ;
 			}
 		}
+		else if(( inData['Level']=="N" ) ||
+			    ( inData['Level']=="X" ) )
+		{
+			wCons = top.DEF_GVAL_LOG_INFO_HEADER + '\n' + wCons + " " ;
+			wCons = wCons + inData['Class'] + " :: " ;
+			wCons = wCons + inData['Func'] ;
+			if( inData['Line']!=top.DEF_GVAL_TEXT_NONE )
+			{
+				wCons = wCons + '\n' + "  Line  : " + inData['Line'] ;
+			}
+		}
 		else if( inData['Level']=="S" )
 		{
-			wCons = top.DEF_GVAL_LOG_SYSRUN_HEADER + '\n' + wCons + " " ;
+///			wCons = top.DEF_GVAL_LOG_SYSRUN_HEADER + '\n' + wCons + " " ;
+			wCons = top.DEF_GVAL_LOG_SYS_HEADER + '\n' + wCons + " " ;
 			wCons = wCons + inData['Class'] + " :: " ;
 			wCons = wCons + inData['Func'] ;
 		}
-		else if( inData['Level']=="SC" )
-		{
-			wCons = top.DEF_GVAL_LOG_SYSCTRL_HEADER + '\n' + wCons + " " ;
-			wCons = wCons + inData['Class'] + " :: " ;
-			wCons = wCons + inData['Func'] ;
-		}
+///		else if( inData['Level']=="SC" )
+///		{
+///			wCons = top.DEF_GVAL_LOG_SYSCTRL_HEADER + '\n' + wCons + " " ;
+///			wCons = wCons + inData['Class'] + " :: " ;
+///			wCons = wCons + inData['Func'] ;
+///		}
 		else if(( inData['Level']=="SU" ) ||
 		        ( inData['Level']=="RU" ) )
 		{
@@ -359,10 +372,19 @@ class CLS_L {
 			wCons = wCons + inData['Class'] + " :: " ;
 			wCons = wCons + inData['Func'] ;
 		}
-		else if(( inData['Level']=="R" ) ||
-		        ( inData['Level']=="RC" ) )
+///		else if(( inData['Level']=="R" ) ||
+///		        ( inData['Level']=="RC" ) )
+		else if( inData['Level']=="R" )
 		{
-			wCons = top.DEF_GVAL_LOG_USECTRL_HEADER + '\n' + wCons + " " ;
+///			wCons = top.DEF_GVAL_LOG_USECTRL_HEADER + '\n' + wCons + " " ;
+			wCons = top.DEF_GVAL_LOG_USER_HEADER + '\n' + wCons + " " ;
+			wCons = wCons + inData['Class'] + " :: " ;
+			wCons = wCons + inData['Func'] ;
+		}
+		else if(( inData['Level']=="TS" ) ||
+		        ( inData['Level']=="TU" ) )
+		{
+			wCons = top.DEF_GVAL_LOG_INFO_HEADER + '\n' + wCons + " " ;
 			wCons = wCons + inData['Class'] + " :: " ;
 			wCons = wCons + inData['Func'] ;
 		}
@@ -383,12 +405,12 @@ class CLS_L {
 			wCons = wCons + '\n' + "  Info: " + inData['Message'] ;
 		}
 		
-		//###非表示情報のフッタ
-		if( inData['Level']=="N" )
-		{
-			wCons = wCons + '\n' + top.DEF_GVAL_LOG_HEADER ;
-		}
-		
+///		//###非表示情報のフッタ
+///		if( inData['Level']=="N" )
+///		{
+///			wCons = wCons + '\n' + top.DEF_GVAL_LOG_HEADER ;
+///		}
+///		
 		/////////////////////////////
 		// コンソール表示
 		
@@ -401,38 +423,102 @@ class CLS_L {
 		else if(( inData['Level']=="B" ) ||
 		        ( inData['Level']=="C" ) ||
 		        ( inData['Level']=="D" ) ||
-		        ( inData['Level']=="E" ) ||
-		        ( inData['Level']=="I" ) )
+		        ( inData['Level']=="E" ) )
+///		        ( inData['Level']=="E" ) ||
+///		        ( inData['Level']=="I" ) )
 		{
 			CLS_OSIF.sConsWarn({ inText:wCons }) ;
 		}
-		//### トラヒック
-		else if(( inData['Level']=="TS" ) ||
-		        ( inData['Level']=="TU" ) )
+		//### エラー：入力エラー
+		else if( inData['Level']=="I" )
 		{
-			CLS_OSIF.sConsInfo({ inText:wCons }) ;
+			CLS_OSIF.sConsWarn({ inText:wCons, inCSS:top.DEF_GVAL_LOG_CONSCSS_IERR }) ;
+		}
+///		//### トラヒック
+///		else if(( inData['Level']=="TS" ) ||
+///		        ( inData['Level']=="TU" ) )
+///		{
+///			CLS_OSIF.sConsInfo({ inText:wCons }) ;
+///		}
+		//### トラヒック：システムトラヒック
+		else if( inData['Level']=="TS" )
+		{
+			CLS_OSIF.sConsInfo({ inText:wCons, inCSS:top.DEF_GVAL_LOG_CONSCSS_TS }) ;
+		}
+		//### トラヒック：ユーザトラヒック
+		else if( inData['Level']=="TU" )
+		{
+			CLS_OSIF.sConsInfo({ inText:wCons, inCSS:top.DEF_GVAL_LOG_CONSCSS_TU }) ;
 		}
 		//### テストログ
 		else if( inData['Level']=="X" )
 		{
 			if( top.DEF_INDEX_TEST==true )
 			{
-				CLS_OSIF.sConsWarn({ inText:wCons }) ;
+///				CLS_OSIF.sConsWarn({ inText:wCons }) ;
+				CLS_OSIF.sConsInfo({ inText:wCons, inCSS:top.DEF_GVAL_LOG_CONSCSS_X }) ;
 			}
 		}
-		//### 非表示・コールバック
-		else if(( inData['Level']=="CB" ) ||
-		        ( inData['Level']=="N" ) )
+///		//### 非表示・コールバック
+///		else if(( inData['Level']=="CB" ) ||
+///		        ( inData['Level']=="N" ) )
+///		{
+///			CLS_OSIF.sConsInfo({ inText:wCons }) ;
+///		}
+		//### コールバック
+		else if( inData['Level']=="CB" )
 		{
-			CLS_OSIF.sConsInfo({ inText:wCons }) ;
+			CLS_OSIF.sConsInfo({ inText:wCons, inCSS:top.DEF_GVAL_LOG_CONSCSS_CB }) ;
 		}
-		//### 操作記録（システム起動・システム設定）
+		//### 非表示
+		else if( inData['Level']=="N" )
+		{
+			CLS_OSIF.sConsInfo({ inText:wCons, inCSS:top.DEF_GVAL_LOG_CONSCSS_N }) ;
+		}
+///		//### 操作記録（システム起動・システム設定）
+///		else if(( inData['Level']=="S" ) ||
+///		        ( inData['Level']=="SC" ) )
+///		{
+///			CLS_OSIF.sConsLog({ inText:wCons }) ;
+///		}
+		//### システム制御：システム起動・ログイン
 		else if(( inData['Level']=="S" ) ||
-		        ( inData['Level']=="SC" ) )
+		        ( inData['Level']=="SU" ) )
 		{
-			CLS_OSIF.sConsLog({ inText:wCons }) ;
+			CLS_OSIF.sConsInfo({ inText:wCons, inCSS:top.DEF_GVAL_LOG_CONSCSS_S }) ;
 		}
-		//### 操作記録（システム規制・ユーザ操作）
+		//### システム制御：システム設定
+		else if( inData['Level']=="SC" )
+		{
+			CLS_OSIF.sConsInfo({ inText:wCons, inCSS:top.DEF_GVAL_LOG_CONSCSS_SC }) ;
+		}
+		//### システム制御：システム規制
+		else if( inData['Level']=="SC" )
+		{
+			CLS_OSIF.sConsInfo({ inText:wCons, inCSS:top.DEF_GVAL_LOG_CONSCSS_SR }) ;
+		}
+		//### ユーザ制御：ユーザ登録・変更・削除・ログイン
+		else if(( inData['Level']=="R" ) ||
+		        ( inData['Level']=="RU" ) )
+		{
+			CLS_OSIF.sConsInfo({ inText:wCons, inCSS:top.DEF_GVAL_LOG_CONSCSS_R }) ;
+		}
+		//### ユーザ制御：ユーザ設定
+		else if( inData['Level']=="RC" )
+		{
+			CLS_OSIF.sConsInfo({ inText:wCons, inCSS:top.DEF_GVAL_LOG_CONSCSS_RC }) ;
+		}
+		//### ユーザ制御：ユーザ規制
+		else if( inData['Level']=="RR" )
+		{
+			CLS_OSIF.sConsInfo({ inText:wCons, inCSS:top.DEF_GVAL_LOG_CONSCSS_RU }) ;
+		}
+///		//### 操作記録（システム規制・ユーザ操作）
+///		else
+///		{
+///			CLS_OSIF.sConsInfo({ inText:wCons }) ;
+///		}
+		//### その他？
 		else
 		{
 			CLS_OSIF.sConsInfo({ inText:wCons }) ;
@@ -484,7 +570,7 @@ class CLS_L {
 		
 		//### 古いログデータを消して、上詰めする
 ///		wNum = CLS_OSIF.sGetObjectNum({ inObject:top.gSTR_LogBox.Data }) ;
-		wNum = CLS_OSIF.sGetArrayNum({ inObject:top.gSTR_LogBox.Data }) ;
+		wNum = CLS_OSIF.sGetObjectNum({ inObject:top.gSTR_LogBox.Data }) ;
 		if( top.DEF_USER_LOGBOXDATA_LEN<=wNum )
 		{///一番上を削除して、詰める
 			top.gSTR_LogBox.Data.shift() ;
@@ -558,7 +644,7 @@ class CLS_L {
 		// 出力データの作成
 		wSTR_Data = this.__createData() ;
 ///		if( CLS_OSIF.sGetObjectNum({ inObject:wSTR_Data['Cons'] })<=0 )
-		if( CLS_OSIF.sGetArrayNum({ inObject:wSTR_Data['Cons'] })<=0 )
+		if( CLS_OSIF.sGetObjectNum({ inObject:wSTR_Data['Cons'] })<=0 )
 		{
 			wMessage = "No Log data" ;
 			this.sL({ inRes:wRes, inLevel:"SR", inMessage:wMessage }) ;
@@ -580,7 +666,7 @@ class CLS_L {
 	static __createData()
 	{
 		let wSTR_Data, wContCons, wOutput ;
-		let wIndex, wKey, wKey2, wSpace, wSpaceLen ;
+		let wIndex, wKey, wKey2, wSpace, wSpaceLen, wLen ;
 		
 		/////////////////////////////
 		// 出力データの応答
@@ -614,9 +700,13 @@ class CLS_L {
 				}
 				else
 				{
+					//### 出力の文字列長を取得する
+					wLen = CLS_OSIF.sGetObjectNum({ inObject : wOutput }) ;
+					
 					//### それ以外は、コンソール用出力
 					wOutput   = String( wKey ) ;
-					wSpaceLen = top.DEF_GVAL_LOG_KOUMOKU_LEN - wOutput.length ;
+///					wSpaceLen = top.DEF_GVAL_LOG_KOUMOKU_LEN - wOutput.length ;
+					wSpaceLen = top.DEF_GVAL_LOG_KOUMOKU_LEN - wLen ;
 					wSpace = " ".repeat( wSpaceLen ) ;
 					wOutput = wOutput + wSpace + ": " + String( top.gSTR_Log[wIndex][wKey] ) + '\n' ;
 					wContCons.push( wOutput ) ;
