@@ -1299,23 +1299,24 @@ class CLS_WinCtrl {
 		
 		/////////////////////////////
 		// タイトルの設定（メインタイトル）
-		
-		//### 翻訳の右側のみ設定する
-		wSubRes = CLS_OSIF.sSplit({
-			inString  : wTitle,
-			inPattern : " - "
-		}) ;
-		if(( wSubRes['Result']==true ) && ( wSubRes['Length']==2 ))
-		{
-			//### 無時分解できたら、右側のみをタイトルに設定する
-			wTitle = wSubRes['Data'][1] ;
-		}
-		
-		//### タイトル設定
+//		
+//		//### 翻訳の右側のみ設定する
+//		wSubRes = CLS_OSIF.sSplit({
+//			inString  : wTitle,
+//			inPattern : " - "
+//		}) ;
+//		if(( wSubRes['Result']==true ) && ( wSubRes['Length']==2 ))
+//		{
+//			//### 無時分解できたら、右側のみをタイトルに設定する
+//			wTitle = wSubRes['Data'][1] ;
+//		}
+//		
+//		//### タイトル設定
 		wSubRes = CLS_PageObj.sSetInner({
 			inPageObj	: inParam.PageObj,
 			inKey		: top.DEF_GVAL_IDX_TITLE_MAIN,
-			inCode		: wTitle
+			inCode		: wTitle,
+			inError		: false
 		}) ;
 		if( wSubRes['Result']!=true )
 		{///タイトルがない場合、正常で終わる

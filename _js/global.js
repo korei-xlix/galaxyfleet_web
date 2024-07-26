@@ -17,6 +17,7 @@
 //# 1.2.2.0		2024-07-15	Hotfix
 //# 1.2.3.0		2024-07-21	Galaxy Fleetに合わせた対応 (仮対応)
 //# 1.2.3.1		2024-07-26	一部処理を最適化、コンソールのCSS化
+//# 1.2.3.2		2024-07-26	親Windowタイトルの変更、コンソールCSSの調整
 	
 //# 1.xxxxx		2024-07-xx	Window制御 設定完了待ち後処理の外部設定
 //#
@@ -26,7 +27,7 @@
 //# ※ユーザ自由変更※
 
 //### システム情報
-var DEF_USER_VERSION	= "1.2.3.1" ;
+var DEF_USER_VERSION	= "1.2.3.2" ;
 var DEF_USER_AUTHOR		= 'korei (X:@korei_xlix)' ;	//HTMLのauthor表示
 var DEF_USER_GITHUB		= "https://github.com/korei-xlix/website/" ;
 var DEF_USER_SITEURL	= "https://website.koreis-labo.com/" ;
@@ -750,17 +751,17 @@ var DEF_GVAL_LOG_CONSCSS_INFO	= "color : #000000;   background-color : #DDFFFF;"
 var DEF_GVAL_LOG_CONSCSS_IERR	= "color : #000000;   background-color : #FFAD90;" ;						//橙色：入力エラー
 
 var DEF_GVAL_LOG_CONSCSS_S		= "color : #FFFFFF;   background-color : #000066;   font-weight : bold;" ;	//青：起動・ログイン
-var DEF_GVAL_LOG_CONSCSS_SC		= "color : #FFFFFF;   background-color : #A4C6FF;" ;						//青：システム設定
+var DEF_GVAL_LOG_CONSCSS_SC		= "color : #000000;   background-color : #D9E5FF;   font-weight : bold;" ;	//青：システム設定
 var DEF_GVAL_LOG_CONSCSS_SR		= "color : #000000;   background-color : #D7EEFF;" ;						//水色：システム規制
 
 var DEF_GVAL_LOG_CONSCSS_R		= "color : #FFFFFF;   background-color : #006600;   font-weight : bold;" ;	//緑：ユーザ登録・変更・削除・ログイン
-var DEF_GVAL_LOG_CONSCSS_RC		= "color : #FFFFFF;   background-color : #AEFFBD;" ;						//緑：ユーザ設定
+var DEF_GVAL_LOG_CONSCSS_RC		= "color : #008000;   background-color : #AEFFBD;   font-weight : bold;" ;	//緑：ユーザ設定
 var DEF_GVAL_LOG_CONSCSS_RR		= "color : #000000;   background-color : #E6FFE9;" ;						//薄い緑：ユーザ規制
 
 var DEF_GVAL_LOG_CONSCSS_TS		= "color : #0000FF;   background-color : #FFFFFF;" ;						//字青：システムトラヒック
 var DEF_GVAL_LOG_CONSCSS_TU		= "color : #008000;   background-color : #FFFFFF;" ;						//字緑：ユーザトラヒック
 
-var DEF_GVAL_LOG_CONSCSS_CB		= "color : #EEEEEE;   background-color : #FFFFFF;" ;						//白：コールバック
+var DEF_GVAL_LOG_CONSCSS_CB		= "color : #333333;   background-color : #FFFFFF;" ;						//白：コールバック
 var DEF_GVAL_LOG_CONSCSS_N		= "color : #000000;   background-color : #FFFFFF;" ;						//白：非表示
 var DEF_GVAL_LOG_CONSCSS_X		= "color : #FFFFFF;   background-color : #666666;" ;						//濃い灰色：テストログ
 
