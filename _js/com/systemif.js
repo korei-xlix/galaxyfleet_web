@@ -3,7 +3,7 @@
 //# ::Admin    : Korei (@korei-xlix)
 //# ::github   : https://github.com/korei-xlix/website/
 //# ::Class    : システム情報
-//##################################################### 
+//#####################################################
 //# 関数群     :
 //#
 //# システム設定
@@ -744,7 +744,7 @@ class CLS_Sys {
 		let wMessage ;
 		
 ///		wMessage = top.DEF_GVAL_LOG_HEADER + '\n' + "*** view All SystemInfo" + '\n' + top.DEF_GVAL_LOG_HEADER ;
-		wMessage = "*** view All SystemInfo" + '\n' + top.DEF_GVAL_LOG_HEADER ;
+		wMessage = "*** view All SystemInfo" ;
 		CLS_OSIF.sConsInfo({ inText:wMessage }) ;
 		
 		wMessage = "*** gSTR_SystemInfo" ;
